@@ -5,6 +5,7 @@ var selected_pill = null
 # The Selected Projectile Index (0, 1, or 2)
 var selected_idx = 0
 onready var grid = $Background/HBoxContainer/ItemGrid
+onready var ExitButton = $Background/ExitButton
 
 # Maps the Projectiles to its indices
 var ProjectileMap = {}
@@ -44,3 +45,8 @@ func set_selected_item(idx):
 	selected_pill = grid.get_child(idx).get_child(1)
 	$Background/HBoxContainer/ItemText/ItemName.bbcode_text = "[b]%s[/b]" % selected_pill.name
 	$Background/HBoxContainer/ItemText/ItemDescription.bbcode_text = ItemDisplay[selected_pill.name]
+
+
+func _on_ExitButton_pressed():
+	# Connect ExitButton to HUD.gd close()
+	get_node("/root/HUD").close_backpack()

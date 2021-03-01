@@ -187,3 +187,4 @@ margin_top = 20.0
 margin_right = -30.0001
 margin_bottom = 40.0
 text = "X"
+[connection signal="pressed" from="Background/ExitButton" to="." method="_on_ExitButton_pressed"]
