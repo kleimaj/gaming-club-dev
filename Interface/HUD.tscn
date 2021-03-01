@@ -64,5 +64,37 @@ margin_bottom = 180.0
 rect_min_size = Vector2( 650, 360 )
 texture = ExtResource( 4 )
 expand = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Backpack/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemText" type="VBoxContainer" parent="CanvasLayer/Backpack/Background/HBoxContainer"]
+margin_left = 15.0
+margin_top = 31.0
+margin_right = 309.0
+margin_bottom = 299.0
+
+[node name="ItemName" type="RichTextLabel" parent="CanvasLayer/Backpack/Background/HBoxContainer/ItemText"]
+margin_right = 294.0
+margin_bottom = 50.0
+bbcode_enabled = true
+bbcode_text = "[b]Green Pill[/b]"
+text = "Green Pill"
+
+[node name="ItemDescription" type="RichTextLabel" parent="CanvasLayer/Backpack/Background/HBoxContainer/ItemText"]
+margin_top = 55.0
+margin_right = 294.0
+margin_bottom = 104.0
+text = "Green pill is best against the green type of mushrooms!"
+
+[node name="ItemGrid" type="GridContainer" parent="CanvasLayer/Backpack/Background/HBoxContainer"]
+margin_left = 327.0
+margin_right = 327.0
+margin_bottom = 360.0
 [connection signal="pressed" from="CanvasLayer/BackpackButton" to="." method="_on_BackpackButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/BookButton" to="." method="_on_BookButton_pressed"]
