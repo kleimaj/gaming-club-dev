@@ -20,9 +20,14 @@ var ItemDisplay = {
 func _ready():
 	# Show the default selected pill (pill index 0)
 	# Assign selected_pill to Blue Pill (texture rect)
-	set_selected(selected_idx)
+	set_selected_item(selected_idx)
+	# Attach gui input listeners
+	for slot in grid.get_children():
+		slot.connect("gui_input", self, "slot_gui_input", [slot])
+		# add entry to ProjectileMap
+		ProjectileMap[slot.name] = ProjectileMap.size()
 
-func set_selected(idx):
+func set_selected_item(idx):
 	# Show Selected Texture Rect
 	grid.get_child(idx).get_child(0).show()
 	# Change the selected pill
