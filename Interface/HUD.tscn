@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://GFX/UI/backpack.png" type="Texture" id=1]
 [ext_resource path="res://GFX/UI/book.png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://GFX/UI/blue_button02.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://GFX/UI/panel.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Projectiles/pill_1.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Projectiles/pill_2.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Projectiles/pill_3.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -127,15 +130,27 @@ rect_min_size = Vector2( 55, 55 )
 custom_styles/panel = SubResource( 2 )
 
 [node name="Selected" type="TextureRect" parent="CanvasLayer/Backpack/Background/HBoxContainer/ItemGrid/Slot0"]
-margin_right = 40.0
-margin_bottom = 40.0
+visible = false
+self_modulate = Color( 1, 0.788235, 0.788235, 1 )
+margin_right = 55.0
+margin_bottom = 55.0
+texture = ExtResource( 6 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Blue Pill" type="TextureRect" parent="CanvasLayer/Backpack/Background/HBoxContainer/ItemGrid/Slot0"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -8.0
+margin_top = -17.5
+margin_right = 8.0
+margin_bottom = 17.5
+texture = ExtResource( 7 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -148,15 +163,27 @@ rect_min_size = Vector2( 55, 55 )
 custom_styles/panel = SubResource( 2 )
 
 [node name="Selected" type="TextureRect" parent="CanvasLayer/Backpack/Background/HBoxContainer/ItemGrid/Slot1"]
-margin_right = 40.0
-margin_bottom = 40.0
+visible = false
+self_modulate = Color( 1, 0.788235, 0.788235, 1 )
+margin_right = 55.0
+margin_bottom = 55.0
+texture = ExtResource( 6 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Red Pill" type="TextureRect" parent="CanvasLayer/Backpack/Background/HBoxContainer/ItemGrid/Slot1"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -8.0
+margin_top = -17.5
+margin_right = 8.0
+margin_bottom = 17.5
+texture = ExtResource( 8 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -169,17 +196,39 @@ rect_min_size = Vector2( 55, 55 )
 custom_styles/panel = SubResource( 2 )
 
 [node name="Selected" type="TextureRect" parent="CanvasLayer/Backpack/Background/HBoxContainer/ItemGrid/Slot2"]
-margin_right = 40.0
-margin_bottom = 40.0
+visible = false
+self_modulate = Color( 1, 0.788235, 0.788235, 1 )
+margin_right = 55.0
+margin_bottom = 55.0
+texture = ExtResource( 6 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Green Pill" type="TextureRect" parent="CanvasLayer/Backpack/Background/HBoxContainer/ItemGrid/Slot2"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -8.0
+margin_top = -17.5
+margin_right = 8.0
+margin_bottom = 17.5
+texture = ExtResource( 9 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/Backpack/Background"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -50.0001
+margin_top = 20.0
+margin_right = -30.0001
+margin_bottom = 40.0
+text = "X"
 [connection signal="pressed" from="CanvasLayer/BackpackButton" to="." method="_on_BackpackButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/BookButton" to="." method="_on_BookButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Backpack/Background/ExitButton" to="." method="_on_ExitButton_pressed"]

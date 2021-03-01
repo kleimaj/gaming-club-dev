@@ -8,3 +8,6 @@ func _on_BackpackButton_pressed():
 
 func _on_BookButton_pressed():
 	pass 
+
+func _on_ExitButton_pressed():
+	pass 
