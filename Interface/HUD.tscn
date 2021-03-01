@@ -81,14 +81,15 @@ margin_left = 15.0
 margin_top = 30.0
 margin_right = -15.0
 margin_bottom = -50.0
-custom_constants/separation = 600
+custom_constants/separation = 300
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ItemText" type="VBoxContainer" parent="CanvasLayer/Backpack/Background/HBoxContainer"]
-margin_right = 300.0
+margin_left = 10.0
+margin_right = 310.0
 margin_bottom = 280.0
 rect_min_size = Vector2( 300, 280 )
 
@@ -104,12 +105,23 @@ text = "Green Pill"
 [node name="ItemDescription" type="RichTextLabel" parent="CanvasLayer/Backpack/Background/HBoxContainer/ItemText"]
 margin_top = 54.0
 margin_right = 300.0
-margin_bottom = 54.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 270, 50 )
 text = "Green pill is best against the green type of mushrooms!"
 
 [node name="ItemGrid" type="GridContainer" parent="CanvasLayer/Backpack/Background/HBoxContainer"]
-margin_left = 900.0
-margin_right = 900.0
+margin_left = 610.0
+margin_right = 610.0
 margin_bottom = 280.0
+
+[node name="Slot0" type="Panel" parent="CanvasLayer/Backpack/Background/HBoxContainer/ItemGrid"]
+
+[node name="Slot1" type="Panel" parent="CanvasLayer/Backpack/Background/HBoxContainer/ItemGrid"]
+margin_top = 4.0
+margin_bottom = 4.0
+
+[node name="Slot2" type="Panel" parent="CanvasLayer/Backpack/Background/HBoxContainer/ItemGrid"]
+margin_top = 8.0
+margin_bottom = 8.0
 [connection signal="pressed" from="CanvasLayer/BackpackButton" to="." method="_on_BackpackButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/BookButton" to="." method="_on_BookButton_pressed"]
