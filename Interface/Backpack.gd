@@ -27,6 +27,16 @@ func _ready():
 		# add entry to ProjectileMap
 		ProjectileMap[slot.name] = ProjectileMap.size()
 
+func slot_gui_input(event: InputEvent, slot):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and event.pressed:
+			# hide the selected texture
+			grid.get_child(selected_idx).get_child(0).hide()
+			# set new selected index
+			selected_idx = ProjectileMap[slot.name]
+			set_selected_item(selected_idx)
+			# emit signal
+
 func set_selected_item(idx):
 	# Show Selected Texture Rect
 	grid.get_child(idx).get_child(0).show()
