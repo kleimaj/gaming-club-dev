@@ -82,12 +82,10 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Backpack/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 15.0
+margin_left = 30.0
 margin_top = 30.0
 margin_right = -15.0
 margin_bottom = -50.0
-custom_constants/separation = 300
-alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -114,8 +112,8 @@ rect_min_size = Vector2( 270, 50 )
 text = "Green pill is best against the green type of mushrooms!"
 
 [node name="ItemGrid" type="GridContainer" parent="CanvasLayer/Backpack/Background/HBoxContainer"]
-margin_left = 600.0
-margin_right = 797.0
+margin_left = 304.0
+margin_right = 501.0
 margin_bottom = 280.0
 rect_min_size = Vector2( 190, 150 )
 custom_constants/vseparation = 16
