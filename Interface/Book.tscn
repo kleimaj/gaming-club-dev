@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GFX/UI/Book/Blank.png" type="Texture" id=1]
 [ext_resource path="res://GFX/UI/Book/Cover.png" type="Texture" id=2]
 [ext_resource path="res://GFX/UI/Book/RightPage.png" type="Texture" id=3]
 [ext_resource path="res://GFX/UI/Book/LeftPage.png" type="Texture" id=4]
+[ext_resource path="res://Interface/Book.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -120,6 +121,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 0, 400 ), Vector2( 0, 0 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "TurnPageNextA"
@@ -200,6 +213,8 @@ tracks/2/keys = {
 }
 
 [node name="Book" type="Node2D"]
+position = Vector2( 0, 400 )
+script = ExtResource( 5 )
 
 [node name="Page1" type="Polygon2D" parent="."]
 position = Vector2( -473.679, -217.758 )
@@ -208,10 +223,11 @@ polygon = PoolVector2Array( 480, 220, 480, 880, 960, 880, 960, 220 )
 uv = PoolVector2Array( 0, 0, 0, 640, 480, 640, 480, 0 )
 
 [node name="Page2" type="Polygon2D" parent="."]
+visible = false
 position = Vector2( -473.679, -217.758 )
 z_index = 5
 texture = ExtResource( 2 )
-polygon = PoolVector2Array( 960, 220, 960, 880, 1440, 880, 1440, 220 )
+polygon = PoolVector2Array( 960, 220, 960, 880, 960, 960, 960, 120 )
 uv = PoolVector2Array( 0, 0, 0, 640, 480, 640, 480, 0 )
 
 [node name="Page3" type="Polygon2D" parent="."]
