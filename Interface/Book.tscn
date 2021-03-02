@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="Book" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Page1" type="Polygon2D" parent="."]
+
+[node name="Page2" type="Polygon2D" parent="."]
