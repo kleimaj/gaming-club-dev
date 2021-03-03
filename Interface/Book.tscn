@@ -185,7 +185,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ PoolVector2Array( 12.397, 165.216, 12.567, 797.139, 26.044, 803.427, 25.875, 171.503 ), PoolVector2Array( 480, 229, 480, 880, 960, 880, 960, 220 ) ]
+"values": [ PoolVector2Array( 960, 120, 960, 980, 960, 880, 960, 220 ), PoolVector2Array( 480, 220, 480, 880, 960, 880, 960, 220 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Page3:visible")
@@ -213,7 +213,8 @@ tracks/2/keys = {
 }
 
 [node name="Book" type="Node2D"]
-position = Vector2( 0, 400 )
+position = Vector2( -0.00012207, 4.89343 )
+scale = Vector2( 0.840001, 0.840001 )
 script = ExtResource( 5 )
 
 [node name="Page1" type="Polygon2D" parent="."]
@@ -223,15 +224,14 @@ polygon = PoolVector2Array( 480, 220, 480, 880, 960, 880, 960, 220 )
 uv = PoolVector2Array( 0, 0, 0, 640, 480, 640, 480, 0 )
 
 [node name="Page2" type="Polygon2D" parent="."]
-visible = false
 position = Vector2( -473.679, -217.758 )
 z_index = 5
 texture = ExtResource( 2 )
-polygon = PoolVector2Array( 960, 220, 960, 880, 960, 960, 960, 120 )
+polygon = PoolVector2Array( 960, 220, 960, 880, 1440, 880, 1440, 220 )
 uv = PoolVector2Array( 0, 0, 0, 640, 480, 640, 480, 0 )
 
 [node name="Page3" type="Polygon2D" parent="."]
-visible = false
+position = Vector2( -464.424, -217.653 )
 texture = ExtResource( 4 )
 polygon = PoolVector2Array( 12.397, 165.216, 12.567, 797.139, 26.044, 803.427, 25.875, 171.503 )
 uv = PoolVector2Array( 0, 0, 0, 640, 480, 640, 480, 0 )
