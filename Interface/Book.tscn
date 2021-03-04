@@ -224,6 +224,7 @@ polygon = PoolVector2Array( 480, 220, 480, 880, 960, 880, 960, 220 )
 uv = PoolVector2Array( 0, 0, 0, 640, 480, 640, 480, 0 )
 
 [node name="Page2" type="Polygon2D" parent="."]
+visible = false
 position = Vector2( -473.679, -217.758 )
 z_index = 5
 texture = ExtResource( 2 )
@@ -233,7 +234,7 @@ uv = PoolVector2Array( 0, 0, 0, 640, 480, 640, 480, 0 )
 [node name="Page3" type="Polygon2D" parent="."]
 position = Vector2( -464.424, -217.653 )
 texture = ExtResource( 4 )
-polygon = PoolVector2Array( 12.397, 165.216, 12.567, 797.139, 26.044, 803.427, 25.875, 171.503 )
+polygon = PoolVector2Array( 480, 220, 480, 880, 960, 880, 960, 220 )
 uv = PoolVector2Array( 0, 0, 0, 640, 480, 640, 480, 0 )
 
 [node name="Page4" type="Polygon2D" parent="."]
@@ -242,8 +243,20 @@ texture = ExtResource( 3 )
 polygon = PoolVector2Array( 960, 220, 960, 880, 1440, 880, 1440, 220 )
 uv = PoolVector2Array( 0, 0, 0, 640, 480, 640, 480, 0 )
 
+[node name="Button" type="Button" parent="Page4"]
+margin_left = 1152.21
+margin_top = 356.9
+margin_right = 1235.21
+margin_bottom = 376.9
+rect_scale = Vector2( 1.47619, 1.47619 )
+text = "Close Book"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 1 )
 anims/SlideIn = SubResource( 4 )
 anims/TurnPageNextA = SubResource( 2 )
 anims/TurnPageNextB = SubResource( 3 )
+[connection signal="pressed" from="Page4/Button" to="." method="_on_Button_pressed"]
