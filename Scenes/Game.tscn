@@ -9,5 +9,6 @@
 [node name="Tank" parent="." instance=ExtResource( 1 )]
 position = Vector2( 65.4972, 531.281 )
 Bullet = ExtResource( 2 )
+bulletSpeed = 2000
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
