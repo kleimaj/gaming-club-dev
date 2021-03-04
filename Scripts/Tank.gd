@@ -3,6 +3,7 @@ extends KinematicBody2D
 export (PackedScene) var Bullet
 export (int) var speed
 export (float) var gun_cooldown
+export (int) var bulletSpeed
 var ammo_texture = "res://Assets/GFX/Projectiles/pill_0.png"
 var velocity = Vector2()
 var can_shoot = true
@@ -41,7 +42,7 @@ func shoot():
 		b.get_node("Sprite").texture.load_path = ammo_texture
 		owner.add_child(b)
 		b.transform = $Muzzle/Position2D.global_transform
-		b.velocity = b.transform.x * 800
+		b.velocity = b.transform.x * bulletSpeed
 		b.gravity = 250
 		
 func _physics_process(delta):
