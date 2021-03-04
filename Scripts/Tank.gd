@@ -7,12 +7,13 @@ export (int) var bulletSpeed
 var ammo_texture = "res://Assets/GFX/Projectiles/pill_0.png"
 var velocity = Vector2()
 var can_shoot = true
+
 var changemuzzle = false
+
 func _ready():
 	$ShootTimer.wait_time = gun_cooldown
 
 func control(delta):
-	
 	velocity = Vector2()
 	velocity = Vector2((get_viewport().get_mouse_position() - position).x,0)
 #	if Input.is_action_pressed('forward'):
@@ -35,6 +36,7 @@ func control(delta):
 #		velocity = Vector2(-speed, 0)
 #	if Input.is_action_just_pressed('click'):
 #		shoot()
+
 		
 func shoot():
 		$ShootTimer.start()
