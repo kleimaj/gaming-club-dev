@@ -7,6 +7,9 @@ var selected_idx = 0
 onready var grid = $Background/HBoxContainer/ItemGrid
 onready var ExitButton = $Background/ExitButton
 
+# Signal to change projectile
+signal projectile_change(texture_path)
+
 # Maps the Projectiles to its indices
 var ProjectileMap = {}
 
@@ -27,6 +30,8 @@ func _ready():
 		slot.connect("gui_input", self, "slot_gui_input", [slot])
 		# add entry to ProjectileMap
 		ProjectileMap[slot.name] = ProjectileMap.size()
+	# Connect Signal Receiver
+	connect("projectile_change", get_node("/root/Game/Tank"), "_on_texture_change")
 
 func slot_gui_input(event: InputEvent, slot):
 	if event is InputEventMouseButton:
@@ -37,6 +42,7 @@ func slot_gui_input(event: InputEvent, slot):
 			selected_idx = ProjectileMap[slot.name]
 			set_selected_item(selected_idx)
 			# emit signal
+			emit_signal("projectile_change", get_texture_path())
 
 func set_selected_item(idx):
 	# Show Selected Texture Rect
@@ -46,6 +52,8 @@ func set_selected_item(idx):
 	$Background/HBoxContainer/ItemText/ItemName.bbcode_text = "[b]%s[/b]" % selected_pill.name
 	$Background/HBoxContainer/ItemText/ItemDescription.bbcode_text = ItemDisplay[selected_pill.name]
 
+func get_texture_path():
+	return selected_pill.texture.load_path
 
 func _on_ExitButton_pressed():
 	# Connect ExitButton to HUD.gd close()
