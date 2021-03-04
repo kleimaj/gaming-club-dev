@@ -49,4 +49,4 @@ func set_selected_item(idx):
 
 func _on_ExitButton_pressed():
 	# Connect ExitButton to HUD.gd close()
-	get_node("/root/HUD").close_backpack()
+	get_node("/root/Game/HUD").close_backpack()
