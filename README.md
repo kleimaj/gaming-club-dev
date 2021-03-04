@@ -9,7 +9,7 @@
 
 #### Week 2 (3/11)
 * Enemy Classes
-* Smoke Effect
+* Mist Effect
 * Level HUD (progress bar, score, etc.)
 * Win / Lose conditions
 
