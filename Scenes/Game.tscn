@@ -157,326 +157,336 @@ position = Vector2( 547.286, 382.842 )
 scale = Vector2( 0.510474, 0.558497 )
 texture = ExtResource( 64 )
 
-[node name="grass_texture_3" type="Sprite" parent="."]
-position = Vector2( 932.258, 504.827 )
-texture = ExtResource( 63 )
+[node name="Trees" type="Node2D" parent="."]
 
-[node name="tree_11" type="Sprite" parent="."]
+[node name="tree_11" type="Sprite" parent="Trees"]
 position = Vector2( 276.779, 316.194 )
 scale = Vector2( 1, 1.30216 )
 texture = ExtResource( 39 )
 
-[node name="tree_11" type="Sprite" parent="tree_11"]
+[node name="tree_11" type="Sprite" parent="Trees/tree_11"]
 position = Vector2( 628.395, -75.7972 )
 scale = Vector2( 0.82788, 0.724664 )
 texture = ExtResource( 39 )
 flip_h = true
 
-[node name="ground_2" type="Sprite" parent="."]
-position = Vector2( 445.187, 584.791 )
-scale = Vector2( 0.941366, 0.483391 )
-texture = ExtResource( 10 )
-
-[node name="ground_3" type="Sprite" parent="."]
-position = Vector2( 847.529, 582.263 )
-scale = Vector2( 0.720519, 0.521644 )
-texture = ExtResource( 7 )
-
-[node name="tree_10" type="Sprite" parent="."]
+[node name="tree_10" type="Sprite" parent="Trees"]
 position = Vector2( 750.285, 256.219 )
 texture = ExtResource( 30 )
 
-[node name="zutto_tree_2" type="Sprite" parent="."]
-position = Vector2( 756.524, 284.492 )
-scale = Vector2( 0.826925, 1.20785 )
-texture = ExtResource( 35 )
-
-[node name="zutto_platform_1" type="Sprite" parent="."]
-position = Vector2( 750.772, 420.464 )
-scale = Vector2( 0.247772, 0.400685 )
-texture = ExtResource( 36 )
-
-[node name="tree_6" type="Sprite" parent="."]
+[node name="tree_6" type="Sprite" parent="Trees"]
 position = Vector2( 931.954, 297.347 )
 scale = Vector2( 0.482285, 0.585705 )
 texture = ExtResource( 44 )
 
-[node name="tree_int_enter" type="Sprite" parent="."]
-position = Vector2( 924.581, 230.131 )
-scale = Vector2( 0.472243, 0.751093 )
-texture = ExtResource( 28 )
-
-[node name="stars_4" type="Sprite" parent="."]
-position = Vector2( 982.369, 194.77 )
-scale = Vector2( 0.127457, 0.468264 )
-texture = ExtResource( 51 )
-flip_h = true
-
-[node name="tree_13" type="Sprite" parent="."]
+[node name="tree_13" type="Sprite" parent="Trees"]
 position = Vector2( 378.867, 374.671 )
 scale = Vector2( 0.881383, 0.902217 )
 texture = ExtResource( 40 )
 
-[node name="owl_2" type="Sprite" parent="."]
-position = Vector2( 978.413, 251.483 )
-scale = Vector2( 0.443011, 0.493318 )
-texture = ExtResource( 49 )
-
-[node name="tree_12" type="Sprite" parent="."]
+[node name="tree_12" type="Sprite" parent="Trees"]
 position = Vector2( 246.195, 409.208 )
 rotation = 0.197317
 scale = Vector2( 0.54742, 0.645801 )
 texture = ExtResource( 34 )
 
-[node name="zutto_plant_2" type="Sprite" parent="."]
-position = Vector2( 992.213, 458.594 )
-texture = ExtResource( 31 )
-
-[node name="bck_tree_2" type="Sprite" parent="."]
+[node name="bck_tree_2" type="Sprite" parent="Trees"]
 position = Vector2( 33.8702, 467.747 )
 scale = Vector2( 0.613815, 0.886179 )
 texture = ExtResource( 70 )
 
-[node name="MainTree" type="Sprite" parent="."]
+[node name="MainTree" type="Sprite" parent="Trees"]
 position = Vector2( 126.777, 258.207 )
 scale = Vector2( 0.978637, 1.21371 )
 texture = ExtResource( 6 )
 
-[node name="Owl" type="Sprite" parent="."]
-position = Vector2( 161.1, 452.94 )
-scale = Vector2( 0.583981, 0.691106 )
-texture = ExtResource( 8 )
-
-[node name="plant_fern_1" type="Sprite" parent="."]
-position = Vector2( 231.211, 462.601 )
-scale = Vector2( 1, 1.2715 )
-texture = ExtResource( 21 )
-
-[node name="plant_fern_2" type="Sprite" parent="."]
-position = Vector2( 271.224, 483.57 )
-scale = Vector2( 1, 0.839364 )
-texture = ExtResource( 15 )
-
-[node name="plant_fern_3" type="Sprite" parent="."]
-position = Vector2( 57.3698, 484.746 )
-texture = ExtResource( 23 )
-
-[node name="plant_fern_4" type="Sprite" parent="."]
-position = Vector2( 280.612, 469.738 )
-texture = ExtResource( 20 )
-
-[node name="plant_fern_5" type="Sprite" parent="."]
-position = Vector2( 209.95, 470.11 )
-scale = Vector2( 1, 1.24594 )
-texture = ExtResource( 24 )
-
-[node name="plant_giant_fern_1" type="Sprite" parent="."]
-position = Vector2( 318.167, 438.164 )
-scale = Vector2( 1.22691, 1.41049 )
-texture = ExtResource( 25 )
-
-[node name="plant_giant_fern_2" type="Sprite" parent="."]
-position = Vector2( 32.7483, 473.145 )
-scale = Vector2( 0.813352, 1.00874 )
-texture = ExtResource( 16 )
-
-[node name="plant_grass_1" type="Sprite" parent="."]
-position = Vector2( 276.86, 485.371 )
-texture = ExtResource( 17 )
-
-[node name="zutto_plant_1" type="Sprite" parent="."]
-position = Vector2( 664.109, 473.892 )
-texture = ExtResource( 29 )
-
-[node name="plant_grass_2" type="Sprite" parent="."]
-position = Vector2( 18.5994, 486.622 )
-texture = ExtResource( 17 )
-
-[node name="plant_grass_3" type="Sprite" parent="."]
-position = Vector2( 315.005, 485.996 )
-texture = ExtResource( 18 )
-
-[node name="plant_giant_fern_3" type="Sprite" parent="."]
-position = Vector2( 384.047, 463.143 )
-rotation = 3.0113
-scale = Vector2( 1.15208, -1.05675 )
-texture = ExtResource( 25 )
-
-[node name="plant_grass_4" type="Sprite" parent="."]
-position = Vector2( 215.578, 480.994 )
-texture = ExtResource( 13 )
-
-[node name="platform_4" type="Sprite" parent="."]
-position = Vector2( 350.649, 487.642 )
-scale = Vector2( 1, 0.836443 )
-texture = ExtResource( 11 )
-
-[node name="purple_mushroom_1" type="Sprite" parent="."]
-position = Vector2( 233.515, 482.87 )
-scale = Vector2( 1.4198, 1 )
-texture = ExtResource( 22 )
-
-[node name="purple_mushroom_2" type="Sprite" parent="."]
-position = Vector2( 330.661, 489.988 )
-scale = Vector2( 2.1933, 1.01606 )
-texture = ExtResource( 12 )
-
-[node name="purple_mushroom_3" type="Sprite" parent="."]
-position = Vector2( 83.2918, 373.409 )
-scale = Vector2( 0.759228, 0.84064 )
-texture = ExtResource( 14 )
-flip_h = true
-
-[node name="purple_mushroom_4" type="Sprite" parent="."]
-position = Vector2( 59.6957, 393.685 )
-scale = Vector2( 1, 0.710617 )
-texture = ExtResource( 12 )
-
-[node name="purple_mushroom_5" type="Sprite" parent="."]
-position = Vector2( 408.797, 473.227 )
-scale = Vector2( 0.644595, 0.77552 )
-texture = ExtResource( 14 )
-
-[node name="rock_dull_bg1" type="Sprite" parent="."]
-position = Vector2( 284.989, 496.627 )
-texture = ExtResource( 27 )
-
-[node name="rock_dull_bg2" type="Sprite" parent="."]
-position = Vector2( 311.878, 501.004 )
-texture = ExtResource( 26 )
-
-[node name="rock_dull_fore1" type="Sprite" parent="."]
-position = Vector2( 534.494, 400.136 )
-scale = Vector2( 0.450842, 1.20218 )
-texture = ExtResource( 50 )
-
-[node name="tree_int_sroom_1" type="Sprite" parent="."]
-position = Vector2( 967.636, 460.392 )
-texture = ExtResource( 33 )
-
-[node name="rock_dull_fore3" type="Sprite" parent="."]
-position = Vector2( 779.377, 464.164 )
-texture = ExtResource( 19 )
-
-[node name="zutto_platform_3" type="Sprite" parent="."]
-position = Vector2( 804.462, 310.178 )
-scale = Vector2( 0.566742, 0.503086 )
-texture = ExtResource( 42 )
-
-[node name="tree_15" type="Sprite" parent="."]
+[node name="tree_15" type="Sprite" parent="Trees"]
 position = Vector2( 856.064, 447.951 )
 scale = Vector2( 0.981078, 0.955372 )
 texture = ExtResource( 37 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tree_15"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Trees/tree_15"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tree_15/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trees/tree_15/StaticBody2D"]
 polygon = PoolVector2Array( -42.2236, -7.23749, -41.2522, -14.7193, -39.6736, -24.3209, -34.3307, -36.4164, -29.8379, -42.6511, -23.7665, -48.2624, -16.2379, -53.1256, -6.52362, -56.1183, 3.67639, -56.7418, 12.905, -55.1207, 20.9193, -52.2527, 28.4478, -47.3896, 35.1264, -41.1548, 41.5621, -32.4261, 45.0836, -23.6974, 46.5406, -15.0934, 46.5406, -4.74356, 44.1121, -1.62619, 40.5907, -4.4942, 38.0406, -3.62131, 34.5192, -4.86829, 31.7264, -3.49661, 26.0192, -7.86096, 20.0693, -6.36462, 14.8478, -12.5994, 9.01923, -9.73141, -1.54504, -0.129822, -2.39508, 13.9608, 2.4621, 26.181, 4.04071, 32.4158, -7.98077, 32.6652, -6.64502, 23.4377, -7.61646, 8.22479, -15.0236, -8.35977, -20.0022, -10.6043, -25.8307, -6.11523, -29.9594, -8.73386, -34.4522, -3.37195, -37.2451, -4.4942, -38.7021, -2.87314 )
 
-[node name="purple_mushroom_6" type="Sprite" parent="."]
-position = Vector2( 705.339, 433.893 )
-scale = Vector2( 1.32228, 1.19899 )
-texture = ExtResource( 22 )
+[node name="tree_14" type="Sprite" parent="Trees"]
+position = Vector2( 638.208, 444.791 )
+scale = Vector2( 0.497002, 0.556296 )
+texture = ExtResource( 38 )
 
-[node name="zutto_plant_3" type="Sprite" parent="."]
-position = Vector2( 683.934, 455.087 )
-texture = ExtResource( 43 )
+[node name="zutto_tree_2" type="Sprite" parent="Trees"]
+position = Vector2( 756.524, 284.492 )
+scale = Vector2( 0.826925, 1.20785 )
+texture = ExtResource( 35 )
 
-[node name="grass_guys_1" type="Sprite" parent="."]
-position = Vector2( 741.629, 465.816 )
-texture = ExtResource( 45 )
+[node name="tree_int_enter" type="Sprite" parent="Trees"]
+position = Vector2( 924.581, 230.131 )
+scale = Vector2( 0.472243, 0.751093 )
+texture = ExtResource( 28 )
 
-[node name="ground_plant_3" type="Sprite" parent="."]
-position = Vector2( 691.803, 471.025 )
-texture = ExtResource( 47 )
-
-[node name="snake_1" type="Sprite" parent="."]
-position = Vector2( 859.729, 484.907 )
-rotation = -0.0767034
-scale = Vector2( 0.723593, 0.585174 )
-texture = ExtResource( 46 )
-
-[node name="tree_int_moss_3" type="Sprite" parent="."]
+[node name="tree_int_moss_3" type="Sprite" parent="Trees"]
 position = Vector2( 1009.92, 332.652 )
 scale = Vector2( 0.581034, 0.672879 )
 texture = ExtResource( 48 )
 
-[node name="tree_int_moss_2" type="Sprite" parent="."]
+[node name="tree_int_moss_2" type="Sprite" parent="Trees"]
 position = Vector2( 132.084, 283.072 )
 scale = Vector2( 0.230819, 0.426127 )
 texture = ExtResource( 52 )
 
-[node name="stars_3" type="Sprite" parent="."]
-position = Vector2( 176.129, 398.115 )
-rotation = 0.170949
-scale = Vector2( 0.104537, 0.272136 )
-texture = ExtResource( 51 )
-
-[node name="rock_dull_bg3" type="Sprite" parent="."]
-position = Vector2( 415.069, 506.938 )
-texture = ExtResource( 53 )
-
-[node name="tree_int_sroom_2" type="Sprite" parent="."]
+[node name="tree_int_sroom_2" type="Sprite" parent="Trees"]
 position = Vector2( 208.486, 272.078 )
 scale = Vector2( 0.198199, 0.153359 )
 texture = ExtResource( 33 )
 flip_h = true
 
-[node name="tree_int_moss_4" type="Sprite" parent="."]
+[node name="tree_int_moss_4" type="Sprite" parent="Trees"]
 position = Vector2( 74.5445, 410.751 )
 rotation = -1.38838
 scale = Vector2( 0.2128, 0.357607 )
 texture = ExtResource( 52 )
 flip_v = true
 
-[node name="tree_int_moss_1" type="Sprite" parent="."]
+[node name="tree_int_moss_1" type="Sprite" parent="Trees"]
 position = Vector2( 210.404, 284.739 )
 rotation = -0.091034
 scale = Vector2( 0.1549, 0.161022 )
 texture = ExtResource( 56 )
 flip_v = true
 
-[node name="bugs_1" type="Sprite" parent="."]
-position = Vector2( 257.742, 180.168 )
-scale = Vector2( 0.653165, 0.557995 )
-texture = ExtResource( 61 )
-
-[node name="grass_texture_1" type="Sprite" parent="."]
-position = Vector2( 574.246, 559.218 )
-scale = Vector2( 0.916528, 0.326036 )
-texture = ExtResource( 62 )
-
-[node name="ground_plant_4" type="Sprite" parent="."]
-position = Vector2( 636.642, 352.809 )
-scale = Vector2( 0.9, 1.06486 )
-texture = ExtResource( 47 )
-
-[node name="grass_texture_2" type="Sprite" parent="."]
-position = Vector2( 700.713, 493.641 )
-scale = Vector2( 0.621, 0.363766 )
-texture = ExtResource( 63 )
-
-[node name="bugs_2" type="Sprite" parent="."]
-position = Vector2( 107.805, 458.824 )
-texture = ExtResource( 69 )
-
-[node name="cave_gr_texture_small_1a_z1" type="Sprite" parent="."]
+[node name="cave_gr_texture_small_1a_z1" type="Sprite" parent="Trees"]
 position = Vector2( 132.493, 375.17 )
 rotation = -0.767833
 scale = Vector2( 0.441994, 0.636508 )
 texture = ExtResource( 71 )
 
-[node name="tree_14" type="Sprite" parent="."]
-position = Vector2( 638.208, 444.791 )
-scale = Vector2( 0.497002, 0.556296 )
-texture = ExtResource( 38 )
+[node name="Plants" type="Node2D" parent="."]
 
-[node name="rock_dull_bg4" type="Sprite" parent="."]
+[node name="zutto_platform_1" type="Sprite" parent="Plants"]
+position = Vector2( 750.772, 420.464 )
+scale = Vector2( 0.247772, 0.400685 )
+texture = ExtResource( 36 )
+
+[node name="plant_fern_1" type="Sprite" parent="Plants"]
+position = Vector2( 231.211, 462.601 )
+scale = Vector2( 1, 1.2715 )
+texture = ExtResource( 21 )
+
+[node name="plant_fern_2" type="Sprite" parent="Plants"]
+position = Vector2( 271.224, 483.57 )
+scale = Vector2( 1, 0.839364 )
+texture = ExtResource( 15 )
+
+[node name="plant_fern_3" type="Sprite" parent="Plants"]
+position = Vector2( 57.3698, 484.746 )
+texture = ExtResource( 23 )
+
+[node name="plant_fern_4" type="Sprite" parent="Plants"]
+position = Vector2( 280.612, 469.738 )
+texture = ExtResource( 20 )
+
+[node name="plant_fern_5" type="Sprite" parent="Plants"]
+position = Vector2( 209.95, 470.11 )
+scale = Vector2( 1, 1.24594 )
+texture = ExtResource( 24 )
+
+[node name="plant_giant_fern_1" type="Sprite" parent="Plants"]
+position = Vector2( 318.167, 438.164 )
+scale = Vector2( 1.22691, 1.41049 )
+texture = ExtResource( 25 )
+
+[node name="plant_giant_fern_2" type="Sprite" parent="Plants"]
+position = Vector2( 32.7483, 473.145 )
+scale = Vector2( 0.813352, 1.00874 )
+texture = ExtResource( 16 )
+
+[node name="plant_grass_1" type="Sprite" parent="Plants"]
+position = Vector2( 276.86, 485.371 )
+texture = ExtResource( 17 )
+
+[node name="zutto_plant_1" type="Sprite" parent="Plants"]
+position = Vector2( 664.109, 473.892 )
+texture = ExtResource( 29 )
+
+[node name="plant_grass_2" type="Sprite" parent="Plants"]
+position = Vector2( 18.5994, 486.622 )
+texture = ExtResource( 17 )
+
+[node name="plant_grass_3" type="Sprite" parent="Plants"]
+position = Vector2( 315.005, 485.996 )
+texture = ExtResource( 18 )
+
+[node name="plant_giant_fern_3" type="Sprite" parent="Plants"]
+position = Vector2( 384.047, 463.143 )
+rotation = 3.0113
+scale = Vector2( 1.15208, -1.05675 )
+texture = ExtResource( 25 )
+
+[node name="plant_grass_4" type="Sprite" parent="Plants"]
+position = Vector2( 215.578, 480.994 )
+texture = ExtResource( 13 )
+
+[node name="zutto_plant_2" type="Sprite" parent="Plants"]
+position = Vector2( 992.213, 458.594 )
+texture = ExtResource( 31 )
+
+[node name="platform_4" type="Sprite" parent="Plants"]
+position = Vector2( 350.649, 487.642 )
+scale = Vector2( 1, 0.836443 )
+texture = ExtResource( 11 )
+
+[node name="purple_mushroom_1" type="Sprite" parent="Plants"]
+position = Vector2( 233.515, 482.87 )
+scale = Vector2( 1.4198, 1 )
+texture = ExtResource( 22 )
+
+[node name="purple_mushroom_2" type="Sprite" parent="Plants"]
+position = Vector2( 330.661, 489.988 )
+scale = Vector2( 2.1933, 1.01606 )
+texture = ExtResource( 12 )
+
+[node name="purple_mushroom_3" type="Sprite" parent="Plants"]
+position = Vector2( 83.2918, 373.409 )
+scale = Vector2( 0.759228, 0.84064 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="purple_mushroom_4" type="Sprite" parent="Plants"]
+position = Vector2( 59.6957, 393.685 )
+scale = Vector2( 1, 0.710617 )
+texture = ExtResource( 12 )
+
+[node name="purple_mushroom_5" type="Sprite" parent="Plants"]
+position = Vector2( 408.797, 473.227 )
+scale = Vector2( 0.644595, 0.77552 )
+texture = ExtResource( 14 )
+
+[node name="zutto_platform_3" type="Sprite" parent="Plants"]
+position = Vector2( 804.462, 310.178 )
+scale = Vector2( 0.566742, 0.503086 )
+texture = ExtResource( 42 )
+
+[node name="purple_mushroom_6" type="Sprite" parent="Plants"]
+position = Vector2( 705.339, 433.893 )
+scale = Vector2( 1.32228, 1.19899 )
+texture = ExtResource( 22 )
+
+[node name="zutto_plant_3" type="Sprite" parent="Plants"]
+position = Vector2( 683.934, 455.087 )
+texture = ExtResource( 43 )
+
+[node name="tree_int_sroom_1" type="Sprite" parent="Plants"]
+position = Vector2( 967.636, 460.392 )
+texture = ExtResource( 33 )
+
+[node name="ground_plant_3" type="Sprite" parent="Plants"]
+position = Vector2( 691.803, 471.025 )
+texture = ExtResource( 47 )
+
+[node name="ground_plant_4" type="Sprite" parent="Plants"]
+position = Vector2( 636.642, 352.809 )
+scale = Vector2( 0.9, 1.06486 )
+texture = ExtResource( 47 )
+
+[node name="Animals" type="Node2D" parent="."]
+
+[node name="stars_4" type="Sprite" parent="Animals"]
+position = Vector2( 982.369, 194.77 )
+scale = Vector2( 0.127457, 0.468264 )
+texture = ExtResource( 51 )
+flip_h = true
+
+[node name="owl_2" type="Sprite" parent="Animals"]
+position = Vector2( 978.413, 251.483 )
+scale = Vector2( 0.443011, 0.493318 )
+texture = ExtResource( 49 )
+
+[node name="Owl" type="Sprite" parent="Animals"]
+position = Vector2( 161.1, 452.94 )
+scale = Vector2( 0.583981, 0.691106 )
+texture = ExtResource( 8 )
+
+[node name="stars_3" type="Sprite" parent="Animals"]
+position = Vector2( 176.129, 398.115 )
+rotation = 0.170949
+scale = Vector2( 0.104537, 0.272136 )
+texture = ExtResource( 51 )
+
+[node name="snake_1" type="Sprite" parent="Animals"]
+position = Vector2( 859.729, 484.907 )
+rotation = -0.0767034
+scale = Vector2( 0.723593, 0.585174 )
+texture = ExtResource( 46 )
+
+[node name="bugs_1" type="Sprite" parent="Animals"]
+position = Vector2( 257.742, 180.168 )
+scale = Vector2( 0.653165, 0.557995 )
+texture = ExtResource( 61 )
+
+[node name="bugs_2" type="Sprite" parent="Animals"]
+position = Vector2( 107.805, 458.824 )
+texture = ExtResource( 69 )
+
+[node name="Rocks" type="Node2D" parent="."]
+
+[node name="rock_dull_bg1" type="Sprite" parent="Rocks"]
+position = Vector2( 284.989, 496.627 )
+texture = ExtResource( 27 )
+
+[node name="rock_dull_bg2" type="Sprite" parent="Rocks"]
+position = Vector2( 311.878, 501.004 )
+texture = ExtResource( 26 )
+
+[node name="rock_dull_fore1" type="Sprite" parent="Rocks"]
+position = Vector2( 534.494, 400.136 )
+scale = Vector2( 0.450842, 1.20218 )
+texture = ExtResource( 50 )
+
+[node name="rock_dull_fore3" type="Sprite" parent="Rocks"]
+position = Vector2( 779.377, 464.164 )
+texture = ExtResource( 19 )
+
+[node name="rock_dull_bg3" type="Sprite" parent="Rocks"]
+position = Vector2( 415.069, 506.938 )
+texture = ExtResource( 53 )
+
+[node name="rock_dull_bg4" type="Sprite" parent="Rocks"]
 position = Vector2( 642.748, 492.162 )
 scale = Vector2( 0.632296, 0.644134 )
 texture = ExtResource( 55 )
 
-[node name="grass_detail_1" type="Sprite" parent="."]
+[node name="Grass" type="Node2D" parent="."]
+
+[node name="grass_texture_3" type="Sprite" parent="Grass"]
+position = Vector2( 932.258, 504.827 )
+texture = ExtResource( 63 )
+
+[node name="ground_2" type="Sprite" parent="Grass"]
+position = Vector2( 445.187, 584.791 )
+scale = Vector2( 0.941366, 0.483391 )
+texture = ExtResource( 10 )
+
+[node name="ground_3" type="Sprite" parent="Grass"]
+position = Vector2( 847.529, 582.263 )
+scale = Vector2( 0.720519, 0.521644 )
+texture = ExtResource( 7 )
+
+[node name="grass_guys_1" type="Sprite" parent="Grass"]
+position = Vector2( 741.629, 465.816 )
+texture = ExtResource( 45 )
+
+[node name="grass_texture_1" type="Sprite" parent="Grass"]
+position = Vector2( 574.246, 559.218 )
+scale = Vector2( 0.916528, 0.326036 )
+texture = ExtResource( 62 )
+
+[node name="grass_texture_2" type="Sprite" parent="Grass"]
+position = Vector2( 700.713, 493.641 )
+scale = Vector2( 0.621, 0.363766 )
+texture = ExtResource( 63 )
+
+[node name="grass_detail_1" type="Sprite" parent="Grass"]
 position = Vector2( 398.708, 518.019 )
 scale = Vector2( 0.768356, 0.719058 )
 texture = ExtResource( 41 )
