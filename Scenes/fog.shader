@@ -2,6 +2,7 @@ shader_type canvas_item;
 
 uniform vec3 color = vec3(0.0);
 uniform int OCTAVES = 5;
+uniform float scaleParam = 0.9;
 
 float rand(vec2 coord){
 	return fract(sin(dot(coord,vec2(12.9898,78.233))* 1000.0) * 43758.5453123);
@@ -22,7 +23,9 @@ float noise(vec2 coord){
 
 float fractal_brownien_motion(vec2 coord){
 	float value = 0.0;
-	float scale = 0.5;
+	// Opacity (basically?)
+	//float scale = 0.5;
+	float scale = scaleParam;
 	
 	vec2 shift = vec2(100.0);
 	mat2 rot = mat2(vec2(cos(0.5), sin(0.5)), vec2(-sin(0.5), cos(0.50)));

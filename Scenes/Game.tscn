@@ -76,6 +76,7 @@
 shader = ExtResource( 4 )
 shader_param/color = Vector3( 0.35, 0.54, 0.95 )
 shader_param/OCTAVES = 4
+shader_param/scaleParam = 0.9
 
 [node name="Game" type="Node2D"]
 
