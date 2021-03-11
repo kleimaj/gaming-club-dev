@@ -1,8 +1,9 @@
-extends Area2D
+extends RigidBody2D
 
 
 export (int) var speed
 export (float) var lifetime
+export (int) var gravity = 98
 
 var velocity = Vector2(350, 0)
 	
@@ -20,3 +21,6 @@ func explode():
 	
 func _on_Lifetime_timeout():
 	explode()
+
+func _on_Area2D_body_entered(body):
+	print(body)
