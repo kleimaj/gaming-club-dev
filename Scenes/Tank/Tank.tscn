@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/GFX/Tank/muzzle.png" type="Texture" id=1]
+[ext_resource path="res://Assets/GFX/Tank/tank.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Tank.gd" type="Script" id=3]
+
+[node name="Tank" type="KinematicBody2D"]
+position = Vector2( 99.5237, 546.291 )
+scale = Vector2( 0.01, 0.01 )
+script = ExtResource( 3 )
+speed = 200
+gun_cooldown = 0.4
+
+[node name="Body" type="Sprite" parent="."]
+position = Vector2( 2159.74, 1650.26 )
+scale = Vector2( 44.5626, 48.9209 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 12, 11, 100, 96 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 333.036, -515.41, 3349.47, -542.707, 3595.15, -105.938, 4052.39, -85.4609, 4673.42, -392.566, 6461.44, -399.391, 6461.44, 603.809, 4680.25, 610.633, 4052.39, 324.004, 3915.9, 310.359, 4339.02, 863.141, 4373.15, 3128.88, 4059.22, 3169.82, 4053.76, 3550.65, 3910.44, 3666.67, 3712.53, 3693.97, 3487.32, 3755.39, 791.644, 3762.21, 641.504, 3714.44, 436.769, 3659.84, 327.577, 3571.12, 293.454, 3188.95, -40.9463, 3168.48, -75.0693, 1851.35, 279.806, 854.969, 341.226, 773.078 )
+
+[node name="Muzzle" type="Sprite" parent="."]
+position = Vector2( 2642.96, 94.1631 )
+scale = Vector2( 47.7034, 39.0546 )
+texture = ExtResource( 1 )
+offset = Vector2( 40, 0 )
+region_enabled = true
+region_rect = Rect2( 3, -2, 88, 32 )
+
+[node name="Position2D" type="Position2D" parent="Muzzle"]
+position = Vector2( 81, 0 )
+
+[node name="ShootTimer" type="Timer" parent="."]
