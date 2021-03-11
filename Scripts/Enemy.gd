@@ -16,3 +16,5 @@ func _on_Area2D_body_entered(body):
 	mat.set_shader_param("scaleParam", scale)
 	# Remove Enemy
 	queue_free()
+	# Remove Bullet
+	body.hide()
