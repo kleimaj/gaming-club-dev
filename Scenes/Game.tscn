@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Scenes/Tank/Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tank/Bullet.tscn" type="PackedScene" id=2]
@@ -67,11 +67,9 @@
 [ext_resource path="res://Assets/GFX/background/glitch-ilmenskie-svg/ilmenskie/cave_pit_3.svg" type="Texture" id=65]
 [ext_resource path="res://Assets/GFX/background/glitch-ilmenskie-svg/ilmenskie/cave_pit_2.svg" type="Texture" id=66]
 [ext_resource path="res://Assets/GFX/background/glitch-ilmenskie-svg/ilmenskie/ground_plant_1.svg" type="Texture" id=67]
-[ext_resource path="res://Assets/GFX/background/glitch-ilmenskie-svg/ilmenskie/creature_blue.svg" type="Texture" id=68]
 [ext_resource path="res://Assets/GFX/background/glitch-ilmenskie-svg/ilmenskie/bugs_2.svg" type="Texture" id=69]
 [ext_resource path="res://Assets/GFX/background/glitch-ilmenskie-svg/ilmenskie/bck_tree_2.svg" type="Texture" id=70]
 [ext_resource path="res://Assets/GFX/background/glitch-ilmenskie-svg/ilmenskie/cave_gr_texture_small_1a_z1.svg" type="Texture" id=71]
-[ext_resource path="res://Assets/GFX/background/glitch-ilmenskie-svg/ilmenskie/creature_red.svg" type="Texture" id=72]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 4 )
@@ -492,16 +490,6 @@ texture = ExtResource( 63 )
 position = Vector2( 398.708, 518.019 )
 scale = Vector2( 0.768356, 0.719058 )
 texture = ExtResource( 41 )
-
-[node name="creature_red" type="Sprite" parent="."]
-position = Vector2( 115.909, 166.793 )
-scale = Vector2( 0.502114, 0.555956 )
-texture = ExtResource( 72 )
-
-[node name="creature_blue" type="Sprite" parent="."]
-position = Vector2( 927.07, 340.469 )
-scale = Vector2( 0.467226, 0.517327 )
-texture = ExtResource( 68 )
 
 [node name="Mist" type="Sprite" parent="."]
 light_mask = 526087
