@@ -21,9 +21,9 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/resizable=false
+window/size/height=768
 window/size/test_width=1024
-window/size/test_height=600
+window/size/test_height=768
 
 [input]
 
