@@ -200,7 +200,7 @@ scale = Vector2( 0.613815, 0.886179 )
 texture = ExtResource( 70 )
 
 [node name="MainTree" type="Sprite" parent="dark-forest-background/Trees"]
-position = Vector2( 126.777, 258.207 )
+position = Vector2( 22.6598, 250.198 )
 scale = Vector2( 0.978637, 1.21371 )
 texture = ExtResource( 6 )
 
@@ -1069,14 +1069,14 @@ position = Vector2( 541.604, 504.932 )
 [node name="Mist" type="Sprite" parent="."]
 light_mask = 526087
 material = SubResource( 1 )
-position = Vector2( 524.588, 245.188 )
+position = Vector2( 509.469, 244.558 )
 rotation = 0.801412
 scale = Vector2( 5.74031, 6.29482 )
 texture = ExtResource( 5 )
 flip_v = true
 
 [node name="Tank" parent="." instance=ExtResource( 1 )]
-position = Vector2( -6.20205, 521.839 )
+position = Vector2( -4.86721, 492.473 )
 collision_mask = 2147483649
 Bullet = ExtResource( 2 )
 bulletSpeed = 2000

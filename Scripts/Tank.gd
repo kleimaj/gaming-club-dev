@@ -14,8 +14,12 @@ func _ready():
 	$ShootTimer.wait_time = gun_cooldown
 
 func control(delta):
-	velocity = Vector2()
-	velocity = Vector2((get_viewport().get_mouse_position() - position).x,0)
+#	velocity = Vector2()
+#	velocity = Vector2((get_viewport().get_mouse_position() - position).x,0)
+	
+	if changemuzzle == false:
+		position.x += (get_global_mouse_position().x - position.x)/6
+	
 #	if Input.is_action_pressed('forward'):
 #		velocity = Vector2(speed, 0)
 #	if Input.is_action_pressed('back'):
