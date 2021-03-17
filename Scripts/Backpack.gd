@@ -2,6 +2,7 @@ extends Control
 
 # The Pill Texture Rect
 var selected_pill = null
+var selected_anim = null
 # The Selected Projectile Index (0, 1, or 2)
 var selected_idx = 0
 onready var grid = $Background/HBoxContainer/ItemGrid
@@ -49,11 +50,13 @@ func set_selected_item(idx):
 	grid.get_child(idx).get_child(0).show()
 	# Change the selected pill
 	selected_pill = grid.get_child(idx).get_child(1)
+	selected_anim = grid.get_child(idx).get_child(2)
 	$Background/HBoxContainer/ItemText/ItemName.bbcode_text = "[b]%s[/b]" % selected_pill.name
 	$Background/HBoxContainer/ItemText/ItemDescription.bbcode_text = ItemDisplay[selected_pill.name]
 
 func get_texture_path():
-	return selected_pill.texture.load_path
+	#return selected_pill.texture.load_path
+	return selected_anim.text
 
 func _on_ExitButton_pressed():
 	# Connect ExitButton to HUD.gd close()
