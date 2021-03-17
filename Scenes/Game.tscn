@@ -1,0 +1,108 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/Tank/Tank.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Tank/Bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Interface/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/fog.shader" type="Shader" id=4]
+[ext_resource path="res://Assets/GFX/background/glitch-ilmenskie-svg/ilmenskie/cave_gr_stone_texture_7.svg" type="Texture" id=5]
+[ext_resource path="res://Assets/GFX/background/leftTree.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Interface/GroundArea2D.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/GFX/background/rightTree.png" type="Texture" id=8]
+[ext_resource path="res://Assets/GFX/background/ground.png" type="Texture" id=28]
+[ext_resource path="res://Assets/GFX/background/background/bgLayer3.png" type="Texture" id=30]
+[ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=34]
+[ext_resource path="res://Assets/GFX/background/branch.png" type="Texture" id=35]
+[ext_resource path="res://Assets/GFX/evilMist.png" type="Texture" id=38]
+[ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=68]
+[ext_resource path="res://Assets/GFX/background/background/bgLayer1.png" type="Texture" id=72]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/color = Vector3( 0.35, 0.54, 0.95 )
+shader_param/OCTAVES = 4
+shader_param/scaleParam = 0.9
+
+[node name="Game" type="Node2D"]
+
+[node name="backgrop" type="Sprite" parent="."]
+position = Vector2( 530.158, -592.874 )
+scale = Vector2( 0.456058, 0.256182 )
+texture = ExtResource( 72 )
+
+[node name="bgLayer2" type="Sprite" parent="backgrop"]
+position = Vector2( 75.7108, 924.311 )
+scale = Vector2( 1.02118, 1.0621 )
+texture = ExtResource( 34 )
+
+[node name="bgLayer3" type="Sprite" parent="backgrop"]
+position = Vector2( -67.624, 1010.4 )
+scale = Vector2( 0.832583, 1.03693 )
+texture = ExtResource( 30 )
+
+[node name="rightTree" type="Sprite" parent="backgrop"]
+position = Vector2( 963.171, 703.596 )
+scale = Vector2( 0.743798, 1.02568 )
+texture = ExtResource( 8 )
+
+[node name="branch" type="Sprite" parent="backgrop/rightTree"]
+position = Vector2( -732.017, 2667.22 )
+rotation = -0.169332
+scale = Vector2( 1.34274, 2.24501 )
+texture = ExtResource( 35 )
+flip_h = true
+
+[node name="leftTree" type="Sprite" parent="backgrop"]
+position = Vector2( -920.763, 708.491 )
+scale = Vector2( 0.839009, 1.04438 )
+texture = ExtResource( 6 )
+
+[node name="branch" type="Sprite" parent="backgrop/leftTree"]
+position = Vector2( 492.334, 3199.17 )
+scale = Vector2( 1.01594, 1.66075 )
+texture = ExtResource( 35 )
+
+[node name="ground" type="Sprite" parent="backgrop"]
+position = Vector2( 19.0995, 4915 )
+scale = Vector2( 1.02118, 0.925825 )
+texture = ExtResource( 28 )
+
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2( 2.95483, 36.9359 )
+
+[node name="Area2D" parent="Enemies" instance=ExtResource( 68 )]
+position = Vector2( 659.006, 224.806 )
+rotation = -0.25775
+
+[node name="Area2D2" parent="Enemies" instance=ExtResource( 68 )]
+position = Vector2( 263.125, 365.096 )
+rotation = 0.194915
+
+[node name="Mist" type="Sprite" parent="."]
+visible = false
+light_mask = 526087
+material = SubResource( 1 )
+position = Vector2( 509.469, 244.558 )
+rotation = 0.801412
+scale = Vector2( 5.74031, 6.29482 )
+texture = ExtResource( 5 )
+flip_v = true
+
+[node name="evilMist" type="Sprite" parent="."]
+position = Vector2( 487.528, -196.501 )
+scale = Vector2( 0.496052, 0.590256 )
+texture = ExtResource( 38 )
+
+[node name="Tank" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32.0688, 564.867 )
+collision_mask = 2147483649
+Bullet = ExtResource( 2 )
+bulletSpeed = 2000
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+margin_left = 1.52185
+margin_top = 7.60883
+margin_right = 1.52185
+margin_bottom = 7.60883
+
+[node name="GroundArea2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 651.869, 667.908 )
