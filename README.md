@@ -8,9 +8,8 @@
 * UI display (book and inventory)
 
 #### Week 2 (3/11)
-* Enemy Classes
-* Mist Effect
-* Level HUD (progress bar, score, etc.)
+~~* Enemy Classes~~ <br>
+~~* Mist Effect~~ <br>
 * Win / Lose conditions
 
 #### Week 3 (3/18)

@@ -19,6 +19,12 @@ config/name="Gameclub"
 run/main_scene="res://Scenes/Game.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/height=768
+window/size/test_width=1024
+window/size/test_height=768
+
 [input]
 
 forward={
@@ -37,9 +43,14 @@ click={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Projectiles"
+2d_physics/layer_3="Enemies"
+
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"
