@@ -99,10 +99,10 @@ Bullet = ExtResource( 2 )
 bulletSpeed = 2000
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
-margin_left = 1.52185
-margin_top = 7.60883
-margin_right = 1.52185
-margin_bottom = 7.60883
+margin_left = -50.919
+margin_top = -7.7637
+margin_right = -50.919
+margin_bottom = -7.7637
 
 [node name="GroundArea2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 651.869, 667.908 )

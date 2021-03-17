@@ -1,13 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/GFX/UI/backpack/front-01.png" type="Texture" id=1]
 [ext_resource path="res://Assets/GFX/UI/bookClosed.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Interface/Backpack.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/GFX/pngs/brown/meter_bar_right_edge_brown.png" type="Texture" id=5]
+[ext_resource path="res://Assets/GFX/pngs/purple/meter_bar_center-repeating_purple.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GFX/pngs/purple/meter_bar_holder_right_edge_purple.png" type="Texture" id=7]
+[ext_resource path="res://Assets/GFX/pngs/purple/meter_bar_holder_center-repeating_purple.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Interface/ProgressBar.gd" type="Script" id=9]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -2.66693
+margin_top = -1.69305
+margin_right = -2.66699
+margin_bottom = -1.69305
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -23,10 +32,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -170.0
-margin_top = -121.0
-margin_right = -78.0
-margin_bottom = -43.0
+margin_left = -851.235
+margin_top = -101.93
+margin_right = -759.235
+margin_bottom = -23.9297
 rect_min_size = Vector2( 75, 75 )
 rect_scale = Vector2( 2, 2 )
 texture_normal = ExtResource( 1 )
@@ -51,5 +60,42 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ProgressBar" type="TextureProgress" parent="CanvasLayer"]
+margin_left = 971.729
+margin_top = 768.107
+margin_right = 1545.73
+margin_bottom = 818.107
+rect_rotation = 270.0
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 6 )
+nine_patch_stretch = true
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightBG" type="TextureRect" parent="CanvasLayer/ProgressBar"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -5.0
+margin_right = 14.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FinalProgress" type="TextureRect" parent="CanvasLayer/ProgressBar"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -6.0
+margin_right = 17.0
+texture = ExtResource( 5 )
+expand = true
 [connection signal="pressed" from="CanvasLayer/BackpackButton" to="." method="_on_BackpackButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/BookButton" to="." method="_on_BookButton_pressed"]
+[connection signal="value_changed" from="CanvasLayer/ProgressBar" to="." method="_on_ProgressBar_value_changed"]
