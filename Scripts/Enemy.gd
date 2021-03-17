@@ -17,4 +17,5 @@ func _on_Area2D_body_entered(body):
 	# Remove Enemy
 	queue_free()
 	# Remove Bullet
-	body.hide()
+	body.free()
+	

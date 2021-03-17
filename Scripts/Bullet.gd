@@ -12,6 +12,10 @@ func _process(delta):
 	velocity.y += gravity * delta
 	position += velocity * delta
 	rotation = velocity.angle()
+	if(position.x < 10):
+		queue_free()
+	if(position.x > 1000):
+		queue_free()
 	
 func _on_Bullet_body_entered(body):
 	pass
@@ -23,4 +27,4 @@ func _on_Lifetime_timeout():
 	explode()
 
 func _on_Area2D_body_entered(body):
-	print(body)
+	pass
