@@ -56,7 +56,7 @@ func shoot():
 		b.get_node("AnimatedSprite").play(spriteAnim)
 		owner.add_child(b)
 		b.transform = $Muzzle/Position2D.global_transform
-		b.velocity = b.transform.x * (bulletSpeed/1.75)
+		b.velocity = b.transform.x * speed
 		b.gravity = 250
 		
 func _physics_process(delta):
