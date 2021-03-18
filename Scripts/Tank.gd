@@ -52,7 +52,6 @@ func control(delta):
 		changemuzzle = false
 		shoot()
 		bulletSpeed = 100
-		
 #func control(delta):
 #	$Muzzle.look_at(get_global_mouse_position())
 #	velocity = Vector2()
@@ -83,6 +82,8 @@ func update_trajectory(delta):
 		line.add_point(pos)
 		vel.y += 2.5
 		pos += vel
+		if pos.y > position.y:
+			break
 #		velocity.y += delta * 10
 #		pos += velocity * delta
 
