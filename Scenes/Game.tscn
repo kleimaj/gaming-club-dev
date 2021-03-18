@@ -69,11 +69,11 @@ texture = ExtResource( 28 )
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 2.95483, 36.9359 )
 
-[node name="Area2D" parent="Enemies" instance=ExtResource( 68 )]
+[node name="Mushroom" parent="Enemies" instance=ExtResource( 68 )]
 position = Vector2( 659.006, 224.806 )
 rotation = -0.25775
 
-[node name="Area2D2" parent="Enemies" instance=ExtResource( 68 )]
+[node name="Mushroom2" parent="Enemies" instance=ExtResource( 68 )]
 position = Vector2( 263.125, 365.096 )
 rotation = 0.194915
 
