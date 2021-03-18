@@ -19,8 +19,5 @@ func set_backpack(isOpen: bool):
 func close_backpack():
 	Backpack.visible = false
 	
-func _on_BookButton_pressed():
-	pass 
-
-func _on_ExitButton_pressed():
-	pass 
+#func _on_BookButton_pressed():
+#	$CanvasLayer/Book.play()

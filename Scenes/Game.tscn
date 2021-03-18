@@ -96,7 +96,6 @@ texture = ExtResource( 38 )
 position = Vector2( 32.0688, 564.867 )
 collision_mask = 2147483649
 Bullet = ExtResource( 2 )
-bulletSpeed = 2000
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 margin_left = 1.52185
