@@ -12,7 +12,7 @@ colors = PoolColorArray( 1, 0, 0, 1, 1, 0.937255, 0, 1 )
 position = Vector2( 99.5237, 546.291 )
 scale = Vector2( 0.01, 0.01 )
 script = ExtResource( 3 )
-speed = 1000
+speed = 500
 gun_cooldown = 0.4
 
 [node name="Muzzle" type="Sprite" parent="."]
