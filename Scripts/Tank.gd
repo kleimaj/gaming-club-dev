@@ -3,7 +3,8 @@ extends KinematicBody2D
 export (PackedScene) var Bullet
 export (int) var speed = 10
 export (float) var gun_cooldown
-var bulletSpeed = 1000
+var bulletSpeed = 100
+var maxBulletSpeed = 2000
 export (bool) var keyboardControls = true
 
 #var ammo_texture = "res://Assets/GFX/Projectiles/bullet1/1-01.png"
@@ -43,11 +44,14 @@ func control(delta):
 			velocity = Vector2(-speed, 0)
 	if Input.is_action_just_pressed('click') || changemuzzle == true:
 		changemuzzle = true
-		$Muzzle.look_at(get_global_mouse_position())
+		if bulletSpeed != maxBulletSpeed:
+			bulletSpeed += 5
+#		$Muzzle.look_at(get_global_mouse_position())
 		update_trajectory(delta)
 	if Input.is_action_just_released("click"):
 		changemuzzle = false
 		shoot()
+		bulletSpeed = 100
 		
 #func control(delta):
 #	$Muzzle.look_at(get_global_mouse_position())
