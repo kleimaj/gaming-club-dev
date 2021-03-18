@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/GFX/Tank/cannonBarrel.png" type="Texture" id=1]
 [ext_resource path="res://Assets/GFX/Tank/cannonBottle1.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Tank.gd" type="Script" id=3]
 [ext_resource path="res://Assets/GFX/Tank/cannonTrolley.png" type="Texture" id=4]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0.937255, 0, 1 )
 
 [node name="Tank" type="KinematicBody2D"]
 position = Vector2( 99.5237, 546.291 )
@@ -11,7 +14,6 @@ scale = Vector2( 0.01, 0.01 )
 script = ExtResource( 3 )
 speed = 1000
 gun_cooldown = 0.4
-bulletSpeed = 10
 
 [node name="Muzzle" type="Sprite" parent="."]
 position = Vector2( 2225.82, 94.1641 )
@@ -32,8 +34,10 @@ region_enabled = true
 region_rect = Rect2( 142, 82, 108, 119 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2( 52.9736, 0 )
 polygon = PoolVector2Array( 333.036, -515.41, 3349.47, -542.707, 3595.15, -105.938, 4052.39, -85.4609, 4673.42, -392.566, 6461.44, -399.391, 6461.44, 603.809, 4680.25, 610.633, 4052.39, 324.004, 3915.9, 310.359, 4339.02, 863.141, 4373.15, 3128.88, 4059.22, 3169.82, 4053.76, 3550.65, 3910.44, 3666.67, 3712.53, 3693.97, 3487.32, 3755.39, 791.644, 3762.21, 641.504, 3714.44, 436.769, 3659.84, 327.577, 3571.12, 293.454, 3188.95, -40.9463, 3168.48, -75.0693, 1851.35, 279.806, 854.969, 341.226, 773.078 )
+disabled = true
 
 [node name="ShootTimer" type="Timer" parent="."]
 
@@ -42,3 +46,10 @@ position = Vector2( 2280.45, 4782.36 )
 scale = Vector2( 34.733, 34.733 )
 texture = ExtResource( 4 )
 offset = Vector2( 0, -60 )
+
+[node name="Line2D" type="Line2D" parent="."]
+z_index = 2
+width = 500.0
+gradient = SubResource( 1 )
+texture_mode = 1
+joint_mode = 2
