@@ -26,3 +26,4 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 	if body.global_position.y < global_position.y:
 		body.velocity.y = -body.velocity.y
 		body.velocity.x *= -(transform.get_rotation() / transform.get_rotation()) * BOUNCE_MULTIPLIER
+		
