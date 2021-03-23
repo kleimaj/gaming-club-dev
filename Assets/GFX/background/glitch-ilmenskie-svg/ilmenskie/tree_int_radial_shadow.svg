@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -6,6 +7,16 @@
 <symbol  id="flash2.ai_x2F_Layer_5_x2F__x3C_Path_x3E_" viewBox="0 -265 338 265">
 	<g id="Layer_1_2_">
 		
+=======
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="338px" height="265px" viewBox="0 0 338 265" style="enable-background:new 0 0 338 265;" xml:space="preserve">
+<symbol  id="flash2.ai_x2F_Layer_5_x2F__x3C_Path_x3E_" viewBox="0 -265 338 265">
+	<g id="Layer_1_2_">
+		
+>>>>>>> master
 			<image style="overflow:visible;" width="338" height="265" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVIAAAEJCAYAAADGnK/bAAAgAElEQVR4nO2d3ZbjunHv/0X1zNix
 fc5NVtY6foW8/6PkFXKTXGXbsWd2SzgXIMBCoQoogKSk7lbtpT0SCICf+ulfH2QDL3vZy172sl1G
 j96Al70MwPLoDVjt9ugNeNnHtBdIX3ameQH5DNdhcPZ7wfZllT3DBfyyj20tWI5cX4++Fr0gbfV7
@@ -483,9 +494,18 @@ DJqAW3W23gMveH5oe4H0OWwYqoAPrEAfroANWKAPWWlnKdUWGDVrwRIogQnokDwQnNrnFzw/ib1A
 wPkF7QXSj28esFrtbsAm84D2kdYCJaDCEtjX9gLny577S/GyKZNgBcbg2mp3wfaRZoAymReOrfYX
 OF9W2VN/KV52mGlwBdrnv3dtTF87Fow7EGxZb9zs8hc0X+ayF0i/rllwTea9Nh55DXnB2+v3AubL
 dtkLpC/TrAdZbh8BpMALli870V4gfdkeGwHuWfYC5Mte9rKXvexlH93+P+ejTs9n9g4GAAAAAElF
+<<<<<<< HEAD
 TkSuQmCC" transform="matrix(1 0 0 -1 0 0)">
 		</image>
 	</g>
 </symbol>
 <use xlink:href="#flash2.ai_x2F_Layer_5_x2F__x3C_Path_x3E_"  width="338" height="265" y="-265" transform="matrix(1 0 0 -1 0 0)" style="overflow:visible;enable-background:new    ;"/>
 </svg>
+=======
+TkSuQmCC" transform="matrix(1 0 0 -1 0 0)">
+		</image>
+	</g>
+</symbol>
+<use xlink:href="#flash2.ai_x2F_Layer_5_x2F__x3C_Path_x3E_"  width="338" height="265" y="-265" transform="matrix(1 0 0 -1 0 0)" style="overflow:visible;enable-background:new    ;"/>
+</svg>
+>>>>>>> master
