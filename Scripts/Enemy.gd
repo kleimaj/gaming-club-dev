@@ -12,6 +12,8 @@ const CollisionMap = {
 	"pink": ["Blue", "Green"] 
 }
 
+var beenHit:bool = false
+
 func _collision_v1(body):
 	# Fetch Mist Sprite
 	var mist:Sprite = get_tree().get_root().get_node("Game").get_node("Mist")
@@ -35,5 +37,10 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 		body.velocity.x *= -(transform.get_rotation() / transform.get_rotation()) * BOUNCE_MULTIPLIER
 		# yellow or pink
 		var projectile_type = body.get_meta("type")
-#		print(get_groups())
+		for group in get_groups():
+			# should only iterate once
+			if CollisionMap[projectile_type].has(group) and not beenHit:
+				print("Collision")
+				beenHit = true
+				break
 		
