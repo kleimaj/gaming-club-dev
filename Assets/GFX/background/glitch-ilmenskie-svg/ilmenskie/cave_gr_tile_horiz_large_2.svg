@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -7,6 +8,17 @@
 	<g>
 		<polygon style="fill:none;" points="0,0 143,0 143,-119 0,-119 		"/>
 		
+=======
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="664.95px" height="146px" viewBox="0 0 664.95 146" style="enable-background:new 0 0 664.95 146;" xml:space="preserve">
+<pattern  width="143" height="119" patternUnits="userSpaceOnUse" id="Unnamed" viewBox="0 -119 143 119" style="overflow:visible;">
+	<g>
+		<polygon style="fill:none;" points="0,0 143,0 143,-119 0,-119 		"/>
+		
+>>>>>>> master
 			<image style="overflow:visible;" width="143" height="119" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAAB3CAYAAAA6ohPnAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAL9RJREFUeNrsff1y28jxbRMAKYii
 KIqWJVlWfJ26dVOVPMDm333WvEieIU+QX+1NNl6tLFP8BEEQvKarT3DQnBmAkrdu/giqWLYkEhzM
@@ -223,6 +235,7 @@ OSxg9GntM3F34LDOxIUDo34QCjq3ER6fdCbESbQBhh05PJVY5LCLaubgHDi1o2cWGv2Ou0Tuvfbq
 BooNGa/xwbiNwjOUwzYfCant/AjSLpeXtYYrzGdzAzIHyjm1bZYgLbUt+BFb4oMEtdzxM+fI4OSb
 hVRdY7n7GedVI3uQKZDPBOzXxPjPiPleH0maukqU70gwIDg9mvu5z5w1AeZQy7PoOy3Ua7mh8oWA
 uS2Y5yMY0YYkk3pbOfEATwukAfL/x8FVMWgv5XXNO4+5Pur8LQ37DkixlP9e312gjvHqPhJfkv4H
+<<<<<<< HEAD
 PUsk7vM/kv8u83/GdS+HB4f8J1yvFpD/J8AAnqV3ki1fbCYAAAAASUVORK5CYII=" transform="matrix(1 0 0 1 0 -119)">
 		</image>
 	</g>
@@ -234,3 +247,16 @@ PUsk7vM/kv8u83/GdS+HB4f8J1yvFpD/J8AAnqV3ki1fbCYAAAAASUVORK5CYII=" transform="mat
 	<rect style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);" width="664.95" height="146"/>
 </g>
 </svg>
+=======
+PUsk7vM/kv8u83/GdS+HB4f8J1yvFpD/J8AAnqV3ki1fbCYAAAAASUVORK5CYII=" transform="matrix(1 0 0 1 0 -119)">
+		</image>
+	</g>
+</pattern>
+<g>
+	<rect style="fill-rule:evenodd;clip-rule:evenodd;fill:#272C40;" width="664.95" height="146"/>
+	<pattern  id="SVGID_1_" xlink:href="#Unnamed" patternTransform="matrix(-1.023 0.0072 0.0088 1.2483 -15799.0938 2045.335)">
+	</pattern>
+	<rect style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);" width="664.95" height="146"/>
+</g>
+</svg>
+>>>>>>> master

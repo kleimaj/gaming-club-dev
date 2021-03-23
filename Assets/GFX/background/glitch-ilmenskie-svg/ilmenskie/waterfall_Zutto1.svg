@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -58,6 +59,68 @@
 	<g id="mist" style="clip-path:url(#SVGID_4_);">
 		<g>
 			
+=======
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="140px" height="160px" viewBox="0 0 140 160" style="enable-background:new 0 0 140 160;" xml:space="preserve">
+<symbol  id="reflection2" viewBox="-10.793 -7.45 21.593 14.85">
+	<g id="Layer_1_3_">
+		
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="17535.1875" y1="-1553.8906" x2="17550.3008" y2="-1553.8906" gradientTransform="matrix(-0.177 0.9842 -0.9842 -0.177 1575.6064 -17541.5371)">
+			<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0.749"/>
+			<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0.2471"/>
+		</linearGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);" d="M9.05,5.65l0.5-2l0.65-0.9c0.4-0.8,0.6-1.667,0.6-2.6
+			c0.002-0.763-0.289-0.98-0.875-0.65C9.335-0.176,8.96-0.176,8.8-0.5C8.64-0.823,8.474-1.282,8.3-1.875
+			C8.131-2.461,8.048-3.037,8.05-3.6c0-1.167-0.583-0.917-1.75,0.75h-1c-0.367,0-0.716-0.45-1.05-1.35
+			c-0.433-1.267-0.833-2.15-1.2-2.65C2.65-7.45,2.467-7.6,2.5-7.3c0.2,0.867,0.217,1.6,0.05,2.2c-0.2,0.667-0.4,1.233-0.6,1.7
+			C1.617-2.733,1.4-2.3,1.3-2.1c-0.533,1.333-1.367,2-2.5,2c-0.566,0-1-0.217-1.3-0.65c-0.1-0.2-0.333-0.733-0.7-1.6
+			c-0.267-0.633-0.5-1.033-0.7-1.2c-0.2-0.2-0.55-0.3-1.05-0.3c-0.167,0-0.533,0.25-1.1,0.75c-0.434,0.4-0.983,0.4-1.65,0
+			c-0.733-0.433-1.333-1.15-1.8-2.15C-9.7-5.75-9.85-6.2-9.95-6.6v2.75c0,0.567-0.216,1.833-0.65,3.8
+			c-0.3,1.433-0.25,2.583,0.15,3.45c0.467,1,0.9,1.25,1.3,0.75c0.3-0.4,0.533-1.15,0.7-2.25c0.1-0.6,0.467-0.517,1.1,0.25
+			c0.767,0.9,1.317,1.233,1.65,1c0.4-0.3,0.717-0.3,0.95,0c0.433,0.467,0.7,0.717,0.8,0.75c0.5,0.167,1.083,0.917,1.75,2.25
+			l1.05,0.6c0.833,0.433,1.566,0.65,2.2,0.65S2.167,7.183,2.5,6.75C2.733,6.417,3.333,5.467,4.3,3.9c0.667-1,1.217-1.983,1.65-2.95
+			c0.133-0.133,0.417,0.767,0.85,2.7c0.434,1.867,0.934,2.767,1.5,2.7C8.6,6.283,8.85,6.05,9.05,5.65z"/>
+	</g>
+</symbol>
+<symbol  id="reflection3" viewBox="-12.103 -8.501 24.278 16.985">
+	<g id="Layer_1_2_">
+		
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="17532.3789" y1="-1552.6465" x2="17551.3281" y2="-1552.6465" gradientTransform="matrix(-0.1768 0.9842 -0.9842 -0.1768 1573.7129 -17540.2227)">
+			<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0.749"/>
+			<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0.2471"/>
+		</linearGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_2_);" d="M12.15,4.8c-0.133-2.2-0.2-3.45-0.2-3.75
+			c0-1-0.05-1.683-0.15-2.05c-0.066-0.267-0.283-0.8-0.65-1.6c-0.267-0.733-0.517-0.883-0.75-0.45C9.733-1.95,9.317-1.3,9.15-1.1
+			C8.617-0.567,8.2-0.867,7.9-2C7.733-2.733,7.367-4.217,6.8-6.45C6.3-7.85,5.983-8.533,5.85-8.5c-0.2,0.367-0.434,0.6-0.7,0.7
+			c-0.233,0.1-0.6,0.433-1.1,1C3.583-6.3,3.167-6.017,2.8-5.95C2.533-5.917,2.133-5.933,1.6-6C1.267-6.067,1-6,0.8-5.8
+			c-0.433,0.433-0.767,0.716-1,0.85c-0.466,0.267-0.917,0.267-1.35,0C-1.85-5.15-2.2-5.633-2.6-6.4
+			c-0.267-0.533-0.517-0.717-0.75-0.55c-0.3,0.2-0.566,1.05-0.8,2.55c-0.3,1.9-0.533,3.333-0.7,4.3C-5.05,1.067-5.3,1.55-5.6,1.35
+			C-5.933,0.917-6.183,0.7-6.35,0.7C-6.417,0.7-6.833,0.467-7.6,0c-0.7-0.4-1.183-0.5-1.45-0.3c-0.2,0.133-0.367,0.483-0.5,1.05
+			c-0.167,0.567-0.434,1-0.8,1.3c-0.367,0.3-0.583,0.133-0.65-0.5C-11.167,0.617-11.4,0-11.7-0.3
+			c-0.367-0.367-0.483-0.117-0.35,0.75c0.233,1.7,0.35,2.9,0.35,3.6c0,1.367,0.267,2.133,0.8,2.3c0.467,0.133,0.917-0.25,1.35-1.15
+			c0.9-0.434,1.4-0.483,1.5-0.15c0,0.333,0.283,1.167,0.85,2.5c0.367,0.934,0.867,1.167,1.5,0.7c0.567-0.467,0.85-1.2,0.85-2.2
+			c0-0.767,0.3-1.133,0.9-1.1c0.4,0,1.2,0.083,2.4,0.25c0.8,0,1.133-0.434,1-1.3c-0.067-0.5-0.233-1.333-0.5-2.5
+			c0-0.7,0.083-1.167,0.25-1.4c0.133-0.133,0.383-0.333,0.75-0.6c0.233-0.233,0.533-0.283,0.9-0.15C1.317-0.55,1.8-0.5,2.3-0.6
+			c0.5-0.133,0.717-0.217,0.65-0.25c-0.2-0.167-0.2-0.417,0-0.75C3.183-1.933,3.4-2.233,3.6-2.5c0.133-0.133,0.417-0.283,0.85-0.45
+			C4.817-3.083,5.3-2.517,5.9-1.25c0.733,1.633,1.2,2.567,1.4,2.8c0.333,0.4,0.617,1.017,0.85,1.85c0.2,0.7,0.417,1.083,0.65,1.15
+			C9.033,4.617,9.3,4.233,9.6,3.4c0.333-0.867,0.566-1.316,0.7-1.35c0.2-0.066,0.483,0.5,0.85,1.7c0.4,1.433,0.667,2.25,0.8,2.45
+			C12.15,6.533,12.217,6.067,12.15,4.8z"/>
+	</g>
+</symbol>
+<g>
+	<defs>
+		<rect id="SVGID_3_" y="0.05" width="139.9" height="160.25"/>
+	</defs>
+	<clipPath id="SVGID_4_">
+		<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+	</clipPath>
+	<g id="mist" style="clip-path:url(#SVGID_4_);">
+		<g>
+			
+>>>>>>> master
 				<image style="overflow:visible;" width="208" height="302" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANAAAAEuCAYAAAD/S5ypAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAALmtJREFUeNrsnQ1v6zizg0eG//9P
 ji7exd1FN2tpSA4lOz0JcHDatE1TW4/Iob5a/IJH773F9/F9/P+jtda3/a4vJN/HF6ZfBtAXlu/j
@@ -268,9 +331,18 @@ UaWRr4KmPfn6xrOWQvTNX3ssPNaGY4ZoBWSVv/lPi7SfANXj4VnSMDaD5ATmT0rg7rJ1y8C5A55l
 jUaAyGW1dsDSfjEY1dfom17nEfAsbQwLIVoJyleF7gHr48DZ0mBEiNj3dUcc/afMkVtp88rv7W54
 tjWEAkg7APnTVeeO0KEM9RPg2dp4ihDdCUf7QmJ/jdLvfQo8tzQOA0iV9/00GNrGhv4E6H4NOLc3
 qJtB+tq4ZyvUR8Bze8MxQbTj72lfQO553aeC86iGsQCkT2n47SEN/pEwPh2exzWwhSB9rdrnqNdH
+<<<<<<< HEAD
 gPP34/8EGAAWnqG1M5xjhQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 -34 -105)">
 			</image>
 		</g>
 	</g>
 </g>
 </svg>
+=======
+gPP34/8EGAAWnqG1M5xjhQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 -34 -105)">
+			</image>
+		</g>
+	</g>
+</g>
+</svg>
+>>>>>>> master

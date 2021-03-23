@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -8,6 +9,18 @@
 	<g>
 		<polygon style="fill:none;" points="0,0 100,0 100,-99 0,-99 		"/>
 		
+=======
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="flash0.ai" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="363.1px" height="91.05px" viewBox="0 0 363.1 91.05" style="enable-background:new 0 0 363.1 91.05;" xml:space="preserve"
+	>
+<pattern  width="100" height="99" patternUnits="userSpaceOnUse" id="Unnamed" viewBox="0 -99 100 99" style="overflow:visible;">
+	<g>
+		<polygon style="fill:none;" points="0,0 100,0 100,-99 0,-99 		"/>
+		
+>>>>>>> master
 			<image style="overflow:visible;" width="100" height="99" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABjCAIAAADihTK7AAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAMAVJREFUeNpcnQ2W48qOo6WQZOft
 /S9mVjFnVjOVtqTQAPgYUXWm3z3VmU5bCsUPCYIgvf6v//1/vtf32I7vea5t2bf98/2ua+v3/X6/
@@ -225,6 +238,7 @@ Omyd2hAABfoxwD5YlCAmAHVP7wvr2Qgp+C4U+CO05tD+1EySrAZtu/YhPtQVuElMjd5wjW9+KAkR
 BjXNMZDgzz5Dfw18DvvUzBzj6wHpA0GPqSMNltAPkGd8/5Wedb47gS9sojJtdvwhy0kSN2jRgZFp
 mVZ6V1o1VtaEIivHo+8V8o9GyUh84FX1I4XauLxnNAKsxpGRhAAjZIGnzg2eBx6OCha+JmWHrojC
 FVdAOZkFTHrzU3AkTe/3O4V6tMSaOrfUV6PPajEu3qTdIbntw5rt0J8bNpUvbZhQpr7TcDT61iPT
+<<<<<<< HEAD
 TJXyI72BftP08aYgWk/3/wQYAGAvp/1h8nbHAAAAAElFTkSuQmCC" transform="matrix(1 0 0 1 0 -99)">
 		</image>
 	</g>
@@ -246,3 +260,26 @@ TJXyI72BftP08aYgWk/3/wQYAGAvp/1h8nbHAAAAAElFTkSuQmCC" transform="matrix(1 0 0 1 
 		c7.101,7.566,13.316,13.117,18.65,16.65c2,1.333,6.217,4,12.649,8C356.017,42.083,359.467,44.983,360.7,47.05z"/>
 </g>
 </svg>
+=======
+TJXyI72BftP08aYgWk/3/wQYAGAvp/1h8nbHAAAAAElFTkSuQmCC" transform="matrix(1 0 0 1 0 -99)">
+		</image>
+	</g>
+</pattern>
+<g>
+	<pattern  id="SVGID_1_" xlink:href="#Unnamed" patternTransform="matrix(1 0 0 1 13.5498 60.4004)">
+	</pattern>
+	<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);" d="M360.7,47.05c1.967,3.267,2.717,5.8,2.25,7.601
+		c-0.733,2.833-4.15,5.3-10.25,7.399c-6.934,2.367-17.733,5.75-32.4,10.15c-14.899,4.467-25.55,7.517-31.95,9.149
+		c-7.066,1.834-17.267,3.65-30.6,5.45c-14.434,1.934-25.9,2.9-34.4,2.9c-5.666,0-14.883,0.233-27.649,0.7
+		c-12.767,0.433-22.983,0.649-30.65,0.649c-9.933,0-19.867-0.316-29.8-0.95c-5.7-0.366-16.883-1.283-33.55-2.75
+		c-15.034-1.267-30.667-3.233-46.9-5.899c-18.233-2.967-30.383-5.767-36.45-8.4c-2.367-1.033-5.184-2.066-8.45-3.1
+		c-3-0.934-4.933-1.617-5.8-2.05c-2.967-1.4-4.317-4.351-4.05-8.851c0.133-2.366,1.967-4.899,5.5-7.6c6.5-4.9,10-7.6,10.5-8.1
+		c6.6-6.267,12.117-11.2,16.55-14.8c8.6-7.033,16.183-11.983,22.75-14.85c7.167-3.1,14.083-4.65,20.75-4.65
+		c5.733-0.033,10.816,1.067,15.25,3.3c3.133,1.566,7.583,2.45,13.35,2.65c7.9,0.3,12.35,0.533,13.35,0.7
+		c1.233,0.2,5.55,1.5,12.95,3.9c6.067,1.933,11.633,2.967,16.7,3.1c18.133,0.5,33.583-0.617,46.35-3.35
+		c9.233-1.934,15.5-3.3,18.8-4.1c5.334-1.267,11.284-2.9,17.851-4.9c11.333-3.4,19.733-5.733,25.2-7
+		c10.533-2.5,18.916-3.6,25.149-3.3c6.967,0.333,14.384,1.934,22.25,4.8c7.566,2.8,12.816,5.75,15.75,8.85
+		c7.101,7.566,13.316,13.117,18.65,16.65c2,1.333,6.217,4,12.649,8C356.017,42.083,359.467,44.983,360.7,47.05z"/>
+</g>
+</svg>
+>>>>>>> master

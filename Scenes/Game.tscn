@@ -122,7 +122,6 @@ margin_left = 197.878
 margin_top = 682.018
 margin_right = 879.878
 margin_bottom = 723.018
-max_value = 100.0
 texture_under = ExtResource( 9 )
 texture_progress = ExtResource( 13 )
 nine_patch_stretch = true
@@ -173,8 +172,8 @@ margin_right = 42.3317
 margin_bottom = 35.2781
 texture = ExtResource( 11 )
 expand = true
-[connection signal="body_shape_entered" from="Enemies/Mushroom" to="evilMist" method="_on_Mushroom_body_shape_entered"]
 [connection signal="body_shape_entered" from="Enemies/Mushroom" to="ProgressBar" method="_on_Mushroom_body_shape_entered"]
-[connection signal="body_shape_entered" from="Enemies/Mushroom2" to="evilMist" method="_on_Mushroom2_body_shape_entered"]
+[connection signal="body_shape_entered" from="Enemies/Mushroom" to="evilMist" method="_on_Mushroom_body_shape_entered"]
 [connection signal="body_shape_entered" from="Enemies/Mushroom2" to="ProgressBar" method="_on_Mushroom2_body_shape_entered"]
+[connection signal="body_shape_entered" from="Enemies/Mushroom2" to="evilMist" method="_on_Mushroom2_body_shape_entered"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_ProgressBar_value_changed"]

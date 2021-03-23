@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -149,6 +150,159 @@
 </symbol>
 <g>
 	
+=======
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="196px" height="288px" viewBox="0 0 196 288" style="enable-background:new 0 0 196 288;" xml:space="preserve">
+<symbol  id="FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E_" viewBox="0 -11.4 11.4 11.4">
+	<g id="Layer_1_13_">
+		
+			<radialGradient id="SVGID_1_" cx="5.7002" cy="-5.7002" r="5.7" gradientTransform="matrix(1 0 0 -1 0 -11.4004)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0.5098" style="stop-color:#AEDBC9"/>
+			<stop  offset="1" style="stop-color:#ADDA8D;stop-opacity:0"/>
+		</radialGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);" d="M11.4-5.7c0-1.566-0.55-2.917-1.65-4.05
+			c-1.133-1.1-2.483-1.65-4.05-1.65c-1.567,0-2.917,0.55-4.05,1.65C0.55-8.617,0-7.267,0-5.7c0,1.567,0.55,2.917,1.65,4.05
+			C2.783-0.55,4.133,0,5.7,0c1.566,0,2.917-0.55,4.05-1.65C10.85-2.783,11.4-4.133,11.4-5.7z"/>
+	</g>
+</symbol>
+<symbol  id="FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_1" viewBox="0 -10.1 10.1 10.1">
+	<g id="Layer_1_12_">
+		
+			<radialGradient id="SVGID_2_" cx="5.0498" cy="-5.0498" r="5.0373" gradientTransform="matrix(1 0 0 -1 0 -10.0996)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0.5098" style="stop-color:#AEDBC9"/>
+			<stop  offset="1" style="stop-color:#ADDA8D;stop-opacity:0"/>
+		</radialGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_2_);" d="M10.1-5.05c0-1.367-0.483-2.55-1.45-3.55
+			c-1-1-2.2-1.5-3.6-1.5c-1.4,0-2.583,0.5-3.55,1.5C0.5-7.6,0-6.417,0-5.05c0,1.4,0.5,2.583,1.5,3.55C2.467-0.5,3.65,0,5.05,0
+			c1.4,0,2.6-0.5,3.6-1.5C9.617-2.467,10.1-3.65,10.1-5.05z"/>
+	</g>
+</symbol>
+<symbol  id="FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_10" viewBox="0 -2.25 2.25 2.25">
+	<g id="Layer_1_3_">
+		
+			<radialGradient id="SVGID_3_" cx="1.1499" cy="-1.1499" r="1.125" gradientTransform="matrix(1 0 0 -1 0 -2.2998)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0.5098" style="stop-color:#AEDBC9"/>
+			<stop  offset="1" style="stop-color:#ADDA8D;stop-opacity:0"/>
+		</radialGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_3_);" d="M2.25-1.15c0-0.3-0.1-0.567-0.3-0.8
+			c-0.233-0.2-0.5-0.3-0.8-0.3c-0.333,0-0.6,0.1-0.8,0.3C0.117-1.717,0-1.45,0-1.15c0,0.333,0.117,0.6,0.35,0.8
+			C0.55-0.117,0.817,0,1.15,0c0.3,0,0.567-0.117,0.8-0.35C2.15-0.55,2.25-0.817,2.25-1.15z"/>
+	</g>
+</symbol>
+<symbol  id="FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_11" viewBox="0 -5.2 5.2 5.2">
+	<g id="Layer_1_2_">
+		
+			<radialGradient id="SVGID_4_" cx="2.6001" cy="-2.6001" r="2.575" gradientTransform="matrix(1 0 0 -1 0 -5.2002)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0.5098" style="stop-color:#AEDBC9"/>
+			<stop  offset="1" style="stop-color:#ADDA8D;stop-opacity:0"/>
+		</radialGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_4_);" d="M5.2-2.6c0-0.733-0.25-1.35-0.75-1.85
+			S3.333-5.2,2.6-5.2c-0.7,0-1.3,0.25-1.8,0.75C0.267-3.95,0-3.333,0-2.6s0.267,1.35,0.8,1.85C1.3-0.25,1.9,0,2.6,0
+			c0.733,0,1.35-0.25,1.85-0.75S5.2-1.867,5.2-2.6z"/>
+	</g>
+</symbol>
+<symbol  id="FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_2" viewBox="0 -8.25 8.25 8.25">
+	<g id="Layer_1_11_">
+		
+			<radialGradient id="SVGID_5_" cx="4.1499" cy="-4.1499" r="4.125" gradientTransform="matrix(1 0 0 -1 0 -8.2998)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0.5098" style="stop-color:#AEDBC9"/>
+			<stop  offset="1" style="stop-color:#ADDA8D;stop-opacity:0"/>
+		</radialGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_5_);" d="M8.25-4.15c0-1.133-0.4-2.1-1.2-2.9
+			c-0.8-0.8-1.767-1.2-2.9-1.2s-2.117,0.4-2.95,1.2C0.4-6.25,0-5.283,0-4.15S0.4-2.033,1.2-1.2C2.033-0.4,3.017,0,4.15,0
+			s2.1-0.4,2.9-1.2C7.85-2.033,8.25-3.017,8.25-4.15z"/>
+	</g>
+</symbol>
+<symbol  id="FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_3" viewBox="0 -5.75 5.75 5.75">
+	<g id="Layer_1_10_">
+		
+			<radialGradient id="SVGID_6_" cx="2.8999" cy="-2.8999" r="2.8625" gradientTransform="matrix(1 0 0 -1 0 -5.7998)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0.5098" style="stop-color:#AEDBC9"/>
+			<stop  offset="1" style="stop-color:#ADDA8D;stop-opacity:0"/>
+		</radialGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_6_);" d="M5.75-2.9c0-0.767-0.283-1.434-0.85-2
+			c-0.566-0.567-1.233-0.85-2-0.85c-0.8,0-1.483,0.283-2.05,0.85C0.283-4.333,0-3.667,0-2.9c0,0.8,0.283,1.483,0.85,2.05
+			C1.417-0.283,2.1,0,2.9,0c0.767,0,1.434-0.283,2-0.85C5.467-1.417,5.75-2.1,5.75-2.9z"/>
+	</g>
+</symbol>
+<symbol  id="FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_4" viewBox="0 -7.65 7.65 7.65">
+	<g id="Layer_1_9_">
+		
+			<radialGradient id="SVGID_7_" cx="3.8501" cy="-3.8501" r="3.825" gradientTransform="matrix(1 0 0 -1 0 -7.7002)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0.5098" style="stop-color:#AEDBC9"/>
+			<stop  offset="1" style="stop-color:#ADDA8D;stop-opacity:0"/>
+		</radialGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_7_);" d="M7.65-3.85c0-1.066-0.367-1.967-1.1-2.7
+			c-0.733-0.733-1.633-1.1-2.7-1.1c-1.067,0-1.983,0.367-2.75,1.1C0.367-5.817,0-4.917,0-3.85C0-2.783,0.367-1.867,1.1-1.1
+			C1.867-0.367,2.783,0,3.85,0c1.066,0,1.967-0.367,2.7-1.1C7.283-1.867,7.65-2.783,7.65-3.85z"/>
+	</g>
+</symbol>
+<symbol  id="FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_5" viewBox="0 -7.65 7.65 7.65">
+	<g id="Layer_1_8_">
+		
+			<radialGradient id="SVGID_8_" cx="3.8501" cy="-3.8501" r="3.825" gradientTransform="matrix(1 0 0 -1 0 -7.7002)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0.5098" style="stop-color:#AEDBC9"/>
+			<stop  offset="1" style="stop-color:#ADDA8D;stop-opacity:0"/>
+		</radialGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_8_);" d="M7.65-3.85c0-1.066-0.367-1.967-1.1-2.7
+			c-0.733-0.733-1.633-1.1-2.7-1.1c-1.067,0-1.983,0.367-2.75,1.1C0.367-5.817,0-4.917,0-3.85C0-2.783,0.367-1.867,1.1-1.1
+			C1.867-0.367,2.783,0,3.85,0c1.066,0,1.967-0.367,2.7-1.1C7.283-1.867,7.65-2.783,7.65-3.85z"/>
+	</g>
+</symbol>
+<symbol  id="FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_6" viewBox="0 -5.35 5.35 5.35">
+	<g id="Layer_1_7_">
+		
+			<radialGradient id="SVGID_9_" cx="2.7002" cy="-2.7002" r="2.6625" gradientTransform="matrix(1 0 0 -1 0 -5.4004)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0.5098" style="stop-color:#AEDBC9"/>
+			<stop  offset="1" style="stop-color:#ADDA8D;stop-opacity:0"/>
+		</radialGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_9_);" d="M5.35-2.7c0-0.733-0.267-1.35-0.8-1.85
+			c-0.5-0.534-1.117-0.8-1.85-0.8c-0.733,0-1.367,0.267-1.9,0.8C0.267-4.05,0-3.433,0-2.7c0,0.733,0.267,1.367,0.8,1.9
+			C1.333-0.267,1.967,0,2.7,0c0.733,0,1.35-0.267,1.85-0.8C5.083-1.333,5.35-1.967,5.35-2.7z"/>
+	</g>
+</symbol>
+<symbol  id="FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_7" viewBox="0 -5.35 5.3 5.35">
+	<g id="Layer_1_6_">
+		
+			<radialGradient id="SVGID_10_" cx="2.6499" cy="-2.7002" r="2.6625" gradientTransform="matrix(1 0 0 -1 0 -5.4004)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0.5098" style="stop-color:#AEDBC9"/>
+			<stop  offset="1" style="stop-color:#ADDA8D;stop-opacity:0"/>
+		</radialGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_10_);" d="M5.3-2.7c0-0.733-0.25-1.35-0.75-1.85
+			c-0.533-0.534-1.167-0.8-1.9-0.8S1.3-5.083,0.8-4.55C0.267-4.05,0-3.433,0-2.7c0,0.733,0.267,1.367,0.8,1.9
+			C1.3-0.267,1.917,0,2.65,0s1.367-0.267,1.9-0.8C5.05-1.3,5.3-1.933,5.3-2.7z"/>
+	</g>
+</symbol>
+<symbol  id="FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_8" viewBox="0 -3.55 3.55 3.55">
+	<g id="Layer_1_5_">
+		
+			<radialGradient id="SVGID_11_" cx="1.75" cy="-1.7998" r="1.7751" gradientTransform="matrix(1 0 0 -1 0 -3.5996)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0.5098" style="stop-color:#AEDBC9"/>
+			<stop  offset="1" style="stop-color:#ADDA8D;stop-opacity:0"/>
+		</radialGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_11_);" d="M3.55-1.8c0-0.467-0.167-0.883-0.5-1.25
+			c-0.367-0.333-0.8-0.5-1.3-0.5c-0.467,0-0.883,0.167-1.25,0.5C0.167-2.683,0-2.267,0-1.8c0,0.5,0.167,0.917,0.5,1.25
+			C0.867-0.183,1.283,0,1.75,0c0.5,0,0.933-0.183,1.3-0.55C3.383-0.883,3.55-1.3,3.55-1.8z"/>
+	</g>
+</symbol>
+<symbol  id="FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_9" viewBox="0 -3.55 3.55 3.55">
+	<g id="Layer_1_4_">
+		
+			<radialGradient id="SVGID_12_" cx="1.75" cy="-1.7998" r="1.7751" gradientTransform="matrix(1 0 0 -1 0 -3.5996)" gradientUnits="userSpaceOnUse">
+			<stop  offset="0.5098" style="stop-color:#AEDBC9"/>
+			<stop  offset="1" style="stop-color:#ADDA8D;stop-opacity:0"/>
+		</radialGradient>
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_12_);" d="M3.55-1.8c0-0.467-0.167-0.883-0.5-1.25
+			c-0.367-0.333-0.8-0.5-1.3-0.5S0.833-3.383,0.5-3.05C0.167-2.683,0-2.267,0-1.8c0,0.5,0.167,0.917,0.5,1.25
+			C0.833-0.183,1.25,0,1.75,0s0.933-0.183,1.3-0.55C3.383-0.883,3.55-1.3,3.55-1.8z"/>
+	</g>
+</symbol>
+<g>
+	
+>>>>>>> master
 		<image style="overflow:visible;" width="196" height="288" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAAEgCAYAAADrBNxLAAAgAElEQVR4nOy9W89tV3IdNqrm2t/h
 4bVJdvPSZJPsJtU3dlNSCEPRJQABG1I6gpLIQcOSHUuCnQiBAsHOBUGs5EFIECDIf8gvyHOQx/gh
 SBAgbcdxIMOCbo5tKI4gWbI7tsNvzVl5qDFqzr3PYV/I737ObLDP3muv27f3rFk1aoyqZXjExk/9
@@ -663,6 +817,7 @@ uUmNjsMkFd4DPS16lJHNz2ME0ca3jmuN+m5UnoAexZ5jC1FY+w5R6hpiAG/L0M7ODkrT3gWeHtzx
 9vEsOPgQ8Ox9Er+HKKwjRfXzYcO8zgzwdLQh4WPFs2fv/YQHRFOmjwT/9K4VkDhWmX++US1+EnyA
 KkNECN8hUlGd8JeI3rdwJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk
 JCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQk
+<<<<<<< HEAD
 JCQkJCQkJCQkJCQkJCQkJLxv+H+QxqdxJ/1FdQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 -4.882813e-004 -4.882813e-004)">
 	</image>
 	
@@ -699,3 +854,41 @@ JCQkJCQkJCQkJCQkJCQkJLxv+H+QxqdxJ/1FdQAAAABJRU5ErkJggg==" transform="matrix(1 0 
 		<use xlink:href="#FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E_"  width="11.4" height="11.4" y="-11.4" transform="matrix(1 0 0 -1 49.5 138.75)" style="overflow:visible;opacity:0.5313;enable-background:new    ;"/>
 </g>
 </svg>
+=======
+JCQkJCQkJCQkJCQkJCQkJLxv+H+QxqdxJ/1FdQAAAABJRU5ErkJggg==" transform="matrix(1 0 0 1 -4.882813e-004 -4.882813e-004)">
+	</image>
+	
+		<radialGradient id="SVGID_13_" cx="81.0498" cy="75.5498" r="3.4125" gradientTransform="matrix(1 0 0 -1 0 151.0996)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0.5098" style="stop-color:#AEDBC9"/>
+		<stop  offset="1" style="stop-color:#ADDA8D;stop-opacity:0"/>
+	</radialGradient>
+	<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_13_);" d="M84.5,75.55c0,0.967-0.333,1.784-1,2.45
+		s-1.483,1-2.45,1c-0.933,0-1.733-0.333-2.4-1c-0.667-0.7-1-1.517-1-2.45c0-0.933,0.333-1.733,1-2.4c0.667-0.667,1.467-1,2.4-1
+		c0.934,0,1.75,0.333,2.45,1C84.167,73.817,84.5,74.617,84.5,75.55z"/>
+	
+		<use xlink:href="#FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_11"  width="5.2" height="5.2" y="-5.2" transform="matrix(1 0 0 -1 108.5498 85.5498)" style="overflow:visible;opacity:0.8008;enable-background:new    ;"/>
+	
+		<use xlink:href="#FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_10"  width="2.25" height="2.25" y="-2.25" transform="matrix(1 0 0 -1 85.3501 30.3501)" style="overflow:visible;opacity:0.8008;enable-background:new    ;"/>
+	
+		<use xlink:href="#FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_9"  width="3.55" height="3.55" y="-3.55" transform="matrix(1 0 0 -1 70.8999 151.2002)" style="overflow:visible;opacity:0.3281;enable-background:new    ;"/>
+	
+		<use xlink:href="#FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_8"  width="3.55" height="3.55" y="-3.55" transform="matrix(1 0 0 -1 134.4502 126.7002)" style="overflow:visible;opacity:0.3281;enable-background:new    ;"/>
+	
+		<use xlink:href="#FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_7"  width="5.3" height="5.35" y="-5.35" transform="matrix(1 0 0 -1 75.0498 20.7998)" style="overflow:visible;opacity:0.3281;enable-background:new    ;"/>
+	
+		<use xlink:href="#FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_6"  width="5.35" height="5.35" y="-5.35" transform="matrix(1 0 0 -1 133.2998 117.2998)" style="overflow:visible;opacity:0.3281;enable-background:new    ;"/>
+	
+		<use xlink:href="#FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_5"  width="7.65" height="7.65" y="-7.65" transform="matrix(1 0 0 -1 101.9004 11.3999)" style="overflow:visible;opacity:0.3281;enable-background:new    ;"/>
+	
+		<use xlink:href="#FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_4"  width="7.65" height="7.65" y="-7.65" transform="matrix(1 0 0 -1 75.6499 221.1504)" style="overflow:visible;opacity:0.3281;enable-background:new    ;"/>
+	
+		<use xlink:href="#FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_3"  width="5.75" height="5.75" y="-5.75" transform="matrix(1 0 0 -1 140.5996 202.5996)" style="overflow:visible;opacity:0.2188;enable-background:new    ;"/>
+	
+		<use xlink:href="#FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_2"  width="8.25" height="8.25" y="-8.25" transform="matrix(1 0 0 -1 72.8501 158.3496)" style="overflow:visible;opacity:0.2188;enable-background:new    ;"/>
+	
+		<use xlink:href="#FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E__x5F_1"  width="10.1" height="10.1" y="-10.1" transform="matrix(1 0 0 -1 95.1499 50.3999)" style="overflow:visible;opacity:0.5313;enable-background:new    ;"/>
+	
+		<use xlink:href="#FlashAICB_x2F_Layer_1_x2F__x3C_Path_x3E_"  width="11.4" height="11.4" y="-11.4" transform="matrix(1 0 0 -1 49.5 138.75)" style="overflow:visible;opacity:0.5313;enable-background:new    ;"/>
+</g>
+</svg>
+>>>>>>> master
