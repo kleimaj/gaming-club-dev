@@ -43,6 +43,20 @@ func _collision_v1(body):
 	body.free()
 	
 
+func register_correct_hit():
+	# Signal Fog and ProgressBar
+	var mist = get_node("../../evilMist")
+	var progressBar = get_node("../../ProgressBar")
+	mist.moveUp(50)
+	progressBar.incrementValue(50)
+	diminish_shader()
+	# Set beenHit to true (doesn't trigger again)
+	beenHit = true
+	# check is game over in Game node
+	var game = get_tree().get_root().get_node("Game")
+	game.incrementScore()
+	game.checkGameOver()
+
 func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_shape):
 	if body.global_position.y < global_position.y:
 		body.velocity.y = -body.velocity.y
@@ -52,13 +66,6 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 		for group in get_groups():
 			# should only iterate once
 			if CollisionMap[projectile_type].has(group) and not beenHit:
-				# Signal Fog and ProgressBar
-				var mist = get_node("../../evilMist")
-				var progressBar = get_node("../../ProgressBar")
-				mist.moveUp(50)
-				progressBar.incrementValue(50)
-				diminish_shader()
-				# Set beenHit to true (doesn't trigger again)
-				beenHit = true
+				register_correct_hit()
 				break
 		
