@@ -40,7 +40,12 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 		for group in get_groups():
 			# should only iterate once
 			if CollisionMap[projectile_type].has(group) and not beenHit:
-				print("Collision")
+				# Signal Fog and ProgressBar
+				var mist = get_node("../../evilMist")
+				var progressBar = get_node("../../ProgressBar")
+				mist.moveUp()
+				progressBar.incrementValue()
+				# Set beenHit to true (doesn't trigger again)
 				beenHit = true
 				break
 		
