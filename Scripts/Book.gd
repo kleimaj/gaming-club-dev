@@ -5,7 +5,8 @@ var CurrentPage = 1
 var PageTexture
 export(float) var PageSpeedRatio = 1
 
-func _ready():
+
+func play():
 	# Bring book to view
 	visible = true
 	$AnimationPlayer.play("SlideIn")
@@ -24,3 +25,7 @@ func PlayNextAnimation(AnimationJustCompleted):
 		PageTurnNextPartA()
 	elif (AnimationJustCompleted == "TurnPageNextA"):
 		PageTurnNextPartB()
+
+
+func _on_Button_pressed():
+	pass # Replace with function body.

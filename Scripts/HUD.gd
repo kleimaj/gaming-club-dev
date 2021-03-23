@@ -19,15 +19,5 @@ func set_backpack(isOpen: bool):
 func close_backpack():
 	Backpack.visible = false
 	
-func _on_BookButton_pressed():
-	pass 
-
-func _on_ExitButton_pressed():
-	pass 
-
-
-func _on_ProgressBar_value_changed(value):
-	if value < 99:
-		$CanvasLayer/ProgressBar/FinalProgress.visible = false
-	else:
-		$CanvasLayer/ProgressBar/FinalProgress.visible = true
+#func _on_BookButton_pressed():
+#	$CanvasLayer/Book.play()

@@ -3,7 +3,9 @@ extends Area2D
 # Rate at which mist decreases (this may be calcualted by total number of enemies)
 export var mistFactor = 0.3
 
-func _on_Area2D_body_entered(body):
+const BOUNCE_MULTIPLIER = 2.5
+
+func _collision_v1(body):
 	# Fetch Mist Sprite
 	var mist:Sprite = get_tree().get_root().get_node("Game").get_node("Mist")
 	# Get ShaderMaterial from Sprite
@@ -19,3 +21,9 @@ func _on_Area2D_body_entered(body):
 	# Remove Bullet
 	body.free()
 	
+
+func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_shape):
+	if body.global_position.y < global_position.y:
+		body.velocity.y = -body.velocity.y
+		body.velocity.x *= -(transform.get_rotation() / transform.get_rotation()) * BOUNCE_MULTIPLIER
+		
