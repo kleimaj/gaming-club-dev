@@ -88,7 +88,7 @@ texture = ExtResource( 5 )
 flip_v = true
 
 [node name="evilMist" type="Sprite" parent="."]
-position = Vector2( 487.528, -196.501 )
+position = Vector2( 487.528, -200 )
 scale = Vector2( 0.496052, 0.590256 )
 texture = ExtResource( 38 )
 
@@ -106,3 +106,69 @@ margin_bottom = -7.7637
 
 [node name="GroundArea2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 651.869, 667.908 )
+<<<<<<< Updated upstream
+=======
+
+[node name="ProgressBar" type="TextureProgress" parent="."]
+margin_left = 197.878
+margin_top = 682.018
+margin_right = 879.878
+margin_bottom = 723.018
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 13 )
+nine_patch_stretch = true
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightBG" type="TextureRect" parent="ProgressBar"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -7.33032
+margin_top = -0.315002
+margin_right = 5.66968
+margin_bottom = -0.315002
+texture = ExtResource( 10 )
+expand = true
+
+[node name="FinalProgress" type="TextureRect" parent="ProgressBar"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.6927
+margin_right = 10.3073
+texture = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IconFrame" type="TextureRect" parent="."]
+margin_left = 165.309
+margin_top = 680.967
+margin_right = 218.309
+margin_bottom = 729.967
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="IconFrame"]
+margin_left = 9.33168
+margin_top = 11.2781
+margin_right = 42.3317
+margin_bottom = 35.2781
+texture = ExtResource( 11 )
+expand = true
+[connection signal="body_shape_entered" from="Enemies/Mushroom" to="ProgressBar" method="_on_Mushroom_body_shape_entered"]
+[connection signal="body_shape_entered" from="Enemies/Mushroom" to="." method="_on_Mushroom_body_shape_entered"]
+[connection signal="body_shape_entered" from="Enemies/Mushroom" to="evilMist" method="_on_Mushroom_body_shape_entered"]
+[connection signal="body_shape_entered" from="Enemies/Mushroom2" to="ProgressBar" method="_on_Mushroom2_body_shape_entered"]
+[connection signal="body_shape_entered" from="Enemies/Mushroom2" to="." method="_on_Mushroom2_body_shape_entered"]
+[connection signal="body_shape_entered" from="Enemies/Mushroom2" to="evilMist" method="_on_Mushroom2_body_shape_entered"]
+[connection signal="value_changed" from="ProgressBar" to="." method="_on_ProgressBar_value_changed"]
+>>>>>>> Stashed changes
