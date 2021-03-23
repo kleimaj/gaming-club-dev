@@ -172,8 +172,8 @@ margin_right = 42.3317
 margin_bottom = 35.2781
 texture = ExtResource( 11 )
 expand = true
-[connection signal="body_shape_entered" from="Enemies/Mushroom" to="ProgressBar" method="_on_Mushroom_body_shape_entered"]
 [connection signal="body_shape_entered" from="Enemies/Mushroom" to="evilMist" method="_on_Mushroom_body_shape_entered"]
-[connection signal="body_shape_entered" from="Enemies/Mushroom2" to="ProgressBar" method="_on_Mushroom2_body_shape_entered"]
+[connection signal="body_shape_entered" from="Enemies/Mushroom" to="ProgressBar" method="_on_Mushroom_body_shape_entered"]
 [connection signal="body_shape_entered" from="Enemies/Mushroom2" to="evilMist" method="_on_Mushroom2_body_shape_entered"]
+[connection signal="body_shape_entered" from="Enemies/Mushroom2" to="ProgressBar" method="_on_Mushroom2_body_shape_entered"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_ProgressBar_value_changed"]
