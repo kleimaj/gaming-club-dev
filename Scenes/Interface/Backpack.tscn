@@ -74,7 +74,7 @@ rect_min_size = Vector2( 270, 50 )
 
 [node name="ItemGrid" type="GridContainer" parent="Background/HBoxContainer"]
 margin_left = 304.0
-margin_right = 501.0
+margin_right = 494.0
 margin_bottom = 280.0
 rect_min_size = Vector2( 190, 150 )
 custom_constants/vseparation = 16
@@ -165,6 +165,7 @@ __meta__ = {
 }
 
 [node name="Slot2" type="Panel" parent="Background/HBoxContainer/ItemGrid"]
+visible = false
 margin_left = 142.0
 margin_right = 197.0
 margin_bottom = 55.0

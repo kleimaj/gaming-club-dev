@@ -8,7 +8,7 @@ var maxBulletSpeed = 2000
 export (bool) var keyboardControls = true
 
 #var ammo_texture = "res://Assets/GFX/Projectiles/bullet1/1-01.png"
-var spriteAnim = "red"
+var spriteAnim = "green"
 var velocity = Vector2()
 var can_shoot = true
 
