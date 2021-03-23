@@ -68,4 +68,4 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 			if CollisionMap[projectile_type].has(group) and not beenHit:
 				register_correct_hit()
 				break
-		
+
