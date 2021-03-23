@@ -98,7 +98,6 @@ collision_mask = 2
 script = ExtResource( 19 )
 
 [node name="Mist" type="Sprite" parent="."]
-visible = false
 light_mask = 526087
 material = SubResource( 1 )
 position = Vector2( 509.469, 244.558 )

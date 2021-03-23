@@ -39,12 +39,12 @@ float fractal_brownien_motion(vec2 coord){
 }
 
 void fragment(){
-	/*vec2 coord = UV * 10.0;
-	
+	vec2 coord = UV * 10.0;
+
 	vec2 motion = vec2(fractal_brownien_motion(coord + vec2(TIME * -0.5, TIME * 0.5)));
-	
+
 	float final = fractal_brownien_motion(coord + motion);
-	
-	COLOR = vec4(color,final * 1.0);*/
+
+	COLOR = vec4(color,final * 1.0);
 	
 }
