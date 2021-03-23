@@ -8,7 +8,7 @@ var maxBulletSpeed = 2000
 export (bool) var keyboardControls = true
 
 #var ammo_texture = "res://Assets/GFX/Projectiles/bullet1/1-01.png"
-var spriteAnim = "green"
+var spriteAnim = "yellow"
 var velocity = Vector2()
 var can_shoot = true
 
@@ -69,6 +69,8 @@ func shoot():
 	var b = Bullet.instance()
 	#b.get_node("Sprite").frames.load_path = ammo_texture
 	b.get_node("AnimatedSprite").play(spriteAnim)
+	# Set projectile type (yellow or pink)
+	b.set_meta("type", spriteAnim)
 	owner.add_child(b)
 	b.transform = muzzle.global_transform
 	b.velocity = b.transform.x * bulletSpeed
