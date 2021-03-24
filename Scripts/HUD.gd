@@ -12,12 +12,15 @@ onready var Backpack = $CanvasLayer/Backpack
 func _on_BackpackButton_pressed():
 	backpackIsOpen  = !backpackIsOpen
 	set_backpack(backpackIsOpen)
+	
 
 func set_backpack(isOpen: bool):
 	Backpack.visible = isOpen
 
 func close_backpack():
 	Backpack.visible = false
+	backpackIsOpen = false
+	
 	
 #func _on_BookButton_pressed():
 #	$CanvasLayer/Book.play()
