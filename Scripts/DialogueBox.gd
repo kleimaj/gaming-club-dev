@@ -77,7 +77,7 @@ func _process(delta):
 		load_dialog()
 
 func load_dialog():
-	$indicator.hide()
+	$Indicator.hide()
 	if dialog_index < dialog_dics.size():
 		# Show Name if exists
 		if dialog_dics[dialog_index].name != null:
@@ -95,4 +95,4 @@ func load_dialog():
 
 
 func _on_Tween_tween_completed(object, key):
-	$indicator.show()
+	$Indicator.show()

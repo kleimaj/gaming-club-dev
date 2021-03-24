@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/Background.png" type="Texture" id=2]
@@ -9,6 +9,22 @@
 size = 35
 use_filter = true
 font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "IDLE"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 755.986, 116.055 ), Vector2( 755.986, 106.055 ) ]
+}
 
 [node name="Cutscene" type="Control"]
 anchor_right = 1.0
@@ -45,7 +61,7 @@ margin_top = 15.0
 margin_right = -15.0
 margin_bottom = -15.0
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.368627, 0.160784, 0.027451, 1 )
 bbcode_enabled = true
 bbcode_text = "Lorem ipsum lorum ricksum. Lorem ipsum lorum ricksum. Lorem ipsum lorum ricksum. Lorem ipsum lorum ricksum. "
 text = "Lorem ipsum lorum ricksum. Lorem ipsum lorum ricksum. Lorem ipsum lorum ricksum. Lorem ipsum lorum ricksum. "
@@ -54,11 +70,13 @@ __meta__ = {
 }
 
 [node name="Indicator" type="Sprite" parent="DialogueBox"]
-position = Vector2( 755.986, 116.055 )
+visible = false
+position = Vector2( 755.986, 110.502 )
 scale = Vector2( 0.16, 0.16 )
 texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DialogueBox/Indicator"]
+anims/IDLE = SubResource( 2 )
 
 [node name="Tween" type="Tween" parent="DialogueBox"]
 
@@ -66,3 +84,11 @@ texture = ExtResource( 4 )
 visible = false
 margin_right = 40.0
 margin_bottom = 40.0
+
+[node name="NameText" type="RichTextLabel" parent="DialogueBox/NameRect"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "Name"
+text = "Name"
