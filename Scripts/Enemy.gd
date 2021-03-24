@@ -7,9 +7,9 @@ const BOUNCE_MULTIPLIER = 2.5
 
 const CollisionMap = {
 	# yellow can heal spotted mushrooms
-	"yellow": ["Blue Spotted", "Green Spotted"],
+	"Yellow": ["Blue Spotted", "Green Spotted"],
 	# pink can heal non-spotted mushrooms
-	"pink": ["Blue", "Green"] 
+	"Red": ["Blue", "Green"] 
 }
 
 var beenHit:bool = false

@@ -7,8 +7,8 @@ var bulletSpeed = 100
 var maxBulletSpeed = 2000
 export (bool) var keyboardControls = true
 
-#var ammo_texture = "res://Assets/GFX/Projectiles/bullet1/1-01.png"
-var spriteAnim = "yellow"
+
+var sprayColor = "Red"
 var velocity = Vector2()
 var can_shoot = true
 
@@ -68,9 +68,9 @@ func shoot():
 	$ShootTimer.start()
 	var b = Bullet.instance()
 	#b.get_node("Sprite").frames.load_path = ammo_texture
-	b.get_node("AnimatedSprite").play(spriteAnim)
+	b.get_node("AnimatedSprite").play(sprayColor)
 	# Set projectile type (yellow or pink)
-	b.set_meta("type", spriteAnim)
+	b.set_meta("type", sprayColor)
 	owner.add_child(b)
 	b.transform = muzzle.global_transform
 	b.velocity = b.transform.x * bulletSpeed
@@ -101,7 +101,8 @@ func _on_Tank_shoot():
 	pass # Replace with function body.
 
 func _on_texture_change(new_anim):
-	spriteAnim = new_anim
-
+	sprayColor = new_anim
+	$Bottle.texture = load("res://Assets/GFX/UI/newBottles/" + new_anim + "BottleLoad.png")
+	
 func _on_Area2D_body_entered(body):
 	pass
