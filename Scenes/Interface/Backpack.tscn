@@ -74,7 +74,7 @@ rect_min_size = Vector2( 270, 50 )
 
 [node name="ItemGrid" type="GridContainer" parent="Background/HBoxContainer"]
 margin_left = 304.0
-margin_right = 501.0
+margin_right = 494.0
 margin_bottom = 280.0
 rect_min_size = Vector2( 190, 150 )
 custom_constants/vseparation = 16
@@ -98,7 +98,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Blue Pill" type="TextureRect" parent="Background/HBoxContainer/ItemGrid/Slot0"]
+[node name="Yellow Medicine" type="TextureRect" parent="Background/HBoxContainer/ItemGrid/Slot0"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -117,7 +117,7 @@ __meta__ = {
 visible = false
 margin_right = 40.0
 margin_bottom = 14.0
-text = "green"
+text = "yellow"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -140,7 +140,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Red Pill" type="TextureRect" parent="Background/HBoxContainer/ItemGrid/Slot1"]
+[node name="Pink Medicine" type="TextureRect" parent="Background/HBoxContainer/ItemGrid/Slot1"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -159,12 +159,13 @@ __meta__ = {
 visible = false
 margin_right = 40.0
 margin_bottom = 14.0
-text = "red"
+text = "pink"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Slot2" type="Panel" parent="Background/HBoxContainer/ItemGrid"]
+visible = false
 margin_left = 142.0
 margin_right = 197.0
 margin_bottom = 55.0

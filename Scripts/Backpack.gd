@@ -16,9 +16,8 @@ var ProjectileMap = {}
 
 # Maps the Item Name to its Description
 var ItemDisplay = {
-	"Blue Pill": "Blue pills are best against the blue type of mushrooms!",
-	"Red Pill": "Red pills are best against the red type of mushrooms!",
-	"Green Pill": "Green pills are best against the green type of mushrooms!",
+	"Yellow Medicine": "Yellow Medicine is best against spotted mushrooms!",
+	"Pink Medicine": "Pink Medicine is best against normal mushrooms!",
 }
 
 # Runs first
