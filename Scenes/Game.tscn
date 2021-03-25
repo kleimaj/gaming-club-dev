@@ -223,6 +223,16 @@ scale = Vector2( 5.76118, 6.40316 )
 texture = ExtResource( 5 )
 flip_v = true
 
+[node name="bgLayer1" type="Sprite" parent="."]
+position = Vector2( -627.199, -598.169 )
+scale = Vector2( 0.54877, 0.254501 )
+texture = ExtResource( 72 )
+
+[node name="bgLayer2" type="Sprite" parent="."]
+position = Vector2( 1688.45, -605.161 )
+scale = Vector2( 0.54877, 0.254501 )
+texture = ExtResource( 72 )
+
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 2.95483, 36.9359 )
 
