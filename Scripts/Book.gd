@@ -1,31 +1,16 @@
-extends Node2D
+extends Control
 
-# Page currently shown on left hand of screen
-var CurrentPage = 1
-var PageTexture
-export(float) var PageSpeedRatio = 1
+onready var follow = $BookTexture/Path2D/PathFollow2D
+onready var description = $BookTexture/HBoxContainer/RightContainer/Description
 
+export var speed = 750
 
-func play():
-	# Bring book to view
-	visible = true
-	$AnimationPlayer.play("SlideIn")
-	$AnimationPlayer.set_speed_scale(PageSpeedRatio/2)
-	$AnimationPlayer.connect("animation_finished", self, "PlayNextAnimation")
+func _ready():
+	set_process(true)
+	show_book_description()
 
-func PageTurnNextPartA():
-	$AnimationPlayer.set_speed_scale(PageSpeedRatio)	
-	$AnimationPlayer.play("TurnPageNextA")
+func _process(delta):
+	follow.set_offset(follow.get_offset() + speed * delta)
 
-func PageTurnNextPartB():
-	$AnimationPlayer.play("TurnPageNextB")
-
-func PlayNextAnimation(AnimationJustCompleted):
-	if (AnimationJustCompleted == "SlideIn"):
-		PageTurnNextPartA()
-	elif (AnimationJustCompleted == "TurnPageNextA"):
-		PageTurnNextPartB()
-
-
-func _on_Button_pressed():
-	pass # Replace with function body.
+func show_book_description():
+	pass

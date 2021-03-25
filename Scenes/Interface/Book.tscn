@@ -4,7 +4,8 @@
 [ext_resource path="res://Assets/GFX/UI/Book/Cover.png" type="Texture" id=2]
 [ext_resource path="res://Assets/GFX/UI/Book/RightPage.png" type="Texture" id=3]
 [ext_resource path="res://Assets/GFX/UI/Book/LeftPage.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/Book.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/OldBook.gd" type="Script" id=5]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
