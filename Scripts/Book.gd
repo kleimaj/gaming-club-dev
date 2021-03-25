@@ -38,6 +38,10 @@ func _ready():
 
 func play_animation():
 	$BookTexture/HBoxContainer/RightContainer/AnimationPlayer.play("ShowDescription")
+func _unhandled_key_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.scancode == KEY_R:
+			play_animation()
 
 func _process(delta):
 #	follow.set_offset(follow.get_offset() + speed * delta)

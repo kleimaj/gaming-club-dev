@@ -62,10 +62,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 15.07, 15.69 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0.02, 15.07, 15.69 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ true, true, false ]
 }
 
 [sub_resource type="Curve2D" id=5]
@@ -182,8 +182,6 @@ custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player selects the spray bottle from the backpack and loads it into the cannon. Once loaded the player has to hit the blue mushroom. Once hit X1 the mushroom brightens and sprays miniscule spores that lightens the mist ever so slightly. The mushrooms work as trampolines. The spray droplet will hit the mushroom, bounce to the next mushroom depending on angle of spray."
-visible_characters = 0
-percent_visible = 0.009
 text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player selects the spray bottle from the backpack and loads it into the cannon. Once loaded the player has to hit the blue mushroom. Once hit X1 the mushroom brightens and sprays miniscule spores that lightens the mist ever so slightly. The mushrooms work as trampolines. The spray droplet will hit the mushroom, bounce to the next mushroom depending on angle of spray."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BookTexture/HBoxContainer/RightContainer"]
@@ -219,13 +217,14 @@ texture_normal = ExtResource( 3 )
 curve = SubResource( 5 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="BookTexture/Path2D"]
-position = Vector2( 560.143, 116.481 )
+position = Vector2( 901.956, 543.523 )
 rotation = 0.00520463
-offset = 47.1632
+offset = 7869.5
 rotate = false
 loop = false
 
 [node name="Sprite" type="Sprite" parent="BookTexture/Path2D/PathFollow2D"]
+visible = false
 position = Vector2( 7.92792, -0.0412598 )
 rotation = -0.00520463
 scale = Vector2( 0.2, 0.2 )
