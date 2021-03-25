@@ -11,23 +11,23 @@
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Fonts/Roboto-Medium.ttf" type="DynamicFontData" id=10]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 40
 use_filter = true
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 use_filter = true
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 22
 use_filter = true
 extra_spacing_top = 10
 font_data = ExtResource( 9 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 resource_name = "ShowDescription"
 length = 16.0
 step = 0.01
@@ -68,7 +68,7 @@ tracks/2/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Curve2D" id=6]
+[sub_resource type="Curve2D" id=5]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 513.015, 116.236, 0, 0, 0, 0, 893.561, 118.218, 0, 0, 0, 0, 518.961, 157.858, 0, 0, 0, 0, 862.47, 157.512, 0, 0, 0, 0, 518.961, 193.534, 0, 0, 0, 0, 825.278, 194.969, 0, 0, 0, 0, 517.097, 232.682, 0, 0, 0, 0, 881.846, 236.217, 0, 0, 0, 0, 517.489, 270.069, 0, 0, 0, 0, 862.712, 274.524, 0, 0, 0, 0, 516.747, 309.417, 0, 0, 0, 0, 821.137, 312.387, 0, 0, 0, 0, 516.004, 347.28, 0, 0, 0, 0, 821.879, 350.992, 0, 0, 0, 0, 516.004, 385.143, 0, 0, 0, 0, 883.5, 389.598, 0, 0, 0, 0, 516.747, 422.264, 0, 0, 0, 0, 906.515, 425.976, 0, 0, 0, 0, 516.004, 459.385, 0, 0, 0, 0, 908.742, 466.067, 0, 0, 0, 0, 515.642, 498.624, 0, 0, 0, 0, 809.353, 503.301, 0, 0, 0, 0, 516.578, 536.975, 0, 0, 0, 0, 901.956, 543.523 )
 }
@@ -121,7 +121,7 @@ margin_top = 102.0
 margin_right = 450.0
 margin_bottom = 152.0
 rect_min_size = Vector2( 450, 50 )
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Blue Mushroom[/center]"
@@ -146,7 +146,7 @@ margin_top = 354.0
 margin_right = 450.0
 margin_bottom = 404.0
 rect_min_size = Vector2( 450, 50 )
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Treated by Pink Juice[/center]"
@@ -178,7 +178,7 @@ margin_top = 95.0
 margin_right = 400.0
 margin_bottom = 595.0
 rect_min_size = Vector2( 400, 500 )
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player selects the spray bottle from the backpack and loads it into the cannon. Once loaded the player has to hit the blue mushroom. Once hit X1 the mushroom brightens and sprays miniscule spores that lightens the mist ever so slightly. The mushrooms work as trampolines. The spray droplet will hit the mushroom, bounce to the next mushroom depending on angle of spray."
@@ -187,7 +187,7 @@ percent_visible = 0.009
 text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player selects the spray bottle from the backpack and loads it into the cannon. Once loaded the player has to hit the blue mushroom. Once hit X1 the mushroom brightens and sprays miniscule spores that lightens the mist ever so slightly. The mushrooms work as trampolines. The spray droplet will hit the mushroom, bounce to the next mushroom depending on angle of spray."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BookTexture/HBoxContainer/RightContainer"]
-anims/ShowDescription = SubResource( 7 )
+anims/ShowDescription = SubResource( 4 )
 
 [node name="ArrowContainer" type="HBoxContainer" parent="BookTexture"]
 anchor_left = 0.5
@@ -216,10 +216,10 @@ margin_bottom = 997.0
 texture_normal = ExtResource( 3 )
 
 [node name="Path2D" type="Path2D" parent="BookTexture"]
-curve = SubResource( 6 )
+curve = SubResource( 5 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="BookTexture/Path2D"]
-position = Vector2( 560.142, 116.481 )
+position = Vector2( 560.143, 116.481 )
 rotation = 0.00520463
 offset = 47.1632
 rotate = false

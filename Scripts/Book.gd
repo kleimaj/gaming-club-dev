@@ -34,8 +34,10 @@ var PageMap = [
 
 func _ready():
 	set_process(true)
-	$BookTexture/HBoxContainer/RightContainer/AnimationPlayer.play("ShowDescription")
 	showPage(page_idx)
+
+func play_animation():
+	$BookTexture/HBoxContainer/RightContainer/AnimationPlayer.play("ShowDescription")
 
 func _process(delta):
 #	follow.set_offset(follow.get_offset() + speed * delta)

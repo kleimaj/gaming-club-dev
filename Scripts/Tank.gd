@@ -50,8 +50,9 @@ func control(delta):
 		update_trajectory(delta)
 	if Input.is_action_just_released("click"):
 		changemuzzle = false
-		shoot()
-		bulletSpeed = 100
+		if get_global_mouse_position().y < 600:
+			shoot()
+			bulletSpeed = 100
 #func control(delta):
 #	$Muzzle.look_at(get_global_mouse_position())
 #	velocity = Vector2()
