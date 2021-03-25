@@ -48,7 +48,7 @@ func register_correct_hit():
 	var mist = get_node("../../evilMist")
 	var progressBar = get_node("../../ProgressBar")
 	mist.moveUp(50)
-	progressBar.incrementValue(50)
+	progressBar.incrementValue(34)
 	diminish_shader()
 	# Set beenHit to true (doesn't trigger again)
 	beenHit = true
