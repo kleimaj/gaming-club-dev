@@ -89,35 +89,57 @@ margin_left = 52.0
 margin_right = 502.0
 margin_bottom = 691.0
 rect_min_size = Vector2( 450, 0 )
+custom_constants/separation = 20
+alignment = 1
 
 [node name="MushroomTitle" type="RichTextLabel" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
+margin_top = 117.0
 margin_right = 450.0
-margin_bottom = 50.0
+margin_bottom = 167.0
 rect_min_size = Vector2( 450, 50 )
 custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-bbcode_text = "Blue Mushroom"
+bbcode_enabled = true
+bbcode_text = "[center]Blue Mushroom[/center]"
 text = "Blue Mushroom"
 
-[node name="Mushroom" type="TextureRect" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
-margin_top = 54.0
+[node name="Mushroom" type="CenterContainer" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
+margin_top = 187.0
 margin_right = 450.0
-margin_bottom = 196.0
+margin_bottom = 329.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mushroom" type="TextureRect" parent="Book/BookTexture/HBoxContainer/LeftContainer/Mushroom"]
+margin_left = 162.0
+margin_right = 287.0
+margin_bottom = 142.0
 texture = ExtResource( 6 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
-margin_top = 200.0
+margin_top = 349.0
 margin_right = 450.0
-margin_bottom = 250.0
+margin_bottom = 399.0
 rect_min_size = Vector2( 450, 50 )
 custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Treated by Pink Juice[/center]"
 text = "Treated by Pink Juice"
 
-[node name="TextureRect" type="TextureRect" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
-margin_top = 254.0
+[node name="Juice" type="CenterContainer" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
+margin_top = 419.0
 margin_right = 450.0
-margin_bottom = 408.0
+margin_bottom = 573.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Juice" type="TextureRect" parent="Book/BookTexture/HBoxContainer/LeftContainer/Juice"]
+margin_left = 163.0
+margin_right = 286.0
+margin_bottom = 154.0
 texture = ExtResource( 8 )
 
 [node name="RightContainer" type="VBoxContainer" parent="Book/BookTexture/HBoxContainer"]
@@ -164,7 +186,7 @@ __meta__ = {
 
 [node name="Indicator" type="Sprite" parent="DialogueBox"]
 visible = false
-position = Vector2( 755.986, 113.284 )
+position = Vector2( 755.986, 108.198 )
 scale = Vector2( 0.16, 0.16 )
 texture = ExtResource( 4 )
 
