@@ -22,5 +22,12 @@ func close_backpack():
 	backpackIsOpen = false
 	
 	
-#func _on_BookButton_pressed():
-#	$CanvasLayer/Book.play()
+func _on_BookButton_pressed():
+	if bookIsOpen:
+		$CanvasLayer/Book.hide()
+		bookIsOpen = false
+		get_tree().paused = false
+	else:
+		$CanvasLayer/Book.show()
+		bookIsOpen = true
+		get_tree().paused = true
