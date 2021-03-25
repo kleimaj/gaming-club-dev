@@ -37,17 +37,23 @@ __meta__ = {
 [node name="Book" type="Control" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -20.0
-margin_right = 20.0
-margin_bottom = 40.0
+margin_left = -294.5
+margin_right = 294.5
+margin_bottom = 489.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="Book"]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_scale = Vector2( 0.5, 0.5 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -294.5
+margin_top = -174.5
+margin_right = -254.5
+margin_bottom = -204.5
+rect_scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -91,7 +97,7 @@ __meta__ = {
 
 [node name="Indicator" type="Sprite" parent="DialogueBox"]
 visible = false
-position = Vector2( 755.986, 114.884 )
+position = Vector2( 755.986, 110.599 )
 scale = Vector2( 0.16, 0.16 )
 texture = ExtResource( 4 )
 
