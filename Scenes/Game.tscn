@@ -246,7 +246,7 @@ position = Vector2( 658.284, 222.651 )
 rotation = -0.289871
 
 [node name="evilMist" type="Sprite" parent="."]
-position = Vector2( 487.528, -250 )
+position = Vector2( 487.528, -1069.14 )
 scale = Vector2( 0.496052, 0.590256 )
 texture = ExtResource( 38 )
 script = ExtResource( 17 )
@@ -332,7 +332,6 @@ current = true
 
 [node name="TopLeft" parent="Camera2D/Limits" index="0"]
 position = Vector2( 0, -1647.78 )
-[connection signal="body_shape_entered" from="Enemies/Blue Mushroom" to="ProgressBar" method="_on_Blue_Mushroom_body_shape_entered"]
 [connection signal="value_changed" from="ProgressBar" to="." method="_on_ProgressBar_value_changed"]
 
 [editable path="Camera2D"]

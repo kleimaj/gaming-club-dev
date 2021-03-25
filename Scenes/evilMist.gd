@@ -1,7 +1,9 @@
 extends Sprite
 
+export var downSpeed = .5
+
 func _process(delta):
-	moveDown(.1)
+	moveDown(downSpeed)
 	
 func _on_Mushroom2_body_shape_entered(body_id, body, body_shape, area_shape):
 	position.y -= 25
