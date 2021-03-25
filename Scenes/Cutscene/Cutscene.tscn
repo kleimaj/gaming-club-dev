@@ -159,7 +159,7 @@ bbcode_enabled = true
 bbcode_text = "[center]Blue Mushroom[/center]"
 text = "Blue Mushroom"
 
-[node name="Mushroom" type="CenterContainer" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
+[node name="MushroomContainer" type="CenterContainer" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
 margin_top = 182.0
 margin_right = 450.0
 margin_bottom = 324.0
@@ -167,13 +167,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Mushroom" type="TextureRect" parent="Book/BookTexture/HBoxContainer/LeftContainer/Mushroom"]
+[node name="Mushroom" type="TextureRect" parent="Book/BookTexture/HBoxContainer/LeftContainer/MushroomContainer"]
 margin_left = 162.0
 margin_right = 287.0
 margin_bottom = 142.0
 texture = ExtResource( 6 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
+[node name="JuiceTitle" type="RichTextLabel" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
 margin_top = 354.0
 margin_right = 450.0
 margin_bottom = 404.0
@@ -184,7 +184,7 @@ bbcode_enabled = true
 bbcode_text = "[center]Treated by Pink Juice[/center]"
 text = "Treated by Pink Juice"
 
-[node name="Juice" type="CenterContainer" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
+[node name="JuiceContainer" type="CenterContainer" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
 margin_top = 434.0
 margin_right = 450.0
 margin_bottom = 588.0
@@ -192,7 +192,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Juice" type="TextureRect" parent="Book/BookTexture/HBoxContainer/LeftContainer/Juice"]
+[node name="Juice" type="TextureRect" parent="Book/BookTexture/HBoxContainer/LeftContainer/JuiceContainer"]
 margin_left = 163.0
 margin_right = 286.0
 margin_bottom = 154.0
@@ -305,7 +305,7 @@ __meta__ = {
 
 [node name="Indicator" type="Sprite" parent="DialogueBox"]
 visible = false
-position = Vector2( 755.986, 107.864 )
+position = Vector2( 755.986, 106.345 )
 scale = Vector2( 0.16, 0.16 )
 texture = ExtResource( 4 )
 
