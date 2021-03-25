@@ -215,7 +215,6 @@ scale = Vector2( 1.02118, 0.925825 )
 texture = ExtResource( 28 )
 
 [node name="Mist" type="Sprite" parent="."]
-visible = false
 light_mask = 526087
 material = SubResource( 1 )
 position = Vector2( 473.749, -477.771 )
