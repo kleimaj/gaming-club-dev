@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/Background.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scripts/Book.gd" type="Script" id=11]
 [ext_resource path="res://Assets/GFX/cutscene/Book/pencil.png" type="Texture" id=12]
+[ext_resource path="res://Assets/GFX/cutscene/Book/arrow.png" type="Texture" id=13]
+[ext_resource path="res://Assets/GFX/cutscene/Book/arrow-right.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=3]
 size = 40
@@ -31,7 +33,7 @@ font_data = ExtResource( 10 )
 
 [sub_resource type="Animation" id=7]
 resource_name = "ShowDescription"
-length = 15.0
+length = 16.0
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("Description:percent_visible")
@@ -56,6 +58,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../../Path2D/PathFollow2D/Sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 15.07, 15.69 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Curve2D" id=6]
@@ -200,23 +214,46 @@ custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player selects the spray bottle from the backpack and loads it into the cannon. Once loaded the player has to hit the blue mushroom. Once hit X1 the mushroom brightens and sprays miniscule spores that lightens the mist ever so slightly. The mushrooms work as trampolines. The spray droplet will hit the mushroom, bounce to the next mushroom depending on angle of spray."
+visible_characters = 3
+percent_visible = 0.009
 text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player selects the spray bottle from the backpack and loads it into the cannon. Once loaded the player has to hit the blue mushroom. Once hit X1 the mushroom brightens and sprays miniscule spores that lightens the mist ever so slightly. The mushrooms work as trampolines. The spray droplet will hit the mushroom, bounce to the next mushroom depending on angle of spray."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Book/BookTexture/HBoxContainer/RightContainer"]
 anims/ShowDescription = SubResource( 7 )
 
 [node name="ArrowContainer" type="HBoxContainer" parent="Book/BookTexture"]
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+margin_left = -450.214
+margin_top = -112.0
+margin_right = 8651.79
+margin_bottom = 885.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_constants/separation = 7000
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftButton" type="TextureButton" parent="Book/BookTexture/ArrowContainer"]
+margin_right = 1051.0
+margin_bottom = 997.0
+texture_normal = ExtResource( 13 )
+
+[node name="RightButton" type="TextureButton" parent="Book/BookTexture/ArrowContainer"]
+margin_left = 8051.0
+margin_right = 9102.0
+margin_bottom = 997.0
+texture_normal = ExtResource( 14 )
 
 [node name="Path2D" type="Path2D" parent="Book/BookTexture"]
 curve = SubResource( 6 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Book/BookTexture/Path2D"]
-position = Vector2( 901.956, 543.523 )
+position = Vector2( 560.142, 116.481 )
 rotation = 0.00520463
-offset = 7860.53
+offset = 47.1632
 rotate = false
 loop = false
 
@@ -230,6 +267,7 @@ offset = Vector2( 427.765, -452.349 )
 [node name="WritingTween" type="Tween" parent="Book/BookTexture"]
 
 [node name="DialogueBox" type="Control" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -267,7 +305,7 @@ __meta__ = {
 
 [node name="Indicator" type="Sprite" parent="DialogueBox"]
 visible = false
-position = Vector2( 755.986, 115.117 )
+position = Vector2( 755.986, 107.864 )
 scale = Vector2( 0.16, 0.16 )
 texture = ExtResource( 4 )
 
@@ -288,3 +326,5 @@ margin_bottom = 40.0
 bbcode_enabled = true
 bbcode_text = "Name"
 text = "Name"
+[connection signal="pressed" from="Book/BookTexture/ArrowContainer/LeftButton" to="Book" method="_on_LeftButton_pressed"]
+[connection signal="pressed" from="Book/BookTexture/ArrowContainer/RightButton" to="Book" method="_on_RightButton_pressed"]
