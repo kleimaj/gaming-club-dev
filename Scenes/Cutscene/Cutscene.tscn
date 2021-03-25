@@ -1,10 +1,24 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/Background.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/Adobe Garamond Pro Semibold.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/indicator.svg" type="Texture" id=4]
 [ext_resource path="res://Assets/GFX/UI/bookOpen.png" type="Texture" id=5]
+[ext_resource path="res://Assets/GFX/UI/blueMushIcon.png" type="Texture" id=6]
+[ext_resource path="res://Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/GFX/UI/newBottles/bottle2.png" type="Texture" id=8]
+[ext_resource path="res://Fonts/Roboto-Medium.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+use_filter = true
+font_data = ExtResource( 9 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -64,21 +78,53 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 26.0
 margin_bottom = 6.10352e-05
+custom_constants/separation = 0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LeftContainer" type="VBoxContainer" parent="Book/BookTexture/HBoxContainer"]
-margin_right = 500.0
+margin_left = 52.0
+margin_right = 502.0
 margin_bottom = 691.0
-rect_min_size = Vector2( 500, 0 )
+rect_min_size = Vector2( 450, 0 )
+
+[node name="MushroomTitle" type="RichTextLabel" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
+margin_right = 450.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 450, 50 )
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_text = "Blue Mushroom"
+text = "Blue Mushroom"
+
+[node name="Mushroom" type="TextureRect" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
+margin_top = 54.0
+margin_right = 450.0
+margin_bottom = 196.0
+texture = ExtResource( 6 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
+margin_top = 200.0
+margin_right = 450.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 450, 50 )
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Treated by Pink Juice"
+
+[node name="TextureRect" type="TextureRect" parent="Book/BookTexture/HBoxContainer/LeftContainer"]
+margin_top = 254.0
+margin_right = 450.0
+margin_bottom = 408.0
+texture = ExtResource( 8 )
 
 [node name="RightContainer" type="VBoxContainer" parent="Book/BookTexture/HBoxContainer"]
-margin_left = 504.0
-margin_right = 1004.0
+margin_left = 502.0
+margin_right = 952.0
 margin_bottom = 691.0
-rect_min_size = Vector2( 500, 0 )
+rect_min_size = Vector2( 450, 0 )
 
 [node name="DialogueBox" type="Control" parent="."]
 anchor_left = 0.5
@@ -118,7 +164,7 @@ __meta__ = {
 
 [node name="Indicator" type="Sprite" parent="DialogueBox"]
 visible = false
-position = Vector2( 755.986, 109.733 )
+position = Vector2( 755.986, 113.284 )
 scale = Vector2( 0.16, 0.16 )
 texture = ExtResource( 4 )
 
