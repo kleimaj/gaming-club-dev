@@ -1,6 +1,6 @@
 extends Node2D
 
-export var mushroomAmount = 2
+export var mushroomAmount = 3
 var mushrooms_hit = 0
 
 func checkGameOver():
