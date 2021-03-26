@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scenes/Tank/Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tank/Bullet.tscn" type="PackedScene" id=2]
@@ -10,15 +10,18 @@
 [ext_resource path="res://Assets/GFX/background/rightTree.png" type="Texture" id=8]
 [ext_resource path="res://Assets/GFX/ProgressBarPngs/brown/meter_bar_holder_center-repeating_brown.png" type="Texture" id=9]
 [ext_resource path="res://Assets/GFX/ProgressBarPngs/brown/meter_bar_holder_right_edge_brown.png" type="Texture" id=10]
-[ext_resource path="res://Assets/GFX/ProgressBarPngs/icons/stamina.png" type="Texture" id=11]
+[ext_resource path="res://Assets/GFX/ProgressBarPngs/icons/magic.png" type="Texture" id=11]
 [ext_resource path="res://Assets/GFX/ProgressBarPngs/brown/meter_icon_holder_brown.png" type="Texture" id=12]
-[ext_resource path="res://Assets/GFX/ProgressBarPngs/brown/meter_bar_center-repeating_brown.png" type="Texture" id=13]
-[ext_resource path="res://Assets/GFX/ProgressBarPngs/brown/meter_bar_right_edge_brown.png" type="Texture" id=14]
+[ext_resource path="res://Assets/GFX/ProgressBarPngs/green/meter_bar_center-repeating_green.png" type="Texture" id=13]
+[ext_resource path="res://Assets/GFX/ProgressBarPngs/green/meter_bar_right_edge_green.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/Game.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/ProgressBar.gd" type="Script" id=16]
 [ext_resource path="res://Scenes/evilMist.gd" type="Script" id=17]
 [ext_resource path="res://Scenes/Enemy/Blue Spotted Mushroom.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/GFX/background/glitch-ilmenskie-svg/ilmenskie/owl_1.svg" type="Texture" id=20]
+[ext_resource path="res://Scenes/Enemy/Green Mushroom.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Enemy/Green Spotted Mushroom.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Assets/GFX/background/ground.png" type="Texture" id=28]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer3.png" type="Texture" id=30]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=34]
@@ -36,6 +39,7 @@ shader_param/scaleParam = 0.9
 [node name="Game" type="Node2D"]
 position = Vector2( 1.82056, -32.7698 )
 script = ExtResource( 15 )
+mushroomAmount = 8
 
 [node name="backgrop" type="Sprite" parent="."]
 position = Vector2( 531.593, -592.521 )
@@ -48,7 +52,7 @@ scale = Vector2( 1.02118, 1.0621 )
 texture = ExtResource( 34 )
 
 [node name="bgLayer3" type="Sprite" parent="backgrop"]
-position = Vector2( 9.65848, 1006.1 )
+position = Vector2( 9.65848, 1013.47 )
 scale = Vector2( 0.832583, 1.03693 )
 texture = ExtResource( 30 )
 
@@ -220,7 +224,7 @@ texture = ExtResource( 28 )
 [node name="Mist" type="Sprite" parent="."]
 light_mask = 526087
 material = SubResource( 1 )
-position = Vector2( 473.749, -477.771 )
+position = Vector2( 474.871, -477.771 )
 rotation = 0.801412
 scale = Vector2( 5.76118, 6.40316 )
 texture = ExtResource( 5 )
@@ -229,30 +233,61 @@ flip_v = true
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 2.95483, 36.9359 )
 
-[node name="Mushroom2" parent="Enemies" groups=[
+[node name="Blue Mushroom" parent="Enemies" groups=[
 "Blue",
 ] instance=ExtResource( 68 )]
-position = Vector2( 263.125, 365.096 )
+position = Vector2( 245.166, 344.892 )
 rotation = 0.194915
 
-[node name="Mushroom3" parent="Enemies" groups=[
+[node name="Blue Mushroom2" parent="Enemies" groups=[
 "Blue",
 ] instance=ExtResource( 68 )]
-position = Vector2( 896.88, 66.7901 )
-rotation = -0.985597
+position = Vector2( 387.188, -454.229 )
+rotation = 0.6353
 scale = Vector2( 0.4, 0.4 )
 
-[node name="Blue Mushroom" parent="Enemies" groups=[
+[node name="Blue Spotted Mushroom" parent="Enemies" groups=[
 "Blue Spotted",
 ] instance=ExtResource( 18 )]
-position = Vector2( 658.284, 222.651 )
+position = Vector2( 657.978, 223.008 )
 rotation = -0.289871
+
+[node name="Blue Spotted Mushroom2" parent="Enemies" groups=[
+"Blue Spotted",
+] instance=ExtResource( 18 )]
+position = Vector2( 754.272, -450.005 )
+rotation = -0.289725
+
+[node name="Green Mushroom" parent="Enemies" groups=[
+"Blue",
+] instance=ExtResource( 21 )]
+position = Vector2( 797.618, 14.1694 )
+rotation = -0.404916
+
+[node name="Green Mushroom2" parent="Enemies" groups=[
+"Blue",
+] instance=ExtResource( 21 )]
+position = Vector2( 261.403, -288.361 )
+rotation = 0.406662
+
+[node name="Green Spotted Mushroom" parent="Enemies" groups=[
+"Blue Spotted",
+] instance=ExtResource( 22 )]
+position = Vector2( 756.513, -219.496 )
+rotation = -0.270526
+
+[node name="Green Spotted Mushroom2" parent="Enemies" groups=[
+"Blue Spotted",
+] instance=ExtResource( 22 )]
+position = Vector2( 248.968, -73.6012 )
+rotation = 0.404916
 
 [node name="evilMist" type="Sprite" parent="."]
 position = Vector2( 487.528, -1069.14 )
 scale = Vector2( 0.496052, 0.590256 )
 texture = ExtResource( 38 )
 script = ExtResource( 17 )
+downSpeed = 0.2
 
 [node name="Tank" parent="." instance=ExtResource( 1 )]
 position = Vector2( 52.8022, 546.6 )
@@ -271,10 +306,11 @@ position = Vector2( 651.869, 667.908 )
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" type="TextureProgress" parent="CanvasLayer2"]
-margin_left = 199.699
-margin_top = 649.248
-margin_right = 881.699
-margin_bottom = 690.248
+margin_left = 938.0
+margin_top = 544.0
+margin_right = 1366.0
+margin_bottom = 585.0
+rect_rotation = 270.0
 texture_under = ExtResource( 9 )
 texture_progress = ExtResource( 13 )
 nine_patch_stretch = true
@@ -308,10 +344,10 @@ __meta__ = {
 }
 
 [node name="IconFrame" type="TextureRect" parent="CanvasLayer2"]
-margin_left = 167.13
-margin_top = 648.197
-margin_right = 220.13
-margin_bottom = 697.197
+margin_left = 931.804
+margin_top = 527.012
+margin_right = 984.804
+margin_bottom = 576.012
 texture = ExtResource( 12 )
 expand = true
 __meta__ = {
@@ -319,10 +355,10 @@ __meta__ = {
 }
 
 [node name="Icon" type="TextureRect" parent="CanvasLayer2/IconFrame"]
-margin_left = 9.33168
-margin_top = 11.2781
-margin_right = 42.3317
-margin_bottom = 35.2781
+margin_left = 6.44598
+margin_top = 8.55408
+margin_right = 47.446
+margin_bottom = 39.5541
 texture = ExtResource( 11 )
 expand = true
 __meta__ = {

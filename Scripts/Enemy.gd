@@ -1,7 +1,7 @@
 extends Area2D
 
 # Rate at which mist decreases (this may be calcualted by total number of enemies)
-export var mistFactor = 0.45
+export var mistFactor = 0.15
 
 const BOUNCE_MULTIPLIER = 2.5
 
@@ -57,7 +57,7 @@ func register_correct_hit():
 	var mist = get_node("../../evilMist")
 	var progressBar = get_node("../../CanvasLayer2/ProgressBar")
 	mist.moveUp(50)
-	progressBar.incrementValue(34)
+	progressBar.incrementValue(13)
 	diminish_shader()
 	# Set beenHit to true (doesn't trigger again)
 	beenHit = true
