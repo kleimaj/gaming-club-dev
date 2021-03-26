@@ -46,7 +46,7 @@ func _collision_v1(body):
 func register_correct_hit():
 	# Signal Fog and ProgressBar
 	var mist = get_node("../../evilMist")
-	var progressBar = get_node("../../ProgressBar")
+	var progressBar = get_node("../../CanvasLayer2/ProgressBar")
 	mist.moveUp(50)
 	progressBar.incrementValue(34)
 	diminish_shader()

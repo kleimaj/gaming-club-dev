@@ -265,11 +265,13 @@ margin_bottom = 7.60883
 [node name="GroundArea2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 651.869, 667.908 )
 
-[node name="ProgressBar" type="TextureProgress" parent="."]
-margin_left = 197.878
-margin_top = 682.018
-margin_right = 879.878
-margin_bottom = 723.018
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="TextureProgress" parent="CanvasLayer2"]
+margin_left = 199.699
+margin_top = 649.248
+margin_right = 881.699
+margin_bottom = 690.248
 texture_under = ExtResource( 9 )
 texture_progress = ExtResource( 13 )
 nine_patch_stretch = true
@@ -278,7 +280,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RightBG" type="TextureRect" parent="ProgressBar"]
+[node name="RightBG" type="TextureRect" parent="CanvasLayer2/ProgressBar"]
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -289,7 +291,7 @@ margin_bottom = -0.315002
 texture = ExtResource( 10 )
 expand = true
 
-[node name="FinalProgress" type="TextureRect" parent="ProgressBar"]
+[node name="FinalProgress" type="TextureRect" parent="CanvasLayer2/ProgressBar"]
 visible = false
 anchor_left = 1.0
 anchor_right = 1.0
@@ -302,18 +304,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="IconFrame" type="TextureRect" parent="."]
-margin_left = 165.309
-margin_top = 680.967
-margin_right = 218.309
-margin_bottom = 729.967
+[node name="IconFrame" type="TextureRect" parent="CanvasLayer2"]
+margin_left = 167.13
+margin_top = 648.197
+margin_right = 220.13
+margin_bottom = 697.197
 texture = ExtResource( 12 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Icon" type="TextureRect" parent="IconFrame"]
+[node name="Icon" type="TextureRect" parent="CanvasLayer2/IconFrame"]
 margin_left = 9.33168
 margin_top = 11.2781
 margin_right = 42.3317
@@ -332,6 +334,6 @@ current = true
 
 [node name="TopLeft" parent="Camera2D/Limits" index="0"]
 position = Vector2( 0, -1647.78 )
-[connection signal="value_changed" from="ProgressBar" to="." method="_on_ProgressBar_value_changed"]
+[connection signal="value_changed" from="CanvasLayer2/ProgressBar" to="." method="_on_ProgressBar_value_changed"]
 
 [editable path="Camera2D"]
