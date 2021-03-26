@@ -75,6 +75,9 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		load_dialog()
+		
+func fade_in():
+	$AnimationPlayer.play("fade-in")
 
 func load_dialog():
 	$Indicator.hide()
