@@ -18,5 +18,8 @@ rotation = 3.13035
 polygon = PoolVector2Array( 210.109, -59.8321, 192.998, -40.009, 166.528, -22.1675, 119.369, -0.180115, 77.3404, 10.6062, 16.5706, 19.3054, -49.0337, 12.9386, -115.038, -13.4481, -155.964, -45.1823, -181.802, -83.6273 )
 one_way_collision = true
 one_way_collision_margin = 128.0
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( -0.578223, -60.7123 )
 [connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_Enemy_body_shape_entered"]
