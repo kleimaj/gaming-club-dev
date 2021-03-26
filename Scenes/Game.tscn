@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/Tank/Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tank/Bullet.tscn" type="PackedScene" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://Scenes/evilMist.gd" type="Script" id=17]
 [ext_resource path="res://Scenes/Enemy/Blue Spotted Mushroom.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Assets/GFX/background/glitch-ilmenskie-svg/ilmenskie/owl_1.svg" type="Texture" id=20]
 [ext_resource path="res://Assets/GFX/background/ground.png" type="Texture" id=28]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer3.png" type="Texture" id=30]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=34]
@@ -52,6 +51,16 @@ texture = ExtResource( 34 )
 position = Vector2( 9.65848, 1006.1 )
 scale = Vector2( 0.832583, 1.03693 )
 texture = ExtResource( 30 )
+
+[node name="bgLayer1" type="Sprite" parent="backgrop"]
+position = Vector2( -2365.54, 417.658 )
+scale = Vector2( 1.06152, 1.07679 )
+texture = ExtResource( 72 )
+
+[node name="bgLayer4" type="Sprite" parent="backgrop"]
+position = Vector2( 2381.68, 400.374 )
+scale = Vector2( 1.06152, 1.07679 )
+texture = ExtResource( 72 )
 
 [node name="rightTree" type="Sprite" parent="backgrop"]
 position = Vector2( 1018.84, 708.078 )
@@ -135,12 +144,6 @@ scale = Vector2( 1.33901, 2.01796 )
 texture = ExtResource( 35 )
 flip_h = true
 flip_v = true
-
-[node name="owl_1" type="Sprite" parent="backgrop/rightTree/branch7"]
-position = Vector2( 301.661, -3.04296 )
-rotation = -0.221657
-scale = Vector2( 1.40558, 1.55718 )
-texture = ExtResource( 20 )
 
 [node name="leftTree" type="Sprite" parent="backgrop"]
 position = Vector2( -916.018, 708.491 )
