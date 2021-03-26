@@ -56,6 +56,16 @@ position = Vector2( 9.65848, 1013.47 )
 scale = Vector2( 0.832583, 1.03693 )
 texture = ExtResource( 30 )
 
+[node name="bgLayer1" type="Sprite" parent="backgrop"]
+position = Vector2( -2365.54, 417.658 )
+scale = Vector2( 1.06152, 1.07679 )
+texture = ExtResource( 72 )
+
+[node name="bgLayer4" type="Sprite" parent="backgrop"]
+position = Vector2( 2381.68, 400.374 )
+scale = Vector2( 1.06152, 1.07679 )
+texture = ExtResource( 72 )
+
 [node name="rightTree" type="Sprite" parent="backgrop"]
 position = Vector2( 1018.84, 708.078 )
 rotation = 0.0122232
@@ -138,12 +148,6 @@ scale = Vector2( 1.33901, 2.01796 )
 texture = ExtResource( 35 )
 flip_h = true
 flip_v = true
-
-[node name="owl_1" type="Sprite" parent="backgrop/rightTree/branch7"]
-position = Vector2( 301.661, -3.04296 )
-rotation = -0.221657
-scale = Vector2( 1.40558, 1.55718 )
-texture = ExtResource( 20 )
 
 [node name="leftTree" type="Sprite" parent="backgrop"]
 position = Vector2( -916.018, 708.491 )
