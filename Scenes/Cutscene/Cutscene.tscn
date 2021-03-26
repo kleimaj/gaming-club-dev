@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/Background.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/Adobe Garamond Pro Semibold.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/indicator.svg" type="Texture" id=4]
 [ext_resource path="res://Scenes/Cutscene/Book.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Cutscene.gd" type="Script" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -30,11 +31,13 @@ tracks/0/keys = {
 [node name="Cutscene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Book" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="DialogueBox" type="Control" parent="."]
 visible = false
