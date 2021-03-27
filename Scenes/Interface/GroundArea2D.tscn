@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/GroundArea2D.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1756.07, 9.21616 )
+extents = Vector2( 3426.17, 9.21616 )
 
 [node name="GroundArea2D" type="Area2D"]
 collision_mask = 2147483650
