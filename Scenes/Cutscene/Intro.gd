@@ -19,6 +19,9 @@ var second_dialogue = [
 ]
 var first_finished = false
 
+func _ready():
+	$AnimationPlayer.play("BeginScene")
+
 func _on_Button_pressed():
 	$AnimationPlayer.play("FadeOutCanvas")
 
@@ -27,7 +30,7 @@ func dialog_finished():
 		$AnimationPlayer.play("zoom-in")
 		first_finished = true
 	else:
-		pass # change scenes
+		$AnimationPlayer.play("EndScene")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "FadeOutCanvas":
@@ -37,3 +40,5 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	elif anim_name == "zoom-in":
 		$CanvasLayer/DialogueBox.assign_dictionary(second_dialogue)
 		$CanvasLayer/DialogueBox.fade_in()
+	elif anim_name == "EndScene":
+		pass # change scene
