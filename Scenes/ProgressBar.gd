@@ -13,3 +13,4 @@ func incrementValue(amount=25):
 
 func decrementValue(amount=25):
 	value -= amount
+

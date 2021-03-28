@@ -1,6 +1,6 @@
 extends Node2D
 
-export var mushroomAmount = 2
+export var mushroomAmount = 3
 var mushrooms_hit = 0
 
 func checkGameOver():
@@ -11,8 +11,8 @@ func incrementScore():
 	mushrooms_hit += 1
 
 func _on_ProgressBar_value_changed(value):
-	$ProgressBar/FinalProgress.visible = false
+	$CanvasLayer2/ProgressBar/FinalProgress.visible = false
 	if value <= 99:
-		$ProgressBar/FinalProgress.visible = false
+		$CanvasLayer2/ProgressBar/FinalProgress.visible = false
 	else:
-		$ProgressBar/FinalProgress.visible = true
+		$CanvasLayer2/ProgressBar/FinalProgress.visible = true

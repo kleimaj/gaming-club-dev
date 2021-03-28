@@ -76,6 +76,7 @@ func shoot():
 	b.transform = muzzle.global_transform
 	b.velocity = b.transform.x * bulletSpeed
 	b.gravity = 250
+	b.get_child(0).get_child(0).remote_path = "../../../Camera2D"
 
 func update_trajectory(delta):
 	line.clear_points()

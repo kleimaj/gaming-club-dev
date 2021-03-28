@@ -12,6 +12,7 @@ onready var Backpack = $CanvasLayer/Backpack
 func _on_BackpackButton_pressed():
 	backpackIsOpen  = !backpackIsOpen
 	set_backpack(backpackIsOpen)
+	get_tree().paused = true
 	
 
 func set_backpack(isOpen: bool):
@@ -20,6 +21,7 @@ func set_backpack(isOpen: bool):
 func close_backpack():
 	Backpack.visible = false
 	backpackIsOpen = false
+	get_tree().paused = false
 	
 	
 func _on_BookButton_pressed():

@@ -1,7 +1,7 @@
 extends Area2D
 
 # Rate at which mist decreases (this may be calcualted by total number of enemies)
-export var mistFactor = 0.45
+export var mistFactor = 0.15
 
 const BOUNCE_MULTIPLIER = 2.5
 
@@ -11,6 +11,23 @@ const CollisionMap = {
 	# pink can heal non-spotted mushrooms
 	"Red": ["Blue", "Green"] 
 }
+
+#For med splash animation
+const MedSplashEffect = preload("res://Scenes/Tank/MedSplash.tscn")
+
+func create_splash_effect(animType, animPosition):
+	var splashEffect = MedSplashEffect.instance()
+	get_parent().add_child(splashEffect)
+	splashEffect.play(animType)
+	splashEffect.global_position = animPosition
+	splashEffect.rotation_degrees = $Position2D.rotation_degrees
+	#Add bubbles on the mushroom after hit
+	var MedBubble = load("res://Scenes/" + animType +".tscn")
+	var bubble = MedBubble.instance()
+	get_parent().add_child(bubble)
+	bubble.position = animPosition
+	bubble.position.y = animPosition.y + 15
+	bubble.rotation_degrees = $Position2D.rotation_degrees
 
 var beenHit:bool = false
 
@@ -46,9 +63,9 @@ func _collision_v1(body):
 func register_correct_hit():
 	# Signal Fog and ProgressBar
 	var mist = get_node("../../evilMist")
-	var progressBar = get_node("../../ProgressBar")
+	var progressBar = get_node("../../CanvasLayer2/ProgressBar")
 	mist.moveUp(50)
-	progressBar.incrementValue(50)
+	progressBar.incrementValue(13)
 	diminish_shader()
 	# Set beenHit to true (doesn't trigger again)
 	beenHit = true
@@ -68,4 +85,5 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 			if CollisionMap[projectile_type].has(group) and not beenHit:
 				register_correct_hit()
 				break
+		create_splash_effect(projectile_type, body.global_position)
 
