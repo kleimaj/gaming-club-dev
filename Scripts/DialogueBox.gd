@@ -79,6 +79,7 @@ func _process(delta):
 
 func assign_dictionary(dictionary):
 	dialog_dics = dictionary
+	dialog_index = 0
 
 func fade_in():
 	$AnimationPlayer.play("fade-in")
@@ -112,5 +113,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "fade-in":
 		load_dialog()
 	elif anim_name == "fade-out":
+		$RichTextLabel.bbcode_text = "..."
 		emit_signal("finished")
 		

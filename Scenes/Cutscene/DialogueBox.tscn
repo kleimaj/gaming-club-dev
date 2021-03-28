@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
+[ext_resource path="res://Assets/GFX/cutscene/DialogueBox/dialogue box.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GFX/cutscene/DialogueBox/indicator.svg" type="Texture" id=3]
+[ext_resource path="res://Fonts/Adobe Garamond Pro Semibold.otf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "IDLE"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 755.986, 116.055 ), Vector2( 755.986, 106.055 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "fade-in"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="DialogueBox" type="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -410.0
+margin_top = -185.0
+margin_right = 410.0
+margin_bottom = -31.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 78.0
+margin_top = 15.0
+margin_right = -72.0
+margin_bottom = -15.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.368627, 0.160784, 0.027451, 1 )
+bbcode_enabled = true
+bbcode_text = "Lorem ipsum lorum ricksum. Lorem ipsum lorum ricksum. Lorem ipsum lorum ricksum. Lorem ipsum lorum ricksum. "
+text = "Lorem ipsum lorum ricksum. Lorem ipsum lorum ricksum. Lorem ipsum lorum ricksum. Lorem ipsum lorum ricksum. "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Indicator" type="Sprite" parent="."]
+visible = false
+position = Vector2( 755.986, 116.055 )
+scale = Vector2( 0.16, 0.16 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Indicator"]
+anims/IDLE = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="NameRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="NameText" type="RichTextLabel" parent="NameRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "Name"
+text = "Name"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade-in = SubResource( 3 )
