@@ -9,6 +9,9 @@ var dialog_dics = [
 		'name': 'Player',
 		'content': 'What\'s that?',
 	},
+]
+
+var second_dialogue = [
 	{
 		'name': 'Cat',
 		'content': 'Meow!',
@@ -17,10 +20,12 @@ var dialog_dics = [
 
 func _on_Button_pressed():
 	$AnimationPlayer.play("FadeOutCanvas")
-	
+
+func dialog_finished():
+	print("Finished")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	print(anim_name)
 	if anim_name == "FadeOutCanvas":
+		$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
 		$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
 		$CanvasLayer/DialogueBox.fade_in()

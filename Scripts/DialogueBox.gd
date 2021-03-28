@@ -68,7 +68,7 @@ var dialog = [
 var dialog_dics
 
 var dialog_index = 0
-var finished = false
+signal finished
 
 #func _ready():
 ##	load_dialog()
@@ -82,6 +82,8 @@ func assign_dictionary(dictionary):
 
 func fade_in():
 	$AnimationPlayer.play("fade-in")
+func fade_out():
+	$AnimationPlayer.play("fade-out")
 	
 func load_dialog():
 	$Indicator.hide()
@@ -97,7 +99,7 @@ func load_dialog():
 		$Tween.interpolate_property($RichTextLabel, "percent_visible", 0, 1, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
 	else:
-		queue_free()
+		fade_out()
 	dialog_index += 1
 
 
@@ -109,3 +111,6 @@ func _on_Tween_tween_completed(object, key):
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "fade-in":
 		load_dialog()
+	elif anim_name == "fade-out":
+		emit_signal("finished")
+		
