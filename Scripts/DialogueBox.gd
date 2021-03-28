@@ -38,47 +38,51 @@ var dialog = [
 	'Not sure… Never saw them again after we walked into the darkness…'
 ]
 
-var dialog_dics = [
-	{
-		'name': null,
-		'content': 'Hello there, welcome to the game! Press [color=#ff0000]Enter[/color] to continue!',
-	},
-	{
-		'name': 'Player',
-		'content': 'What\'s that?',
-	},
-	{
-		'name': 'Cat',
-		'content': 'Meow!',
-	},
-	{
-		'name': 'Dr. Flores',
-		'content': 'Black mold has been wreaking havoc on my terrariums and surprisingly, those same black mold spores cause shrinking.',
-	},
-	{
-		'name': 'Dr. Flores',
-		'content': '[color=#ff0000]The only way for us to return to normal size is to eradicate the black spores and return my terrariums to their former glory![/color]',
-	},
-	{
-		'name': null,
-		'content': '...'
-	}
-	
-]
+#var dialog_dics = [
+#	{
+#		'name': null,
+#		'content': 'Hello there, welcome to the game! Press [color=#ff0000]Enter[/color] to continue!',
+#	},
+#	{
+#		'name': 'Player',
+#		'content': 'What\'s that?',
+#	},
+#	{
+#		'name': 'Cat',
+#		'content': 'Meow!',
+#	},
+#	{
+#		'name': 'Dr. Flores',
+#		'content': 'Black mold has been wreaking havoc on my terrariums and surprisingly, those same black mold spores cause shrinking.',
+#	},
+#	{
+#		'name': 'Dr. Flores',
+#		'content': '[color=#ff0000]The only way for us to return to normal size is to eradicate the black spores and return my terrariums to their former glory![/color]',
+#	},
+#	{
+#		'name': null,
+#		'content': '...'
+#	}
+#
+#]
+var dialog_dics
 
 var dialog_index = 0
 var finished = false
 
-func _ready():
-	load_dialog()
+#func _ready():
+##	load_dialog()
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		load_dialog()
-		
+
+func assign_dictionary(dictionary):
+	dialog_dics = dictionary
+
 func fade_in():
 	$AnimationPlayer.play("fade-in")
-
+	
 func load_dialog():
 	$Indicator.hide()
 	if dialog_index < dialog_dics.size():
@@ -99,7 +103,7 @@ func load_dialog():
 
 func _on_Tween_tween_completed(object, key):
 	$Indicator.show()
-	$Indicator/AnimationPlayer.play("IDLE")
+	$Indicator/AnimationPlayer.play()
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
