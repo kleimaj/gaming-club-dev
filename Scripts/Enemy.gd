@@ -14,12 +14,20 @@ const CollisionMap = {
 
 #For med splash animation
 const MedSplashEffect = preload("res://Scenes/Tank/MedSplash.tscn")
+
 func create_splash_effect(animType, animPosition):
 	var splashEffect = MedSplashEffect.instance()
 	get_parent().add_child(splashEffect)
 	splashEffect.play(animType)
 	splashEffect.global_position = animPosition
 	splashEffect.rotation_degrees = $Position2D.rotation_degrees
+	#Add bubbles on the mushroom after hit
+	var MedBubble = load("res://Scenes/" + animType +".tscn")
+	var bubble = MedBubble.instance()
+	get_parent().add_child(bubble)
+	bubble.position = animPosition
+	bubble.position.y = animPosition.y + 15
+	bubble.rotation_degrees = $Position2D.rotation_degrees
 
 var beenHit:bool = false
 
