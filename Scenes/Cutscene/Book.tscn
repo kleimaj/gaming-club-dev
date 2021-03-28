@@ -217,7 +217,7 @@ texture_normal = ExtResource( 3 )
 curve = SubResource( 5 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="BookTexture/Path2D"]
-position = Vector2( 901.956, 543.523 )
+position = Vector2( 901.954, 543.523 )
 rotation = 0.00520463
 offset = 7869.5
 rotate = false
