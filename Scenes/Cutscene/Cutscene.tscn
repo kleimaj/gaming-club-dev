@@ -54,7 +54,6 @@ __meta__ = {
 [node name="Book" parent="." instance=ExtResource( 5 )]
 
 [node name="DialogueBox" type="Control" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -92,7 +91,7 @@ __meta__ = {
 
 [node name="Indicator" type="Sprite" parent="DialogueBox"]
 visible = false
-position = Vector2( 755.986, 114.848 )
+position = Vector2( 755.986, 116.055 )
 scale = Vector2( 0.16, 0.16 )
 texture = ExtResource( 4 )
 

@@ -99,3 +99,9 @@ func load_dialog():
 
 func _on_Tween_tween_completed(object, key):
 	$Indicator.show()
+	$Indicator/AnimationPlayer.play("IDLE")
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "fade-in":
+		load_dialog()
