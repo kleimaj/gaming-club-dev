@@ -1,15 +1,13 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Fonts/Roboto-Medium.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/GFX/cutscene/Book/pencil.png" type="Texture" id=4]
 [ext_resource path="res://Assets/GFX/UI/bookOpen.png" type="Texture" id=5]
 [ext_resource path="res://Assets/GFX/UI/blueMushIcon.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GFX/cutscene/Book/arrow.png" type="Texture" id=7]
-[ext_resource path="res://Assets/GFX/UI/newBottles/bottle2.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Cutscene/TransitionBook.gd" type="Script" id=8]
 [ext_resource path="res://Assets/GFX/cutscene/Book/arrow-right.png" type="Texture" id=9]
-[ext_resource path="res://Scripts/Book.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -17,9 +15,10 @@ use_filter = true
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 32
+size = 22
 use_filter = true
-font_data = ExtResource( 2 )
+extra_spacing_top = 10
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 22
@@ -32,7 +31,7 @@ resource_name = "ShowDescription"
 length = 16.0
 step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("Description:percent_visible")
+tracks/0/path = NodePath("Notes:percent_visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -79,7 +78,7 @@ anchor_right = 0.5
 margin_left = -294.5
 margin_right = 294.5
 margin_bottom = 489.0
-script = ExtResource( 10 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -102,25 +101,25 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="BookTexture"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/separation = 0
+custom_constants/separation = 41
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LeftContainer" type="VBoxContainer" parent="BookTexture/HBoxContainer"]
-margin_left = 64.0
-margin_right = 514.0
+margin_left = 69.0
+margin_right = 469.0
 margin_bottom = 691.0
 rect_min_size = Vector2( 400, 0 )
 custom_constants/separation = 30
 alignment = 1
 
 [node name="MushroomTitle" type="RichTextLabel" parent="BookTexture/HBoxContainer/LeftContainer"]
-margin_top = 102.0
-margin_right = 450.0
-margin_bottom = 152.0
-rect_min_size = Vector2( 450, 50 )
+margin_top = 44.0
+margin_right = 400.0
+margin_bottom = 94.0
+rect_min_size = Vector2( 400, 50 )
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
@@ -128,52 +127,40 @@ bbcode_text = "[center]Blue Mushroom[/center]"
 text = "Blue Mushroom"
 
 [node name="MushroomContainer" type="CenterContainer" parent="BookTexture/HBoxContainer/LeftContainer"]
-margin_top = 182.0
-margin_right = 450.0
-margin_bottom = 324.0
+margin_top = 124.0
+margin_right = 400.0
+margin_bottom = 266.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Mushroom" type="TextureRect" parent="BookTexture/HBoxContainer/LeftContainer/MushroomContainer"]
-margin_left = 162.0
-margin_right = 287.0
+margin_left = 137.0
+margin_right = 262.0
 margin_bottom = 142.0
 texture = ExtResource( 6 )
 
-[node name="JuiceTitle" type="RichTextLabel" parent="BookTexture/HBoxContainer/LeftContainer"]
-margin_top = 354.0
-margin_right = 450.0
-margin_bottom = 404.0
-rect_min_size = Vector2( 450, 50 )
+[node name="Description" type="RichTextLabel" parent="BookTexture/HBoxContainer/LeftContainer"]
+margin_top = 296.0
+margin_right = 400.0
+margin_bottom = 646.0
+rect_min_size = Vector2( 400, 350 )
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
-bbcode_text = "[center]Treated by Pink Juice[/center]"
-text = "Treated by Pink Juice"
-
-[node name="JuiceContainer" type="CenterContainer" parent="BookTexture/HBoxContainer/LeftContainer"]
-margin_top = 434.0
-margin_right = 450.0
-margin_bottom = 588.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Juice" type="TextureRect" parent="BookTexture/HBoxContainer/LeftContainer/JuiceContainer"]
-margin_left = 163.0
-margin_right = 286.0
-margin_bottom = 154.0
-texture = ExtResource( 8 )
+bbcode_text = "The blue mushroom with spots is very similar to the blue mushroom without spots. The mushroom lives in sunlight,** but is more difficult to treat than the one without spots when it gets out of control which can occur in darkness. When it thrives in darkness, **1 dose of the yellow spray is needed to treat it.** 
+"
+text = "The blue mushroom with spots is very similar to the blue mushroom without spots. The mushroom lives in sunlight,** but is more difficult to treat than the one without spots when it gets out of control which can occur in darkness. When it thrives in darkness, **1 dose of the yellow spray is needed to treat it.** 
+"
 
 [node name="RightContainer" type="VBoxContainer" parent="BookTexture/HBoxContainer"]
-margin_left = 514.0
-margin_right = 914.0
+margin_left = 510.0
+margin_right = 910.0
 margin_bottom = 691.0
 rect_min_size = Vector2( 400, 0 )
 alignment = 1
 
-[node name="Description" type="RichTextLabel" parent="BookTexture/HBoxContainer/RightContainer"]
+[node name="Notes" type="RichTextLabel" parent="BookTexture/HBoxContainer/RightContainer"]
 margin_top = 95.0
 margin_right = 400.0
 margin_bottom = 595.0
@@ -188,6 +175,7 @@ text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player 
 anims/ShowDescription = SubResource( 4 )
 
 [node name="ArrowContainer" type="HBoxContainer" parent="BookTexture"]
+visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -230,6 +218,17 @@ rotation = -0.00520463
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 4 )
 offset = Vector2( 427.765, -452.349 )
+
+[node name="TextureButton" type="TextureButton" parent="BookTexture/Path2D/PathFollow2D"]
+margin_left = -2.88477
+margin_top = -173.413
+margin_right = 880.115
+margin_bottom = 708.587
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="WritingTween" type="Tween" parent="BookTexture"]
 [connection signal="pressed" from="BookTexture/ArrowContainer/LeftButton" to="." method="_on_LeftButton_pressed"]

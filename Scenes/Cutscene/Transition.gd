@@ -88,38 +88,47 @@ var second_dialog = [
 
 var ItemMap = {
 	"BlueMushroom": {
-		"name": "Blue Mushroom",
+		"name": "[center]Blue Mushroom[/center]",
+		"sprite": load("res://Assets/GFX/UI/blueMushIcon.png"),
 		"description": "The blue mushroom is the most common in this terrarium. Approximately, 85-95% of a healthy terrarium includes them. **The mushroom lives in sunlight,** but thrives in darkness, **1 dose of the pink spray is needed to treat it when it's dark.** ",
 		"notes": "The blue mushroom is similar to Candida albicans. Approximately, 85-95% of yeast cultured in a healthy vagina is Candida albicans. An overgrowth of this common yeast caused by an imbalance in the vagina can result in an infection. Fungistatic drugs which can be topical or oral are commonly used to treat these infections. "
 	},
 	"BlueSpottedMushroom": {
-		"name": "Blue Spotted Mushroom",
+		"name": "[center]Blue Spotted Mushroom[/center]",
+		"sprite": load("res://Assets/GFX/UI/blueSpotsMushIcon.png"),
 		"description": "The blue mushroom with spots is very similar to the blue mushroom without spots. The mushroom lives in sunlight,** but is more difficult to treat than the one without spots when it gets out of control which can occur in darkness. When it thrives in darkness, **1 dose of the yellow spray is needed to treat it.** ",
 		"notes": "The blue mushroom with spots is similar to Candida albicans. Approximately, 85-95% of yeast cultured in a healthy vagina is Candida albicans. An overgrowth of this common yeast caused by an imbalance in the vagina can result in an infection. Although certain fungistatic drugs which can be topical or oral may be used, resistance to certain drugs can occur. Other treatment options need to be considered."
 	},
 	"GreenMushroom": {
-		"name": "Green Mushroom",
+		"name": "[center]Green Mushroom[/center]",
+		"sprite": load("res://Assets/GFX/UI/greenMushIcon.png"),
 		"description": "The green mushroom is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. **The mushroom thrives in dark environments,** but if it thrives, **2 doses of the pink spray is needed to treat it.**",
 		"notes": "The green mushroom is similar to Candida non-albicans. It is rarely present in a healthy vagina. An overgrowth of this less common yeast caused by an imbalance in the vagina can result in an infection. Fungistatic drugs which can be topical or oral are commonly used to treat these infections but may need a longer duration  of treatment to eradicate the signs and symptoms."
 	},
 	"GreenSpottedMushroom": {
-		"name": "Green Spotted Mushroom",
+		"name": "[center]Green Spotted Mushroom[/center]",
+		"sprite": load("res://Assets/GFX/UI/greenSpotsMushIcon.png"),
 		"description": "The green mushroom with spots is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. **The mushroom thrives in dark environments, but is more difficult to treat than the one without spots when it gets out of control. ** If it thrives too much, **2 doses of the yellow spray is needed to treat it.**",
 		"notes": "The green mushroom with spots is similar to Candida non-albicans. It is rarely present in a healthy vagina. An overgrowth of this less common yeast caused by an imbalance in the vagina can result in an infection. Although certain fungistatic drugs which can be topical or oral may be used, resistance to certain drugs can occur. Other treatment options become very limited but need to be considered."
 	},
 	"YellowSpray": {
-		"name": "Yellow Spray",
+		"name": "[center]Yellow Spray[/center]",
+		"sprite": load("res://Assets/GFX/UI/newBottles/bottle1.png"),
 		"description": "The yellow spray is used on the overgrowth of blue and green mushrooms with  spots to trigger the the stopping of spores to fend off the dark mist. Sometimes certain mushrooms need more spray for a longer duration of time to be effective.",
 		"notes": "The yellow spray is similar to various fungistatic drugs which can be topical or oral. Patients may develop a resistance to this drug resulting in the need for longer duration of treatment"
 	},
 	"PinkSpray": {
-		"name": "Pink Spray",
+		"name": "[center]Pink Spray[/center]",
+		"sprite": load("res://Assets/GFX/UI/newBottles/bottle2.png"),
 		"description": "The pink spray is used on the overgrowth of blue and green mushrooms to trigger the stopping of spores to fend off the dark mist. Sometimes certain mushrooms need more spray for a longer duration of time to be effective.",
 		"notes": "The pink spray is similar to various fungistatic drugs which can be topical or oral. Patients may develop a resistance to this drug resulting in the need for longer duration of treatment"
 	}
 }
 
 var finished = false
+
+var clickable_items = 0
+const MAX_CLICKABLE_ITEMS = 6
 
 func _ready():
 	$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
@@ -142,6 +151,11 @@ func dialog_finished():
 		
 func _on_item_pressed(button):
 	print(button.name)
+	$CanvasLayer/Book.show()
+	$CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/MushroomTitle.bbcode_text = ItemMap[button.name].name
+	$CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/MushroomContainer/Mushroom.texture = ItemMap[button.name].sprite
+	$CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/Description.bbcode_text = ItemMap[button.name].description
+	$CanvasLayer/Book/BookTexture/HBoxContainer/RightContainer/Notes.bbcode_text = ItemMap[button.name].notes
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "BeginScene":
