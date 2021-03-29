@@ -18,13 +18,13 @@
 [ext_resource path="res://Scenes/evilMist.gd" type="Script" id=17]
 [ext_resource path="res://Scenes/Enemy/Blue Spotted Mushroom.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/GFX/raincloud/raincloud1.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/Enemy/Green Mushroom.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/Enemy/Green Spotted Mushroom.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Assets/GFX/background/ground.png" type="Texture" id=28]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer3.png" type="Texture" id=30]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=34]
 [ext_resource path="res://Assets/GFX/background/branch.png" type="Texture" id=35]
-[ext_resource path="res://Assets/GFX/evilMist.png" type="Texture" id=38]
 [ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=68]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer1.png" type="Texture" id=72]
 
@@ -59,7 +59,7 @@ scale = Vector2( 1.06152, 1.07679 )
 texture = ExtResource( 72 )
 
 [node name="rightTree" type="Sprite" parent="backgrop"]
-position = Vector2( 1018.84, 708.078 )
+position = Vector2( 1011.46, 708.027 )
 rotation = 0.0122232
 scale = Vector2( 0.743798, 1.02568 )
 texture = ExtResource( 8 )
@@ -268,9 +268,9 @@ position = Vector2( 248.968, -73.6012 )
 rotation = 0.404916
 
 [node name="evilMist" type="Sprite" parent="."]
-position = Vector2( 487.528, -1069.14 )
-scale = Vector2( 0.496052, 0.590256 )
-texture = ExtResource( 38 )
+position = Vector2( 532.056, -1312.77 )
+scale = Vector2( 0.998361, 0.945063 )
+texture = ExtResource( 20 )
 script = ExtResource( 17 )
 downSpeed = 0.2
 
@@ -292,9 +292,9 @@ rotation = 0.00340095
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" type="TextureProgress" parent="CanvasLayer2"]
-margin_left = 955.932
+margin_left = 954.988
 margin_top = 542.37
-margin_right = 1383.93
+margin_right = 1382.99
 margin_bottom = 583.37
 rect_rotation = 270.0
 texture_under = ExtResource( 9 )
