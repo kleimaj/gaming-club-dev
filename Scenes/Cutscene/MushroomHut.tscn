@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/GFX/cutscene/Env01.png" type="Texture" id=5]
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=1]
 resource_name = "BeginScene"
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
@@ -31,7 +31,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=2]
 resource_name = "EndScene"
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
@@ -58,7 +58,7 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/CenterContainer:modulate")
 tracks/0/interp = 1
@@ -108,7 +108,7 @@ tracks/3/keys = {
 "values": [ Vector2( -55.5556, 0 ), Vector2( -555.556, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Backdrop/Trees/RightTrees:position")
 tracks/0/interp = 1
@@ -134,7 +134,7 @@ tracks/1/keys = {
 "values": [ Vector2( -55.5556, 0 ), Vector2( -555.556, 0 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 resource_name = "zoom-in"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:zoom")
@@ -187,6 +187,26 @@ __meta__ = {
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 3 )]
 
+[node name="Button" type="Control" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Terrarium" type="Button" parent="CanvasLayer/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 480.996
+margin_top = 349.623
+margin_right = 540.996
+margin_bottom = 359.623
+rect_min_size = Vector2( 100, 50 )
+text = "Terrarium"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -200,9 +220,10 @@ position = Vector2( 838.233, 386.746 )
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BeginScene = SubResource( 10 )
-anims/EndScene = SubResource( 9 )
-anims/FadeOutCanvas = SubResource( 5 )
-anims/MoveTrees = SubResource( 6 )
-anims/zoom-in = SubResource( 8 )
+anims/BeginScene = SubResource( 1 )
+anims/EndScene = SubResource( 2 )
+anims/FadeOutCanvas = SubResource( 3 )
+anims/MoveTrees = SubResource( 4 )
+anims/zoom-in = SubResource( 5 )
+[connection signal="pressed" from="CanvasLayer/Button/Terrarium" to="." method="_on_Terrarium_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
