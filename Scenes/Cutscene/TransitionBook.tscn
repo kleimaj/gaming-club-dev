@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Fonts/Roboto-Regular.ttf" type="DynamicFontData" id=3]
@@ -12,6 +12,12 @@
 [sub_resource type="DynamicFont" id=1]
 size = 40
 use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 22
+use_filter = true
+extra_spacing_top = 10
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -145,6 +151,7 @@ margin_top = 296.0
 margin_right = 400.0
 margin_bottom = 646.0
 rect_min_size = Vector2( 400, 350 )
+custom_fonts/bold_font = SubResource( 6 )
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
@@ -231,5 +238,13 @@ __meta__ = {
 }
 
 [node name="WritingTween" type="Tween" parent="BookTexture"]
+
+[node name="Button" type="Button" parent="BookTexture"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -46.0
+margin_bottom = 20.0
+text = "close"
 [connection signal="pressed" from="BookTexture/ArrowContainer/LeftButton" to="." method="_on_LeftButton_pressed"]
 [connection signal="pressed" from="BookTexture/ArrowContainer/RightButton" to="." method="_on_RightButton_pressed"]
+[connection signal="pressed" from="BookTexture/Button" to="." method="_on_Button_pressed"]

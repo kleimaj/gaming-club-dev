@@ -86,29 +86,36 @@ var second_dialog = [
 	},
 ]
 
+var third_dialog = [
+	{
+		'name': 'Prof. Flores',
+		'content': 'Come along now! I’ve set up what might be our escape from here!'
+	}
+]
+
 var ItemMap = {
 	"BlueMushroom": {
 		"name": "[center]Blue Mushroom[/center]",
 		"sprite": load("res://Assets/GFX/UI/blueMushIcon.png"),
-		"description": "The blue mushroom is the most common in this terrarium. Approximately, 85-95% of a healthy terrarium includes them. **The mushroom lives in sunlight,** but thrives in darkness, **1 dose of the pink spray is needed to treat it when it's dark.** ",
+		"description": "The blue mushroom is the most common in this terrarium. Approximately, 85-95% of a healthy terrarium includes them. [b]The mushroom lives in sunlight,[/b] but thrives in darkness, [b]1 dose of the pink spray is needed to treat it when it's dark.[/b]",
 		"notes": "The blue mushroom is similar to Candida albicans. Approximately, 85-95% of yeast cultured in a healthy vagina is Candida albicans. An overgrowth of this common yeast caused by an imbalance in the vagina can result in an infection. Fungistatic drugs which can be topical or oral are commonly used to treat these infections. "
 	},
 	"BlueSpottedMushroom": {
 		"name": "[center]Blue Spotted Mushroom[/center]",
 		"sprite": load("res://Assets/GFX/UI/blueSpotsMushIcon.png"),
-		"description": "The blue mushroom with spots is very similar to the blue mushroom without spots. The mushroom lives in sunlight,** but is more difficult to treat than the one without spots when it gets out of control which can occur in darkness. When it thrives in darkness, **1 dose of the yellow spray is needed to treat it.** ",
+		"description": "The blue mushroom with spots is very similar to the blue mushroom without spots. [b]The mushroom lives in sunlight,[/b] but is more difficult to treat than the one without spots when it gets out of control which can occur in darkness. When it thrives in darkness, [b]1 dose of the yellow spray is needed to treat it.[/b] ",
 		"notes": "The blue mushroom with spots is similar to Candida albicans. Approximately, 85-95% of yeast cultured in a healthy vagina is Candida albicans. An overgrowth of this common yeast caused by an imbalance in the vagina can result in an infection. Although certain fungistatic drugs which can be topical or oral may be used, resistance to certain drugs can occur. Other treatment options need to be considered."
 	},
 	"GreenMushroom": {
 		"name": "[center]Green Mushroom[/center]",
 		"sprite": load("res://Assets/GFX/UI/greenMushIcon.png"),
-		"description": "The green mushroom is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. **The mushroom thrives in dark environments,** but if it thrives, **2 doses of the pink spray is needed to treat it.**",
+		"description": "The green mushroom is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. [b]The mushroom thrives in dark environments,[/b] but if it thrives, [b]2 doses of the pink spray is needed to treat it.[/b]",
 		"notes": "The green mushroom is similar to Candida non-albicans. It is rarely present in a healthy vagina. An overgrowth of this less common yeast caused by an imbalance in the vagina can result in an infection. Fungistatic drugs which can be topical or oral are commonly used to treat these infections but may need a longer duration  of treatment to eradicate the signs and symptoms."
 	},
 	"GreenSpottedMushroom": {
 		"name": "[center]Green Spotted Mushroom[/center]",
 		"sprite": load("res://Assets/GFX/UI/greenSpotsMushIcon.png"),
-		"description": "The green mushroom with spots is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. **The mushroom thrives in dark environments, but is more difficult to treat than the one without spots when it gets out of control. ** If it thrives too much, **2 doses of the yellow spray is needed to treat it.**",
+		"description": "The green mushroom with spots is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. [b]The mushroom thrives in dark environments, but is more difficult to treat than the one without spots when it gets out of control.[/b] If it thrives too much, [b]2 doses of the yellow spray is needed to treat it.[/b]",
 		"notes": "The green mushroom with spots is similar to Candida non-albicans. It is rarely present in a healthy vagina. An overgrowth of this less common yeast caused by an imbalance in the vagina can result in an infection. Although certain fungistatic drugs which can be topical or oral may be used, resistance to certain drugs can occur. Other treatment options become very limited but need to be considered."
 	},
 	"YellowSpray": {
@@ -125,7 +132,7 @@ var ItemMap = {
 	}
 }
 
-var finished = false
+var finished_count = 0
 
 var clickable_items = 0
 const MAX_CLICKABLE_ITEMS = 6
@@ -142,20 +149,28 @@ func enable_buttons():
 		button.connect("pressed", self, "_on_item_pressed", [button])
 
 func dialog_finished():
-	if not finished:
+	if finished_count == 0:
 		$AnimationPlayer.play("BeginScene")
-		finished = true
-	else:
+		finished_count += 1
+	elif finished_count == 1:
 		$CanvasLayer/BookButton.show()
 		enable_buttons()
+		finished_count += 1		
+	else:
+		$AnimationPlayer.play("EndScene")
 		
 func _on_item_pressed(button):
-	print(button.name)
 	$CanvasLayer/Book.show()
 	$CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/MushroomTitle.bbcode_text = ItemMap[button.name].name
 	$CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/MushroomContainer/Mushroom.texture = ItemMap[button.name].sprite
 	$CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/Description.bbcode_text = ItemMap[button.name].description
 	$CanvasLayer/Book/BookTexture/HBoxContainer/RightContainer/Notes.bbcode_text = ItemMap[button.name].notes
+	clickable_items += 1
+	button.disconnect("pressed", self, "_on_item_pressed")
+	if clickable_items == MAX_CLICKABLE_ITEMS:
+		# finish scene
+		$CanvasLayer/DialogueBox.assign_dictionary(third_dialog)
+		$CanvasLayer/DialogueBox.fade_in()
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "BeginScene":

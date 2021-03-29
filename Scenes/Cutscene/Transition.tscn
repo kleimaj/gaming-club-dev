@@ -96,8 +96,10 @@ position = Vector2( 687.206, 365.043 )
 scale = Vector2( 12.7333, 14.1522 )
 
 [node name="Buttons" type="Control" parent="Backdrop"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 23.0229
+margin_top = -196.973
+margin_right = 63.0229
+margin_bottom = -156.973
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -177,7 +179,6 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.52588e-05
@@ -187,7 +188,6 @@ __meta__ = {
 }
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 1 )]
-visible = false
 
 [node name="BookButton" type="TextureButton" parent="CanvasLayer"]
 visible = false
@@ -207,9 +207,6 @@ __meta__ = {
 
 [node name="Book" parent="CanvasLayer" instance=ExtResource( 12 )]
 visible = false
-
-[node name="PathFollow2D" parent="CanvasLayer/Book/BookTexture/Path2D" index="0"]
-position = Vector2( 901.956, 543.523 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 510.654, 386.746 )
