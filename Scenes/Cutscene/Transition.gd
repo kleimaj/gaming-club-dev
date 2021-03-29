@@ -92,13 +92,24 @@ func _ready():
 	$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
 	$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
 	$CanvasLayer/DialogueBox.fade_in()
+	enable_buttons()
+	
+func enable_buttons():
+	for button in $Backdrop/Buttons.get_children():
+		button.disabled = false
+		button.connect("pressed", self, "_on_item_pressed", [button])
+	print("Buttons enabled")
 
 func dialog_finished():
 	if not finished:
 		$AnimationPlayer.play("BeginScene")
 		finished = true
 	else:
-		pass
+		$CanvasLayer/BookButton.show()
+		enable_buttons()
+		
+func _on_item_pressed(button):
+	print(button.name)
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "BeginScene":
