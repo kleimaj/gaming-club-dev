@@ -1,0 +1,174 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
+[ext_resource path="res://Assets/GFX/cutscene/DialogueBox/Background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GFX/cutscene/DialogueBox/indicator.svg" type="Texture" id=3]
+[ext_resource path="res://Fonts/Adobe Garamond Pro Semibold.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Fonts/Roboto-Medium.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/GFX/cutscene/DialogueBox/dialogue box.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GFX/cutscene/Cat.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "IDLE"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 755.986, 116.055 ), Vector2( 755.986, 106.055 ) ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "fade-in"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fade-in-cat"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CatRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fade-out"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="DialogueBox" type="Control"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -410.0
+margin_top = -185.0
+margin_right = 410.0
+margin_bottom = -31.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CatRect" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -279.082
+margin_top = -99.408
+margin_right = -76.0815
+margin_bottom = 105.592
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 78.0
+margin_top = 15.0
+margin_right = -78.0
+margin_bottom = -15.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.368627, 0.160784, 0.027451, 1 )
+bbcode_enabled = true
+bbcode_text = "..."
+text = "..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Indicator" type="Sprite" parent="."]
+position = Vector2( 724.557, 104.83 )
+scale = Vector2( 0.16, 0.16 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Indicator"]
+anims/IDLE = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="NameRect" type="TextureRect" parent="."]
+visible = false
+margin_left = 3.0
+margin_top = -42.0
+margin_right = 154.0
+margin_bottom = -1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameText" type="RichTextLabel" parent="NameRect"]
+margin_left = 6.0
+margin_right = 149.0
+margin_bottom = 40.0
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "Name"
+text = "Name"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade-in = SubResource( 3 )
+anims/fade-in-cat = SubResource( 6 )
+anims/fade-out = SubResource( 4 )
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

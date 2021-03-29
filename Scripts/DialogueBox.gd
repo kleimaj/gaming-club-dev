@@ -38,44 +38,54 @@ var dialog = [
 	'Not sure… Never saw them again after we walked into the darkness…'
 ]
 
-var dialog_dics = [
-	{
-		'name': null,
-		'content': 'Hello there, welcome to the game! Press [color=#ff0000]Enter[/color] to continue!',
-	},
-	{
-		'name': 'Player',
-		'content': 'What\'s that?',
-	},
-	{
-		'name': 'Cat',
-		'content': 'Meow!',
-	},
-	{
-		'name': 'Dr. Flores',
-		'content': 'Black mold has been wreaking havoc on my terrariums and surprisingly, those same black mold spores cause shrinking.',
-	},
-	{
-		'name': 'Dr. Flores',
-		'content': '[color=#ff0000]The only way for us to return to normal size is to eradicate the black spores and return my terrariums to their former glory![/color]',
-	},
-	{
-		'name': null,
-		'content': '...'
-	}
-	
-]
+#var dialog_dics = [
+#	{
+#		'name': null,
+#		'content': 'Hello there, welcome to the game! Press [color=#ff0000]Enter[/color] to continue!',
+#	},
+#	{
+#		'name': 'Player',
+#		'content': 'What\'s that?',
+#	},
+#	{
+#		'name': 'Cat',
+#		'content': 'Meow!',
+#	},
+#	{
+#		'name': 'Dr. Flores',
+#		'content': 'Black mold has been wreaking havoc on my terrariums and surprisingly, those same black mold spores cause shrinking.',
+#	},
+#	{
+#		'name': 'Dr. Flores',
+#		'content': '[color=#ff0000]The only way for us to return to normal size is to eradicate the black spores and return my terrariums to their former glory![/color]',
+#	},
+#	{
+#		'name': null,
+#		'content': '...'
+#	}
+#
+#]
+var dialog_dics
 
 var dialog_index = 0
-var finished = false
+signal finished
 
-func _ready():
-	load_dialog()
+#func _ready():
+##	load_dialog()
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		load_dialog()
 
+func assign_dictionary(dictionary):
+	dialog_dics = dictionary
+	dialog_index = 0
+
+func fade_in():
+	$AnimationPlayer.play("fade-in")
+func fade_out():
+	$AnimationPlayer.play("fade-out")
+	
 func load_dialog():
 	$Indicator.hide()
 	if dialog_index < dialog_dics.size():
@@ -83,6 +93,9 @@ func load_dialog():
 		if dialog_dics[dialog_index].name != null:
 			$NameRect.show()
 			$NameRect/NameText.bbcode_text = dialog_dics[dialog_index].name
+			if dialog_dics[dialog_index].name == "Cat":
+				$CatRect.show()
+				$AnimationPlayer.play("fade-in-cat")
 		else:
 			$NameRect.hide()
 		$RichTextLabel.bbcode_text = dialog_dics[dialog_index].content
@@ -90,9 +103,19 @@ func load_dialog():
 		$Tween.interpolate_property($RichTextLabel, "percent_visible", 0, 1, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
 	else:
-		queue_free()
+		fade_out()
 	dialog_index += 1
 
 
 func _on_Tween_tween_completed(object, key):
 	$Indicator.show()
+	$Indicator/AnimationPlayer.play()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "fade-in":
+		load_dialog()
+	elif anim_name == "fade-out":
+		$RichTextLabel.bbcode_text = "..."
+		emit_signal("finished")
+		
