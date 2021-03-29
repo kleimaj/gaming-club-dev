@@ -6,12 +6,12 @@
 [ext_resource path="res://Scenes/Cutscene/Intro.gd" type="Script" id=4]
 [ext_resource path="res://Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=5]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 50
 use_filter = true
 font_data = ExtResource( 5 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=2]
 resource_name = "BeginScene"
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
@@ -38,7 +38,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=3]
 resource_name = "EndScene"
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
@@ -65,11 +65,83 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 
+[sub_resource type="Animation" id=4]
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/CenterContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.888889 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/CenterContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/Backdrop/Trees/RightTrees:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, -2 ),
+"update": 0,
+"values": [ Vector2( 55.5556, 0 ), Vector2( 555.556, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/Backdrop/Trees/LeftTrees:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, -2 ),
+"update": 0,
+"values": [ Vector2( -55.5556, 0 ), Vector2( -555.556, 0 ) ]
+}
+
 [sub_resource type="Animation" id=5]
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Backdrop/Trees/RightTrees:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, -2 ),
+"update": 0,
+"values": [ Vector2( 55.5556, 0 ), Vector2( 555.556, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/Backdrop/Trees/LeftTrees:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, -2 ),
+"update": 0,
+"values": [ Vector2( -55.5556, 0 ), Vector2( -555.556, 0 ) ]
+}
 
 [sub_resource type="Animation" id=6]
-
-[sub_resource type="Animation" id=8]
 resource_name = "zoom-in"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:zoom")
@@ -180,7 +252,7 @@ margin_top = 329.0
 margin_right = 1024.0
 margin_bottom = 404.0
 rect_min_size = Vector2( 1024, 75 )
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center]FemBlast[/center]!"
 text = "FemBlast!"
@@ -218,10 +290,10 @@ position = Vector2( 838.233, 386.746 )
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BeginScene = SubResource( 10 )
-anims/EndScene = SubResource( 9 )
-anims/FadeOutCanvas = SubResource( 5 )
-anims/MoveTrees = SubResource( 6 )
-anims/zoom-in = SubResource( 8 )
+anims/BeginScene = SubResource( 2 )
+anims/EndScene = SubResource( 3 )
+anims/FadeOutCanvas = SubResource( 4 )
+anims/MoveTrees = SubResource( 5 )
+anims/zoom-in = SubResource( 6 )
 [connection signal="pressed" from="CanvasLayer/CenterContainer/ButtonContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

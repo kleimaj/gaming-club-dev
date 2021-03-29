@@ -13,7 +13,7 @@
 [ext_resource path="res://Assets/GFX/UI/newBottles/bottle2.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Cutscene/TransitionBook.tscn" type="PackedScene" id=12]
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=1]
 resource_name = "BeginScene"
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
@@ -40,7 +40,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=2]
 resource_name = "EndScene"
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
@@ -208,13 +208,16 @@ __meta__ = {
 [node name="Book" parent="CanvasLayer" instance=ExtResource( 12 )]
 visible = false
 
+[node name="PathFollow2D" parent="CanvasLayer/Book/BookTexture/Path2D" index="0"]
+position = Vector2( 901.954, 543.523 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 510.654, 386.746 )
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BeginScene = SubResource( 10 )
-anims/EndScene = SubResource( 9 )
+anims/BeginScene = SubResource( 1 )
+anims/EndScene = SubResource( 2 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 [editable path="CanvasLayer/Book"]

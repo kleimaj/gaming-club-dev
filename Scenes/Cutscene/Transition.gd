@@ -157,6 +157,7 @@ func dialog_finished():
 		enable_buttons()
 		finished_count += 1		
 	else:
+		$CanvasLayer/BookButton.hide()
 		$AnimationPlayer.play("EndScene")
 		
 func _on_item_pressed(button):
