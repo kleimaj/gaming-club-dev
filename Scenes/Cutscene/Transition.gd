@@ -131,7 +131,6 @@ func enable_buttons():
 	for button in $Backdrop/Buttons.get_children():
 		button.disabled = false
 		button.connect("pressed", self, "_on_item_pressed", [button])
-	print("Buttons enabled")
 
 func dialog_finished():
 	if not finished:
