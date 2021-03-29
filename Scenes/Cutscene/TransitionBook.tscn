@@ -14,17 +14,11 @@ size = 40
 use_filter = true
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=6]
-size = 22
-use_filter = true
-extra_spacing_top = 10
-font_data = ExtResource( 1 )
-
 [sub_resource type="DynamicFont" id=2]
 size = 22
 use_filter = true
 extra_spacing_top = 10
-font_data = ExtResource( 3 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 22
@@ -32,8 +26,13 @@ use_filter = true
 extra_spacing_top = 10
 font_data = ExtResource( 3 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "ShowDescription"
+[sub_resource type="DynamicFont" id=4]
+size = 22
+use_filter = true
+extra_spacing_top = 10
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=5]
 length = 16.0
 step = 0.01
 tracks/0/type = "value"
@@ -73,7 +72,7 @@ tracks/2/keys = {
 "values": [ true, true, false ]
 }
 
-[sub_resource type="Curve2D" id=5]
+[sub_resource type="Curve2D" id=6]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 513.015, 116.236, 0, 0, 0, 0, 893.561, 118.218, 0, 0, 0, 0, 518.961, 157.858, 0, 0, 0, 0, 862.47, 157.512, 0, 0, 0, 0, 518.961, 193.534, 0, 0, 0, 0, 825.278, 194.969, 0, 0, 0, 0, 517.097, 232.682, 0, 0, 0, 0, 881.846, 236.217, 0, 0, 0, 0, 517.489, 270.069, 0, 0, 0, 0, 862.712, 274.524, 0, 0, 0, 0, 516.747, 309.417, 0, 0, 0, 0, 821.137, 312.387, 0, 0, 0, 0, 516.004, 347.28, 0, 0, 0, 0, 821.879, 350.992, 0, 0, 0, 0, 516.004, 385.143, 0, 0, 0, 0, 883.5, 389.598, 0, 0, 0, 0, 516.747, 422.264, 0, 0, 0, 0, 906.515, 425.976, 0, 0, 0, 0, 516.004, 459.385, 0, 0, 0, 0, 908.742, 466.067, 0, 0, 0, 0, 515.642, 498.624, 0, 0, 0, 0, 809.353, 503.301, 0, 0, 0, 0, 516.578, 536.975, 0, 0, 0, 0, 901.956, 543.523 )
 }
@@ -151,8 +150,8 @@ margin_top = 296.0
 margin_right = 400.0
 margin_bottom = 646.0
 rect_min_size = Vector2( 400, 350 )
-custom_fonts/bold_font = SubResource( 6 )
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/bold_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "The blue mushroom with spots is very similar to the blue mushroom without spots. The mushroom lives in sunlight,** but is more difficult to treat than the one without spots when it gets out of control which can occur in darkness. When it thrives in darkness, **1 dose of the yellow spray is needed to treat it.** 
@@ -172,14 +171,14 @@ margin_top = 95.0
 margin_right = 400.0
 margin_bottom = 595.0
 rect_min_size = Vector2( 400, 500 )
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player selects the spray bottle from the backpack and loads it into the cannon. Once loaded the player has to hit the blue mushroom. Once hit X1 the mushroom brightens and sprays miniscule spores that lightens the mist ever so slightly. The mushrooms work as trampolines. The spray droplet will hit the mushroom, bounce to the next mushroom depending on angle of spray."
 text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player selects the spray bottle from the backpack and loads it into the cannon. Once loaded the player has to hit the blue mushroom. Once hit X1 the mushroom brightens and sprays miniscule spores that lightens the mist ever so slightly. The mushrooms work as trampolines. The spray droplet will hit the mushroom, bounce to the next mushroom depending on angle of spray."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BookTexture/HBoxContainer/RightContainer"]
-anims/ShowDescription = SubResource( 4 )
+anims/ShowDescription = SubResource( 5 )
 
 [node name="ArrowContainer" type="HBoxContainer" parent="BookTexture"]
 visible = false
@@ -209,7 +208,7 @@ margin_bottom = 997.0
 texture_normal = ExtResource( 9 )
 
 [node name="Path2D" type="Path2D" parent="BookTexture"]
-curve = SubResource( 5 )
+curve = SubResource( 6 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="BookTexture/Path2D"]
 position = Vector2( 901.954, 543.523 )
