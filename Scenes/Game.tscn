@@ -1,10 +1,9 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/Tank/Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tank/Bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Interface/HUD.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/fog.shader" type="Shader" id=4]
-[ext_resource path="res://Assets/GFX/background/glitch-ilmenskie-svg/ilmenskie/cave_gr_stone_texture_7.svg" type="Texture" id=5]
+[ext_resource path="res://Scenes/Enemy/Mist.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/GFX/background/leftTree.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Interface/GroundArea2D.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/GFX/background/rightTree.png" type="Texture" id=8]
@@ -28,12 +27,6 @@
 [ext_resource path="res://Assets/GFX/evilMist.png" type="Texture" id=38]
 [ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=68]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer1.png" type="Texture" id=72]
-
-[sub_resource type="ShaderMaterial" id=1]
-shader = ExtResource( 4 )
-shader_param/color = Vector3( 0.35, 0.54, 0.95 )
-shader_param/OCTAVES = 4
-shader_param/scaleParam = 0.9
 
 [node name="Game" type="Node2D"]
 position = Vector2( 1.82056, -32.7698 )
@@ -220,14 +213,7 @@ position = Vector2( 19.0995, 4915 )
 scale = Vector2( 1.02118, 0.925825 )
 texture = ExtResource( 28 )
 
-[node name="Mist" type="Sprite" parent="."]
-light_mask = 526087
-material = SubResource( 1 )
-position = Vector2( 474.871, -477.771 )
-rotation = 0.801412
-scale = Vector2( 5.76118, 6.40316 )
-texture = ExtResource( 5 )
-flip_v = true
+[node name="Mist" parent="." instance=ExtResource( 4 )]
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 2.95483, 36.9359 )
