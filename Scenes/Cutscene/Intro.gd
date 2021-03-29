@@ -41,4 +41,4 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		$CanvasLayer/DialogueBox.assign_dictionary(second_dialogue)
 		$CanvasLayer/DialogueBox.fade_in()
 	elif anim_name == "EndScene":
-		pass # change scene
+		get_tree().change_scene("res://Scenes/Cutscene/MushroomHut.tscn")
