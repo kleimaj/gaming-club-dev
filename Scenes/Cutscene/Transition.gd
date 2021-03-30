@@ -42,7 +42,11 @@ var second_dialog = [
 	},
 	{
 		'name': 'Prof. Flores',
-		'content': 'This is not just some bottle! It’s- well it WAS my award winning terrarium. You see, I’m a botanist and fungi expert. Black spores have been wreaking havoc on my terrariums and surprisingly, those same black spores cause shrinking.'
+		'content': 'This is not just some bottle! It’s- well it WAS my award winning terrarium. You see, I’m a botanist and fungi expert.'
+	},
+	{
+		'name': 'Prof. Flores',
+		'content': 'Black spores have been wreaking havoc on my terrariums and surprisingly, those same black spores cause shrinking.'
 	},
 	{
 		'name': 'Prof. Flores',
@@ -78,7 +82,11 @@ var second_dialog = [
 	},
 	{
 		'name': 'Prof. Flores',
-		'content': 'This is not just any book! It contains all the knowledge I’ve cultivated through my studies. I have it mostly committed to memory, so you can hold onto it for the time being. Here’s a pen if you have anything to add.'
+		'content': 'This is not just any book! It contains all the knowledge I’ve cultivated through my studies.'
+	},
+	{
+		'name': 'Prof. Flores',
+		'content': 'I have it mostly committed to memory, so you can hold onto it for the time being. Here’s a pen if you have anything to add.'
 	},
 	{
 		'name': 'Prof. Flores',

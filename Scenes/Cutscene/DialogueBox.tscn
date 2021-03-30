@@ -78,6 +78,7 @@ tracks/0/keys = {
 }
 
 [node name="DialogueBox" type="Control"]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -134,9 +135,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 78.0
-margin_top = 15.0
+margin_top = 38.0
 margin_right = -78.0
-margin_bottom = -15.0
+margin_bottom = -30.0
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.368627, 0.160784, 0.027451, 1 )
 bbcode_enabled = true

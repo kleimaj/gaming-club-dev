@@ -1,5 +1,6 @@
 [gd_scene load_steps=17 format=2]
 
+[ext_resource path="res://Scenes/Cutscene/BookStyles/BookButton.tres" type="StyleBox" id=1]
 [ext_resource path="res://Fonts/ink-free-normal.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/GFX/cutscene/Book/pencil.png" type="Texture" id=4]
 [ext_resource path="res://Assets/GFX/UI/bookOpen.png" type="Texture" id=5]
@@ -86,13 +87,6 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 513.015, 116.236, 0, 0, 0, 0, 893.561, 118.218, 0, 0, 0, 0, 518.961, 157.858, 0, 0, 0, 0, 862.47, 157.512, 0, 0, 0, 0, 518.961, 193.534, 0, 0, 0, 0, 825.278, 194.969, 0, 0, 0, 0, 517.097, 232.682, 0, 0, 0, 0, 881.846, 236.217, 0, 0, 0, 0, 517.489, 270.069, 0, 0, 0, 0, 862.712, 274.524, 0, 0, 0, 0, 516.747, 309.417, 0, 0, 0, 0, 821.137, 312.387, 0, 0, 0, 0, 516.004, 347.28, 0, 0, 0, 0, 821.879, 350.992, 0, 0, 0, 0, 516.004, 385.143, 0, 0, 0, 0, 883.5, 389.598, 0, 0, 0, 0, 516.747, 422.264, 0, 0, 0, 0, 906.515, 425.976, 0, 0, 0, 0, 516.004, 459.385, 0, 0, 0, 0, 908.742, 466.067, 0, 0, 0, 0, 515.642, 498.624, 0, 0, 0, 0, 809.353, 503.301, 0, 0, 0, 0, 516.578, 536.975, 0, 0, 0, 0, 901.956, 543.523 )
 }
 
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.337255, 0.337255, 0.337255, 1 )
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-
 [sub_resource type="DynamicFont" id=10]
 size = 31
 use_filter = true
@@ -171,6 +165,7 @@ margin_bottom = 100.0
 rect_min_size = Vector2( 87, 99 )
 texture = ExtResource( 6 )
 expand = true
+stretch_mode = 5
 
 [node name="LineBreak" type="Panel" parent="BookTexture/HBoxContainer/LeftContainer"]
 margin_top = 220.0
@@ -279,7 +274,9 @@ margin_left = -46.0
 margin_right = 4.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
-custom_styles/normal = SubResource( 9 )
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/normal = ExtResource( 1 )
 custom_fonts/font = SubResource( 10 )
 text = "X"
 __meta__ = {
