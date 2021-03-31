@@ -1,18 +1,17 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/Background.png" type="Texture" id=2]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/indicator.svg" type="Texture" id=3]
-[ext_resource path="res://Fonts/Adobe Garamond Pro Semibold.otf" type="DynamicFontData" id=4]
-[ext_resource path="res://Fonts/Roboto-Medium.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Fonts/Calibri Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/dialogue box.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GFX/cutscene/Cat.png" type="Texture" id=7]
 [ext_resource path="res://Assets/GFX/cutscene/Dr_F.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-size = 35
+size = 22
 use_filter = true
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "IDLE"
@@ -31,7 +30,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="DynamicFont" id=3]
-size = 25
+size = 22
 use_filter = true
 font_data = ExtResource( 5 )
 
@@ -136,9 +135,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 78.0
-margin_top = 15.0
+margin_top = 38.0
 margin_right = -78.0
-margin_bottom = -15.0
+margin_bottom = -30.0
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.368627, 0.160784, 0.027451, 1 )
 bbcode_enabled = true
@@ -171,14 +170,21 @@ __meta__ = {
 }
 
 [node name="NameText" type="RichTextLabel" parent="NameRect"]
-margin_left = 6.0
-margin_right = 149.0
-margin_bottom = 40.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.618
+anchor_bottom = 0.5
+margin_left = -66.0
+margin_top = -14.0
+margin_right = 71.5
+margin_bottom = 20.0
 custom_fonts/normal_font = SubResource( 3 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.427451, 0.239216, 0.105882, 1 )
 bbcode_enabled = true
-bbcode_text = "Name"
 text = "Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fade-in = SubResource( 4 )

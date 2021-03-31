@@ -1,15 +1,33 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
+
 
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GFX/cutscene/Env01.png" type="Texture" id=2]
 [ext_resource path="res://Assets/GFX/cutscene/bush.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Cutscene/Intro.gd" type="Script" id=4]
 [ext_resource path="res://Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Fonts/Calibri Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Scenes/Cutscene/ButtonStyles/Button.tres" type="StyleBox" id=7]
+[ext_resource path="res://Scenes/SmokeRight.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/SmokeLeft.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
 use_filter = true
 font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.992157, 0.737255, 0.0901961, 1 )
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="DynamicFont" id=8]
+size = 24
+use_filter = true
+font_data = ExtResource( 6 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "BeginScene"
@@ -91,7 +109,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("CanvasLayer/Backdrop/Trees/RightTrees:position")
+tracks/2/path = NodePath("CanvasLayer/Trees/RightTrees:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -103,7 +121,7 @@ tracks/2/keys = {
 "values": [ Vector2( 55.5556, 0 ), Vector2( 555.556, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("CanvasLayer/Backdrop/Trees/LeftTrees:position")
+tracks/3/path = NodePath("CanvasLayer/Trees/LeftTrees:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -117,7 +135,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=5]
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/Backdrop/Trees/RightTrees:position")
+tracks/0/path = NodePath("CanvasLayer/Trees/RightTrees:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -129,7 +147,7 @@ tracks/0/keys = {
 "values": [ Vector2( 55.5556, 0 ), Vector2( 555.556, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/Backdrop/Trees/LeftTrees:position")
+tracks/1/path = NodePath("CanvasLayer/Trees/LeftTrees:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -144,7 +162,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=6]
 resource_name = "zoom-in"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/path = NodePath("Backdrop/Camera2D:zoom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -156,16 +174,16 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0.75, 0.75 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/Backdrop:rect_scale")
+tracks/1/path = NodePath("Backdrop/Camera2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0.1, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
+"values": [ Vector2( 902.409, 504.018 ), Vector2( 681.331, 495.636 ) ]
 }
 
 [node name="Intro" type="Control"]
@@ -176,9 +194,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Backdrop" type="TextureRect" parent="CanvasLayer"]
+[node name="Backdrop" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -234.962
@@ -192,41 +208,71 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Trees" type="Control" parent="CanvasLayer/Backdrop"]
+[node name="Camera2D" type="Camera2D" parent="Backdrop"]
+position = Vector2( 902.409, 504.018 )
+current = true
+process_mode = 0
+smoothing_enabled = true
+
+[node name="SmokeRight" parent="." instance=ExtResource( 8 )]
+
+[node name="Top" parent="SmokeRight" index="0"]
+z_index = 1
+
+[node name="Medium" parent="SmokeRight" index="1"]
+z_index = 1
+
+[node name="Bottom" parent="SmokeRight" index="2"]
+z_index = 1
+
+[node name="SmokeLeft" parent="." instance=ExtResource( 9 )]
+
+[node name="Top" parent="SmokeLeft" index="0"]
+z_index = 1
+
+[node name="Middle" parent="SmokeLeft" index="1"]
+z_index = 1
+
+[node name="Bottom" parent="SmokeLeft" index="2"]
+z_index = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Trees" type="Control" parent="CanvasLayer"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -486.192
-margin_top = -787.709
-margin_right = 537.808
-margin_bottom = -33.7087
+margin_left = -394.654
+margin_top = -711.79
+margin_right = 629.346
+margin_bottom = 42.2101
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RightTrees" type="Node2D" parent="CanvasLayer/Backdrop/Trees"]
+[node name="RightTrees" type="Node2D" parent="CanvasLayer/Trees"]
 position = Vector2( 55.5556, 0 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Backdrop/Trees/RightTrees"]
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Trees/RightTrees"]
 position = Vector2( 569.056, 562 )
 scale = Vector2( 0.294413, 0.294413 )
 texture = ExtResource( 3 )
 
-[node name="Sprite3" type="Sprite" parent="CanvasLayer/Backdrop/Trees/RightTrees"]
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Trees/RightTrees"]
 position = Vector2( 795.056, 558 )
 scale = Vector2( 0.294413, 0.294413 )
 texture = ExtResource( 3 )
 
-[node name="LeftTrees" type="Node2D" parent="CanvasLayer/Backdrop/Trees"]
+[node name="LeftTrees" type="Node2D" parent="CanvasLayer/Trees"]
 position = Vector2( -55.5556, 0 )
 
-[node name="Sprite4" type="Sprite" parent="CanvasLayer/Backdrop/Trees/LeftTrees"]
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Trees/LeftTrees"]
 position = Vector2( 41.0558, 552 )
 scale = Vector2( 0.294413, 0.294413 )
 texture = ExtResource( 3 )
 
-[node name="Sprite2" type="Sprite" parent="CanvasLayer/Backdrop/Trees/LeftTrees"]
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Trees/LeftTrees"]
 position = Vector2( 273.056, 558 )
 scale = Vector2( 0.294413, 0.294413 )
 texture = ExtResource( 3 )
@@ -248,9 +294,9 @@ __meta__ = {
 }
 
 [node name="Title" type="RichTextLabel" parent="CanvasLayer/CenterContainer"]
-margin_top = 329.0
+margin_top = 314.0
 margin_right = 1024.0
-margin_bottom = 404.0
+margin_bottom = 389.0
 rect_min_size = Vector2( 1024, 75 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
@@ -261,33 +307,37 @@ __meta__ = {
 }
 
 [node name="ButtonContainer" type="CenterContainer" parent="CanvasLayer/CenterContainer"]
-margin_top = 404.0
+margin_top = 389.0
 margin_right = 1024.0
-margin_bottom = 424.0
+margin_bottom = 439.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="CanvasLayer/CenterContainer/ButtonContainer"]
-margin_left = 487.0
-margin_right = 537.0
-margin_bottom = 20.0
+margin_left = 437.0
+margin_right = 587.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 150, 50 )
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 9 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 text = "START"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 838.233, 386.746 )
-current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/BeginScene = SubResource( 2 )
@@ -297,3 +347,7 @@ anims/MoveTrees = SubResource( 5 )
 anims/zoom-in = SubResource( 6 )
 [connection signal="pressed" from="CanvasLayer/CenterContainer/ButtonContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="SmokeRight"]
+
+[editable path="SmokeLeft"]

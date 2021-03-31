@@ -1,4 +1,4 @@
-extends Sprite
+extends Area2D
 
 export var downSpeed = .5
 

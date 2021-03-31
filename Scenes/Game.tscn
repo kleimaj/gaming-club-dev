@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/Tank/Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tank/Bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Interface/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Enemy/Mist.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/GFX/UI/meterOutsideCap.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/LostConditionArea.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/GFX/background/leftTree.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Interface/GroundArea2D.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/GFX/background/rightTree.png" type="Texture" id=8]
@@ -14,18 +15,47 @@
 [ext_resource path="res://Assets/GFX/UI/MicrosoftTeams-image (1).png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Game.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/ProgressBar.gd" type="Script" id=16]
-[ext_resource path="res://Scenes/evilMist.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/evilMist.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Enemy/Blue Spotted Mushroom.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Assets/GFX/raincloud/raincloud1.png" type="Texture" id=20]
 [ext_resource path="res://Scenes/Enemy/Green Mushroom.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/Enemy/Green Spotted Mushroom.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Assets/GFX/background/ground.png" type="Texture" id=28]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer3.png" type="Texture" id=30]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=34]
 [ext_resource path="res://Assets/GFX/background/branch.png" type="Texture" id=35]
+[ext_resource path="res://Assets/GFX/evilMist.png" type="Texture" id=38]
 [ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=68]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer1.png" type="Texture" id=72]
+
+[sub_resource type="Animation" id=1]
+resource_name = "zoom_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3, 3 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 3, 3 ) ]
+}
 
 [node name="Game" type="Node2D"]
 position = Vector2( 1.82056, -32.7698 )
@@ -58,7 +88,7 @@ scale = Vector2( 1.06152, 1.07679 )
 texture = ExtResource( 72 )
 
 [node name="rightTree" type="Sprite" parent="backgrop"]
-position = Vector2( 1011.22, 707.332 )
+position = Vector2( 1018.84, 708.078 )
 rotation = 0.0122232
 scale = Vector2( 0.743798, 1.02568 )
 texture = ExtResource( 8 )
@@ -213,7 +243,8 @@ scale = Vector2( 1.02118, 0.925825 )
 texture = ExtResource( 28 )
 
 [node name="Mist" parent="." instance=ExtResource( 4 )]
-position = Vector2( 474.93, -478.105 )
+position = Vector2( 555.044, -664.841 )
+scale = Vector2( 9.83748, 11.5621 )
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 2.95483, 36.9359 )
@@ -267,12 +298,8 @@ rotation = -0.270526
 position = Vector2( 248.968, -73.6012 )
 rotation = 0.404916
 
-[node name="evilMist" type="Sprite" parent="."]
-position = Vector2( 532.056, -1312.77 )
-scale = Vector2( 0.998361, 0.945063 )
-texture = ExtResource( 20 )
-script = ExtResource( 17 )
-downSpeed = 0.2
+
+[node name="evilMist" parent="." instance=ExtResource( 17 )]
 
 [node name="Tank" parent="." instance=ExtResource( 1 )]
 position = Vector2( 52.8022, 546.6 )
@@ -289,9 +316,13 @@ margin_bottom = 7.60883
 position = Vector2( 522.189, 696.331 )
 rotation = 0.00340095
 
+[node name="LostConditionArea" parent="." instance=ExtResource( 5 )]
+position = Vector2( 558.538, 558.903 )
+
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" type="TextureProgress" parent="CanvasLayer2"]
+
 margin_left = 964.649
 margin_top = 575.33
 margin_right = 1392.65
@@ -374,10 +405,18 @@ texture = ExtResource( 11 )
 position = Vector2( 536.119, 407.802 )
 rotation = 1.56789
 scale = Vector2( 0.184558, 0.210266 )
+offset = Vector2( 1, 1 )
 current = true
 
 [node name="TopLeft" parent="Camera2D/Limits" index="0"]
 position = Vector2( 0, -1647.78 )
+
+[node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/zoom_in = SubResource( 1 )
+anims/zoom_out = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
 [connection signal="value_changed" from="CanvasLayer2/ProgressBar" to="." method="_on_ProgressBar_value_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="Camera2D"]

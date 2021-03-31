@@ -208,8 +208,8 @@ __meta__ = {
 [node name="Book" parent="CanvasLayer" instance=ExtResource( 12 )]
 visible = false
 
-[node name="PathFollow2D" parent="CanvasLayer/Book/BookTexture/Path2D" index="0"]
-position = Vector2( 901.954, 543.523 )
+[node name="MushroomTitle" parent="CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer" index="0"]
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 510.654, 386.746 )
