@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/evilMist.gd" type="Script" id=1]
+[ext_resource path="res://Assets/GFX/evilMist.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 572.82
+
+[node name="evilMist" type="Area2D"]
+light_mask = 16385
+position = Vector2( 487.528, -1069.14 )
+scale = Vector2( 0.496052, 0.590256 )
+script = ExtResource( 1 )
+downSpeed = 0.2
+
+[node name="Evilmist" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 832.523, 23.6667 )
+rotation = 1.5708
+shape = SubResource( 1 )
