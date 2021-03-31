@@ -19,8 +19,12 @@ func _ready():
 	$AnimationPlayer.play("BeginScene")
 	
 
+func dialog_finished():
+	$CanvasLayer/Backdrop/Cat.show()
+
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "BeginScene":
+		$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
 		$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
 		$CanvasLayer/DialogueBox.fade_in()
 	elif anim_name == "EndScene":

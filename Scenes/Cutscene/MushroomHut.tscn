@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
+[ext_resource path="res://Assets/GFX/MushroomHut/backdrop.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Cutscene/MushroomHut.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/GFX/cutscene/Env01.png" type="Texture" id=5]
+[ext_resource path="res://Assets/GFX/MushroomHut/terrarium.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GFX/cutscene/Cat.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BeginScene"
@@ -178,12 +180,21 @@ margin_left = -234.962
 margin_top = -113.081
 margin_right = 418.038
 margin_bottom = 75.9188
-texture = ExtResource( 5 )
+texture = ExtResource( 1 )
 expand = true
 stretch_mode = 7
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Cat" type="TextureRect" parent="CanvasLayer/Backdrop"]
+visible = false
+margin_left = 615.706
+margin_top = 391.745
+margin_right = 837.706
+margin_bottom = 615.745
+texture = ExtResource( 5 )
+expand = true
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 3 )]
 
@@ -194,20 +205,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Terrarium" type="Button" parent="CanvasLayer/Button"]
+[node name="Terrarium" type="TextureButton" parent="CanvasLayer/Button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 480.996
+margin_left = 579.415
 margin_top = 349.623
-margin_right = 540.996
-margin_bottom = 359.623
+margin_right = 661.415
+margin_bottom = 432.623
 rect_min_size = Vector2( 100, 50 )
-text = "Terrarium"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 4 )
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
