@@ -1,7 +1,7 @@
 extends Area2D
 
 # Rate at which mist decreases (this may be calcualted by total number of enemies)
-export var mistFactor = 0.15
+export var mistFactor = 0.05
 
 const BOUNCE_MULTIPLIER = 2.5
 
@@ -60,7 +60,7 @@ func _collision_v1(body):
 	body.free()
 	
 
-func register_correct_hit():
+func register_correct_hit(anim_type):
 	# Signal Fog and ProgressBar
 	var mist = get_node("../../evilMist")
 	var progressBar = get_node("../../CanvasLayer2/ProgressBar")
@@ -72,7 +72,7 @@ func register_correct_hit():
 	# check is game over in Game node
 	var game = get_tree().get_root().get_node("Game")
 	game.incrementScore()
-	game.checkGameOver()
+	game.checkGameOver(anim_type)
 
 func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_shape):
 	if body.global_position.y < global_position.y:
@@ -83,7 +83,7 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 		for group in get_groups():
 			# should only iterate once
 			if CollisionMap[projectile_type].has(group) and not beenHit:
-				register_correct_hit()
+				register_correct_hit(projectile_type)
 				break
 		create_splash_effect(projectile_type, body.global_position)
 

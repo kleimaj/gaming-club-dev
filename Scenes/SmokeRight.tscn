@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/GFX/cutscene/mist outside house/Asset 2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/GFX/cutscene/mist outside house/Asset 1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GFX/cutscene/mist outside house/Asset 8.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Move"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 355, 355 ), Vector2( 351.619, 351.359 ), Vector2( 354.856, 348.383 ), Vector2( 358.254, 346.87 ), Vector2( 365.851, 345.691 ), Vector2( 371.064, 346.722 ), Vector2( 374.612, 349.158 ), Vector2( 364.508, 352.699 ), Vector2( 355.878, 351.906 ), Vector2( 352.578, 351.112 ), Vector2( 355, 355 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Medium:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 365, 390 ), Vector2( 361.879, 388.18 ), Vector2( 366.3, 383.239 ), Vector2( 373.321, 381.419 ), Vector2( 377.742, 386.619 ), Vector2( 383.203, 383.759 ), Vector2( 378.262, 386.88 ), Vector2( 374.362, 391.3 ), Vector2( 373.321, 387.92 ), Vector2( 373.321, 385.059 ), Vector2( 365, 390 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Bottom:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 380, 430 ), Vector2( 376.359, 427.92 ), Vector2( 372.199, 425.319 ), Vector2( 374.019, 421.939 ), Vector2( 377.92, 420.638 ), Vector2( 382.6, 419.598 ), Vector2( 384.941, 421.938 ), Vector2( 385.461, 425.319 ), Vector2( 383.12, 426.619 ), Vector2( 379.48, 427.139 ), Vector2( 380, 430 ) ]
+}
+
+[node name="SmokeRight" type="Node"]
+
+[node name="Top" type="Sprite" parent="."]
+position = Vector2( 355, 355 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="Medium" type="Sprite" parent="."]
+position = Vector2( 365, 390 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="Bottom" type="Sprite" parent="."]
+position = Vector2( 380, 430 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Move"
+anims/Move = SubResource( 1 )
