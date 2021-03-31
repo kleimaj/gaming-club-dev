@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Cutscene/BookStyles/BookButton.tres" type="StyleBox" id=1]
 [ext_resource path="res://Fonts/ink-free-normal.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/GFX/cutscene/Book/pencil.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GFX/cutscene/Book/pen.png" type="Texture" id=3]
 [ext_resource path="res://Assets/GFX/UI/bookOpen.png" type="Texture" id=5]
 [ext_resource path="res://Assets/GFX/UI/blueMushIcon.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GFX/cutscene/Book/arrow.png" type="Texture" id=7]
@@ -36,14 +36,13 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 22
-outline_size = 1
 outline_color = Color( 0.823529, 0, 0, 1 )
 use_filter = true
 extra_spacing_top = 10
 font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=5]
-length = 16.0
+length = 3.0
 step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("Notes:percent_visible")
@@ -52,31 +51,31 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.8, 1.33, 2.16, 2.69, 3.37, 3.92, 4.68, 5.28, 5.89, 6.62, 6.98, 7.84, 8.12, 8.86, 9.7, 10.25, 10.88, 11.83, 12.44, 13.04, 13.87, 14.27, 14.94 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 2.04 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.08, 0.08, 0.168074, 0.168, 0.245395, 0.245, 0.33565, 0.336, 0.42322, 0.423, 0.492991, 0.493, 0.561069, 0.561, 0.652598, 0.653, 0.74863, 0.749, 0.848776, 0.849, 0.914963, 0.915, 1.0 ]
+"values": [ 0.0, 1.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../../Path2D/PathFollow2D:unit_offset")
+tracks/1/path = NodePath("../../BlueMushroom/PathFollow2D:unit_offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 15 ),
+"times": PoolRealArray( 0, 2.06 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../../Path2D/PathFollow2D/Sprite:visible")
+tracks/2/path = NodePath("../../BlueMushroom/PathFollow2D/Sprite:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.02, 15.07, 15.69 ),
+"times": PoolRealArray( 0.02, 2.07, 2.41 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, true, false ]
@@ -84,7 +83,7 @@ tracks/2/keys = {
 
 [sub_resource type="Curve2D" id=6]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 513.015, 116.236, 0, 0, 0, 0, 893.561, 118.218, 0, 0, 0, 0, 518.961, 157.858, 0, 0, 0, 0, 862.47, 157.512, 0, 0, 0, 0, 518.961, 193.534, 0, 0, 0, 0, 825.278, 194.969, 0, 0, 0, 0, 517.097, 232.682, 0, 0, 0, 0, 881.846, 236.217, 0, 0, 0, 0, 517.489, 270.069, 0, 0, 0, 0, 862.712, 274.524, 0, 0, 0, 0, 516.747, 309.417, 0, 0, 0, 0, 821.137, 312.387, 0, 0, 0, 0, 516.004, 347.28, 0, 0, 0, 0, 821.879, 350.992, 0, 0, 0, 0, 516.004, 385.143, 0, 0, 0, 0, 883.5, 389.598, 0, 0, 0, 0, 516.747, 422.264, 0, 0, 0, 0, 906.515, 425.976, 0, 0, 0, 0, 516.004, 459.385, 0, 0, 0, 0, 908.742, 466.067, 0, 0, 0, 0, 515.642, 498.624, 0, 0, 0, 0, 809.353, 503.301, 0, 0, 0, 0, 516.578, 536.975, 0, 0, 0, 0, 901.956, 543.523 )
+"points": PoolVector2Array( 0, 0, 0, 0, 513.015, 116.236, 0, 0, 0, 0, 883.52, 545.422 )
 }
 
 [sub_resource type="DynamicFont" id=10]
@@ -148,19 +147,19 @@ margin_right = 400.0
 margin_bottom = 100.0
 
 [node name="MushroomTitle" type="RichTextLabel" parent="BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer"]
-margin_right = 230.0
+margin_right = 250.0
 margin_bottom = 100.0
-rect_min_size = Vector2( 230, 100 )
+rect_min_size = Vector2( 250, 100 )
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.0156863, 0.545098, 0.6, 1 )
 bbcode_enabled = true
-bbcode_text = "[center]Blue Mushroom[/center]"
+bbcode_text = "Blue Mushroom"
 text = "Blue Mushroom"
 fit_content_height = true
 
 [node name="Mushroom" type="TextureRect" parent="BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer"]
-margin_left = 234.0
-margin_right = 321.0
+margin_left = 254.0
+margin_right = 341.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 87, 99 )
 texture = ExtResource( 6 )
@@ -235,35 +234,22 @@ margin_right = 9102.0
 margin_bottom = 997.0
 texture_normal = ExtResource( 9 )
 
-[node name="Path2D" type="Path2D" parent="BookTexture"]
-visible = false
+[node name="BlueMushroom" type="Path2D" parent="BookTexture"]
 curve = SubResource( 6 )
 
-[node name="PathFollow2D" type="PathFollow2D" parent="BookTexture/Path2D"]
-position = Vector2( 901.956, 543.523 )
+[node name="PathFollow2D" type="PathFollow2D" parent="BookTexture/BlueMushroom"]
+position = Vector2( 883.52, 545.422 )
 rotation = 0.00520463
-offset = 7869.5
+offset = 566.795
 rotate = false
 loop = false
 
-[node name="Sprite" type="Sprite" parent="BookTexture/Path2D/PathFollow2D"]
-visible = false
-position = Vector2( 7.92792, -0.0412598 )
-rotation = -0.00520463
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 4 )
-offset = Vector2( 427.765, -452.349 )
-
-[node name="TextureButton" type="TextureButton" parent="BookTexture/Path2D/PathFollow2D"]
-margin_left = -2.88477
-margin_top = -173.413
-margin_right = 880.115
-margin_bottom = 708.587
-rect_scale = Vector2( 0.2, 0.2 )
-texture_normal = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Sprite" type="Sprite" parent="BookTexture/BlueMushroom/PathFollow2D"]
+position = Vector2( 1.54279, 2.56921 )
+rotation = 0.824467
+scale = Vector2( 0.649022, 0.649022 )
+texture = ExtResource( 3 )
+offset = Vector2( 2.67004, -267.01 )
 
 [node name="WritingTween" type="Tween" parent="BookTexture"]
 
