@@ -37,6 +37,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
 		$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
 		$CanvasLayer/DialogueBox.fade_in()
+		
 	elif anim_name == "zoom-in":
 		$CanvasLayer/DialogueBox.assign_dictionary(second_dialogue)
 		$CanvasLayer/DialogueBox.fade_in()
