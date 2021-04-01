@@ -222,6 +222,11 @@ func _on_item_pressed(button):
 	button.disconnect("pressed", self, "_on_item_pressed")
 	if clickable_items == MAX_CLICKABLE_ITEMS:
 		# finish scene
+		$LeftButton.hide()
+		$RightButton.hide()
+		$AnimationPlayer.stop()
+		$CanvasLayer/BookButton.hide()
+		$CanvasLayer/BackpackButton.hide()
 		$CanvasLayer/DialogueBox.show()
 		$CanvasLayer/DialogueBox.assign_dictionary(third_dialog)
 		$CanvasLayer/DialogueBox.fade_in()
