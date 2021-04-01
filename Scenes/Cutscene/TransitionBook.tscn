@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Cutscene/BookStyles/BookButton.tres" type="StyleBox" id=1]
 [ext_resource path="res://Fonts/ink-free-normal.ttf" type="DynamicFontData" id=2]
@@ -16,11 +16,11 @@ outline_color = Color( 0.0156863, 0.545098, 0.6, 1 )
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxLine" id=8]
+[sub_resource type="StyleBoxLine" id=2]
 color = Color( 0.0156863, 0.545098, 0.6, 1 )
 thickness = 4
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 22
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -28,20 +28,20 @@ use_filter = true
 extra_spacing_top = 5
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 22
 use_filter = true
 extra_spacing_top = 5
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 22
 outline_color = Color( 0.823529, 0, 0, 1 )
 use_filter = true
 extra_spacing_top = 10
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 3.0
 step = 0.01
 tracks/0/type = "value"
@@ -81,12 +81,19 @@ tracks/2/keys = {
 "values": [ true, true, false ]
 }
 
-[sub_resource type="Curve2D" id=6]
+[sub_resource type="Curve2D" id=7]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 513.015, 116.236, 0, 0, 0, 0, 883.52, 545.422 )
 }
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.258824, 0.258824, 0.258824, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="DynamicFont" id=8]
 size = 31
 use_filter = true
 font_data = ExtResource( 2 )
@@ -170,15 +177,15 @@ stretch_mode = 5
 margin_top = 220.0
 margin_right = 400.0
 margin_bottom = 220.0
-custom_styles/panel = SubResource( 8 )
+custom_styles/panel = SubResource( 2 )
 
 [node name="Description" type="RichTextLabel" parent="BookTexture/HBoxContainer/LeftContainer"]
 margin_top = 250.0
 margin_right = 400.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 400, 350 )
-custom_fonts/bold_font = SubResource( 2 )
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "The blue mushroom with spots is very similar to the blue mushroom without spots. The mushroom lives in sunlight,** but is more difficult to treat than the one without spots when it gets out of control which can occur in darkness. When it thrives in darkness, [b]1 dose of the yellow spray is needed to treat it.[/b]
@@ -198,14 +205,14 @@ margin_top = 95.0
 margin_right = 400.0
 margin_bottom = 595.0
 rect_min_size = Vector2( 400, 500 )
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 0.823529, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player selects the spray bottle from the backpack and loads it into the cannon. Once loaded the player has to hit the blue mushroom. Once hit X1 the mushroom brightens and sprays miniscule spores that lightens the mist ever so slightly. The mushrooms work as trampolines. The spray droplet will hit the mushroom, bounce to the next mushroom depending on angle of spray."
 text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player selects the spray bottle from the backpack and loads it into the cannon. Once loaded the player has to hit the blue mushroom. Once hit X1 the mushroom brightens and sprays miniscule spores that lightens the mist ever so slightly. The mushrooms work as trampolines. The spray droplet will hit the mushroom, bounce to the next mushroom depending on angle of spray."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BookTexture/HBoxContainer/RightContainer"]
-anims/ShowDescription = SubResource( 5 )
+anims/ShowDescription = SubResource( 6 )
 
 [node name="ArrowContainer" type="HBoxContainer" parent="BookTexture"]
 visible = false
@@ -235,7 +242,7 @@ margin_bottom = 997.0
 texture_normal = ExtResource( 9 )
 
 [node name="BlueMushroom" type="Path2D" parent="BookTexture"]
-curve = SubResource( 6 )
+curve = SubResource( 7 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="BookTexture/BlueMushroom"]
 position = Vector2( 883.52, 545.422 )
@@ -260,10 +267,11 @@ margin_left = -46.0
 margin_right = 4.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
-custom_styles/hover = ExtResource( 1 )
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 9 )
 custom_styles/pressed = ExtResource( 1 )
 custom_styles/normal = ExtResource( 1 )
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 8 )
 text = "X"
 __meta__ = {
 "_edit_use_anchors_": false
