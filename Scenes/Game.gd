@@ -8,7 +8,43 @@ var rainScene = load("res://Scenes/Rain.tscn")
 var last_med_color = null
 var rs = null
 
+var dialog_1 = [
+	{
+		'name': 'Prof. Flores',
+		'content': 'It looks like the mist is encroaching on us… quickly!',
+	},
+	{
+		'name': 'Prof. Flores',
+		'content': 'We must hit the mushrooms with medicine to drive the mist up and out of the terrarium.',
+	},
+	{
+		'name': 'Prof. Flores',
+		'content': 'Move the cannon with the A and D keys!',
+	},
+	{
+		'name': 'Prof. Flores',
+		'content': 'Aim the cannon with your mouse. Click the mouse to launch the medicine',
+	},
+	{
+		'name': 'Prof. Flores',
+		'content': 'The longer you click, the farther the medicine will launch! Remember that!',
+	},
+	{
+		'name': 'Prof. Flores',
+		'content': 'If you\'re not sure how to deal with each mushroom, check your guidebook again! Good luck!',
+	},
+]
+
 onready var timer = $Timer
+
+func _ready():
+	$evilMist.set_process(false)
+	$CanvasLayer2/DialogueBox.connect("finished", self, "dialog_finished")
+	$CanvasLayer2/DialogueBox.assign_dictionary(dialog_1)
+	$CanvasLayer2/DialogueBox.fade_in()
+
+func dialog_finished():
+	$evilMist.set_process(true)
 
 func checkGameOver(animType):
 	if mushrooms_hit == mushroomAmount:
