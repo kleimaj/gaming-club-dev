@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GFX/cutscene/Env01.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Cutscene/ButtonStyles/Button.tres" type="StyleBox" id=7]
 [ext_resource path="res://Scenes/SmokeRight.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/SmokeLeft.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/GFX/Music/[MapleStory BGM] Sleepywood.wav" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -340,6 +341,12 @@ anims/EndScene = SubResource( 5 )
 anims/FadeOutCanvas = SubResource( 6 )
 anims/MoveTrees = SubResource( 7 )
 anims/zoom-in = SubResource( 8 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 10 )
+volume_db = -30.0
+autoplay = true
 [connection signal="pressed" from="CanvasLayer/CenterContainer/ButtonContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
