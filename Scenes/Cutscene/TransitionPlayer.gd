@@ -7,7 +7,7 @@ enum{
 	RIGHT
 }
 
-var state = "stop"
+var state = STOP
 var speed = 5
 var leftLimit = 840
 var rightLimit = -480
