@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/GFX/UI/newBottles/RedBottleLoad.png" type="Texture" id=6]
 
 [sub_resource type="Gradient" id=1]
-colors = PoolColorArray( 1, 0, 0, 1, 1, 0.937255, 0, 1 )
+colors = PoolColorArray( 1, 0.984314, 0, 1, 1, 0.937255, 0, 1 )
 
 [node name="Tank" type="KinematicBody2D"]
 position = Vector2( 99.5237, 546.291 )

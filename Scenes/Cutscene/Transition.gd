@@ -104,6 +104,7 @@ var third_dialog = [
 var ItemMap = {
 	"BlueMushroom": {
 		"name": "Blue Mushroom",
+		"pack": false,
 		"sprite": load("res://Assets/GFX/UI/blueMushIcon.png"),
 		"color": "#048B99",
 		"description": "The blue mushroom is the most common in this terrarium. Approximately, 85-95% of a healthy terrarium includes them. [b]The mushroom lives in sunlight,[/b] but thrives in darkness, [b]1 dose of the pink spray is needed to treat it when it's dark.[/b]",
@@ -111,6 +112,7 @@ var ItemMap = {
 	},
 	"BlueSpottedMushroom": {
 		"name": "Blue Spotted Mushroom",
+		"pack": false,
 		"sprite": load("res://Assets/GFX/UI/blueSpotsMushIcon.png"),
 		"color": "#048B99",
 		"description": "The blue mushroom with spots is very similar to the blue mushroom without spots. [b]The mushroom lives in sunlight,[/b] but is more difficult to treat than the one without spots when it gets out of control which can occur in darkness. When it thrives in darkness, [b]1 dose of the yellow spray is needed to treat it.[/b] ",
@@ -118,6 +120,7 @@ var ItemMap = {
 	},
 	"GreenMushroom": {
 		"name": "Green Mushroom",
+		"pack": false,
 		"sprite": load("res://Assets/GFX/UI/greenMushIcon.png"),
 		"color": "#0E8E00",
 		"description": "The green mushroom is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. [b]The mushroom thrives in dark environments,[/b] but if it thrives, [b]2 doses of the pink spray is needed to treat it.[/b]",
@@ -125,6 +128,7 @@ var ItemMap = {
 	},
 	"GreenSpottedMushroom": {
 		"name": "Green Spotted Mushroom",
+		"pack": false,
 		"sprite": load("res://Assets/GFX/UI/greenSpotsMushIcon.png"),
 		"color": "#0E8E00",
 		"description": "The green mushroom with spots is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. [b]The mushroom thrives in dark environments, but is more difficult to treat than the one without spots when it gets out of control.[/b] If it thrives too much, [b]2 doses of the yellow spray is needed to treat it.[/b]",
@@ -132,6 +136,7 @@ var ItemMap = {
 	},
 	"YellowSpray": {
 		"name": "Yellow Spray",
+		"pack": true,
 		"sprite": load("res://Assets/GFX/UI/newBottles/bottle1.png"),
 		"color": "#000",
 		"description": "The yellow spray is used on the overgrowth of blue and green mushrooms with  spots to trigger the the stopping of spores to fend off the dark mist. Sometimes certain mushrooms need more spray for a longer duration of time to be effective.",
@@ -139,6 +144,7 @@ var ItemMap = {
 	},
 	"PinkSpray": {
 		"name": "Pink Spray",
+		"pack": true,
 		"sprite": load("res://Assets/GFX/UI/newBottles/bottle2.png"),
 		"color": "#000",
 		"description": "The pink spray is used on the overgrowth of blue and green mushrooms to trigger the stopping of spores to fend off the dark mist. Sometimes certain mushrooms need more spray for a longer duration of time to be effective.",
@@ -151,6 +157,7 @@ var finished_count = 0
 var clickable_items = 0
 const MAX_CLICKABLE_ITEMS = 6
 
+
 func _ready():
 	$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
 	$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
@@ -158,7 +165,7 @@ func _ready():
 	enable_buttons()
 	
 func enable_buttons():
-	for button in $Backdrop/Buttons.get_children():
+	for button in $Player/Backdrop/Buttons.get_children():
 		button.disabled = false
 		button.connect("pressed", self, "_on_item_pressed", [button])
 
@@ -168,8 +175,13 @@ func dialog_finished():
 		finished_count += 1
 	elif finished_count == 1:
 		$CanvasLayer/BookButton.show()
-		enable_buttons()
+		$CanvasLayer/BackpackButton.show()
 		finished_count += 1
+		$LeftButton.show()
+		$RightButton.show()
+		$AnimationPlayer.play("Arrows")
+		$Player/Backdrop/Buttons.show()
+		enable_buttons()
 	else:
 		$CanvasLayer/BookButton.hide()
 		$AnimationPlayer.play("EndScene")
@@ -191,6 +203,11 @@ func set_line_break(lineBreak, color):
 	
 func _on_item_pressed(button):
 	$CanvasLayer/Book.show()
+	$CanvasLayer/Book.buttonType = null
+	if ItemMap[button.name].pack:
+		$CanvasLayer/Book.buttonType = button.name
+		ItemMap[button.name].collected = true
+	get_node("Player/Backdrop/Buttons/" + button.name +"/" + button.name + "G").hide()
 	var title = $CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer/MushroomTitle
 	title.bbcode_text = ItemMap[button.name].name
 	set_title(title, ItemMap[button.name].color)
@@ -211,3 +228,99 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "BeginScene":
 		$CanvasLayer/DialogueBox.assign_dictionary(second_dialog)
 		$CanvasLayer/DialogueBox.fade_in()
+
+func _engorgio(obj):
+	var scale = obj.get_scale() * 1.25
+	obj.set_scale(scale)
+	
+func _reducto(obj):
+	var scale = obj.get_scale() / 1.25
+	obj.set_scale(scale)
+	
+func _on_LeftButton_mouse_entered():
+	$AnimationPlayer.stop()
+	$Player.move_left()
+	_engorgio($LeftButton)
+
+
+func _on_LeftButton_mouse_exited():
+	$Player.stop()
+	$AnimationPlayer.play("Arrows")
+	_reducto($LeftButton)
+
+
+func _on_RightButton_mouse_entered():
+	_engorgio($RightButton)
+	$Player.move_right()
+	$AnimationPlayer.stop()
+	
+	
+func _on_RightButton_mouse_exited():
+	_reducto($RightButton)
+	$Player.stop()
+	$AnimationPlayer.play("Arrows")
+
+
+func _on_BlueMushroom_mouse_entered():
+	_engorgio($Player/Backdrop/Buttons/BlueMushroom)
+	
+
+func _on_BlueMushroom_mouse_exited():
+	_reducto($Player/Backdrop/Buttons/BlueMushroom)
+
+
+func _on_BlueSpottedMushroom_mouse_entered():
+	_engorgio($Player/Backdrop/Buttons/BlueSpottedMushroom)
+
+
+func _on_BlueSpottedMushroom_mouse_exited():
+	_reducto($Player/Backdrop/Buttons/BlueSpottedMushroom)
+
+
+func _on_GreenMushroom_mouse_entered():
+	_engorgio($Player/Backdrop/Buttons/GreenMushroom)
+
+
+func _on_GreenMushroom_mouse_exited():
+	_reducto($Player/Backdrop/Buttons/GreenMushroom)
+
+
+func _on_GreenSpottedMushroom_mouse_entered():
+	_engorgio($Player/Backdrop/Buttons/GreenSpottedMushroom)
+
+
+func _on_GreenSpottedMushroom_mouse_exited():
+	_reducto($Player/Backdrop/Buttons/GreenSpottedMushroom)
+
+
+func _on_YellowSpray_mouse_entered():
+	_engorgio($Player/Backdrop/Buttons/YellowSpray)
+
+
+func _on_YellowSpray_mouse_exited():
+	_reducto($Player/Backdrop/Buttons/YellowSpray)
+
+
+func _on_PinkSpray_mouse_entered():
+	_engorgio($Player/Backdrop/Buttons/PinkSpray)
+
+
+func _on_PinkSpray_mouse_exited():
+	_reducto($Player/Backdrop/Buttons/PinkSpray)
+
+
+
+
+func _on_BackpackButton_mouse_entered():
+	if $CanvasLayer/BackpackButton/PinkSpray.visible:
+		$CanvasLayer/BackpackButton/PinkSpray.rect_position.y -= 40
+	if $CanvasLayer/BackpackButton/YellowSpray.visible:
+		$CanvasLayer/BackpackButton/YellowSpray.rect_position.y -= 40
+
+
+func _on_BackpackButton_mouse_exited():
+	if $CanvasLayer/BackpackButton/PinkSpray.visible:
+		$CanvasLayer/BackpackButton/PinkSpray.rect_position.y += 40
+	if $CanvasLayer/BackpackButton/YellowSpray.visible:
+		$CanvasLayer/BackpackButton/YellowSpray.rect_position.y += 40
+

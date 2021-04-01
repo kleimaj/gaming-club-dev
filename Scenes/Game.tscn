@@ -24,7 +24,6 @@
 [ext_resource path="res://Assets/GFX/background/background/bgLayer3.png" type="Texture" id=30]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=34]
 [ext_resource path="res://Assets/GFX/background/branch.png" type="Texture" id=35]
-[ext_resource path="res://Assets/GFX/evilMist.png" type="Texture" id=38]
 [ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=68]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer1.png" type="Texture" id=72]
 
@@ -297,7 +296,6 @@ rotation = -0.270526
 ] instance=ExtResource( 22 )]
 position = Vector2( 248.968, -73.6012 )
 rotation = 0.404916
-
 
 [node name="evilMist" parent="." instance=ExtResource( 17 )]
 

@@ -18,13 +18,11 @@ func checkGameOver(animType):
 		rs.start_rain(animType)
 		var animation = $CameraAnimationPlayer.get_animation("zoom_out")
 		animation.track_insert_key(0, 0.0, $Camera2D.zoom)
-		print(((3.0 - $Camera2D.zoom.x) * 100))
 		$Camera2D.limit_left -= ((3.0 - $Camera2D.zoom.x) * 500)
 		$Camera2D.limit_right += ((3.0 - $Camera2D.zoom.y) * 500)
 		$CameraAnimationPlayer.play("zoom_out")
 		$Camera2D.smoothing_enabled = true
 		$Camera2D.smoothing_speed = 5
-		
 		timer.set_wait_time(rain_seconds)
 		timer.start();
 	
@@ -41,5 +39,5 @@ func _on_ProgressBar_value_changed(value):
 
 func _on_Timer_timeout():
 	$Mist.hide()
-	rs.stop_rain()
+	
 	
