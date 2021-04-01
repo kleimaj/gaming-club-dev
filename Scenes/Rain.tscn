@@ -149,5 +149,5 @@ texture = ExtResource( 3 )
 
 [node name="RainSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -6.679
+volume_db = -30.0
 mix_target = 1
