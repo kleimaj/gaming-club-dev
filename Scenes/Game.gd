@@ -72,6 +72,7 @@ func checkGameOver(animType):
 		$CameraAnimationPlayer.play("zoom_out")
 		$Camera2D.smoothing_enabled = true
 		$Camera2D.smoothing_speed = 5
+		rs.get_node("RainSound").play()
 		timer.set_wait_time(rain_seconds)
 		timer.start();
 	
