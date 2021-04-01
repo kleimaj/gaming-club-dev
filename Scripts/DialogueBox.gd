@@ -93,10 +93,10 @@ func load_dialog():
 		if dialog_dics[dialog_index].name != null:
 			$NameRect.show()
 			$NameRect/NameText.bbcode_text = dialog_dics[dialog_index].name
-			if dialog_dics[dialog_index].name == "Cat":
+			if dialog_dics[dialog_index].name == "[center]Cat[/center]":
 				$CatRect.show()
 				$AnimationPlayer.play("fade-in-cat")
-			elif dialog_dics[dialog_index].name == "Prof. Flores" or dialog_dics[dialog_index].name == "???":
+			elif dialog_dics[dialog_index].name == "[center]Prof. Flores[/center]" or dialog_dics[dialog_index].name == "[center]???[/center]":
 				$FloresRect.show()
 		else:
 			$NameRect.hide()

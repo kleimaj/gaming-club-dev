@@ -298,10 +298,8 @@ __meta__ = {
 }
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 1 )]
-margin_left = -371.0
-margin_top = -218.0
-margin_right = 449.0
-margin_bottom = -28.0
+margin_top = -222.092
+margin_bottom = -32.0917
 
 [node name="BookButton" type="TextureButton" parent="CanvasLayer"]
 visible = false
@@ -365,14 +363,6 @@ visible = false
 
 [node name="MushroomTitle" parent="CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer" index="0"]
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-
-[node name="Notes" parent="CanvasLayer/Book/BookTexture/HBoxContainer/RightContainer" index="0"]
-visible_characters = 0
-percent_visible = 0.0
-
-[node name="PathFollow2D" parent="CanvasLayer/Book/BookTexture/BlueMushroom" index="0"]
-position = Vector2( 513.015, 116.236 )
-offset = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Arrows = SubResource( 1 )

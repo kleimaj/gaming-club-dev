@@ -26,10 +26,13 @@ func close_backpack():
 	
 func _on_BookButton_pressed():
 	if bookIsOpen:
-		$CanvasLayer/Book.hide()
+		$CanvasLayer/TransitionBook.hide()
 		bookIsOpen = false
 		get_tree().paused = false
 	else:
-		$CanvasLayer/Book.show()
+		$CanvasLayer/TransitionBook.show()
+		$CanvasLayer/TransitionBook/BookTexture/ArrowContainer.show()
+		$CanvasLayer/TransitionBook/BookTexture/HBoxContainer/RightContainer/Notes.percent_visible = 1
+		$CanvasLayer/TransitionBook/BookTexture/BlueMushroom/PathFollow2D/Sprite.hide()
 		bookIsOpen = true
 		get_tree().paused = true

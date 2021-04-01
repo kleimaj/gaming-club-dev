@@ -499,12 +499,14 @@ anims/zoom_in = SubResource( 4 )
 anims/zoom_out = SubResource( 5 )
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 27 )
 volume_db = -30.0
 autoplay = true
+
 [connection signal="area_entered" from="LostConditionArea" to="." method="_on_LostConditionArea_area_entered"]
 [connection signal="value_changed" from="CanvasLayer2/ProgressBar" to="." method="_on_ProgressBar_value_changed"]
 [connection signal="pressed" from="CanvasLayer2/YouLose/RetryButton" to="." method="_on_RetryButton_pressed"]

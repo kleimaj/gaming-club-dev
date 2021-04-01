@@ -6,8 +6,8 @@ onready var base_size = Vector2(1920, 1080)
 
 func _ready():
 		# Use whichever you would like by default
-	set_fullscreen()
-	#set_windowed()
+#	set_fullscreen()
+	set_windowed()
 
 
 func set_fullscreen():
