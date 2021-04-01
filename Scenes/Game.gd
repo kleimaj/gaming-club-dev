@@ -10,34 +10,34 @@ var rs = null
 
 var dialog_1 = [
 	{
-		'name': 'Prof. Flores',
+		'name': '[center]Prof. Flores[/center]',
 		'content': 'It looks like the mist is encroaching on us… quickly! (use your scroll wheel to view the mist)',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': '[center]Prof. Flores[/center]',
 		'content': 'We must hit the mushrooms with medicine to drive the mist up and out of the terrarium.',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': '[center]Prof. Flores[/center]',
 		'content': 'Move the cannon with the A and D keys!',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': '[center]Prof. Flores[/center]',
 		'content': 'Aim the cannon with your mouse. Click the mouse to launch the medicine',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': '[center]Prof. Flores[/center]',
 		'content': 'The longer you click, the farther the medicine will launch! Remember that!',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': '[center]Prof. Flores[/center]',
 		'content': 'If you\'re not sure how to deal with each mushroom, check your guidebook again! Good luck!',
 	},
 ]
 
 var dialog_2 = [
 	{
-		'name': 'Prof. Flores',
+		'name': '[center]Prof. Flores[/center]',
 		'content': 'Oh! You did it!! The medicine is mixing with the rainclouds and spreading across the terrarium! Let’s get out of here!'
 	}
 ]

@@ -6,14 +6,14 @@ var dialog_dics = [
 		'content': 'Hello there, welcome to the game! Press [color=#ff0000]Enter[/color] to continue!',
 	},
 	{
-		'name': 'Player',
+		'name': '[center]Player[/center]',
 		'content': 'What\'s that?',
 	},
 ]
 
 var second_dialogue = [
 	{
-		'name': 'Cat',
+		'name': '[center]Cat[/center]',
 		'content': 'Meow!',
 	}
 ]
