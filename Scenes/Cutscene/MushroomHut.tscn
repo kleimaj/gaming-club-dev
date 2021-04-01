@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/GFX/MushroomHut/backdrop.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Cutscene/MushroomHut.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/GFX/MushroomHut/terrarium.png" type="Texture" id=4]
 [ext_resource path="res://Assets/GFX/cutscene/Cat.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Glow.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/GFX/cutscene/Book/arrow.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BeginScene"
@@ -163,6 +165,22 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
 }
 
+[sub_resource type="Animation" id=6]
+resource_name = "Move"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 638.196, 258.913 ), Vector2( 638.196, 273.913 ), Vector2( 638.196, 258.913 ) ]
+}
+
 [node name="MushroomHut" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -189,32 +207,51 @@ __meta__ = {
 
 [node name="Cat" type="TextureRect" parent="CanvasLayer/Backdrop"]
 visible = false
-margin_left = 615.706
-margin_top = 391.745
-margin_right = 837.706
-margin_bottom = 615.745
+margin_left = 615.172
+margin_top = 392.813
+margin_right = 837.172
+margin_bottom = 616.813
 texture = ExtResource( 5 )
 expand = true
+stretch_mode = 1
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 3 )]
 
+[node name="arrow" type="Sprite" parent="CanvasLayer"]
+visible = false
+position = Vector2( 638.196, 258.913 )
+rotation = 4.71239
+scale = Vector2( 0.07, 0.04 )
+texture = ExtResource( 8 )
+
 [node name="Button" type="Control" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
+modulate = Color( 1.1, 1.5, 1.9, 1 )
+margin_left = 1.90894
+margin_top = 3.81799
+margin_right = 41.9089
+margin_bottom = 43.818
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Glow" parent="CanvasLayer/Button" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 639.933, 410.224 )
+
 [node name="Terrarium" type="TextureButton" parent="CanvasLayer/Button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 579.415
-margin_top = 349.623
-margin_right = 661.415
-margin_bottom = 432.623
+margin_left = 578.261
+margin_top = 347.044
+margin_right = 660.261
+margin_bottom = 430.044
 rect_min_size = Vector2( 100, 50 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 4 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -235,5 +272,11 @@ anims/EndScene = SubResource( 2 )
 anims/FadeOutCanvas = SubResource( 3 )
 anims/MoveTrees = SubResource( 4 )
 anims/zoom-in = SubResource( 5 )
+
+[node name="ArrowBobbing" type="AnimationPlayer" parent="."]
+autoplay = "Move"
+anims/Move = SubResource( 6 )
+[connection signal="mouse_entered" from="CanvasLayer/Button/Terrarium" to="." method="_on_Terrarium_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Button/Terrarium" to="." method="_on_Terrarium_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Button/Terrarium" to="." method="_on_Terrarium_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
