@@ -19,6 +19,15 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.262745 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="BookButton" type="TextureButton" parent="CanvasLayer"]
 anchor_left = 1.0
 anchor_top = 1.0
