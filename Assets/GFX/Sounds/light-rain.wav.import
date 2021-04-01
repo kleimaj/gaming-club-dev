@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/light-rain.wav-e28db0e94c823d4254bde7eee4658e14.sample"
+
+[deps]
+
+source_file="res://Assets/GFX/Sounds/light-rain.wav"
+dest_files=[ "res://.import/light-rain.wav-e28db0e94c823d4254bde7eee4658e14.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
