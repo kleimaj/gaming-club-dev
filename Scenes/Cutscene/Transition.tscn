@@ -143,7 +143,6 @@ position = Vector2( 687.206, 365.043 )
 scale = Vector2( 12.7333, 14.1522 )
 
 [node name="Buttons" type="Control" parent="Player/Backdrop"]
-visible = false
 margin_left = 23.0229
 margin_top = -196.973
 margin_right = 63.0229

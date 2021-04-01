@@ -162,7 +162,6 @@ func _ready():
 	$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
 	$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
 	$CanvasLayer/DialogueBox.fade_in()
-	enable_buttons()
 	
 func enable_buttons():
 	for button in $Player/Backdrop/Buttons.get_children():
@@ -182,8 +181,10 @@ func dialog_finished():
 		$AnimationPlayer.play("Arrows")
 		$Player/Backdrop/Buttons.show()
 		enable_buttons()
+		$CanvasLayer/DialogueBox.hide()
 	else:
 		$CanvasLayer/BookButton.hide()
+		$CanvasLayer/BackpackButton.hide()
 		$AnimationPlayer.play("EndScene")
 		
 func set_title(title, color):
@@ -221,6 +222,7 @@ func _on_item_pressed(button):
 	button.disconnect("pressed", self, "_on_item_pressed")
 	if clickable_items == MAX_CLICKABLE_ITEMS:
 		# finish scene
+		$CanvasLayer/DialogueBox.show()
 		$CanvasLayer/DialogueBox.assign_dictionary(third_dialog)
 		$CanvasLayer/DialogueBox.fade_in()
 	
@@ -228,6 +230,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "BeginScene":
 		$CanvasLayer/DialogueBox.assign_dictionary(second_dialog)
 		$CanvasLayer/DialogueBox.fade_in()
+	elif anim_name == "EndScene":
+		get_tree().change_scene("res://Scenes/Game.tscn")
 
 func _engorgio(obj):
 	var scale = obj.get_scale() * 1.25
