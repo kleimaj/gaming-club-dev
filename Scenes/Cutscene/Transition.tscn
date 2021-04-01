@@ -365,14 +365,6 @@ visible = false
 [node name="MushroomTitle" parent="CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer" index="0"]
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 
-[node name="Notes" parent="CanvasLayer/Book/BookTexture/HBoxContainer/RightContainer" index="0"]
-visible_characters = 0
-percent_visible = 0.0
-
-[node name="PathFollow2D" parent="CanvasLayer/Book/BookTexture/BlueMushroom" index="0"]
-position = Vector2( 513.015, 116.236 )
-offset = 0.0
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Arrows = SubResource( 1 )
 anims/BeginScene = SubResource( 2 )

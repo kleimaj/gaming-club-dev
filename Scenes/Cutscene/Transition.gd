@@ -50,7 +50,7 @@ var second_dialog = [
 	},
 	{
 		'name': '[center]Prof. Flores[/center]',
-		'content': '[color=#000000]The only way for us to return to normal size is to eradicate the black spores and return my terrarium to its former glory![/color]'
+		'content': 'The only way for us to return to normal size is to eradicate the black spores and return my terrarium to its former glory!'
 	},
 	{
 		'name': '[center]Prof. Flores[/center]',
