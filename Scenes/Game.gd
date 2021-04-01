@@ -11,7 +11,7 @@ var rs = null
 var dialog_1 = [
 	{
 		'name': 'Prof. Flores',
-		'content': 'It looks like the mist is encroaching on us… quickly!',
+		'content': 'It looks like the mist is encroaching on us… quickly! (use your scroll wheel to view the mist)',
 	},
 	{
 		'name': 'Prof. Flores',
@@ -35,6 +35,15 @@ var dialog_1 = [
 	},
 ]
 
+var dialog_2 = [
+	{
+		'name': 'Prof. Flores',
+		'content': 'Oh! You did it!! The medicine is mixing with the rainclouds and spreading across the terrarium! Let’s get out of here!'
+	}
+]
+
+var dialog_count = 0
+
 onready var timer = $Timer
 
 func _ready():
@@ -44,7 +53,11 @@ func _ready():
 	$CanvasLayer2/DialogueBox.fade_in()
 
 func dialog_finished():
-	$evilMist.set_process(true)
+	if dialog_count == 0:
+		$evilMist.set_process(true)
+		dialog_count += 1
+	else:
+		get_tree().change_scene("res://Scenes/Cutscene/Ending.tscn")
 
 func checkGameOver(animType):
 	if mushrooms_hit == mushroomAmount:
@@ -75,5 +88,16 @@ func _on_ProgressBar_value_changed(value):
 
 func _on_Timer_timeout():
 	$Mist.hide()
+	$CanvasLayer2/DialogueBox.assign_dictionary(dialog_2)
+	$CanvasLayer2/DialogueBox.fade_in()
 	
 	
+
+
+func _on_LostConditionArea_area_entered(area):
+	$evilMist.set_process(false)
+	$CanvasLayer2/YouLose.show()
+
+
+func _on_RetryButton_pressed():
+	get_tree().reload_current_scene()
