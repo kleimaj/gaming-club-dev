@@ -225,6 +225,10 @@ func _on_item_pressed(button):
 		$CanvasLayer/DialogueBox.show()
 		$CanvasLayer/DialogueBox.assign_dictionary(third_dialog)
 		$CanvasLayer/DialogueBox.fade_in()
+		$CanvasLayer/BookButton.hide()
+		$CanvasLayer/BackpackButton.hide()
+		$LeftButton.hide()
+		$RightButton.hide()
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "BeginScene":
