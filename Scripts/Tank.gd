@@ -12,7 +12,8 @@ var sprayColor = "Red"
 var velocity = Vector2()
 var can_shoot = true
 
-onready var line = $Line2D
+onready var YellowLine = $YellowLine2D
+onready var RedLine = $RedLine2D
 onready var muzzle = $Muzzle/Position2D
 
 export var MAX_POINTS = 500
@@ -65,7 +66,8 @@ func control(delta):
 
 		
 func shoot():
-	line.clear_points()
+	YellowLine.clear_points()
+	RedLine.clear_points()
 	$ShootTimer.start()
 	var b = Bullet.instance()
 	#b.get_node("Sprite").frames.load_path = ammo_texture
@@ -79,11 +81,16 @@ func shoot():
 	b.get_child(0).get_child(0).remote_path = "../../../Camera2D"
 
 func update_trajectory(delta):
-	line.clear_points()
+	YellowLine.clear_points()
+	RedLine.clear_points()
 	var pos = muzzle.global_position
 	var vel = muzzle.global_transform.x * bulletSpeed
 	for i in MAX_POINTS:
-		line.add_point(pos)
+		if sprayColor == "Yellow":
+			YellowLine.add_point(pos)
+		else:
+			RedLine.add_point(pos)
+		#line.add_point(pos)
 		vel.y += 2.5
 		pos += vel
 		if pos.y > position.y:
