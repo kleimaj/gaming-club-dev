@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Grandma s Theme - The Legend of Zelda The Wind Waker.ogg-375c687c67ad9d59418304ca808ceaab.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Music/Grandma s Theme - The Legend of Zelda The Wind Waker.ogg"
+dest_files=[ "res://.import/Grandma s Theme - The Legend of Zelda The Wind Waker.ogg-375c687c67ad9d59418304ca808ceaab.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

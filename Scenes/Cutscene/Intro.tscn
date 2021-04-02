@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Cutscene/ButtonStyles/Button.tres" type="StyleBox" id=7]
 [ext_resource path="res://Scenes/SmokeRight.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/SmokeLeft.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/GFX/Music/[MapleStory BGM] Sleepywood.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/SFX/Music/[MapleStory BGM] Sleepywood.ogg" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50

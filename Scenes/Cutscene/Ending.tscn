@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/GFX/MushroomHut/terrarium.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Cutscene/Ending.gd" type="Script" id=5]
-[ext_resource path="res://Assets/GFX/Music/[MapleStory BGM] Sleepywood.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/SFX/Music/[MapleStory BGM] Sleepywood.ogg" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BeginScene"

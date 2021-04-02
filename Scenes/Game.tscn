@@ -26,13 +26,15 @@
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/dialogue box.png" type="Texture" id=24]
 [ext_resource path="res://Fonts/Calibri Regular.ttf" type="DynamicFontData" id=25]
 [ext_resource path="res://Scenes/Cutscene/ButtonStyles/Button.tres" type="StyleBox" id=26]
-[ext_resource path="res://Assets/GFX/Music/Honey Hills (Forest Area) - Kirby Star Allies Music.wav" type="AudioStream" id=27]
+[ext_resource path="res://Assets/SFX/Music/Honey Hills (Forest Area) - Kirby Star Allies Music.ogg" type="AudioStream" id=27]
 [ext_resource path="res://Assets/GFX/background/ground.png" type="Texture" id=28]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer3.png" type="Texture" id=30]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=34]
 [ext_resource path="res://Assets/GFX/background/branch.png" type="Texture" id=35]
 [ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=68]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer1.png" type="Texture" id=72]
+
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 96

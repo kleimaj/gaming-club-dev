@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Scarlet Forest.ogg-3abf13d65f02ddbceeb48eb86c42ac67.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Music/Scarlet Forest.ogg"
+dest_files=[ "res://.import/Scarlet Forest.ogg-3abf13d65f02ddbceeb48eb86c42ac67.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

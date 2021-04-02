@@ -6,8 +6,10 @@
 [ext_resource path="res://Assets/GFX/MushroomHut/terrarium.png" type="Texture" id=4]
 [ext_resource path="res://Assets/GFX/cutscene/Cat.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Glow.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/GFX/Music/Grandma s Theme - The Legend of Zelda The Wind Waker.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/SFX/Music/Grandma s Theme - The Legend of Zelda The Wind Waker.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Assets/GFX/cutscene/Book/arrow.png" type="Texture" id=8]
+
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "BeginScene"
