@@ -8,6 +8,25 @@ var rainScene = load("res://Scenes/Rain.tscn")
 var last_med_color = null
 var rs = null
 
+# skippable scenes
+func _unhandled_key_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.scancode == KEY_S:
+			# Skip to next scene
+			pass
+		elif event.pressed and event.scancode == KEY_G:
+			get_tree().change_scene("res://Scenes/Game.tscn")
+		elif event.pressed and event.scancode == KEY_1:
+			get_tree().change_scene("res://Scenes/Cutscene/Intro.tscn")
+		elif event.pressed and event.scancode == KEY_2:
+			get_tree().change_scene("res://Scenes/Cutscene/MushroomHut.tscn")
+		elif event.pressed and event.scancode == KEY_3:
+			get_tree().change_scene("res://Scenes/Cutscene/Transition.tscn")
+		elif event.pressed and event.scancode == KEY_4:
+			get_tree().change_scene("res://Scenes/Game.tscn")
+		elif event.pressed and event.scancode == KEY_5:
+			get_tree().change_scene("res://Scenes/Cutscene/Ending.tscn")
+
 var dialog_1 = [
 	{
 		'name': '[center]Prof. Flores[/center]',

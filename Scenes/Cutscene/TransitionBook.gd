@@ -2,8 +2,12 @@ extends Control
 
 export var buttonType = "PinkSpray"
 
+signal book_closed
+
+#keeps track of what page the user is on (index of ItemMap array)
 var page_idx = 0
 
+# Array of dictionaries for each item
 var ItemMap = [
 	{
 		"name": "Blue Mushroom",
@@ -55,29 +59,40 @@ var ItemMap = [
 	}
 ]
 
+# Changes Mushroom Title (sets new color and outline color)
 func set_title(title, color):
+	# creates dynamic font
 	var dynamic_font = DynamicFont.new()
 	dynamic_font.font_data = load("res://Fonts/ink-free-normal.ttf")
 	dynamic_font.size = 38
 	dynamic_font.outline_color = color
 	dynamic_font.outline_size = 1
 	dynamic_font.use_filter = true
+	# set title to new dynamic font (with new assigned color)
 	title.set("custom_fonts/normal_font", dynamic_font)
 	title.add_color_override("default_color", Color(color))
+
+# Changes color of LineBreak
 func set_line_break(lineBreak, color):
+	# creates new StyleBoxLine
 	var styleBoxLine = StyleBoxLine.new()
 	styleBoxLine.color = color
 	styleBoxLine.thickness = 4
+	# sets LineBreak to new StyleBoxLine
 	lineBreak.add_stylebox_override("panel", styleBoxLine)
 
+# Close Button Listener
 func _on_Button_pressed():
+	# hide book, emit book-closed signal
 	hide()
+	emit_signal("book_closed")
 	get_tree().paused = false
 #	if buttonType != null:
 #		get_parent().get_parent().get_node("Player/Backdrop/Buttons/"+ buttonType).hide()
 #		get_parent().get_node("BackpackButton/"+ buttonType).show()
 
 func showPage(idx):
+	# set new page contents of the current page
 	var pageContents = ItemMap[idx]
 	var title = $BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer/MushroomTitle
 	title.bbcode_text = pageContents.name
@@ -89,14 +104,14 @@ func showPage(idx):
 	$BookTexture/HBoxContainer/RightContainer/Notes.bbcode_text = pageContents.notes
 
 
-
+# Turn page to the left
 func _on_LeftButton_pressed():
 	page_idx -=1
 	if page_idx == -1:
 		page_idx = 5
 	showPage(page_idx)
 
-
+# Turn page to the right
 func _on_RightButton_pressed():
 	page_idx +=1
 	if page_idx == 6:

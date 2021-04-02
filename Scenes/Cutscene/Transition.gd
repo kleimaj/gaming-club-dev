@@ -162,6 +162,7 @@ func _ready():
 	$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
 	$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
 	$CanvasLayer/DialogueBox.fade_in()
+	$CanvasLayer/Book.connect("book_closed", self, "book_closed_handler")
 	
 func enable_buttons():
 	for button in $Player/Backdrop/Buttons.get_children():
@@ -220,6 +221,8 @@ func _on_item_pressed(button):
 	clickable_items += 1
 	$CanvasLayer/Book/BookTexture/HBoxContainer/RightContainer/AnimationPlayer.play("ShowDescription")
 	button.disconnect("pressed", self, "_on_item_pressed")
+
+func book_closed_handler():
 	if clickable_items == MAX_CLICKABLE_ITEMS:
 		# finish scene
 		$LeftButton.hide()
@@ -234,7 +237,7 @@ func _on_item_pressed(button):
 		$CanvasLayer/BackpackButton.hide()
 		$LeftButton.hide()
 		$RightButton.hide()
-	
+
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "BeginScene":
 		$CanvasLayer/DialogueBox.assign_dictionary(second_dialog)
