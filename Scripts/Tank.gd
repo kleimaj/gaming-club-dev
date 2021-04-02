@@ -19,6 +19,7 @@ onready var muzzle = $Muzzle/Position2D
 export var MAX_POINTS = 500
 
 var changemuzzle = false
+var enabled = true
 
 func _ready():
 	$ShootTimer.wait_time = gun_cooldown
@@ -35,7 +36,8 @@ func control(delta):
 			position.x = 30
 		if(position.x > 950):
 			position.x = 950
-		
+	if not enabled:
+		return
 	if keyboardControls:	
 		$Muzzle.look_at(get_global_mouse_position())
 		velocity = Vector2()

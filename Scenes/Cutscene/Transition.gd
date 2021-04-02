@@ -1,6 +1,6 @@
 extends "res://Scripts/Cutscene.gd"
 
-var dialog_dics = [
+var first_dialog = [
 	{
 		'name': '[center]Player[/center]',
 		'content': 'Where am I?',
@@ -160,7 +160,7 @@ const MAX_CLICKABLE_ITEMS = 6
 
 func _ready():
 	$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
-	$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
+	$CanvasLayer/DialogueBox.assign_dictionary(first_dialog)
 	$CanvasLayer/DialogueBox.fade_in()
 	$CanvasLayer/Book.connect("book_closed", self, "book_closed_handler")
 	
