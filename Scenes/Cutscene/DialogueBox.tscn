@@ -150,7 +150,7 @@ __meta__ = {
 
 [node name="Indicator" type="Sprite" parent="."]
 visible = false
-position = Vector2( 755.986, 108.285 )
+position = Vector2( 755.986, 111.291 )
 scale = Vector2( 0.16, 0.16 )
 texture = ExtResource( 3 )
 
