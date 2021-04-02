@@ -105,6 +105,7 @@ var ItemMap = {
 	"BlueMushroom": {
 		"name": "Blue Mushroom",
 		"pack": false,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/blueMushIcon.png"),
 		"color": "#048B99",
 		"description": "The blue mushroom is the most common in this terrarium. Approximately, 85-95% of a healthy terrarium includes them. [b]The mushroom lives in sunlight,[/b] but thrives in darkness, [b]1 dose of the pink spray is needed to treat it when it's dark.[/b]",
@@ -113,6 +114,7 @@ var ItemMap = {
 	"BlueSpottedMushroom": {
 		"name": "Blue Spotted Mushroom",
 		"pack": false,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/blueSpotsMushIcon.png"),
 		"color": "#048B99",
 		"description": "The blue mushroom with spots is very similar to the blue mushroom without spots. [b]The mushroom lives in sunlight,[/b] but is more difficult to treat than the one without spots when it gets out of control which can occur in darkness. When it thrives in darkness, [b]1 dose of the yellow spray is needed to treat it.[/b] ",
@@ -121,6 +123,7 @@ var ItemMap = {
 	"GreenMushroom": {
 		"name": "Green Mushroom",
 		"pack": false,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/greenMushIcon.png"),
 		"color": "#0E8E00",
 		"description": "The green mushroom is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. [b]The mushroom thrives in dark environments,[/b] but if it thrives, [b]2 doses of the pink spray is needed to treat it.[/b]",
@@ -129,6 +132,7 @@ var ItemMap = {
 	"GreenSpottedMushroom": {
 		"name": "Green Spotted Mushroom",
 		"pack": false,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/greenSpotsMushIcon.png"),
 		"color": "#0E8E00",
 		"description": "The green mushroom with spots is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. [b]The mushroom thrives in dark environments, but is more difficult to treat than the one without spots when it gets out of control.[/b] If it thrives too much, [b]2 doses of the yellow spray is needed to treat it.[/b]",
@@ -137,6 +141,7 @@ var ItemMap = {
 	"YellowSpray": {
 		"name": "Yellow Spray",
 		"pack": true,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/newBottles/bottle1.png"),
 		"color": "#000",
 		"description": "The yellow spray is used on the overgrowth of blue and green mushrooms with  spots to trigger the the stopping of spores to fend off the dark mist. Sometimes certain mushrooms need more spray for a longer duration of time to be effective.",
@@ -145,6 +150,7 @@ var ItemMap = {
 	"PinkSpray": {
 		"name": "Pink Spray",
 		"pack": true,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/newBottles/bottle2.png"),
 		"color": "#000",
 		"description": "The pink spray is used on the overgrowth of blue and green mushrooms to trigger the stopping of spores to fend off the dark mist. Sometimes certain mushrooms need more spray for a longer duration of time to be effective.",
@@ -192,21 +198,25 @@ func dialog_finished():
 		
 	
 func _on_item_pressed(button):
-	$CanvasLayer/Book.show()
-	$CanvasLayer/Book.buttonType = null
-	if ItemMap[button.name].pack:
-		$CanvasLayer/Book.buttonType = button.name
-		button.hide()
-		get_node("CanvasLayer/BackpackButton/"+button.name).show()
+	if ItemMap[button.name].collected:
+		$CanvasLayer/Book.show()
+		$CanvasLayer/Book.receiveItem(button.name, false)
+	else:
+		$CanvasLayer/Book.buttonType = null
 		ItemMap[button.name].collected = true
-	get_node("Player/Backdrop/Buttons/" + button.name +"/" + button.name + "G").hide()
-	$CanvasLayer/Book.receiveItem(button.name)
-	clickable_items += 1
-	_reducto(button)
-	button.disconnect("pressed", self, "_on_item_pressed")
-	button.disconnect("mouse_entered", self, "_on_mouse_entered")
-	button.disconnect("mouse_exited", self, "_on_mouse_exited")
-	button.mouse_default_cursor_shape = Control.CURSOR_ARROW
+		if ItemMap[button.name].pack:
+			$CanvasLayer/Book.buttonType = button.name
+			button.hide()
+			get_node("CanvasLayer/BackpackButton/"+button.name).show()
+		get_node("Player/Backdrop/Buttons/" + button.name +"/" + button.name + "G").hide()
+		$CanvasLayer/Book.show()
+		$CanvasLayer/Book.receiveItem(button.name, true)
+		clickable_items += 1
+		_reducto(button)
+		button.disconnect("mouse_entered", self, "_on_mouse_entered")
+		button.disconnect("mouse_exited", self, "_on_mouse_exited")
+#	button.disconnect("pressed", self, "_on_item_pressed")
+#	button.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	
 func book_closed_handler():
 	if clickable_items == MAX_CLICKABLE_ITEMS:
