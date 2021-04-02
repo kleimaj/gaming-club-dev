@@ -1,6 +1,6 @@
 extends "res://Scripts/Cutscene.gd"
 
-var dialog_dics = [
+var first_dialog = [
 	{
 		'name': '[center]Player[/center]',
 		'content': 'Where am I?',
@@ -160,13 +160,16 @@ const MAX_CLICKABLE_ITEMS = 6
 
 func _ready():
 	$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
-	$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
+	$CanvasLayer/DialogueBox.assign_dictionary(first_dialog)
 	$CanvasLayer/DialogueBox.fade_in()
+	$CanvasLayer/Book.connect("book_closed", self, "book_closed_handler")
 	
 func enable_buttons():
 	for button in $Player/Backdrop/Buttons.get_children():
 		button.disabled = false
 		button.connect("pressed", self, "_on_item_pressed", [button])
+		button.connect("mouse_entered", self, "_on_mouse_entered", [button])
+		button.connect("mouse_exited", self, "_on_mouse_exited", [button])		
 
 func dialog_finished():
 	if finished_count == 0:
@@ -187,20 +190,6 @@ func dialog_finished():
 		$CanvasLayer/BackpackButton.hide()
 		$AnimationPlayer.play("EndScene")
 		
-func set_title(title, color):
-	var dynamic_font = DynamicFont.new()
-	dynamic_font.font_data = load("res://Fonts/ink-free-normal.ttf")
-	dynamic_font.size = 38
-	dynamic_font.outline_color = color
-	dynamic_font.outline_size = 1
-	dynamic_font.use_filter = true
-	title.set("custom_fonts/normal_font", dynamic_font)
-	title.add_color_override("default_color", Color(color))
-func set_line_break(lineBreak, color):
-	var styleBoxLine = StyleBoxLine.new()
-	styleBoxLine.color = color
-	styleBoxLine.thickness = 4
-	lineBreak.add_stylebox_override("panel", styleBoxLine)
 	
 func _on_item_pressed(button):
 	$CanvasLayer/Book.show()
@@ -209,19 +198,18 @@ func _on_item_pressed(button):
 		$CanvasLayer/Book.buttonType = button.name
 		ItemMap[button.name].collected = true
 	get_node("Player/Backdrop/Buttons/" + button.name +"/" + button.name + "G").hide()
-	var title = $CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer/MushroomTitle
-	title.bbcode_text = ItemMap[button.name].name
-	set_title(title, ItemMap[button.name].color)
-	var lineBreak = $CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/LineBreak
-	set_line_break(lineBreak, ItemMap[button.name].color)
-	$CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer/Mushroom.texture = ItemMap[button.name].sprite
-	$CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/Description.bbcode_text = ItemMap[button.name].description
-	$CanvasLayer/Book/BookTexture/HBoxContainer/RightContainer/Notes.bbcode_text = ItemMap[button.name].notes
+	$CanvasLayer/Book.receiveItem(button.name)
 	clickable_items += 1
-	$CanvasLayer/Book/BookTexture/HBoxContainer/RightContainer/AnimationPlayer.play("ShowDescription")
+	_reducto(button)
 	button.disconnect("pressed", self, "_on_item_pressed")
+	button.disconnect("mouse_entered", self, "_on_mouse_entered")
+	button.disconnect("mouse_exited", self, "_on_mouse_exited")
+	button.mouse_default_cursor_shape = Control.CURSOR_ARROW
+	
+func book_closed_handler():
 	if clickable_items == MAX_CLICKABLE_ITEMS:
 		# finish scene
+		# hide all UI items
 		$LeftButton.hide()
 		$RightButton.hide()
 		$AnimationPlayer.stop()
@@ -230,11 +218,7 @@ func _on_item_pressed(button):
 		$CanvasLayer/DialogueBox.show()
 		$CanvasLayer/DialogueBox.assign_dictionary(third_dialog)
 		$CanvasLayer/DialogueBox.fade_in()
-		$CanvasLayer/BookButton.hide()
-		$CanvasLayer/BackpackButton.hide()
-		$LeftButton.hide()
-		$RightButton.hide()
-	
+
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "BeginScene":
 		$CanvasLayer/DialogueBox.assign_dictionary(second_dialog)
@@ -273,56 +257,11 @@ func _on_RightButton_mouse_exited():
 	$Player.stop()
 	$AnimationPlayer.play("Arrows")
 
+func _on_mouse_entered(button):
+	_engorgio(button)
 
-func _on_BlueMushroom_mouse_entered():
-	_engorgio($Player/Backdrop/Buttons/BlueMushroom)
-	
-
-func _on_BlueMushroom_mouse_exited():
-	_reducto($Player/Backdrop/Buttons/BlueMushroom)
-
-
-func _on_BlueSpottedMushroom_mouse_entered():
-	_engorgio($Player/Backdrop/Buttons/BlueSpottedMushroom)
-
-
-func _on_BlueSpottedMushroom_mouse_exited():
-	_reducto($Player/Backdrop/Buttons/BlueSpottedMushroom)
-
-
-func _on_GreenMushroom_mouse_entered():
-	_engorgio($Player/Backdrop/Buttons/GreenMushroom)
-
-
-func _on_GreenMushroom_mouse_exited():
-	_reducto($Player/Backdrop/Buttons/GreenMushroom)
-
-
-func _on_GreenSpottedMushroom_mouse_entered():
-	_engorgio($Player/Backdrop/Buttons/GreenSpottedMushroom)
-
-
-func _on_GreenSpottedMushroom_mouse_exited():
-	_reducto($Player/Backdrop/Buttons/GreenSpottedMushroom)
-
-
-func _on_YellowSpray_mouse_entered():
-	_engorgio($Player/Backdrop/Buttons/YellowSpray)
-
-
-func _on_YellowSpray_mouse_exited():
-	_reducto($Player/Backdrop/Buttons/YellowSpray)
-
-
-func _on_PinkSpray_mouse_entered():
-	_engorgio($Player/Backdrop/Buttons/PinkSpray)
-
-
-func _on_PinkSpray_mouse_exited():
-	_reducto($Player/Backdrop/Buttons/PinkSpray)
-
-
-
+func _on_mouse_exited(button):
+	_reducto(button)
 
 func _on_BackpackButton_mouse_entered():
 	if $CanvasLayer/BackpackButton/PinkSpray.visible:

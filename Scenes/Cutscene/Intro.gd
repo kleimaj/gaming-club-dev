@@ -1,9 +1,10 @@
 extends "res://Scripts/Cutscene.gd"
 
-var dialog_dics = [
+# Cutscene dialogue is an array of dictionaries
+var first_dialogue = [
 	{
 		'name': null,
-		'content': 'Hello there, welcome to the game! Press [color=#ff0000]Enter[/color] to continue!',
+		'content': 'Hello there, welcome to the game! Please [color=#ff0000]click[/color] to continue!',
 	},
 	{
 		'name': '[center]Player[/center]',
@@ -17,6 +18,7 @@ var second_dialogue = [
 		'content': 'Meow!',
 	}
 ]
+# bool to check if the first dialogue has finished
 var first_finished = false
 
 func _ready():
@@ -35,7 +37,7 @@ func dialog_finished():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "FadeOutCanvas":
 		$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
-		$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
+		$CanvasLayer/DialogueBox.assign_dictionary(first_dialogue)
 		$CanvasLayer/DialogueBox.fade_in()
 		
 	elif anim_name == "zoom-in":

@@ -331,7 +331,7 @@ position = Vector2( 0.349731, -1610.63 )
 texture = ExtResource( 12 )
 
 [node name="Tank" parent="." instance=ExtResource( 1 )]
-position = Vector2( 52.8022, 546.6 )
+position = Vector2( 482.944, 546.6 )
 collision_mask = 2147483649
 Bullet = ExtResource( 2 )
 
