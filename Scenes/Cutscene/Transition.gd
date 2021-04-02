@@ -196,6 +196,8 @@ func _on_item_pressed(button):
 	$CanvasLayer/Book.buttonType = null
 	if ItemMap[button.name].pack:
 		$CanvasLayer/Book.buttonType = button.name
+		button.hide()
+		get_node("CanvasLayer/BackpackButton/"+button.name).show()
 		ItemMap[button.name].collected = true
 	get_node("Player/Backdrop/Buttons/" + button.name +"/" + button.name + "G").hide()
 	$CanvasLayer/Book.receiveItem(button.name)
