@@ -7,14 +7,14 @@ var first_dialogue = [
 		'content': 'Hello there, welcome to the game! Please [color=#ff0000]click[/color] to continue!',
 	},
 	{
-		'name': '[center]Player[/center]',
+		'name': 'Player',
 		'content': 'What\'s that?',
 	},
 ]
 
 var second_dialogue = [
 	{
-		'name': '[center]Cat[/center]',
+		'name': 'Cat',
 		'content': 'Meow!',
 	}
 ]

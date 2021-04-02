@@ -2,74 +2,74 @@ extends "res://Scripts/Cutscene.gd"
 
 var first_dialog = [
 	{
-		'name': '[center]Player[/center]',
+		'name': 'Player',
 		'content': 'Where am I?',
 	},
 ]
 
 var second_dialog = [
 	{
-		'name': '[center]???[/center]',
+		'name': '???',
 		'content': 'Hmph! Not exactly who I was expecting but-',
 	},
 	{
-		'name': '[center]Player[/center]',
+		'name': 'Player',
 		'content': '(startled) AAAAA!!!',
 	},
 	{
-		'name': '[center]???[/center]',
+		'name': '???',
 		'content': 'AAAA WHY ARE YOU SCREAMING??',
 	},
 	{
-		'name': '[center]Player[/center]',
+		'name': 'Player',
 		'content': 'Who are you!? Do you have any idea what’s going on here!?',
 	},
 	{
-		'name': '[center]???[/center]',
+		'name': '???',
 		'content': 'Ah ah! Be calmed young friend, it appears your curiosity got the better of you! Not that I’m one to talk..',
 	},
 	{
-		'name': '[center]Player[/center]',
+		'name': 'Player',
 		'content': 'Huh??',
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'I\'m Professor Flores, and it appears that you and I are trapped!'
 	},
 	{
-		'name': '[center]Player[/center]',
+		'name': 'Player',
 		'content': 'Eh? Wait like- in that bottle??',
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'This is not just some bottle! It’s- well it WAS my award winning terrarium. You see, I’m a botanist and fungi expert.'
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'Black spores have been wreaking havoc on my terrariums and surprisingly, those same black spores cause shrinking.'
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'The only way for us to return to normal size is to eradicate the black spores and return my terrarium to its former glory!'
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'I came in here to try and find a better treatment and rebalance the ecosystem.'
 	},
 	{
-		'name': '[center]Player[/center]',
+		'name': 'Player',
 		'content': 'That\'s how I got in here? I thought that was smoke! It’s billowing out into the forest, we have to stop these spores before they spread beyond control!',
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'Agreed, okay lets.. Wait, how did you get in here?'
 	},
 	{
-		'name': '[center]Player[/center]',
+		'name': 'Player',
 		'content': 'I was walking to a gynecology conference when...',
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'Nevermind that then, here take this!'
 	},
 	{
@@ -77,26 +77,26 @@ var second_dialog = [
 		'content': 'You received a Book'
 	},
 	{
-		'name': '[center]Player[/center]',
+		'name': 'Player',
 		'content': 'A book?',
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'This is not just any book! It contains all the knowledge I’ve cultivated through my studies.'
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'I have it mostly committed to memory, so you can hold onto it for the time being. Here’s a pen if you have anything to add.'
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'I’m going to scout ahead. Take a look around. I’ll come back and check on you.'
 	},
 ]
 
 var third_dialog = [
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'Come along now! I’ve set up what might be our escape from here!'
 	}
 ]

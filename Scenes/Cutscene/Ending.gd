@@ -2,11 +2,11 @@ extends "res://Scripts/Cutscene.gd"
 
 var dialog_dics = [
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'Thanks again for all your help! Good luck at your meeting, you’re welcome to come by and visit anytime!',
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'I have a feeling I may need your help with the rest of my terrariums in the future...',
 	},
 ]
