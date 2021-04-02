@@ -59,6 +59,15 @@ var ItemMap = [
 	}
 ]
 
+var KeyMap = {
+	"BlueMushroom": 0,
+	"BlueSpottedMushroom": 1,
+	"GreenMushroom": 2,
+	"GreenSpottedMushroom": 3,
+	"YellowSpray": 4,
+	"PinkSpray": 5
+}
+
 # Changes Mushroom Title (sets new color and outline color)
 func set_title(title, color):
 	# creates dynamic font
@@ -90,6 +99,10 @@ func _on_Button_pressed():
 #	if buttonType != null:
 #		get_parent().get_parent().get_node("Player/Backdrop/Buttons/"+ buttonType).hide()
 #		get_parent().get_node("BackpackButton/"+ buttonType).show()
+
+func receiveItem(item_name):
+	showPage(KeyMap[item_name])
+	$BookTexture/HBoxContainer/RightContainer/AnimationPlayer.play("ShowDescription")
 
 func showPage(idx):
 	# set new page contents of the current page

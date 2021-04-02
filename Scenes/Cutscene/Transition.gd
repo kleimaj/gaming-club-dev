@@ -210,21 +210,14 @@ func _on_item_pressed(button):
 		$CanvasLayer/Book.buttonType = button.name
 		ItemMap[button.name].collected = true
 	get_node("Player/Backdrop/Buttons/" + button.name +"/" + button.name + "G").hide()
-	var title = $CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer/MushroomTitle
-	title.bbcode_text = ItemMap[button.name].name
-	set_title(title, ItemMap[button.name].color)
-	var lineBreak = $CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/LineBreak
-	set_line_break(lineBreak, ItemMap[button.name].color)
-	$CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer/Mushroom.texture = ItemMap[button.name].sprite
-	$CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/Description.bbcode_text = ItemMap[button.name].description
-	$CanvasLayer/Book/BookTexture/HBoxContainer/RightContainer/Notes.bbcode_text = ItemMap[button.name].notes
+	$CanvasLayer/Book.receiveItem(button.name)
 	clickable_items += 1
-	$CanvasLayer/Book/BookTexture/HBoxContainer/RightContainer/AnimationPlayer.play("ShowDescription")
 	button.disconnect("pressed", self, "_on_item_pressed")
 
 func book_closed_handler():
 	if clickable_items == MAX_CLICKABLE_ITEMS:
 		# finish scene
+		# hide all UI items
 		$LeftButton.hide()
 		$RightButton.hide()
 		$AnimationPlayer.stop()
@@ -233,10 +226,6 @@ func book_closed_handler():
 		$CanvasLayer/DialogueBox.show()
 		$CanvasLayer/DialogueBox.assign_dictionary(third_dialog)
 		$CanvasLayer/DialogueBox.fade_in()
-		$CanvasLayer/BookButton.hide()
-		$CanvasLayer/BackpackButton.hide()
-		$LeftButton.hide()
-		$RightButton.hide()
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "BeginScene":
