@@ -12,6 +12,7 @@ var ItemMap = [
 	{
 		"name": "Blue Mushroom",
 		"pack": false,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/blueMushIcon.png"),
 		"color": "#048B99",
 		"description": "The blue mushroom is the most common in this terrarium. Approximately, 85-95% of a healthy terrarium includes them. [b]The mushroom lives in sunlight,[/b] but thrives in darkness, [b]1 dose of the pink spray is needed to treat it when it's dark.[/b]",
@@ -20,6 +21,7 @@ var ItemMap = [
 	{
 		"name": "Blue Spotted Mushroom",
 		"pack": false,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/blueSpotsMushIcon.png"),
 		"color": "#048B99",
 		"description": "The blue mushroom with spots is very similar to the blue mushroom without spots. [b]The mushroom lives in sunlight,[/b] but is more difficult to treat than the one without spots when it gets out of control which can occur in darkness. When it thrives in darkness, [b]1 dose of the yellow spray is needed to treat it.[/b] ",
@@ -28,6 +30,7 @@ var ItemMap = [
 	{
 		"name": "Green Mushroom",
 		"pack": false,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/greenMushIcon.png"),
 		"color": "#0E8E00",
 		"description": "The green mushroom is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. [b]The mushroom thrives in dark environments,[/b] but if it thrives, [b]2 doses of the pink spray is needed to treat it.[/b]",
@@ -36,6 +39,7 @@ var ItemMap = [
 	{
 		"name": "Green Spotted Mushroom",
 		"pack": false,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/greenSpotsMushIcon.png"),
 		"color": "#0E8E00",
 		"description": "The green mushroom with spots is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. [b]The mushroom thrives in dark environments, but is more difficult to treat than the one without spots when it gets out of control.[/b] If it thrives too much, [b]2 doses of the yellow spray is needed to treat it.[/b]",
@@ -44,6 +48,7 @@ var ItemMap = [
 	{
 		"name": "Yellow Spray",
 		"pack": true,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/newBottles/bottle1.png"),
 		"color": "#000",
 		"description": "The yellow spray is used on the overgrowth of blue and green mushrooms with  spots to trigger the the stopping of spores to fend off the dark mist. Sometimes certain mushrooms need more spray for a longer duration of time to be effective.",
@@ -52,6 +57,7 @@ var ItemMap = [
 	{
 		"name": "Pink Spray",
 		"pack": true,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/newBottles/bottle2.png"),
 		"color": "#000",
 		"description": "The pink spray is used on the overgrowth of blue and green mushrooms to trigger the stopping of spores to fend off the dark mist. Sometimes certain mushrooms need more spray for a longer duration of time to be effective.",

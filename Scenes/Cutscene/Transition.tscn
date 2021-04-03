@@ -1,9 +1,8 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Cutscene/Transition.gd" type="Script" id=2]
 [ext_resource path="res://Assets/GFX/explorationScene/Env02 back.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/Enemy/Mist.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/GFX/UI/bookClosed.png" type="Texture" id=5]
 [ext_resource path="res://Assets/GFX/UI/blueMushIcon.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GFX/UI/blueSpotsMushIcon.png" type="Texture" id=7]
@@ -19,12 +18,45 @@
 [ext_resource path="res://Scenes/Glow.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/GFX/background/foliage2.png" type="Texture" id=18]
 [ext_resource path="res://Assets/GFX/background/foliage4.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/MistCanvas.tscn" type="PackedScene" id=20]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Arrows"
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0, 4.59177e-40, 1 )
+colors = PoolColorArray( 0.266667, 0.027451, 0.309804, 0.223529, 0.396078, 0.0941176, 0.517647, 0.105882, 0.392157, 0.145098, 0.501961, 0.0745098, 0.980392, 0.647059, 0.980392, 0.0588235 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0.0016, 0.117265 ), 0.0, 0.801052, 0, 0, Vector2( 1, 0.489416 ), -0.825937, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+resource_local_to_scene = true
+trail_divisor = 4
+emission_shape = 2
+emission_box_extents = Vector3( 400, 100, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 10, 0 )
+spread = 0.0
+gravity = Vector3( 0, 5, 0 )
+initial_velocity = 5.0
+angular_velocity = 0.01
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+tangential_accel = 0.2
+angle = 360.0
+angle_random = 1.0
+scale = 2.0
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+
+[sub_resource type="Animation" id=6]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("LeftButton:rect_position")
+tracks/0/path = NodePath("Nav/LeftButton:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -36,7 +68,7 @@ tracks/0/keys = {
 "values": [ Vector2( 63.553, 349.99 ), Vector2( 73.553, 349.99 ), Vector2( 63.553, 349.99 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("RightButton:rect_position")
+tracks/1/path = NodePath("Nav/RightButton:rect_position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -48,7 +80,7 @@ tracks/1/keys = {
 "values": [ Vector2( 935.294, 349.99 ), Vector2( 930.294, 349.99 ), Vector2( 935.294, 349.99 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
@@ -74,7 +106,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
@@ -100,15 +132,20 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "PinkSpray"
+[sub_resource type="Animation" id=9]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=10]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=11]
 
-[sub_resource type="Animation" id=7]
-resource_name = "YellowSpray"
+[sub_resource type="Animation" id=12]
+
+[sub_resource type="Environment" id=13]
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 1.3
+glow_blend_mode = 0
+glow_bicubic_upscale = true
 
 [node name="Transition" type="Control"]
 anchor_right = 1.0
@@ -137,11 +174,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Mist" parent="Player/Backdrop" instance=ExtResource( 4 )]
-modulate = Color( 1, 1, 1, 0.658824 )
-position = Vector2( 687.206, 365.043 )
-scale = Vector2( 12.7333, 14.1522 )
-
 [node name="Buttons" type="Control" parent="Player/Backdrop"]
 margin_left = 23.0229
 margin_top = -196.973
@@ -152,6 +184,7 @@ __meta__ = {
 }
 
 [node name="BlueMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
 margin_left = -1763.53
 margin_top = 485.073
 margin_right = -1638.53
@@ -165,9 +198,14 @@ __meta__ = {
 }
 
 [node name="BlueMushroomG" parent="Player/Backdrop/Buttons/BlueMushroom" instance=ExtResource( 17 )]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
 position = Vector2( 63.2125, 52.3086 )
 
+[node name="Particles2D" parent="Player/Backdrop/Buttons/BlueMushroom/BlueMushroomG" index="0"]
+modulate = Color( 1, 0.701961, 0, 1 )
+
 [node name="BlueSpottedMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
 margin_left = -605.136
 margin_top = 578.556
 margin_right = -451.136
@@ -184,6 +222,7 @@ __meta__ = {
 position = Vector2( 77.6906, 64.3643 )
 
 [node name="GreenMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
 margin_left = 2289.04
 margin_top = 613.003
 margin_right = 2443.03
@@ -200,6 +239,7 @@ __meta__ = {
 position = Vector2( 68.9351, 53.7703 )
 
 [node name="GreenSpottedMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
 margin_left = 1265.64
 margin_top = 646.642
 margin_right = 1427.64
@@ -216,6 +256,7 @@ __meta__ = {
 position = Vector2( 86.2458, 68.6934 )
 
 [node name="YellowSpray" type="TextureButton" parent="Player/Backdrop/Buttons"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
 margin_left = -1289.43
 margin_top = 483.442
 margin_right = -1127.43
@@ -232,6 +273,7 @@ __meta__ = {
 position = Vector2( 68.9351, 88.5908 )
 
 [node name="PinkSpray" type="TextureButton" parent="Player/Backdrop/Buttons"]
+modulate = Color( 1.2, 1.2, 1.2, 1 )
 margin_left = 822.921
 margin_top = 569.664
 margin_right = 984.921
@@ -257,13 +299,15 @@ position = Vector2( 698.059, 482.174 )
 scale = Vector2( 0.137942, 0.167282 )
 texture = ExtResource( 18 )
 
-[node name="LeftButton" type="Button" parent="."]
+[node name="Nav" type="CanvasLayer" parent="."]
+
+[node name="LeftButton" type="Button" parent="Nav"]
 visible = false
 margin_left = 63.553
 margin_top = 349.99
 margin_right = 1126.55
 margin_bottom = 1352.99
-rect_scale = Vector2( 0.025, 0.05 )
+rect_scale = Vector2( 0.05, 0.05 )
 mouse_default_cursor_shape = 2
 icon = ExtResource( 14 )
 flat = true
@@ -271,13 +315,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RightButton" type="Button" parent="."]
+[node name="RightButton" type="Button" parent="Nav"]
 visible = false
 margin_left = 935.294
 margin_top = 349.99
 margin_right = 1998.29
 margin_bottom = 1352.99
-rect_scale = Vector2( 0.025, 0.05 )
+rect_scale = Vector2( 0.05, 0.05 )
 mouse_default_cursor_shape = 2
 icon = ExtResource( 15 )
 flat = true
@@ -286,6 +330,16 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="MistCanvas" parent="CanvasLayer" instance=ExtResource( 20 )]
+
+[node name="BackgroundMist" parent="CanvasLayer/MistCanvas" index="0"]
+position = Vector2( 529.446, -16.6933 )
+process_material = SubResource( 5 )
+
+[node name="BMTinge" parent="CanvasLayer/MistCanvas" index="1"]
+visible = false
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
 anchor_right = 1.0
@@ -339,6 +393,7 @@ margin_right = 142.439
 margin_bottom = 123.269
 rect_rotation = -21.4166
 rect_scale = Vector2( 0.7, 0.7 )
+mouse_default_cursor_shape = 2
 icon = ExtResource( 11 )
 flat = true
 
@@ -351,6 +406,7 @@ margin_right = 335.177
 margin_bottom = 88.2405
 rect_rotation = 24.0585
 rect_scale = Vector2( 0.7, 0.7 )
+mouse_default_cursor_shape = 2
 icon = ExtResource( 10 )
 flat = true
 __meta__ = {
@@ -363,16 +419,35 @@ visible = false
 [node name="MushroomTitle" parent="CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer" index="0"]
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 
+[node name="ArrowContainer" parent="CanvasLayer/Book/BookTexture" index="1"]
+visible = false
+
+[node name="LeftTButton" type="TextureButton" parent="CanvasLayer/Book/BookTexture/ArrowContainer" index="2"]
+visible = false
+margin_right = 1051.0
+margin_bottom = 997.0
+texture_normal = ExtResource( 14 )
+
+[node name="RightTButton" type="TextureButton" parent="CanvasLayer/Book/BookTexture/ArrowContainer" index="3"]
+visible = false
+margin_left = 8051.0
+margin_right = 9102.0
+margin_bottom = 997.0
+texture_normal = ExtResource( 15 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Arrows = SubResource( 1 )
-anims/BeginScene = SubResource( 2 )
-anims/EndScene = SubResource( 3 )
-anims/PinkSpray = SubResource( 4 )
-anims/Red = SubResource( 5 )
-anims/Yellow = SubResource( 6 )
-anims/YellowSpray = SubResource( 7 )
+anims/Arrows = SubResource( 6 )
+anims/BeginScene = SubResource( 7 )
+anims/EndScene = SubResource( 8 )
+anims/PinkSpray = SubResource( 9 )
+anims/Red = SubResource( 10 )
+anims/Yellow = SubResource( 11 )
+anims/YellowSpray = SubResource( 12 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 13 )
 [connection signal="mouse_entered" from="Player/Backdrop/Buttons/BlueMushroom" to="." method="_on_BlueMushroom_mouse_entered"]
 [connection signal="mouse_exited" from="Player/Backdrop/Buttons/BlueMushroom" to="." method="_on_BlueMushroom_mouse_exited"]
 [connection signal="mouse_entered" from="Player/Backdrop/Buttons/BlueSpottedMushroom" to="." method="_on_BlueSpottedMushroom_mouse_entered"]
@@ -385,12 +460,19 @@ anims/YellowSpray = SubResource( 7 )
 [connection signal="mouse_exited" from="Player/Backdrop/Buttons/YellowSpray" to="." method="_on_YellowSpray_mouse_exited"]
 [connection signal="mouse_entered" from="Player/Backdrop/Buttons/PinkSpray" to="." method="_on_PinkSpray_mouse_entered"]
 [connection signal="mouse_exited" from="Player/Backdrop/Buttons/PinkSpray" to="." method="_on_PinkSpray_mouse_exited"]
-[connection signal="mouse_entered" from="LeftButton" to="." method="_on_LeftButton_mouse_entered"]
-[connection signal="mouse_exited" from="LeftButton" to="." method="_on_LeftButton_mouse_exited"]
-[connection signal="mouse_entered" from="RightButton" to="." method="_on_RightButton_mouse_entered"]
-[connection signal="mouse_exited" from="RightButton" to="." method="_on_RightButton_mouse_exited"]
+[connection signal="mouse_entered" from="Nav/LeftButton" to="." method="_on_LeftButton_mouse_entered"]
+[connection signal="mouse_exited" from="Nav/LeftButton" to="." method="_on_LeftButton_mouse_exited"]
+[connection signal="mouse_entered" from="Nav/RightButton" to="." method="_on_RightButton_mouse_entered"]
+[connection signal="mouse_exited" from="Nav/RightButton" to="." method="_on_RightButton_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/BookButton" to="." method="_on_BookButton_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/BackpackButton" to="." method="_on_BackpackButton_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/BackpackButton" to="." method="_on_BackpackButton_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Book/BookTexture/ArrowContainer/LeftTButton" to="." method="_on_LeftTButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Book/BookTexture/ArrowContainer/RightTButton" to="." method="_on_RightTButton_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="Player/Backdrop/Buttons/BlueMushroom/BlueMushroomG"]
+
+[editable path="CanvasLayer/MistCanvas"]
 
 [editable path="CanvasLayer/Book"]
