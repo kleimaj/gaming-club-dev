@@ -220,6 +220,13 @@ func _on_item_pressed(button):
 		clickable_items += 1
 		ItemMap[button.name].collected = true
 		$CanvasLayer/Book.receiveItem(button.name)
+		if clickable_items == 2:
+			$CanvasLayer/Book/BookTexture/ArrowContainer.visible = true
+			$CanvasLayer/Book/BookTexture/ArrowContainer/LeftButton.visible = false
+			$CanvasLayer/Book/BookTexture/ArrowContainer/RightButton.visible = false
+			$CanvasLayer/Book/BookTexture/ArrowContainer/LeftTButton.visible = true
+			$CanvasLayer/Book/BookTexture/ArrowContainer/RightTButton.visible = true
+		
 	else:
 		$CanvasLayer/Book.showPage($CanvasLayer/Book.KeyMap[button.name])
 	
@@ -331,12 +338,6 @@ func _on_BookButton_pressed():
 	if clickable_items > 0 :
 		_game_pause(true)
 		$CanvasLayer/Book.show()
-		if clickable_items > 1:
-			$CanvasLayer/Book/BookTexture/ArrowContainer.visible = true
-			$CanvasLayer/Book/BookTexture/ArrowContainer/LeftButton.visible = false
-			$CanvasLayer/Book/BookTexture/ArrowContainer/RightButton.visible = false
-			$CanvasLayer/Book/BookTexture/ArrowContainer/LeftTButton.visible = true
-			$CanvasLayer/Book/BookTexture/ArrowContainer/RightTButton.visible = true
 		$CanvasLayer/Book.showPage(content_map[content_map.keys()[0]])
 		page_idx = 0
 		
