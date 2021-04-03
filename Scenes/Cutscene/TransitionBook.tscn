@@ -217,7 +217,6 @@ text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player 
 anims/ShowDescription = SubResource( 6 )
 
 [node name="ArrowContainer" type="HBoxContainer" parent="BookTexture"]
-visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
