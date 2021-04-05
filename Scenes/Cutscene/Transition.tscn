@@ -302,6 +302,7 @@ texture = ExtResource( 18 )
 [node name="Nav" type="CanvasLayer" parent="."]
 
 [node name="LeftButton" type="Button" parent="Nav"]
+visible = false
 margin_left = 63.553
 margin_top = 349.99
 margin_right = 1126.55
@@ -315,6 +316,7 @@ __meta__ = {
 }
 
 [node name="RightButton" type="Button" parent="Nav"]
+visible = false
 margin_left = 935.294
 margin_top = 349.99
 margin_right = 1998.29
@@ -340,7 +342,6 @@ process_material = SubResource( 5 )
 visible = false
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.52588e-05
@@ -350,7 +351,6 @@ __meta__ = {
 }
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 1 )]
-visible = false
 margin_top = -222.092
 margin_bottom = -32.0917
 
