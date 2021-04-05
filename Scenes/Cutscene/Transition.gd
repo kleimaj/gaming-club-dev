@@ -353,3 +353,9 @@ func _on_RightTButton_pressed():
 		page_idx = 0
 	$CanvasLayer/Book.showPage(content_map[content_map.keys()[page_idx]])
 	
+func _on_disable_nav(buttonTyp):
+	get_node("Nav/" + buttonTyp).disabled = true
+	
+func _on_enable_nav(buttonTyp):
+	get_node("Nav/" + buttonTyp).disabled = false
+	
