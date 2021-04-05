@@ -109,7 +109,6 @@ func _on_Button_pressed():
 func receiveItem(item_name, playAnimation):
 	showPage(KeyMap[item_name])
 	if playAnimation:
-		print("playing")
 		$BookTexture/HBoxContainer/RightContainer/AnimationPlayer.play("ShowDescription")
 
 func showPage(idx):

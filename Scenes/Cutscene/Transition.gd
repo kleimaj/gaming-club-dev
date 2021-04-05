@@ -208,6 +208,7 @@ func _on_item_pressed(button):
 	else:
 		$CanvasLayer/Book.buttonType = null
 		ItemMap[button.name].collected = true
+		content_map[button.name] = ItemMap.keys().find(button.name)
 		if ItemMap[button.name].pack:
 			$CanvasLayer/Book.buttonType = button.name
 			button.hide()
@@ -216,6 +217,8 @@ func _on_item_pressed(button):
 		$CanvasLayer/Book.show()
 		$CanvasLayer/Book.receiveItem(button.name, true)
 		clickable_items += 1
+		if clickable_items > 1:
+			$CanvasLayer/Book/BookTexture/ArrowContainer.show()
 		_reducto(button)
 		button.disconnect("mouse_entered", self, "_on_mouse_entered")
 		button.disconnect("mouse_exited", self, "_on_mouse_exited")
@@ -332,6 +335,8 @@ func _on_BookButton_pressed():
 		$CanvasLayer/Book.show()
 		$CanvasLayer/Book.showPage(content_map[content_map.keys()[0]])
 		page_idx = 0
+		if clickable_items > 1:
+			$CanvasLayer/Book/BookTexture/ArrowContainer.show()
 		
 			
 		
