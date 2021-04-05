@@ -16,7 +16,7 @@ var dialog_dics = [
 ]
 
 func _ready():
-	$AnimationPlayer.play("BeginScene")
+	$AnimationPlayer.play("BeginScene2")
 	
 
 func dialog_finished():
@@ -29,7 +29,7 @@ func dialog_finished():
 	
 	
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "BeginScene":
+	if anim_name == "BeginScene2":
 		$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
 		$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
 		$CanvasLayer/DialogueBox.fade_in()
