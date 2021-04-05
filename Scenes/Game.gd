@@ -66,18 +66,18 @@ var dialog_count = 0
 onready var timer = $Timer
 
 func _ready():
-	$emcl/evilMist.set_process(false)
-	$Tank.enabled = false
+#	$emcl/evilMist.set_process(false)
+#	$Tank.enabled = false
 	$CanvasLayer2/DialogueBox.connect("finished", self, "dialog_finished")
-	$CanvasLayer2/DialogueBox.assign_dictionary(dialog_1)
-	$CanvasLayer2/DialogueBox.fade_in()
+#	$CanvasLayer2/DialogueBox.assign_dictionary(dialog_1)
+#	$CanvasLayer2/DialogueBox.fade_in()
 
 func dialog_finished():
-	if dialog_count == 0:
-		$emcl/evilMist.set_process(true)
-		$Tank.enabled = true
-		dialog_count += 1
-	else:
+#	if dialog_count == 0:
+#		$emcl/evilMist.set_process(true)
+#		$Tank.enabled = true
+#		dialog_count += 1
+#	else:
 		get_tree().change_scene("res://Scenes/Cutscene/Ending.tscn")
 
 func checkGameOver(animType):
