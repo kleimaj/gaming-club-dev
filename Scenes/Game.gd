@@ -66,7 +66,7 @@ var dialog_count = 0
 onready var timer = $Timer
 
 func _ready():
-	$evilMist.set_process(false)
+	$emcl/evilMist.set_process(false)
 	$Tank.enabled = false
 	$CanvasLayer2/DialogueBox.connect("finished", self, "dialog_finished")
 	$CanvasLayer2/DialogueBox.assign_dictionary(dialog_1)
@@ -74,7 +74,7 @@ func _ready():
 
 func dialog_finished():
 	if dialog_count == 0:
-		$evilMist.set_process(true)
+		$emcl/evilMist.set_process(true)
 		$Tank.enabled = true
 		dialog_count += 1
 	else:
@@ -82,7 +82,7 @@ func dialog_finished():
 
 func checkGameOver(animType):
 	if mushrooms_hit == mushroomAmount:
-		$evilMist.hide()
+		$emcl/evilMist.hide()
 		rs = rainScene.instance()
 		add_child(rs)
 		rs.start_rain(animType)
@@ -94,6 +94,7 @@ func checkGameOver(animType):
 		$Camera2D.smoothing_enabled = true
 		$Camera2D.smoothing_speed = 5
 		rs.get_node("RainSound").play()
+		$CanvasLayer3/MistCanvas/BackgroundMist.emitting = false
 		timer.set_wait_time(rain_seconds)
 		timer.start();
 	
@@ -109,7 +110,7 @@ func _on_ProgressBar_value_changed(value):
 
 
 func _on_Timer_timeout():
-	$Mist.hide()
+	#$Mist.hide()
 	$CanvasLayer2/DialogueBox.assign_dictionary(dialog_2)
 	$CanvasLayer2/DialogueBox.fade_in()
 	
@@ -117,7 +118,7 @@ func _on_Timer_timeout():
 
 
 func _on_LostConditionArea_area_entered(area):
-	$evilMist.set_process(false)
+	$emcl/evilMist.set_process(false)
 	$CanvasLayer2/YouLose.show()
 
 

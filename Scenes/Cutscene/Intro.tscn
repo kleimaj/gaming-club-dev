@@ -296,9 +296,11 @@ margin_right = 1024.0
 margin_bottom = 389.0
 rect_min_size = Vector2( 1024, 75 )
 custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.97351, 0.514107, 0.0349887, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Gyno-Garden[/center]"
 text = "Gyno-Garden"
+
 __meta__ = {
 "_edit_use_anchors_": false
 }

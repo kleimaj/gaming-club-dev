@@ -163,6 +163,9 @@ var finished_count = 0
 var clickable_items = 0
 const MAX_CLICKABLE_ITEMS = 6
 
+var content_map = {}
+var current_page_index = 0 
+var page_idx = 0
 
 func _ready():
 	$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
@@ -185,8 +188,8 @@ func dialog_finished():
 		$CanvasLayer/BookButton.show()
 		$CanvasLayer/BackpackButton.show()
 		finished_count += 1
-		$LeftButton.show()
-		$RightButton.show()
+		$Nav/LeftButton.show()
+		$Nav/RightButton.show()
 		$AnimationPlayer.play("Arrows")
 		$Player/Backdrop/Buttons.show()
 		enable_buttons()
@@ -198,6 +201,7 @@ func dialog_finished():
 		
 	
 func _on_item_pressed(button):
+	_game_pause(true)
 	if ItemMap[button.name].collected:
 		$CanvasLayer/Book.show()
 		$CanvasLayer/Book.receiveItem(button.name, false)
@@ -222,14 +226,16 @@ func book_closed_handler():
 	if clickable_items == MAX_CLICKABLE_ITEMS:
 		# finish scene
 		# hide all UI items
-		$LeftButton.hide()
-		$RightButton.hide()
+		$Nav/LeftButton.hide()
+		$Nav/RightButton.hide()
 		$AnimationPlayer.stop()
 		$CanvasLayer/BookButton.hide()
 		$CanvasLayer/BackpackButton.hide()
 		$CanvasLayer/DialogueBox.show()
 		$CanvasLayer/DialogueBox.assign_dictionary(third_dialog)
 		$CanvasLayer/DialogueBox.fade_in()
+	else:
+		_game_pause(false)
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "BeginScene":
@@ -247,27 +253,31 @@ func _reducto(obj):
 	obj.set_scale(scale)
 	
 func _on_LeftButton_mouse_entered():
-	$AnimationPlayer.stop()
-	$Player.move_left()
-	_engorgio($LeftButton)
+	if not $Nav/LeftButton.disabled:
+		$AnimationPlayer.stop()
+		$Player.move_left()
+		_engorgio($Nav/LeftButton)
 
 
 func _on_LeftButton_mouse_exited():
-	$Player.stop()
-	$AnimationPlayer.play("Arrows")
-	_reducto($LeftButton)
+	if not $Nav/LeftButton.disabled:
+		$Player.stop()
+		$AnimationPlayer.play("Arrows")
+		_reducto($Nav/LeftButton)
 
 
 func _on_RightButton_mouse_entered():
-	_engorgio($RightButton)
-	$Player.move_right()
-	$AnimationPlayer.stop()
+	if not $Nav/RightButton.disabled:
+		_engorgio($Nav/RightButton)
+		$Player.move_right()
+		$AnimationPlayer.stop()
 	
 	
 func _on_RightButton_mouse_exited():
-	_reducto($RightButton)
-	$Player.stop()
-	$AnimationPlayer.play("Arrows")
+	if not $Nav/RightButton.disabled:
+		_reducto($Nav/RightButton)
+		$Player.stop()
+		$AnimationPlayer.play("Arrows")
 
 func _on_mouse_entered(button):
 	_engorgio(button)
@@ -288,3 +298,53 @@ func _on_BackpackButton_mouse_exited():
 	if $CanvasLayer/BackpackButton/YellowSpray.visible:
 		$CanvasLayer/BackpackButton/YellowSpray.rect_position.y += 40
 
+
+func _on_bb_pressed(button):
+	if button.visible:
+		$CanvasLayer/Book.show()
+		$CanvasLayer/Book.showPage($CanvasLayer/Book.KeyMap[button.name])
+		
+func _on_mouse_bb_entered(button):
+	if button.visible:
+		button.rect_position.y -= 40
+		
+func _on_mouse_bb_exited(button):
+	if button.visible:
+		button.rect_position.y += 40
+		
+func _game_pause(state):
+	if state:
+		$CanvasLayer/MistCanvas/BackgroundMist.set_speed_scale(0.0)
+		$AnimationPlayer.stop()
+		$Nav/LeftButton.disabled = true
+		$Nav/RightButton.disabled = true
+	else:
+		$CanvasLayer/MistCanvas/BackgroundMist.set_speed_scale(1.0)
+		$AnimationPlayer.play("Arrows")
+		$Nav/LeftButton.disabled = false
+		$Nav/RightButton.disabled = false
+	
+
+
+func _on_BookButton_pressed():
+	if clickable_items > 0 :
+		_game_pause(true)
+		$CanvasLayer/Book.show()
+		$CanvasLayer/Book.showPage(content_map[content_map.keys()[0]])
+		page_idx = 0
+		
+			
+		
+func _on_LeftTButton_pressed():
+	page_idx -=1
+	if page_idx == -1:
+		page_idx = content_map.keys().size() - 1
+	$CanvasLayer/Book.showPage(content_map[content_map.keys()[page_idx]])
+
+
+func _on_RightTButton_pressed():
+	page_idx +=1
+	if page_idx == content_map.keys().size():
+		page_idx = 0
+	$CanvasLayer/Book.showPage(content_map[content_map.keys()[page_idx]])
+	

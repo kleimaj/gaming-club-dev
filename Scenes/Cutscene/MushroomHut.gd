@@ -16,16 +16,20 @@ var dialog_dics = [
 ]
 
 func _ready():
-	$AnimationPlayer.play("BeginScene")
+	$AnimationPlayer.play("BeginScene2")
 	
 
 func dialog_finished():
-	$CanvasLayer/Backdrop/Cat.show()
-	$CanvasLayer/Button/Glow.show()
-	$CanvasLayer/arrow.show()
-
+	$Backdrop/Cat.show()
+	$Backdrop/Button/Glow.show()
+	$Backdrop/Button/arrow.show()
+	$Backdrop/Button/Camera_Animation.play("Zoom_In")
+	$Backdrop/Button/Terrarium.disabled = false
+	$Backdrop/Button/Terrarium.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	
+	
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "BeginScene":
+	if anim_name == "BeginScene2":
 		$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
 		$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
 		$CanvasLayer/DialogueBox.fade_in()
@@ -37,12 +41,14 @@ func _on_Terrarium_pressed():
 
 
 func _on_Terrarium_mouse_entered():
-	$CanvasLayer/Button/Terrarium.set_scale(Vector2(1.05,1.05))
-	var pos = $CanvasLayer/Button/Terrarium.get_position()
-	$CanvasLayer/Button/Terrarium.set_position(Vector2(pos.x-3.0,pos.y-6.0))
+	if not $Backdrop/Button/Terrarium.disabled:
+		$Backdrop/Button/Terrarium.set_scale(Vector2(1.30,1.05))
+		var pos = $Backdrop/Button/Terrarium.get_position()
+		$Backdrop/Button/Terrarium.set_position(Vector2(pos.x-3.0,pos.y-6.0))
 
 
 func _on_Terrarium_mouse_exited():
-	$CanvasLayer/Button/Terrarium.set_scale(Vector2(1.0,1.0))
-	var pos = $CanvasLayer/Button/Terrarium.get_position()
-	$CanvasLayer/Button/Terrarium.set_position(Vector2(pos.x+3.0,pos.y+6.0))
+	if not $Backdrop/Button/Terrarium.disabled:
+		$Backdrop/Button/Terrarium.set_scale(Vector2(1.25,1.0))
+		var pos = $Backdrop/Button/Terrarium.get_position()
+		$Backdrop/Button/Terrarium.set_position(Vector2(pos.x+3.0,pos.y+6.0))
