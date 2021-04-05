@@ -2,15 +2,15 @@ extends "res://Scripts/Cutscene.gd"
 
 var dialog_dics = [
 	{
-		'name': '[center]Player[/center]',
+		'name': 'Player',
 		'content': 'Hello...? Is anyone in here?',
 	},
 	{
-		'name': '[center]Cat[/center]',
+		'name': 'Cat',
 		'content': 'Meow!',
 	},
 	{
-		'name': '[center]Player[/center]',
+		'name': 'Player',
 		'content': 'Hey wait!',
 	},
 ]

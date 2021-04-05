@@ -26,6 +26,7 @@ corner_radius_bottom_left = 18
 [sub_resource type="DynamicFont" id=3]
 size = 24
 use_filter = true
+extra_spacing_top = 3
 font_data = ExtResource( 6 )
 
 [sub_resource type="Animation" id=4]
@@ -297,12 +298,9 @@ rect_min_size = Vector2( 1024, 75 )
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.97351, 0.514107, 0.0349887, 1 )
 bbcode_enabled = true
-bbcode_text = "[center]GynoGarden[/center]
+bbcode_text = "[center]Gyno-Garden[/center]"
+text = "Gyno-Garden"
 
-"
-text = "GynoGarden
-
-"
 __meta__ = {
 "_edit_use_anchors_": false
 }

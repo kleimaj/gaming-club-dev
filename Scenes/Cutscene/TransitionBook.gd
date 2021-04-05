@@ -106,9 +106,11 @@ func _on_Button_pressed():
 #		get_parent().get_parent().get_node("Player/Backdrop/Buttons/"+ buttonType).hide()
 #		get_parent().get_node("BackpackButton/"+ buttonType).show()
 
-func receiveItem(item_name):
+func receiveItem(item_name, playAnimation):
 	showPage(KeyMap[item_name])
-	$BookTexture/HBoxContainer/RightContainer/AnimationPlayer.play("ShowDescription")
+	if playAnimation:
+		print("playing")
+		$BookTexture/HBoxContainer/RightContainer/AnimationPlayer.play("ShowDescription")
 
 func showPage(idx):
 	# set new page contents of the current page

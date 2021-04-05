@@ -29,34 +29,34 @@ func _unhandled_key_input(event):
 
 var dialog_1 = [
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'It looks like the mist is encroaching on us… quickly! (use your scroll wheel to view the mist)',
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'We must hit the mushrooms with medicine to drive the mist up and out of the terrarium.',
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'Move the cannon with the A and D keys!',
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'Aim the cannon with your mouse. Click the mouse to launch the medicine',
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'The longer you click, the farther the medicine will launch! Remember that!',
 	},
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'If you\'re not sure how to deal with each mushroom, check your guidebook again! Good luck!',
 	},
 ]
 
 var dialog_2 = [
 	{
-		'name': '[center]Prof. Flores[/center]',
+		'name': 'Prof. Flores',
 		'content': 'Oh! You did it!! The medicine is mixing with the rainclouds and spreading across the terrarium! Let’s get out of here!'
 	}
 ]

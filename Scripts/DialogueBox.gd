@@ -5,6 +5,7 @@ var dialog_dics = []
 
 var dialog_index = 0
 signal finished
+var dialog_done = false
 
 #func _ready():
 ##	load_dialog()
@@ -12,6 +13,7 @@ signal finished
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept") and dialog_dics.size():
 		load_dialog()
+		set_process(false)
 
 func assign_dictionary(dictionary):
 	dialog_dics = dictionary
@@ -29,10 +31,10 @@ func load_dialog():
 		if dialog_dics[dialog_index].name != null:
 			$NameRect.show()
 			$NameRect/NameText.bbcode_text = dialog_dics[dialog_index].name
-			if dialog_dics[dialog_index].name == "[center]Cat[/center]":
+			if dialog_dics[dialog_index].name == "Cat":
 				$CatRect.show()
 				$AnimationPlayer.play("fade-in-cat")
-			elif dialog_dics[dialog_index].name == "[center]Prof. Flores[/center]" or dialog_dics[dialog_index].name == "[center]???[/center]":
+			elif dialog_dics[dialog_index].name == "Prof. Flores" or dialog_dics[dialog_index].name == "???":
 				$FloresRect.show()
 		else:
 			$NameRect.hide()
@@ -47,7 +49,8 @@ func load_dialog():
 
 func _on_Tween_tween_completed(object, key):
 	$Indicator.show()
-	$Indicator/AnimationPlayer.play()
+	$Indicator/AnimationPlayer.play("IDLE")
+	set_process(true)
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):

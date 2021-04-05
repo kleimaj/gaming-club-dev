@@ -18,6 +18,7 @@
 [ext_resource path="res://Scenes/Glow.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/GFX/background/foliage2.png" type="Texture" id=18]
 [ext_resource path="res://Assets/GFX/background/foliage4.png" type="Texture" id=19]
+[ext_resource path="res://Assets/SFX/Music/Labyrinth I - Lush Woodlands.ogg" type="AudioStream" id=20]
 [ext_resource path="res://Scenes/MistCanvas.tscn" type="PackedScene" id=20]
 
 [sub_resource type="Gradient" id=1]
@@ -52,6 +53,7 @@ angle_random = 1.0
 scale = 2.0
 scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
+
 
 [sub_resource type="Animation" id=6]
 loop = true
@@ -446,8 +448,14 @@ anims/YellowSpray = SubResource( 12 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -30.0
+autoplay = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 13 )
+
 [connection signal="mouse_entered" from="Player/Backdrop/Buttons/BlueMushroom" to="." method="_on_BlueMushroom_mouse_entered"]
 [connection signal="mouse_exited" from="Player/Backdrop/Buttons/BlueMushroom" to="." method="_on_BlueMushroom_mouse_exited"]
 [connection signal="mouse_entered" from="Player/Backdrop/Buttons/BlueSpottedMushroom" to="." method="_on_BlueSpottedMushroom_mouse_entered"]
