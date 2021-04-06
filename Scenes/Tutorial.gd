@@ -113,6 +113,7 @@ func _on_Camera2D_reached_upper_limit():
 	if steps_completed == 0:
 		progress_tutorial()
 		$backgrop/RightArrow.show()
+		$AnimationPlayer.play("move-arrows")
 
 
 func _on_RightArea_body_entered(body):
@@ -120,6 +121,7 @@ func _on_RightArea_body_entered(body):
 		progress_tutorial()
 		$backgrop/RightArrow.hide()
 		$backgrop/LeftArrow.show()
+		$AnimationPlayer.play("move-arrows")
 
 func _on_LeftArea_body_entered(body):
 	if steps_completed == 3:

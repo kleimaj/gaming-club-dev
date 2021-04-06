@@ -3,7 +3,7 @@ extends Area2D
 # Rate at which mist decreases (this may be calcualted by total number of enemies)
 export var mistFactor = 0.08
 
-const BOUNCE_MULTIPLIER = 2.5
+export var BOUNCE_MULTIPLIER = 2.5
 
 const CollisionMap = {
 	# yellow can heal spotted mushrooms
