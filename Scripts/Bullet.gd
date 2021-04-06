@@ -6,7 +6,9 @@ export (float) var lifetime
 export (int) var gravity = 98
 
 var velocity = Vector2(350, 0)
-	
+
+var curr_hits = 0
+const MAX_HITS = 2
 	
 func _process(delta):
 	velocity.y += gravity * delta

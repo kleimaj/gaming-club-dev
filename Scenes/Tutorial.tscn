@@ -1,38 +1,38 @@
 [gd_scene load_steps=44 format=2]
 
-[ext_resource path="res://Scenes/Tank/Tank.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Tank/Bullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Interface/HUD.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/LostConditionArea.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/GFX/background/leftTree.png" type="Texture" id=6]
+[ext_resource path="res://Fonts/Calibri Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/GFX/UI/panel.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/MistCanvas.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/evilMist.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Tank/Tank.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Interface/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Interface/GroundArea2D.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/GFX/background/rightTree.png" type="Texture" id=8]
-[ext_resource path="res://Assets/GFX/UI/meterInsideMiddle.png" type="Texture" id=9]
-[ext_resource path="res://Assets/GFX/UI/meterInsideCap.png" type="Texture" id=10]
-[ext_resource path="res://Assets/GFX/UI/progress bar.png" type="Texture" id=11]
-[ext_resource path="res://Assets/GFX/raincloud/mistTileTop.png" type="Texture" id=12]
-[ext_resource path="res://Assets/GFX/UI/MicrosoftTeams-image (1).png" type="Texture" id=13]
-[ext_resource path="res://Assets/GFX/raincloud/mistTileBottom.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Tank/Bullet.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Enemy/Blue Spotted Mushroom.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Enemy/Green Mushroom.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Enemy/Green Spotted Mushroom.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Cutscene/ButtonStyles/Button.tres" type="StyleBox" id=14]
 [ext_resource path="res://Scenes/Game.gd" type="Script" id=15]
-[ext_resource path="res://Scenes/ProgressBar.gd" type="Script" id=16]
-[ext_resource path="res://Scenes/evilMist.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Enemy/Blue Spotted Mushroom.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Assets/GFX/UI/panel.png" type="Texture" id=20]
-[ext_resource path="res://Scenes/Enemy/Green Mushroom.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/Enemy/Green Spotted Mushroom.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Assets/GFX/cutscene/DialogueBox/dialogue box.png" type="Texture" id=24]
-[ext_resource path="res://Fonts/Calibri Regular.ttf" type="DynamicFontData" id=25]
-[ext_resource path="res://Scenes/Cutscene/ButtonStyles/Button.tres" type="StyleBox" id=26]
-[ext_resource path="res://Assets/SFX/Music/Honey Hills (Forest Area) - Kirby Star Allies Music.ogg" type="AudioStream" id=27]
-[ext_resource path="res://Assets/GFX/background/ground.png" type="Texture" id=28]
-[ext_resource path="res://Scenes/MistCanvas.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Assets/GFX/background/background/bgLayer3.png" type="Texture" id=30]
-[ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=34]
-[ext_resource path="res://Assets/GFX/background/branch.png" type="Texture" id=35]
-[ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=68]
-[ext_resource path="res://Assets/GFX/background/background/bgLayer1.png" type="Texture" id=72]
+[ext_resource path="res://Assets/GFX/background/leftTree.png" type="Texture" id=16]
+[ext_resource path="res://Assets/GFX/background/rightTree.png" type="Texture" id=17]
+[ext_resource path="res://Assets/GFX/UI/meterInsideMiddle.png" type="Texture" id=18]
+[ext_resource path="res://Assets/GFX/UI/meterInsideCap.png" type="Texture" id=19]
+[ext_resource path="res://Assets/GFX/UI/progress bar.png" type="Texture" id=20]
+[ext_resource path="res://Assets/GFX/cutscene/DialogueBox/dialogue box.png" type="Texture" id=21]
+[ext_resource path="res://Assets/GFX/background/background/bgLayer3.png" type="Texture" id=22]
+[ext_resource path="res://Assets/GFX/raincloud/mistTileTop.png" type="Texture" id=23]
+[ext_resource path="res://Assets/GFX/background/ground.png" type="Texture" id=24]
+[ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=25]
+[ext_resource path="res://Assets/GFX/UI/MicrosoftTeams-image (1).png" type="Texture" id=26]
+[ext_resource path="res://Assets/GFX/raincloud/mistTileBottom.png" type="Texture" id=27]
+[ext_resource path="res://Assets/GFX/background/branch.png" type="Texture" id=28]
+[ext_resource path="res://Assets/SFX/Music/Honey Hills (Forest Area) - Kirby Star Allies Music.ogg" type="AudioStream" id=29]
+[ext_resource path="res://Assets/GFX/background/background/bgLayer1.png" type="Texture" id=30]
+[ext_resource path="res://Scenes/ProgressBar.gd" type="Script" id=31]
+[ext_resource path="res://Scenes/LostConditionArea.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=33]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0, 4.59177e-40, 1 )
@@ -70,7 +70,7 @@ color_ramp = SubResource( 2 )
 [sub_resource type="DynamicFont" id=6]
 size = 96
 use_filter = true
-font_data = ExtResource( 25 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.992157, 0.737255, 0.0901961, 1 )
@@ -82,7 +82,7 @@ corner_radius_bottom_left = 18
 [sub_resource type="DynamicFont" id=8]
 size = 24
 use_filter = true
-font_data = ExtResource( 25 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=9]
 tracks/0/type = "value"
@@ -112,7 +112,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 3, 3 ) ]
 }
 
-[node name="Game" type="Node2D"]
+[node name="Tutorial" type="Node2D"]
 position = Vector2( 1.82056, -32.7698 )
 script = ExtResource( 15 )
 mushroomAmount = 8
@@ -120,46 +120,46 @@ mushroomAmount = 8
 [node name="backgrop" type="Sprite" parent="."]
 position = Vector2( 531.593, -592.521 )
 scale = Vector2( 0.456058, 0.256182 )
-texture = ExtResource( 72 )
+texture = ExtResource( 30 )
 
 [node name="bgLayer2" type="Sprite" parent="backgrop"]
 position = Vector2( 95.0314, 924.311 )
 scale = Vector2( 1.02118, 1.0621 )
-texture = ExtResource( 34 )
+texture = ExtResource( 25 )
 
 [node name="bgLayer3" type="Sprite" parent="backgrop"]
 position = Vector2( 9.65848, 1013.47 )
 scale = Vector2( 0.832583, 1.03693 )
-texture = ExtResource( 30 )
+texture = ExtResource( 22 )
 
 [node name="bgLayer1" type="Sprite" parent="backgrop"]
 position = Vector2( -2365.54, 417.658 )
 scale = Vector2( 1.06152, 1.07679 )
-texture = ExtResource( 72 )
+texture = ExtResource( 30 )
 
 [node name="bgLayer4" type="Sprite" parent="backgrop"]
 position = Vector2( 2381.68, 400.374 )
 scale = Vector2( 1.06152, 1.07679 )
-texture = ExtResource( 72 )
+texture = ExtResource( 30 )
 
 [node name="rightTree" type="Sprite" parent="backgrop"]
 position = Vector2( 1018.84, 708.078 )
 rotation = 0.0122232
 scale = Vector2( 0.743798, 1.02568 )
-texture = ExtResource( 8 )
+texture = ExtResource( 17 )
 
 [node name="branch" type="Sprite" parent="backgrop/rightTree"]
 position = Vector2( -732.017, 2667.22 )
 rotation = -0.169332
 scale = Vector2( 1.34274, 2.24501 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 flip_h = true
 
 [node name="branch2" type="Sprite" parent="backgrop/rightTree"]
 position = Vector2( -516.968, 1876.75 )
 rotation = 0.279547
 scale = Vector2( 1.00255, 1.64383 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 flip_h = true
 flip_v = true
 
@@ -167,7 +167,7 @@ flip_v = true
 position = Vector2( -515.334, 1845.16 )
 rotation = -0.622961
 scale = Vector2( 1.24039, 1.64383 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 flip_h = true
 flip_v = true
 
@@ -175,14 +175,14 @@ flip_v = true
 position = Vector2( -763.159, 1093.43 )
 rotation = 0.2926
 scale = Vector2( 1.34274, 2.24501 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 flip_h = true
 
 [node name="branch5" type="Sprite" parent="backgrop/rightTree"]
 position = Vector2( -311.449, 334.451 )
 rotation = -0.190636
 scale = Vector2( 0.645443, 2.01796 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 flip_h = true
 flip_v = true
 
@@ -190,7 +190,7 @@ flip_v = true
 position = Vector2( -353.763, 179.84 )
 rotation = -0.190636
 scale = Vector2( 0.645443, 2.01796 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 flip_h = true
 flip_v = true
 
@@ -198,7 +198,7 @@ flip_v = true
 position = Vector2( -307.49, -1193.26 )
 rotation = -0.0182367
 scale = Vector2( 0.39666, 1.24547 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 flip_h = true
 flip_v = true
 
@@ -206,14 +206,14 @@ flip_v = true
 position = Vector2( -409.043, -1465.33 )
 rotation = -0.0182367
 scale = Vector2( 0.621316, 2.92563 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 flip_h = true
 
 [node name="branch10" type="Sprite" parent="backgrop/rightTree"]
 position = Vector2( -762.381, -2760.15 )
 rotation = -0.0182367
 scale = Vector2( 1.28812, 4.60222 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 flip_h = true
 flip_v = true
 
@@ -221,138 +221,138 @@ flip_v = true
 position = Vector2( -783.122, -621.994 )
 rotation = 0.219321
 scale = Vector2( 1.33901, 2.01796 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 flip_h = true
 flip_v = true
 
 [node name="leftTree" type="Sprite" parent="backgrop"]
 position = Vector2( -916.018, 708.491 )
 scale = Vector2( 0.839009, 1.04438 )
-texture = ExtResource( 6 )
+texture = ExtResource( 16 )
 
 [node name="branch" type="Sprite" parent="backgrop/leftTree"]
 position = Vector2( 492.334, 3199.17 )
 scale = Vector2( 1.01594, 1.66075 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 
 [node name="branch2" type="Sprite" parent="backgrop/leftTree"]
 position = Vector2( 386.007, 2453.49 )
 rotation = -0.213658
 scale = Vector2( 1.01594, 1.66075 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 flip_v = true
 
 [node name="branch3" type="Sprite" parent="backgrop/leftTree"]
 position = Vector2( 132.586, 1799.41 )
 rotation = 0.188567
 scale = Vector2( 0.538709, 1.47305 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 
 [node name="branch4" type="Sprite" parent="backgrop/leftTree"]
 position = Vector2( 132.586, 1799.41 )
 rotation = -0.242676
 scale = Vector2( 0.538709, 1.47305 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 
 [node name="branch5" type="Sprite" parent="backgrop/leftTree"]
 position = Vector2( 359.535, 1707.95 )
 rotation = 0.780914
 scale = Vector2( 1.19778, 1.47305 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 
 [node name="branch6" type="Sprite" parent="backgrop/leftTree"]
 position = Vector2( 542.981, 829.74 )
 rotation = 0.0244875
 scale = Vector2( 1.19778, 1.47305 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 
 [node name="branch7" type="Sprite" parent="backgrop/leftTree"]
 position = Vector2( 420.395, -96.2926 )
 rotation = 0.0244875
 scale = Vector2( 1.0126, 4.50878 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 
 [node name="branch8" type="Sprite" parent="backgrop/leftTree"]
 position = Vector2( 281.778, -1222.85 )
 rotation = 0.190137
 scale = Vector2( 0.761952, 2.4256 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 flip_v = true
 
 [node name="branch9" type="Sprite" parent="backgrop/leftTree"]
 position = Vector2( 403.606, -1783.83 )
 rotation = 0.190137
 scale = Vector2( 1.03865, 2.4256 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 
 [node name="branch10" type="Sprite" parent="backgrop/leftTree"]
 position = Vector2( 477.564, -3185.66 )
 rotation = -0.532807
 scale = Vector2( 1.2462, 2.4256 )
-texture = ExtResource( 35 )
+texture = ExtResource( 28 )
 flip_v = true
 
 [node name="ground" type="Sprite" parent="backgrop"]
 position = Vector2( 19.0995, 4915 )
 scale = Vector2( 1.02118, 0.925825 )
-texture = ExtResource( 28 )
+texture = ExtResource( 24 )
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 2.95483, 36.9359 )
 
 [node name="Blue Mushroom" parent="Enemies" groups=[
 "Blue",
-] instance=ExtResource( 68 )]
+] instance=ExtResource( 11 )]
 position = Vector2( 245.166, 344.892 )
 rotation = 0.194915
 
 [node name="Blue Mushroom2" parent="Enemies" groups=[
 "Blue",
-] instance=ExtResource( 68 )]
+] instance=ExtResource( 11 )]
 position = Vector2( 387.188, -454.229 )
 rotation = 0.6353
 scale = Vector2( 0.4, 0.4 )
 
 [node name="Blue Spotted Mushroom" parent="Enemies" groups=[
 "Blue Spotted",
-] instance=ExtResource( 18 )]
+] instance=ExtResource( 9 )]
 position = Vector2( 657.978, 223.008 )
 rotation = -0.289871
 
 [node name="Blue Spotted Mushroom2" parent="Enemies" groups=[
 "Blue Spotted",
-] instance=ExtResource( 18 )]
+] instance=ExtResource( 9 )]
 position = Vector2( 754.272, -450.005 )
 rotation = -0.289725
 
 [node name="Green Mushroom" parent="Enemies" groups=[
 "Blue",
-] instance=ExtResource( 21 )]
+] instance=ExtResource( 10 )]
 position = Vector2( 797.618, 14.1694 )
 rotation = -0.404916
 
 [node name="Green Mushroom2" parent="Enemies" groups=[
 "Blue",
-] instance=ExtResource( 21 )]
+] instance=ExtResource( 10 )]
 position = Vector2( 261.403, -288.361 )
 rotation = 0.406662
 
 [node name="Green Spotted Mushroom" parent="Enemies" groups=[
 "Blue Spotted",
-] instance=ExtResource( 22 )]
+] instance=ExtResource( 12 )]
 position = Vector2( 756.513, -219.496 )
 rotation = -0.270526
 
 [node name="Green Spotted Mushroom2" parent="Enemies" groups=[
 "Blue Spotted",
-] instance=ExtResource( 22 )]
+] instance=ExtResource( 12 )]
 position = Vector2( 248.968, -73.6012 )
 rotation = 0.404916
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="."]
 layer = 0
 
-[node name="MistCanvas" parent="CanvasLayer3" instance=ExtResource( 29 )]
+[node name="MistCanvas" parent="CanvasLayer3" instance=ExtResource( 3 )]
 
 [node name="BackgroundMist" parent="CanvasLayer3/MistCanvas" index="0"]
 process_material = SubResource( 5 )
@@ -366,27 +366,27 @@ margin_bottom = 2406.04
 [node name="emcl" type="CanvasLayer" parent="."]
 follow_viewport_enable = true
 
-[node name="evilMist" parent="emcl" instance=ExtResource( 17 )]
+[node name="evilMist" parent="emcl" instance=ExtResource( 4 )]
 position = Vector2( 488.025, -1103.23 )
 z_index = 2
 
 [node name="mistTileBottom" type="Sprite" parent="emcl/evilMist"]
 self_modulate = Color( 1, 1, 1, 0.698039 )
 position = Vector2( 260.025, -1649.22 )
-texture = ExtResource( 14 )
+texture = ExtResource( 27 )
 
 [node name="mistTileTop" type="Sprite" parent="emcl/evilMist/mistTileBottom"]
 self_modulate = Color( 1, 1, 1, 0.698039 )
 light_mask = -2147483647
 position = Vector2( 0.349731, -1639.63 )
-texture = ExtResource( 12 )
+texture = ExtResource( 23 )
 
-[node name="Tank" parent="." instance=ExtResource( 1 )]
+[node name="Tank" parent="." instance=ExtResource( 5 )]
 position = Vector2( 482.944, 546.6 )
 collision_mask = 2147483649
-Bullet = ExtResource( 2 )
+Bullet = ExtResource( 8 )
 
-[node name="HUD" parent="." instance=ExtResource( 3 )]
+[node name="HUD" parent="." instance=ExtResource( 6 )]
 margin_left = 1.52185
 margin_top = 7.60883
 margin_right = 1.52185
@@ -396,7 +396,7 @@ margin_bottom = 7.60883
 position = Vector2( 522.189, 696.331 )
 rotation = 0.00340095
 
-[node name="LostConditionArea" parent="." instance=ExtResource( 5 )]
+[node name="LostConditionArea" parent="." instance=ExtResource( 32 )]
 position = Vector2( 558.538, 558.903 )
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
@@ -407,10 +407,10 @@ margin_top = 575.33
 margin_right = 1392.65
 margin_bottom = 616.33
 rect_rotation = 270.0
-texture_under = ExtResource( 13 )
-texture_progress = ExtResource( 9 )
+texture_under = ExtResource( 26 )
+texture_progress = ExtResource( 18 )
 nine_patch_stretch = true
-script = ExtResource( 16 )
+script = ExtResource( 31 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -449,7 +449,7 @@ margin_left = -7.78973
 margin_top = 0.280945
 margin_right = 13.2103
 margin_bottom = 0.280945
-texture = ExtResource( 10 )
+texture = ExtResource( 19 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -464,7 +464,7 @@ margin_top = 41.2627
 margin_right = -403.58
 margin_bottom = 40.2627
 rect_rotation = 540.0
-texture = ExtResource( 10 )
+texture = ExtResource( 19 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -476,16 +476,16 @@ light_mask = -2147483647
 position = Vector2( 210.868, 2.49182 )
 rotation = 1.5708
 scale = Vector2( 0.484115, 0.354863 )
-texture = ExtResource( 11 )
+texture = ExtResource( 20 )
 
 [node name="panel" type="Sprite" parent="CanvasLayer2/ProgressBar/progress bar"]
 show_behind_parent = true
 position = Vector2( 5.00031, 0.381226 )
 rotation = -4.95477e-06
 scale = Vector2( 1.14564, 5.62328 )
-texture = ExtResource( 20 )
+texture = ExtResource( 2 )
 
-[node name="DialogueBox" parent="CanvasLayer2" instance=ExtResource( 23 )]
+[node name="DialogueBox" parent="CanvasLayer2" instance=ExtResource( 13 )]
 
 [node name="YouLose" type="TextureRect" parent="CanvasLayer2"]
 visible = false
@@ -498,7 +498,7 @@ margin_top = -90.1106
 margin_right = 1823.49
 margin_bottom = 546.889
 rect_scale = Vector2( 0.264467, 0.264467 )
-texture = ExtResource( 24 )
+texture = ExtResource( 21 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -526,7 +526,7 @@ rect_min_size = Vector2( 150, 50 )
 rect_scale = Vector2( 2.20998, 2.20998 )
 mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 7 )
-custom_styles/normal = ExtResource( 26 )
+custom_styles/normal = ExtResource( 14 )
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -535,7 +535,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Camera2D" parent="." instance=ExtResource( 19 )]
+[node name="Camera2D" parent="." instance=ExtResource( 33 )]
 position = Vector2( 536.119, 407.802 )
 rotation = 1.56789
 scale = Vector2( 0.184558, 0.210266 )
@@ -553,7 +553,7 @@ anims/zoom_out = SubResource( 10 )
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 27 )
+stream = ExtResource( 29 )
 volume_db = -30.0
 autoplay = true
 

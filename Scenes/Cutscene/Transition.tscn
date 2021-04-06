@@ -1,8 +1,9 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Cutscene/Transition.gd" type="Script" id=2]
 [ext_resource path="res://Assets/GFX/explorationScene/Env02 back.png" type="Texture" id=3]
+[ext_resource path="res://Assets/SFX/Music/Labyrinth I - Lush Woodlands.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Assets/GFX/UI/bookClosed.png" type="Texture" id=5]
 [ext_resource path="res://Assets/GFX/UI/blueMushIcon.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GFX/UI/blueSpotsMushIcon.png" type="Texture" id=7]
@@ -451,6 +452,7 @@ anims/YellowSpray = SubResource( 12 )
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 volume_db = -30.0
 autoplay = true
 
@@ -475,6 +477,8 @@ environment = SubResource( 13 )
 [connection signal="pressed" from="CanvasLayer/BookButton" to="." method="_on_BookButton_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/BackpackButton" to="." method="_on_BackpackButton_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/BackpackButton" to="." method="_on_BackpackButton_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/BackpackButton/PinkSpray" to="." method="_on_PinkSpray_pressed"]
+[connection signal="pressed" from="CanvasLayer/BackpackButton/YellowSpray" to="." method="_on_YellowSpray_pressed"]
 [connection signal="pressed" from="CanvasLayer/Book/BookTexture/ArrowContainer/LeftTButton" to="." method="_on_LeftTButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/Book/BookTexture/ArrowContainer/RightTButton" to="." method="_on_RightTButton_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

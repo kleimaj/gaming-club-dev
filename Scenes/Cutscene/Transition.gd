@@ -359,3 +359,15 @@ func _on_disable_nav(buttonTyp):
 func _on_enable_nav(buttonTyp):
 	get_node("Nav/" + buttonTyp).disabled = false
 	
+
+
+func _on_PinkSpray_pressed():
+	_game_pause(true)
+	$CanvasLayer/Book.show()
+	$CanvasLayer/Book.receiveItem("PinkSpray", false)
+
+
+func _on_YellowSpray_pressed():
+	_game_pause(true)	
+	$CanvasLayer/Book.show()
+	$CanvasLayer/Book.receiveItem("YellowSpray", false)
