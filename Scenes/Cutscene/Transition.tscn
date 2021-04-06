@@ -475,6 +475,8 @@ environment = SubResource( 13 )
 [connection signal="pressed" from="CanvasLayer/BookButton" to="." method="_on_BookButton_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/BackpackButton" to="." method="_on_BackpackButton_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/BackpackButton" to="." method="_on_BackpackButton_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/BackpackButton/PinkSpray" to="." method="_on_PinkSpray_pressed"]
+[connection signal="pressed" from="CanvasLayer/BackpackButton/YellowSpray" to="." method="_on_YellowSpray_pressed"]
 [connection signal="pressed" from="CanvasLayer/Book/BookTexture/ArrowContainer/LeftTButton" to="." method="_on_LeftTButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/Book/BookTexture/ArrowContainer/RightTButton" to="." method="_on_RightTButton_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
