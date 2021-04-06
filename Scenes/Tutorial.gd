@@ -96,9 +96,7 @@ func _on_Timer_timeout():
 	
 
 
-func _on_LostConditionArea_area_entered(area):
-	$emcl/evilMist.set_process(false)
-	$CanvasLayer2/YouLose.show()
+
 
 
 func _on_RetryButton_pressed():
@@ -109,9 +107,18 @@ func _on_Camera2D_reached_lower_limit():
 	if steps_completed == 1:
 		$CanvasLayer2/DialogueBox.load_dialog()
 		steps_completed += 1
+		$Tank.enabled = true
 
 
 func _on_Camera2D_reached_upper_limit():
 	if steps_completed == 0:
 		$CanvasLayer2/DialogueBox.load_dialog()
 		steps_completed += 1
+
+
+func _on_RightArea_body_entered(body):
+	print("RIGHT")
+
+func _on_LeftArea_body_entered(body):
+	print("LEFT")
+
