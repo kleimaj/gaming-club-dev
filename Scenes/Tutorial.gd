@@ -39,11 +39,11 @@ var dialog_1 = [
 	},
 	{
 		'name': 'Prof. Flores',
-		'content': 'Move the cannon with the A and D keys, move to the very end of the level and back',
+		'content': 'Move the cannon with the A and D keys, move to the very right with the D key',
 	},
 	{
 		'name': 'Prof. Flores',
-		'content': 'The longer you click, the farther the medicine will launch! Remember that!',
+		'content': 'Excellent! Now move back in place with the A key',
 	},
 	{
 		'name': 'Prof. Flores',
@@ -95,9 +95,9 @@ func _on_Timer_timeout():
 	pass
 	
 
-
-
-
+func progress_tutorial():
+	$CanvasLayer2/DialogueBox.load_dialog()
+	steps_completed += 1
 
 func _on_RetryButton_pressed():
 	get_tree().reload_current_scene()
@@ -105,20 +105,24 @@ func _on_RetryButton_pressed():
 
 func _on_Camera2D_reached_lower_limit():
 	if steps_completed == 1:
-		$CanvasLayer2/DialogueBox.load_dialog()
-		steps_completed += 1
+		progress_tutorial()
 		$Tank.enabled = true
 
 
 func _on_Camera2D_reached_upper_limit():
 	if steps_completed == 0:
-		$CanvasLayer2/DialogueBox.load_dialog()
-		steps_completed += 1
+		progress_tutorial()
+		$backgrop/RightArrow.show()
 
 
 func _on_RightArea_body_entered(body):
-	print("RIGHT")
+	if steps_completed == 2:
+		progress_tutorial()
+		$backgrop/RightArrow.hide()
+		$backgrop/LeftArrow.show()
 
 func _on_LeftArea_body_entered(body):
-	print("LEFT")
+	if steps_completed == 3:
+		progress_tutorial()
+		$backgrop/LeftArrow.hide()
 
