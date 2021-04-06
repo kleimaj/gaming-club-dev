@@ -49,8 +49,10 @@ func control(delta):
 			velocity = Vector2(-speed, 0)
 	if Input.is_action_just_pressed('click') || changemuzzle == true:
 		changemuzzle = true
+		# Charging up functionality
 		#if bulletSpeed != maxBulletSpeed:
 			#bulletSpeed += 5
+		# New way of shooting (Gouri)
 		bulletSpeed = abs((500 - get_global_mouse_position().y)) * 2.0
 #		$Muzzle.look_at(get_global_mouse_position())
 		update_trajectory(delta)

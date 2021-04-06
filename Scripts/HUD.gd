@@ -50,3 +50,5 @@ func _on_BookButton_pressed():
 
 func _on_Backpack_close_backpack():
 	close_backpack()
+
+

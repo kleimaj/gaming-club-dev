@@ -577,6 +577,9 @@ autoplay = true
 
 [node name="CAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ResetCamera = SubResource( 11 )
+[connection signal="projectile_change" from="Tank" to="HUD" method="_on_Tank_projectile_change"]
+[connection signal="close_backpack" from="HUD/CanvasLayer/Backpack" to="HUD" method="_on_Backpack_close_backpack"]
+[connection signal="projectile_change" from="HUD/CanvasLayer/Backpack" to="Tank" method="_on_Backpack_projectile_change"]
 [connection signal="area_entered" from="LostConditionArea" to="." method="_on_LostConditionArea_area_entered"]
 [connection signal="value_changed" from="CanvasLayer2/ProgressBar" to="." method="_on_ProgressBar_value_changed"]
 [connection signal="pressed" from="CanvasLayer2/YouLose/RetryButton" to="." method="_on_RetryButton_pressed"]

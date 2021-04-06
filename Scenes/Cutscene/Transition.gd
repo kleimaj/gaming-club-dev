@@ -245,7 +245,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		$CanvasLayer/DialogueBox.assign_dictionary(second_dialog)
 		$CanvasLayer/DialogueBox.fade_in()
 	elif anim_name == "EndScene":
-		get_tree().change_scene("res://Scenes/Game.tscn")
+		get_tree().change_scene("res://Scenes/Tutorial.tscn")
 
 func _engorgio(obj):
 	var scale = obj.get_scale() * 1.25
