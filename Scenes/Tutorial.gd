@@ -57,6 +57,14 @@ var dialog_1 = [
 		'name': 'Prof. Flores',
 		'content': 'Nice work, check out your Book to refresh on what medicine is effective against blue spotted mushrooms!',
 	},
+	{
+		'name': 'Prof. Flores',
+		'content': 'Now you should know that Yellow Medicine is effective against Blue Spotted Mushrooms. Try hitting the last indicated mushroom!',
+	},
+	{
+		'name': 'Prof. Flores',
+		'content': 'Excellent work, you\'re all prepared to clear out the mist of the terrarium!',
+	},
 ]
 
 var dialog_count = 0
@@ -70,12 +78,13 @@ func _ready():
 	$CanvasLayer2/DialogueBox.fade_in()
 
 func dialog_finished():
+	$HUD.hide()
+	$AnimationPlayer.play("fade-out")
 #	if dialog_count == 0:
 #		$emcl/evilMist.set_process(true)
 #		$Tank.enabled = true
 #		dialog_count += 1
 #	else:
-		get_tree().change_scene("res://Scenes/Cutscene/Ending.tscn")
 
 func checkGameOver(animType):
 	pass
@@ -144,3 +153,24 @@ func _on_Tank_projectile_change():
 		progress_tutorial()
 		$CanvasLayer2/BackpackArrow.hide()
 		$CanvasLayer2/BookArrow.show()
+		$AnimationPlayer.play("move-arrows")
+
+
+func _on_TransitionBook_tutorial_item_found():
+	if steps_completed == 6:
+		progress_tutorial()
+		$CanvasLayer2/BookArrow.hide()
+		$backgrop/MushroomArrow2.show()
+		$AnimationPlayer.play("move-arrows")
+
+
+func _on_Blue_Spotted_Mushroom_tutorial_hit():
+	if steps_completed == 7:
+		progress_tutorial()
+		$backgrop/MushroomArrow2.hide()
+		$CanvasLayer2/DialogueBox.dialog_locked = false
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "fade-out":
+		get_tree().change_scene("res://Scenes/Game.tscn")
