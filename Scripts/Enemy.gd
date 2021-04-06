@@ -90,8 +90,10 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 				register_correct_hit(projectile_type)
 				break
 		create_splash_effect(projectile_type, body.global_position)
-		body.free()
-		_reset_camera(get_parent().get_parent().get_node("Camera2D").position)
+		body.curr_hits += 1
+		if body.curr_hits == body.MAX_HITS:
+			body.free()
+			_reset_camera(get_parent().get_parent().get_node("Camera2D").position)
 		
 
 func _reset_camera(current_camera_position):
