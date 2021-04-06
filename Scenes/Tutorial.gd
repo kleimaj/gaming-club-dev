@@ -47,15 +47,12 @@ var dialog_1 = [
 	},
 	{
 		'name': 'Prof. Flores',
-		'content': 'If you\'re not sure how to deal with each mushroom, check your guidebook again! Good luck!',
+		'content': 'Try hitting the indicated blue mushroom! Hold and click your left mouse button to properly aim and fire the medicine!',
 	},
-]
-
-var dialog_2 = [
 	{
 		'name': 'Prof. Flores',
-		'content': 'Oh! You did it!! The medicine is mixing with the rainclouds and spreading across the terrarium! Let’s get out of here!'
-	}
+		'content': 'Nice shot! Now try changing medicine types with your backpack! Click on the Yellow Medicine!',
+	},
 ]
 
 var dialog_count = 0
@@ -127,4 +124,10 @@ func _on_LeftArea_body_entered(body):
 	if steps_completed == 3:
 		progress_tutorial()
 		$backgrop/LeftArrow.hide()
+		$backgrop/MushroomArrow.show()
+		$AnimationPlayer.play("move-arrows")
 
+func _on_Blue_Mushroom_tutorial_hit():
+	if steps_completed == 4:
+		progress_tutorial()
+		$backgrop/MushroomArrow.hide()
