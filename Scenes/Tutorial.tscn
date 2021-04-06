@@ -1,9 +1,7 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=35 format=2]
 
-[ext_resource path="res://Fonts/Calibri Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/GFX/UI/panel.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/MistCanvas.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/evilMist.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Tank/Tank.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Interface/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Interface/GroundArea2D.tscn" type="PackedScene" id=7]
@@ -13,20 +11,16 @@
 [ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Enemy/Green Spotted Mushroom.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Cutscene/ButtonStyles/Button.tres" type="StyleBox" id=14]
 [ext_resource path="res://Scenes/Tutorial.gd" type="Script" id=15]
 [ext_resource path="res://Assets/GFX/background/leftTree.png" type="Texture" id=16]
 [ext_resource path="res://Assets/GFX/background/rightTree.png" type="Texture" id=17]
 [ext_resource path="res://Assets/GFX/UI/meterInsideMiddle.png" type="Texture" id=18]
 [ext_resource path="res://Assets/GFX/UI/meterInsideCap.png" type="Texture" id=19]
 [ext_resource path="res://Assets/GFX/UI/progress bar.png" type="Texture" id=20]
-[ext_resource path="res://Assets/GFX/cutscene/DialogueBox/dialogue box.png" type="Texture" id=21]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer3.png" type="Texture" id=22]
-[ext_resource path="res://Assets/GFX/raincloud/mistTileTop.png" type="Texture" id=23]
 [ext_resource path="res://Assets/GFX/background/ground.png" type="Texture" id=24]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=25]
 [ext_resource path="res://Assets/GFX/UI/MicrosoftTeams-image (1).png" type="Texture" id=26]
-[ext_resource path="res://Assets/GFX/raincloud/mistTileBottom.png" type="Texture" id=27]
 [ext_resource path="res://Assets/GFX/background/branch.png" type="Texture" id=28]
 [ext_resource path="res://Assets/SFX/Music/Honey Hills (Forest Area) - Kirby Star Allies Music.ogg" type="AudioStream" id=29]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer1.png" type="Texture" id=30]
@@ -66,23 +60,6 @@ angle_random = 1.0
 scale = 2.0
 scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 96
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.992157, 0.737255, 0.0901961, 1 )
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-
-[sub_resource type="DynamicFont" id=8]
-size = 24
-use_filter = true
-font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=9]
 tracks/0/type = "value"
@@ -362,24 +339,6 @@ margin_top = -9.95749
 margin_right = 2217.26
 margin_bottom = 2406.04
 
-[node name="emcl" type="CanvasLayer" parent="."]
-follow_viewport_enable = true
-
-[node name="evilMist" parent="emcl" instance=ExtResource( 4 )]
-position = Vector2( 488.025, -1103.23 )
-z_index = 2
-
-[node name="mistTileBottom" type="Sprite" parent="emcl/evilMist"]
-self_modulate = Color( 1, 1, 1, 0.698039 )
-position = Vector2( 260.025, -1649.22 )
-texture = ExtResource( 27 )
-
-[node name="mistTileTop" type="Sprite" parent="emcl/evilMist/mistTileBottom"]
-self_modulate = Color( 1, 1, 1, 0.698039 )
-light_mask = -2147483647
-position = Vector2( 0.349731, -1639.63 )
-texture = ExtResource( 23 )
-
 [node name="Tank" parent="." instance=ExtResource( 5 )]
 position = Vector2( 482.944, 546.6 )
 collision_mask = 2147483649
@@ -401,6 +360,7 @@ position = Vector2( 558.538, 558.903 )
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="ProgressBar" type="TextureProgress" parent="CanvasLayer2"]
+visible = false
 margin_left = 964.649
 margin_top = 575.33
 margin_right = 1392.65
@@ -485,54 +445,7 @@ scale = Vector2( 1.14564, 5.62328 )
 texture = ExtResource( 2 )
 
 [node name="DialogueBox" parent="CanvasLayer2" instance=ExtResource( 13 )]
-
-[node name="YouLose" type="TextureRect" parent="CanvasLayer2"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -294.511
-margin_top = -90.1106
-margin_right = 1823.49
-margin_bottom = 546.889
-rect_scale = Vector2( 0.264467, 0.264467 )
-texture = ExtResource( 21 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer2/YouLose"]
-margin_left = 498.84
-margin_top = 146.662
-margin_right = 1598.84
-margin_bottom = 346.662
-custom_fonts/normal_font = SubResource( 6 )
-custom_colors/default_color = Color( 0.286275, 0.133333, 0, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Sadly, you have failed to fend off the mist.[/center]"
-text = "Sadly, you have failed to fend off the mist."
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RetryButton" type="Button" parent="CanvasLayer2/YouLose"]
-margin_left = 893.377
-margin_top = 378.886
-margin_right = 1043.38
-margin_bottom = 428.886
-rect_min_size = Vector2( 150, 50 )
-rect_scale = Vector2( 2.20998, 2.20998 )
-mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 7 )
-custom_styles/normal = ExtResource( 14 )
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-text = "RETRY"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+dialog_locked = true
 
 [node name="Camera2D" parent="." instance=ExtResource( 33 )]
 position = Vector2( 536.119, 407.802 )
@@ -559,7 +472,8 @@ autoplay = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 [connection signal="area_entered" from="LostConditionArea" to="." method="_on_LostConditionArea_area_entered"]
 [connection signal="value_changed" from="CanvasLayer2/ProgressBar" to="." method="_on_ProgressBar_value_changed"]
-[connection signal="pressed" from="CanvasLayer2/YouLose/RetryButton" to="." method="_on_RetryButton_pressed"]
+[connection signal="reached_lower_limit" from="Camera2D" to="." method="_on_Camera2D_reached_lower_limit"]
+[connection signal="reached_upper_limit" from="Camera2D" to="." method="_on_Camera2D_reached_upper_limit"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="CanvasLayer3/MistCanvas"]
