@@ -565,4 +565,6 @@ autoplay = true
 
 [editable path="CanvasLayer3/MistCanvas"]
 
+[editable path="HUD"]
+
 [editable path="Camera2D"]

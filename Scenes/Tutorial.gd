@@ -53,6 +53,10 @@ var dialog_1 = [
 		'name': 'Prof. Flores',
 		'content': 'Nice shot! Now try changing medicine types with your backpack! Click on the Yellow Medicine!',
 	},
+	{
+		'name': 'Prof. Flores',
+		'content': 'Nice work, check out your Book to refresh on what medicine is effective against blue spotted mushrooms!',
+	},
 ]
 
 var dialog_count = 0
@@ -131,5 +135,12 @@ func _on_Blue_Mushroom_tutorial_hit():
 	if steps_completed == 4:
 		progress_tutorial()
 		$backgrop/MushroomArrow.hide()
-		$backgrop/BackpackArrow.show()
+		$CanvasLayer2/BackpackArrow.show()
 		$AnimationPlayer.play("move-arrows")
+
+
+func _on_Tank_projectile_change():
+	if steps_completed == 5:
+		progress_tutorial()
+		$CanvasLayer2/BackpackArrow.hide()
+		$CanvasLayer2/BookArrow.show()
