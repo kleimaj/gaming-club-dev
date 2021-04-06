@@ -129,6 +129,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( -597.789, 3484.29 ), Vector2( -597.789, 3534.29 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("backgrop/BackpackArrow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1026.16, 4575.69 ), Vector2( -1026.16, 4625.69 ) ]
+}
 
 [node name="Tutorial" type="Node2D"]
 position = Vector2( 1.82056, -32.7698 )
@@ -316,7 +328,7 @@ texture = ExtResource( 24 )
 
 [node name="RightArrow" type="Sprite" parent="backgrop"]
 visible = false
-position = Vector2( 765.293, 4337.2 )
+position = Vector2( 765.293, 4319.75 )
 rotation = 1.5708
 scale = Vector2( -0.249112, -0.092973 )
 texture = ExtResource( 1 )
@@ -331,7 +343,7 @@ shape = SubResource( 11 )
 
 [node name="LeftArrow" type="Sprite" parent="backgrop"]
 visible = false
-position = Vector2( -57.871, 4365.89 )
+position = Vector2( -57.8711, 4348.44 )
 rotation = 1.5708
 scale = Vector2( -0.249112, -0.092973 )
 texture = ExtResource( 1 )
@@ -347,7 +359,7 @@ shape = SubResource( 11 )
 
 [node name="MushroomArrow" type="Sprite" parent="backgrop"]
 visible = false
-position = Vector2( -597.789, 3519.68 )
+position = Vector2( -597.789, 3502.24 )
 rotation = 1.5708
 scale = Vector2( -0.249112, -0.092973 )
 texture = ExtResource( 1 )
@@ -356,6 +368,22 @@ texture = ExtResource( 1 )
 position = Vector2( -560.594, 0 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="backgrop/MushroomArrow/LeftArea"]
+position = Vector2( 0.000976563, 9.34009 )
+rotation = -7.04132e-15
+scale = Vector2( 129.165, 53.1951 )
+shape = SubResource( 11 )
+
+[node name="BackpackArrow" type="Sprite" parent="backgrop"]
+visible = false
+position = Vector2( -1026.16, 4593.64 )
+rotation = 1.5708
+scale = Vector2( -0.249112, -0.092973 )
+texture = ExtResource( 1 )
+
+[node name="LeftArea" type="Area2D" parent="backgrop/BackpackArrow"]
+position = Vector2( -560.594, 0 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="backgrop/BackpackArrow/LeftArea"]
 position = Vector2( 0.000976563, 9.34009 )
 rotation = -7.04132e-15
 scale = Vector2( 129.165, 53.1951 )
@@ -538,6 +566,7 @@ anims/move-arrows = SubResource( 12 )
 [connection signal="body_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_RightArea_body_entered"]
 [connection signal="body_entered" from="backgrop/LeftArrow/LeftArea" to="." method="_on_LeftArea_body_entered"]
 [connection signal="tutorial_hit" from="Enemies/Blue Mushroom" to="." method="_on_Blue_Mushroom_tutorial_hit"]
+[connection signal="close_backpack" from="HUD/CanvasLayer/Backpack" to="HUD" method="_on_Backpack_close_backpack"]
 [connection signal="area_entered" from="LostConditionArea" to="." method="_on_LostConditionArea_area_entered"]
 [connection signal="value_changed" from="CanvasLayer2/ProgressBar" to="." method="_on_ProgressBar_value_changed"]
 [connection signal="reached_lower_limit" from="Camera2D" to="." method="_on_Camera2D_reached_lower_limit"]
@@ -545,5 +574,7 @@ anims/move-arrows = SubResource( 12 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="CanvasLayer3/MistCanvas"]
+
+[editable path="HUD"]
 
 [editable path="Camera2D"]

@@ -131,3 +131,5 @@ func _on_Blue_Mushroom_tutorial_hit():
 	if steps_completed == 4:
 		progress_tutorial()
 		$backgrop/MushroomArrow.hide()
+		$backgrop/BackpackArrow.show()
+		$AnimationPlayer.play("move-arrows")

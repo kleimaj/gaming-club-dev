@@ -46,3 +46,7 @@ func _on_BookButton_pressed():
 		$CanvasLayer/TransitionBook/BookTexture/BlueMushroom/PathFollow2D/Sprite.hide()
 		bookIsOpen = true
 		get_tree().paused = true
+
+
+func _on_Backpack_close_backpack():
+	close_backpack()
