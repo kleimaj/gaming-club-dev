@@ -92,18 +92,9 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 		create_splash_effect(projectile_type, body.global_position)
 		body.curr_hits += 1
 		if body.curr_hits == body.MAX_HITS:
+			body.explode()
 			body.free()
-			_reset_camera(get_parent().get_parent().get_node("Camera2D").position)
+			
 		
 
-func _reset_camera(current_camera_position):
-	var ap = get_parent().get_parent().get_node("CameraAnimationPlayer")
-	var camera_obj = get_parent().get_parent().get_node("Camera2D")
-	print(ap)
-	print(camera_obj)
-	var animation = ap.get_animation("ResetCamera")
-	animation.track_insert_key(0, 0.0, current_camera_position)
-	ap.play("ResetCamera")
-	camera_obj.smoothing_enabled = true
-	camera_obj.smoothing_speed = 5
 
