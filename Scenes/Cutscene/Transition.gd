@@ -190,7 +190,7 @@ func dialog_finished():
 		finished_count += 1
 		$Nav/LeftButton.show()
 		$Nav/RightButton.show()
-		$AnimationPlayer.play("Arrows")
+		_arrow_animate()
 		$Player/Backdrop/Buttons.show()
 		enable_buttons()
 		$CanvasLayer/DialogueBox.hide()
@@ -265,7 +265,7 @@ func _on_LeftButton_mouse_entered():
 func _on_LeftButton_mouse_exited():
 	if not $Nav/LeftButton.disabled:
 		$Player.stop()
-		$AnimationPlayer.play("Arrows")
+		_arrow_animate()
 		_reducto($Nav/LeftButton)
 
 
@@ -280,7 +280,7 @@ func _on_RightButton_mouse_exited():
 	if not $Nav/RightButton.disabled:
 		_reducto($Nav/RightButton)
 		$Player.stop()
-		$AnimationPlayer.play("Arrows")
+		_arrow_animate()
 
 func _on_mouse_entered(button):
 	_engorgio(button)
@@ -318,14 +318,14 @@ func _on_mouse_bb_exited(button):
 func _game_pause(state):
 	if state:
 		$CanvasLayer/MistCanvas/BackgroundMist.set_speed_scale(0.0)
-		$AnimationPlayer.stop()
 		$Nav/LeftButton.disabled = true
 		$Nav/RightButton.disabled = true
+		_arrow_animate()
 	else:
 		$CanvasLayer/MistCanvas/BackgroundMist.set_speed_scale(1.0)
-		$AnimationPlayer.play("Arrows")
 		$Nav/LeftButton.disabled = false
 		$Nav/RightButton.disabled = false
+		_arrow_animate()
 	
 
 
@@ -356,9 +356,11 @@ func _on_RightTButton_pressed():
 func _on_disable_nav(buttonTyp):
 	get_node("Nav/" + buttonTyp).rect_scale = Vector2(0.05,0.05)
 	get_node("Nav/" + buttonTyp).disabled = true
+	_arrow_animate()
 	
 func _on_enable_nav(buttonTyp):
 	get_node("Nav/" + buttonTyp).disabled = false
+	_arrow_animate()
 	
 
 
@@ -372,3 +374,14 @@ func _on_YellowSpray_pressed():
 	_game_pause(true)	
 	$CanvasLayer/Book.show()
 	$CanvasLayer/Book.receiveItem("YellowSpray", false)
+	
+func _arrow_animate():
+	if not $Nav/LeftButton.disabled:
+		$LeftArrowAnimation.play("Move")
+	else:
+		$LeftArrowAnimation.stop()
+	
+	if not $Nav/RightButton.disabled:
+		$RightArrowAnimation.play("Move")
+	else:
+		$RightArrowAnimation.stop()
