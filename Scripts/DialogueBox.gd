@@ -15,6 +15,10 @@ func _process(delta):
 		load_dialog()
 		set_process(false)
 
+func _input(event):
+	if event is InputEventKey and event.scancode == KEY_S and not event.echo:
+		fade_out()
+
 func assign_dictionary(dictionary):
 	dialog_dics = dictionary
 	dialog_index = 0
