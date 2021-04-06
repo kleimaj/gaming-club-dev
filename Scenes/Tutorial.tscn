@@ -14,7 +14,7 @@
 [ext_resource path="res://Scenes/Enemy/Green Spotted Mushroom.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Cutscene/ButtonStyles/Button.tres" type="StyleBox" id=14]
-[ext_resource path="res://Scenes/Game.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/Tutorial.gd" type="Script" id=15]
 [ext_resource path="res://Assets/GFX/background/leftTree.png" type="Texture" id=16]
 [ext_resource path="res://Assets/GFX/background/rightTree.png" type="Texture" id=17]
 [ext_resource path="res://Assets/GFX/UI/meterInsideMiddle.png" type="Texture" id=18]
@@ -115,7 +115,6 @@ tracks/0/keys = {
 [node name="Tutorial" type="Node2D"]
 position = Vector2( 1.82056, -32.7698 )
 script = ExtResource( 15 )
-mushroomAmount = 8
 
 [node name="backgrop" type="Sprite" parent="."]
 position = Vector2( 531.593, -592.521 )
