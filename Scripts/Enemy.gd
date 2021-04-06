@@ -3,7 +3,10 @@ extends Area2D
 # Rate at which mist decreases (this may be calcualted by total number of enemies)
 export var mistFactor = 0.08
 
-const BOUNCE_MULTIPLIER = 2.5
+export var BOUNCE_MULTIPLIER = 2.5
+export var isTutorial = false
+
+signal tutorial_hit
 
 const CollisionMap = {
 	# yellow can heal spotted mushrooms
@@ -86,9 +89,11 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 		var projectile_type = body.get_meta("type")
 		for group in get_groups():
 			# should only iterate once
-			if CollisionMap[projectile_type].has(group) and not beenHit:
+			if CollisionMap[projectile_type].has(group) and not beenHit and not isTutorial:
 				register_correct_hit(projectile_type)
 				break
+			elif isTutorial:
+				emit_signal("tutorial_hit")
 		create_splash_effect(projectile_type, body.global_position)
 		body.curr_hits += 1
 		if body.curr_hits == body.MAX_HITS:

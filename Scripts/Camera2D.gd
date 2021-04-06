@@ -8,6 +8,9 @@ export var ZOOM_OFFSET = 50
 export var LOWER_LIMIT = 1
 export var UPPER_LIMIT = 3
 
+signal reached_upper_limit
+signal reached_lower_limit
+
 
 
 func _ready():
@@ -24,6 +27,7 @@ func _input(event):
 		if(zoom.x < LOWER_LIMIT):
 			zoom.x = LOWER_LIMIT
 			zoom.y = LOWER_LIMIT
+			emit_signal("reached_lower_limit")			
 		else:
 			limit_left += ZOOM_OFFSET
 			limit_right -= ZOOM_OFFSET
@@ -35,6 +39,8 @@ func _input(event):
 		if(zoom.x > UPPER_LIMIT):
 			zoom.x = UPPER_LIMIT
 			zoom.y = UPPER_LIMIT
+			# for tutorial
+			emit_signal("reached_upper_limit")
 		else:
 			limit_left -= ZOOM_OFFSET
 			limit_right +=ZOOM_OFFSET

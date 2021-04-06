@@ -21,6 +21,8 @@ export var MAX_POINTS = 500
 var changemuzzle = false
 var enabled = true
 
+signal projectile_change
+
 func _ready():
 	$ShootTimer.wait_time = gun_cooldown
 
@@ -117,3 +119,10 @@ func _on_texture_change(new_anim):
 	
 func _on_Area2D_body_entered(body):
 	pass
+
+
+func _on_Backpack_projectile_change(new_anim):
+	sprayColor = new_anim
+	$Bottle.texture = load("res://Assets/GFX/UI/newBottles/" + new_anim + "BottleLoad.png")
+	if new_anim == "Yellow":
+		emit_signal("projectile_change")

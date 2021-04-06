@@ -3,6 +3,7 @@ extends Control
 export var buttonType = "PinkSpray"
 
 signal book_closed
+signal tutorial_item_found
 
 #keeps track of what page the user is on (index of ItemMap array)
 var page_idx = 0
@@ -102,6 +103,8 @@ func _on_Button_pressed():
 	hide()
 	emit_signal("book_closed")
 	get_tree().paused = false
+	if page_idx == 1:
+		emit_signal("tutorial_item_found")
 #	if buttonType != null:
 #		get_parent().get_parent().get_node("Player/Backdrop/Buttons/"+ buttonType).hide()
 #		get_parent().get_node("BackpackButton/"+ buttonType).show()

@@ -7,16 +7,18 @@ var dialog_index = 0
 signal finished
 var dialog_done = false
 
+export var dialog_locked = false
+
 #func _ready():
 ##	load_dialog()
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept") and dialog_dics.size():
+	if Input.is_action_just_pressed("ui_accept") and dialog_dics.size() and not dialog_locked:
 		load_dialog()
 		set_process(false)
 
 func _input(event):
-	if event is InputEventKey and event.scancode == KEY_S and not event.echo:
+	if event is InputEventKey and event.scancode == KEY_S and not event.echo and not dialog_locked:
 		fade_out()
 
 func assign_dictionary(dictionary):
