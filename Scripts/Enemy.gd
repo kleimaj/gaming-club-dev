@@ -76,6 +76,7 @@ func register_correct_hit(anim_type):
 	diminish_shader()
 	# Set beenHit to true (doesn't trigger again)
 	beenHit = true
+	$MushroomSpores/Particles2D.emitting = false
 	# check is game over in Game node
 	var game = get_tree().get_root().get_node("Game")
 	game.incrementScore()
@@ -98,7 +99,6 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 		body.curr_hits += 1
 		if body.curr_hits == body.MAX_HITS:
 			body.explode()
-			body.free()
 			
 		
 
