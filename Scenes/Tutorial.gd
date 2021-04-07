@@ -145,6 +145,7 @@ func _on_Blue_Mushroom_tutorial_hit():
 		progress_tutorial()
 		$backgrop/MushroomArrow.hide()
 		$CanvasLayer2/BackpackArrow.show()
+		$HUD/CanvasLayer/BackpackGlow.show()
 		$AnimationPlayer.play("move-arrows")
 
 
@@ -152,7 +153,9 @@ func _on_Tank_projectile_change():
 	if steps_completed == 5:
 		progress_tutorial()
 		$CanvasLayer2/BackpackArrow.hide()
+		$HUD/CanvasLayer/BackpackGlow.hide()
 		$CanvasLayer2/BookArrow.show()
+		$HUD/CanvasLayer/BookGlow.show()
 		$AnimationPlayer.play("move-arrows")
 
 
@@ -160,6 +163,7 @@ func _on_TransitionBook_tutorial_item_found():
 	if steps_completed == 6:
 		progress_tutorial()
 		$CanvasLayer2/BookArrow.hide()
+		$HUD/CanvasLayer/BookGlow.hide()
 		$backgrop/MushroomArrow2.show()
 		$AnimationPlayer.play("move-arrows")
 

@@ -83,23 +83,24 @@ func register_correct_hit(anim_type):
 	game.checkGameOver(anim_type)
 
 func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_shape):
-	if body.global_position.y < global_position.y:
-		body.velocity.y = -body.velocity.y * BOUNCE_MULTIPLIER
-		body.velocity.x *= -(transform.get_rotation() / transform.get_rotation()) 
-		# yellow or pink
-		var projectile_type = body.get_meta("type")
-		for group in get_groups():
-			# should only iterate once
-			if CollisionMap[projectile_type].has(group) and not beenHit and not isTutorial:
-				register_correct_hit(projectile_type)
-				break
-			elif isTutorial:
-				emit_signal("tutorial_hit")
-				$MushroomSpores/Particles2D.emitting = false
-		create_splash_effect(projectile_type, body.global_position)
-		body.curr_hits += 1
-		if body.curr_hits == body.MAX_HITS:
-			body.explode()
+#	One Way Collision
+#	if body.global_position.y < global_position.y:
+	body.velocity.y = -body.velocity.y * BOUNCE_MULTIPLIER
+	body.velocity.x *= -(transform.get_rotation() / transform.get_rotation()) 
+	# yellow or pink
+	var projectile_type = body.get_meta("type")
+	for group in get_groups():
+		# should only iterate once
+		if CollisionMap[projectile_type].has(group) and not beenHit and not isTutorial:
+			register_correct_hit(projectile_type)
+			break
+		elif isTutorial:
+			emit_signal("tutorial_hit")
+			$MushroomSpores/Particles2D.emitting = false
+	create_splash_effect(projectile_type, body.global_position)
+	body.curr_hits += 1
+	if body.curr_hits == body.MAX_HITS:
+		body.explode()
 			
 		
 

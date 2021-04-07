@@ -6,6 +6,7 @@ export (float) var gun_cooldown
 var bulletSpeed = 100
 var maxBulletSpeed = 2000
 export (bool) var keyboardControls = true
+export (bool) var chargingControls = true
 
 
 var sprayColor = "Red"
@@ -50,10 +51,12 @@ func control(delta):
 	if Input.is_action_just_pressed('click') || changemuzzle == true:
 		changemuzzle = true
 		# Charging up functionality
-		#if bulletSpeed != maxBulletSpeed:
-			#bulletSpeed += 5
+		if chargingControls:
+			if bulletSpeed != maxBulletSpeed:
+				bulletSpeed += 5
+		else:
 		# New way of shooting (Gouri)
-		bulletSpeed = abs((500 - get_global_mouse_position().y)) * 2.0
+			bulletSpeed = abs((500 - get_global_mouse_position().y)) * 2.0
 #		$Muzzle.look_at(get_global_mouse_position())
 		update_trajectory(delta)
 	if Input.is_action_just_released("click"):
@@ -61,6 +64,9 @@ func control(delta):
 		if get_global_mouse_position().y < 600:
 			shoot()
 			bulletSpeed = 100
+	if Input.is_action_just_pressed("right_click"):
+		chargingControls = !chargingControls
+		
 #func control(delta):
 #	$Muzzle.look_at(get_global_mouse_position())
 #	velocity = Vector2()
