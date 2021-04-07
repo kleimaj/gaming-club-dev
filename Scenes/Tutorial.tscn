@@ -27,22 +27,22 @@
 [ext_resource path="res://Scenes/LostConditionArea.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=33]
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=1]
 
-[sub_resource type="Gradient" id=1]
+[sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0, 0, 4.59177e-40, 1 )
 colors = PoolColorArray( 0.266667, 0.027451, 0.309804, 0.223529, 0.396078, 0.0941176, 0.517647, 0.105882, 0.392157, 0.145098, 0.501961, 0.0745098, 0.980392, 0.647059, 0.980392, 0.0588235 )
 
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=4]
 _data = [ Vector2( 0.0016, 0.117265 ), 0.0, 0.801052, 0, 0, Vector2( 1, 0.489416 ), -0.825937, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
-curve = SubResource( 3 )
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=6]
 resource_local_to_scene = true
 trail_divisor = 4
 emission_shape = 2
@@ -59,10 +59,10 @@ tangential_accel = 0.2
 angle = 360.0
 angle_random = 1.0
 scale = 2.0
-scale_curve = SubResource( 4 )
-color_ramp = SubResource( 2 )
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:zoom")
 tracks/0/interp = 1
@@ -76,7 +76,7 @@ tracks/0/keys = {
 "values": [ Vector2( 3, 3 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:zoom")
 tracks/0/interp = 1
@@ -90,7 +90,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 3, 3 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=9]
 resource_name = "fade-out"
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer2/Fade:modulate")
@@ -117,7 +117,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=10]
 resource_name = "move-arrows"
 loop = true
 tracks/0/type = "value"
@@ -390,7 +390,7 @@ position = Vector2( -560.594, 0 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="backgrop/RightArrow/RightArea"]
 rotation = -7.04132e-15
 scale = Vector2( 129.165, 53.195 )
-shape = SubResource( 11 )
+shape = SubResource( 1 )
 
 [node name="LeftArrow" type="Sprite" parent="backgrop"]
 visible = false
@@ -406,7 +406,7 @@ position = Vector2( -560.594, 0 )
 position = Vector2( 0.000976563, 9.34009 )
 rotation = -7.04132e-15
 scale = Vector2( 129.165, 53.1951 )
-shape = SubResource( 11 )
+shape = SubResource( 1 )
 
 [node name="MushroomArrow" type="Sprite" parent="backgrop"]
 visible = false
@@ -422,7 +422,7 @@ position = Vector2( -560.594, 0 )
 position = Vector2( 0.000976563, 9.34009 )
 rotation = -7.04132e-15
 scale = Vector2( 129.165, 53.1951 )
-shape = SubResource( 11 )
+shape = SubResource( 1 )
 
 [node name="MushroomArrow2" type="Sprite" parent="backgrop"]
 visible = false
@@ -438,7 +438,7 @@ position = Vector2( -560.594, 0 )
 position = Vector2( 0.000976563, 9.34009 )
 rotation = -7.04132e-15
 scale = Vector2( 129.165, 53.1951 )
-shape = SubResource( 11 )
+shape = SubResource( 1 )
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 2.95483, 36.9359 )
@@ -466,7 +466,7 @@ layer = 0
 
 [node name="BackgroundMist" parent="CanvasLayer3/MistCanvas" index="0"]
 visible = false
-process_material = SubResource( 5 )
+process_material = SubResource( 6 )
 
 [node name="BMTinge" parent="CanvasLayer3/MistCanvas" index="1"]
 visible = false
@@ -600,7 +600,7 @@ position = Vector2( -560.594, 0 )
 position = Vector2( 0.000976563, 9.34009 )
 rotation = -7.04132e-15
 scale = Vector2( 129.165, 53.1951 )
-shape = SubResource( 11 )
+shape = SubResource( 1 )
 
 [node name="BackpackArrow" type="Sprite" parent="CanvasLayer2"]
 visible = false
@@ -616,7 +616,7 @@ position = Vector2( -560.594, 0 )
 position = Vector2( 0.000976563, 9.34009 )
 rotation = -7.04132e-15
 scale = Vector2( 129.165, 53.1951 )
-shape = SubResource( 11 )
+shape = SubResource( 1 )
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer2"]
 modulate = Color( 0.888889, 0.888889, 0.888889, 0.111111 )
@@ -638,8 +638,8 @@ current = true
 position = Vector2( 0, -1647.78 )
 
 [node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/zoom_in = SubResource( 9 )
-anims/zoom_out = SubResource( 10 )
+anims/zoom_in = SubResource( 7 )
+anims/zoom_out = SubResource( 8 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -652,8 +652,8 @@ autoplay = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/fade-out = SubResource( 13 )
-anims/move-arrows = SubResource( 12 )
+anims/fade-out = SubResource( 9 )
+anims/move-arrows = SubResource( 10 )
 [connection signal="area_shape_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_RightArea_area_shape_entered"]
 [connection signal="body_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_RightArea_body_entered"]
