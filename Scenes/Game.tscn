@@ -383,6 +383,7 @@ margin_bottom = 2406.04
 follow_viewport_enable = true
 
 [node name="evilMist" parent="emcl" instance=ExtResource( 17 )]
+visible = false
 position = Vector2( 488.025, -1103.23 )
 z_index = 2
 
