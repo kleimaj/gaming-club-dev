@@ -485,6 +485,7 @@ margin_left = 1.52185
 margin_top = 7.60883
 margin_right = 1.52185
 margin_bottom = 7.60883
+isTutorial = true
 
 [node name="GroundArea2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 522.189, 696.331 )

@@ -3,6 +3,8 @@ extends Control
 var backpackIsOpen = false
 var bookIsOpen = false
 
+export var isTutorial = false
+
 onready var Backpack = $CanvasLayer/Backpack
 
 # On default, set backpack and book visibility to false
@@ -46,6 +48,8 @@ func _on_BookButton_pressed():
 		$CanvasLayer/TransitionBook/BookTexture/BlueMushroom/PathFollow2D/Sprite.hide()
 		bookIsOpen = true
 		get_tree().paused = true
+		if isTutorial:
+			$CanvasLayer/TransitionBook.receiveItem("BlueSpottedMushroom", false)
 
 
 func _on_Backpack_close_backpack():
