@@ -1,8 +1,8 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Cutscene/Transition.gd" type="Script" id=2]
-[ext_resource path="res://Assets/GFX/explorationScene/Env02 back.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GFX/new/Transition_bg/Transition.png" type="Texture" id=3]
 [ext_resource path="res://Assets/SFX/Music/Labyrinth I - Lush Woodlands.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Assets/GFX/UI/bookClosed.png" type="Texture" id=5]
 [ext_resource path="res://Assets/GFX/UI/blueMushIcon.png" type="Texture" id=6]
@@ -15,10 +15,9 @@
 [ext_resource path="res://Scenes/Cutscene/TransitionPlayer.gd" type="Script" id=13]
 [ext_resource path="res://Assets/GFX/cutscene/Book/arrow.png" type="Texture" id=14]
 [ext_resource path="res://Assets/GFX/cutscene/Book/arrow-right.png" type="Texture" id=15]
-[ext_resource path="res://Assets/GFX/UI/backpack/front-01.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/Glow.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Assets/GFX/background/foliage2.png" type="Texture" id=18]
-[ext_resource path="res://Assets/GFX/background/foliage4.png" type="Texture" id=19]
+[ext_resource path="res://Assets/GFX/new/Backpack/BackpackFront.png" type="Texture" id=18]
+[ext_resource path="res://Assets/GFX/new/Backpack/Backpack_closed_Back.png" type="Texture" id=19]
 [ext_resource path="res://Scenes/MistCanvas.tscn" type="PackedScene" id=20]
 
 [sub_resource type="Gradient" id=1]
@@ -195,11 +194,11 @@ script = ExtResource( 13 )
 [node name="Backdrop" type="TextureRect" parent="Player"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 169.66
-margin_top = 163.944
-margin_right = 822.659
-margin_bottom = 352.944
-rect_scale = Vector2( 0.5, 0.58 )
+margin_left = 202.0
+margin_top = 196.0
+margin_right = 1496.0
+margin_bottom = 413.0
+rect_scale = Vector2( 0.25, 0.3 )
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 4
@@ -208,21 +207,21 @@ __meta__ = {
 }
 
 [node name="Buttons" type="Control" parent="Player/Backdrop"]
-margin_left = 23.0229
-margin_top = -196.973
-margin_right = 63.0229
-margin_bottom = -156.973
+margin_left = 140.906
+margin_top = 618.891
+margin_right = 180.906
+margin_bottom = 658.891
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BlueMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = -1763.53
-margin_top = 485.073
-margin_right = -1638.53
-margin_bottom = 627.073
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = -2181.23
+margin_top = 372.533
+margin_right = -2056.23
+margin_bottom = 514.533
+rect_scale = Vector2( 1.1, 1.1 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 6 )
 texture_disabled = ExtResource( 6 )
@@ -239,11 +238,10 @@ modulate = Color( 1, 0.701961, 0, 1 )
 
 [node name="BlueSpottedMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = -605.136
-margin_top = 578.556
-margin_right = -451.136
-margin_bottom = 733.556
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = -1155.36
+margin_top = 450.604
+margin_right = -1001.36
+margin_bottom = 605.604
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 7 )
 texture_disabled = ExtResource( 7 )
@@ -256,11 +254,10 @@ position = Vector2( 77.6906, 64.3643 )
 
 [node name="GreenMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = 2289.04
-margin_top = 613.003
-margin_right = 2443.03
-margin_bottom = 768.003
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = 2349.34
+margin_top = 248.354
+margin_right = 2503.33
+margin_bottom = 403.354
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 8 )
 texture_disabled = ExtResource( 8 )
@@ -273,11 +270,10 @@ position = Vector2( 68.9351, 53.7703 )
 
 [node name="GreenSpottedMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = 1265.64
-margin_top = 646.642
-margin_right = 1427.64
-margin_bottom = 807.642
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = 1157.62
+margin_top = 366.407
+margin_right = 1319.62
+margin_bottom = 527.407
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 9 )
 texture_disabled = ExtResource( 9 )
@@ -290,11 +286,10 @@ position = Vector2( 86.2458, 68.6934 )
 
 [node name="YellowSpray" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = -1289.43
-margin_top = 483.442
-margin_right = -1127.43
-margin_bottom = 644.442
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = -3336.27
+margin_top = 51.3906
+margin_right = -3174.27
+margin_bottom = 212.391
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 10 )
 texture_disabled = ExtResource( 10 )
@@ -307,11 +302,10 @@ position = Vector2( 68.9351, 88.5908 )
 
 [node name="PinkSpray" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = 822.921
-margin_top = 569.664
-margin_right = 984.921
-margin_bottom = 730.664
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = 459.264
+margin_top = 41.0161
+margin_right = 621.264
+margin_bottom = 202.016
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 11 )
 texture_disabled = ExtResource( 11 )
@@ -321,16 +315,6 @@ __meta__ = {
 
 [node name="PinkSprayG" parent="Player/Backdrop/Buttons/PinkSpray" instance=ExtResource( 17 )]
 position = Vector2( 68.9351, 93.565 )
-
-[node name="foliage4" type="Sprite" parent="Player/Backdrop"]
-position = Vector2( 792.239, 490.521 )
-scale = Vector2( 0.215926, 0.294963 )
-texture = ExtResource( 19 )
-
-[node name="foliage2" type="Sprite" parent="Player/Backdrop"]
-position = Vector2( 698.059, 482.174 )
-scale = Vector2( 0.137942, 0.167282 )
-texture = ExtResource( 18 )
 
 [node name="Nav" type="CanvasLayer" parent="."]
 
@@ -406,45 +390,52 @@ __meta__ = {
 
 [node name="BackpackButton" type="TextureButton" parent="CanvasLayer"]
 visible = false
-margin_left = 40.0
-margin_top = 600.0
-margin_right = 331.0
-margin_bottom = 983.0
-rect_scale = Vector2( 0.3, 0.33 )
+margin_left = 32.204
+margin_top = 583.109
+margin_right = 2120.2
+margin_bottom = 2671.11
+rect_scale = Vector2( 0.07, 0.07 )
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 16 )
+texture_normal = ExtResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PinkSpray" type="Button" parent="CanvasLayer/BackpackButton"]
 visible = false
-show_behind_parent = true
-margin_left = 7.4386
-margin_top = -36.7306
-margin_right = 142.439
-margin_bottom = 123.269
+margin_left = 327.94
+margin_top = 379.774
+margin_right = 462.94
+margin_bottom = 539.774
 rect_rotation = -21.4166
-rect_scale = Vector2( 0.7, 0.7 )
+rect_scale = Vector2( 4, 4 )
 mouse_default_cursor_shape = 2
 icon = ExtResource( 11 )
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="YellowSpray" type="Button" parent="CanvasLayer/BackpackButton"]
 visible = false
-show_behind_parent = true
-margin_left = 200.177
-margin_top = -71.7595
-margin_right = 335.177
-margin_bottom = 88.2405
+margin_left = 1230.96
+margin_top = 175.979
+margin_right = 1365.96
+margin_bottom = 335.979
 rect_rotation = 24.0585
-rect_scale = Vector2( 0.7, 0.7 )
+rect_scale = Vector2( 4, 4 )
 mouse_default_cursor_shape = 2
 icon = ExtResource( 10 )
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BackpackFront" type="Sprite" parent="CanvasLayer/BackpackButton"]
+visible = false
+position = Vector2( 1023.86, 1415.49 )
+scale = Vector2( 1, 1.03593 )
+texture = ExtResource( 18 )
 
 [node name="Book" parent="CanvasLayer" instance=ExtResource( 12 )]
 visible = false
@@ -484,6 +475,9 @@ anims/Yellow = SubResource( 11 )
 anims/YellowSpray = SubResource( 12 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 319.606, 422.005 )
+process_mode = 0
+smoothing_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
@@ -515,8 +509,7 @@ anims/Move = SubResource( 15 )
 [connection signal="mouse_entered" from="Nav/RightButton" to="." method="_on_RightButton_mouse_entered"]
 [connection signal="mouse_exited" from="Nav/RightButton" to="." method="_on_RightButton_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/BookButton" to="." method="_on_BookButton_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/BackpackButton" to="." method="_on_BackpackButton_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/BackpackButton" to="." method="_on_BackpackButton_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/BackpackButton" to="." method="_on_BackpackButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/BackpackButton/PinkSpray" to="." method="_on_PinkSpray_pressed"]
 [connection signal="pressed" from="CanvasLayer/BackpackButton/YellowSpray" to="." method="_on_YellowSpray_pressed"]
 [connection signal="pressed" from="CanvasLayer/Book/BookTexture/ArrowContainer/LeftTButton" to="." method="_on_LeftTButton_pressed"]

@@ -1,15 +1,16 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/GFX/cutscene/Env01.png" type="Texture" id=2]
-[ext_resource path="res://Assets/GFX/cutscene/bush.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GFX/new/Intro_Env/openning_TreeB.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GFX/new/Intro_Env/Intro_Env_img.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Cutscene/Intro.gd" type="Script" id=4]
 [ext_resource path="res://Fonts/Roboto-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Fonts/Calibri Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scenes/Cutscene/ButtonStyles/Button.tres" type="StyleBox" id=7]
-[ext_resource path="res://Scenes/SmokeRight.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/SmokeLeft.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/SmokeLeft.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/SmokeRight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/SFX/Music/[MapleStory BGM] Sleepywood.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Assets/GFX/new/Intro_Env/openning_TreeA.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -116,7 +117,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, -2 ),
 "update": 0,
-"values": [ Vector2( 55.5556, 0 ), Vector2( 555.556, 0 ) ]
+"values": [ Vector2( 55.5556, 0 ), Vector2( 755.556, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("CanvasLayer/Trees/LeftTrees:position")
@@ -128,10 +129,11 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, -2 ),
 "update": 0,
-"values": [ Vector2( -55.5556, 0 ), Vector2( -555.556, 0 ) ]
+"values": [ Vector2( -55.5556, 0 ), Vector2( -755.556, 0 ) ]
 }
 
 [sub_resource type="Animation" id=7]
+length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Trees/RightTrees:position")
 tracks/0/interp = 1
@@ -139,10 +141,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, -2 ),
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 55.5556, 0 ), Vector2( 555.556, 0 ) ]
+"values": [ Vector2( 55.5556, 0 ), Vector2( 755.556, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CanvasLayer/Trees/LeftTrees:position")
@@ -151,10 +153,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, -2 ),
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -55.5556, 0 ), Vector2( -555.556, 0 ) ]
+"values": [ Vector2( -55.5556, 0 ), Vector2( -755.556, 0 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -183,6 +185,33 @@ tracks/1/keys = {
 "values": [ Vector2( 902.409, 504.018 ), Vector2( 681.331, 495.636 ) ]
 }
 
+[sub_resource type="Animation" id=9]
+resource_name = "zoom-in2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Backdrop/Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.3, 1 ), Vector2( 1.3, 1 ), Vector2( 0.75, 0.6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Backdrop/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 667.536, 379.361 ), Vector2( 667.536, 379.361 ), Vector2( 617.536, 419.361 ) ]
+}
+
 [node name="Intro" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -194,11 +223,10 @@ __meta__ = {
 [node name="Backdrop" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -234.962
-margin_top = -113.081
-margin_right = 418.038
-margin_bottom = 75.9188
-texture = ExtResource( 2 )
+margin_left = -99.0
+margin_top = -2.0
+margin_right = 209.0
+texture = ExtResource( 3 )
 expand = true
 stretch_mode = 7
 __meta__ = {
@@ -206,31 +234,32 @@ __meta__ = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="Backdrop"]
-position = Vector2( 902.409, 504.018 )
+position = Vector2( 667.536, 379.361 )
 current = true
+zoom = Vector2( 1.3, 1 )
 process_mode = 0
 smoothing_enabled = true
 
-[node name="SmokeRight" parent="." instance=ExtResource( 8 )]
-
-[node name="Top" parent="SmokeRight" index="0"]
-z_index = 1
-
-[node name="Medium" parent="SmokeRight" index="1"]
-z_index = 1
-
-[node name="Bottom" parent="SmokeRight" index="2"]
-z_index = 1
-
-[node name="SmokeLeft" parent="." instance=ExtResource( 9 )]
+[node name="SmokeLeft" parent="." instance=ExtResource( 8 )]
 
 [node name="Top" parent="SmokeLeft" index="0"]
 z_index = 1
 
-[node name="Middle" parent="SmokeLeft" index="1"]
+[node name="Medium" parent="SmokeLeft" index="1"]
 z_index = 1
 
 [node name="Bottom" parent="SmokeLeft" index="2"]
+z_index = 1
+
+[node name="SmokeRight" parent="." instance=ExtResource( 9 )]
+
+[node name="Top" parent="SmokeRight" index="0"]
+z_index = 1
+
+[node name="Middle" parent="SmokeRight" index="1"]
+z_index = 1
+
+[node name="Bottom" parent="SmokeRight" index="2"]
 z_index = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -252,27 +281,17 @@ __meta__ = {
 position = Vector2( 55.5556, 0 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Trees/RightTrees"]
-position = Vector2( 569.056, 562 )
-scale = Vector2( 0.294413, 0.294413 )
-texture = ExtResource( 3 )
-
-[node name="Sprite3" type="Sprite" parent="CanvasLayer/Trees/RightTrees"]
-position = Vector2( 795.056, 558 )
-scale = Vector2( 0.294413, 0.294413 )
-texture = ExtResource( 3 )
+position = Vector2( 580.644, 424.09 )
+scale = Vector2( 0.877181, 1.16077 )
+texture = ExtResource( 2 )
 
 [node name="LeftTrees" type="Node2D" parent="CanvasLayer/Trees"]
 position = Vector2( -55.5556, 0 )
 
 [node name="Sprite4" type="Sprite" parent="CanvasLayer/Trees/LeftTrees"]
-position = Vector2( 41.0558, 552 )
-scale = Vector2( 0.294413, 0.294413 )
-texture = ExtResource( 3 )
-
-[node name="Sprite2" type="Sprite" parent="CanvasLayer/Trees/LeftTrees"]
-position = Vector2( 273.056, 558 )
-scale = Vector2( 0.294413, 0.294413 )
-texture = ExtResource( 3 )
+position = Vector2( 193.125, 426.315 )
+scale = Vector2( 0.855993, 1.10737 )
+texture = ExtResource( 11 )
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 1 )]
 
@@ -328,10 +347,9 @@ __meta__ = {
 }
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -342,6 +360,7 @@ anims/EndScene = SubResource( 5 )
 anims/FadeOutCanvas = SubResource( 6 )
 anims/MoveTrees = SubResource( 7 )
 anims/zoom-in = SubResource( 8 )
+anims/zoom-in2 = SubResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
@@ -351,6 +370,6 @@ autoplay = true
 [connection signal="pressed" from="CanvasLayer/CenterContainer/ButtonContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
-[editable path="SmokeRight"]
-
 [editable path="SmokeLeft"]
+
+[editable path="SmokeRight"]
