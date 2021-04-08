@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Mist.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0, 4.59177e-40, 1 )
+colors = PoolColorArray( 0.266667, 0.027451, 0.309804, 0.223529, 0.396078, 0.0941176, 0.517647, 0.105882, 0.392157, 0.145098, 0.501961, 0.0745098, 0.980392, 0.647059, 0.980392, 0.0588235 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0.0016, 0.117265 ), 0.0, 0.801052, 0, 0, Vector2( 1, 0.489416 ), -0.825937, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+resource_local_to_scene = true
+trail_divisor = 4
+emission_shape = 2
+emission_box_extents = Vector3( 400, 100, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 10, 0 )
+spread = 0.0
+gravity = Vector3( 0, 5, 0 )
+initial_velocity = 5.0
+angular_velocity = 0.01
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+tangential_accel = 0.2
+angle = 360.0
+angle_random = 1.0
+scale = 2.0
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+
+[node name="MistCanvas" type="Node"]
+
+[node name="BackgroundMist" parent="." instance=ExtResource( 2 )]
+use_parent_material = true
+position = Vector2( 526.79, 1.89465 )
+scale = Vector2( 2, 1.5 )
+amount = 100
+lifetime = 15.0
+speed_scale = 1.5
+process_material = SubResource( 5 )
+
+[node name="BMTinge" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_left = -1091.11
+margin_top = 3.53796
+margin_right = 2213.89
+margin_bottom = 2419.54
+color = Color( 0.498039, 0.0901961, 0.435294, 0.121569 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

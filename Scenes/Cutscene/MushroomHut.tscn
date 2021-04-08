@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/GFX/MushroomHut/backdrop.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Cutscene/MushroomHut.gd" type="Script" id=2]
@@ -6,11 +6,57 @@
 [ext_resource path="res://Assets/GFX/MushroomHut/terrarium.png" type="Texture" id=4]
 [ext_resource path="res://Assets/GFX/cutscene/Cat.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Glow.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/GFX/Music/Grandma s Theme - The Legend of Zelda The Wind Waker.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/SFX/Music/Grandma s Theme - The Legend of Zelda The Wind Waker.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Assets/GFX/cutscene/Book/arrow.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
-resource_name = "BeginScene"
+resource_name = "Move"
+loop = true
+
+[sub_resource type="Animation" id=2]
+resource_name = "Zoom_In"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Camera2D:limit_smoothed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Move"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 38.8999, -130.027 ), Vector2( 38.9, -145.027 ), Vector2( 38.9, -130.027 ) ]
+}
+
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
@@ -36,8 +82,34 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "EndScene"
+[sub_resource type="Animation" id=5]
+resource_name = "BeginScene2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/Fade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
@@ -63,7 +135,7 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/CenterContainer:modulate")
 tracks/0/interp = 1
@@ -113,7 +185,7 @@ tracks/3/keys = {
 "values": [ Vector2( -55.5556, 0 ), Vector2( -555.556, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Backdrop/Trees/RightTrees:position")
 tracks/0/interp = 1
@@ -139,10 +211,9 @@ tracks/1/keys = {
 "values": [ Vector2( -55.5556, 0 ), Vector2( -555.556, 0 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "zoom-in"
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
-tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/path = NodePath("Backdrop/Camera2D:zoom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -154,7 +225,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 0.75, 0.75 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/Backdrop:rect_scale")
+tracks/1/path = NodePath("Backdrop:rect_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -166,39 +237,28 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "Move"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/arrow:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 638.196, 258.913 ), Vector2( 638.196, 273.913 ), Vector2( 638.196, 258.913 ) ]
-}
-
 [node name="MushroomHut" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = -0.483
+anchor_top = -0.481
+anchor_right = 1.496
+anchor_bottom = 1.507
+margin_left = 322.645
+margin_top = 141.618
+margin_right = -679.851
+margin_bottom = -603.334
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Backdrop" type="TextureRect" parent="CanvasLayer"]
+[node name="Backdrop" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -234.962
-margin_top = -113.081
-margin_right = 418.038
-margin_bottom = 75.9188
+margin_left = -563.0
+margin_top = -358.0
+margin_right = 1067.0
+margin_bottom = 400.0
+rect_scale = Vector2( 0.8, 1 )
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 7
@@ -206,84 +266,103 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Cat" type="TextureRect" parent="CanvasLayer/Backdrop"]
-visible = false
-margin_left = 615.172
-margin_top = 392.813
-margin_right = 837.172
-margin_bottom = 616.813
-texture = ExtResource( 5 )
-expand = true
-stretch_mode = 1
+[node name="Camera2D" type="Camera2D" parent="Backdrop"]
+position = Vector2( 1351.87, 760.321 )
+scale = Vector2( 1.25, 1 )
+current = true
+zoom = Vector2( 2, 2 )
+process_mode = 0
+limit_smoothed = true
 
-[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 3 )]
-
-[node name="arrow" type="Sprite" parent="CanvasLayer"]
-visible = false
-position = Vector2( 638.196, 258.913 )
-rotation = 4.71239
-scale = Vector2( 0.07, 0.04 )
-texture = ExtResource( 8 )
-
-[node name="Button" type="Control" parent="CanvasLayer"]
+[node name="Button" type="Control" parent="Backdrop"]
 modulate = Color( 1.1, 1.5, 1.9, 1 )
-margin_left = 1.90894
-margin_top = 3.81799
-margin_right = 41.9089
-margin_bottom = 43.818
+margin_left = 1387.36
+margin_top = 859.798
+margin_right = 1425.36
+margin_bottom = 899.798
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Glow" parent="CanvasLayer/Button" instance=ExtResource( 6 )]
+[node name="Glow" parent="Backdrop/Button" instance=ExtResource( 6 )]
 visible = false
-position = Vector2( 639.933, 410.224 )
+position = Vector2( 38.4879, 25.7651 )
+scale = Vector2( 1.25, 1 )
 
-[node name="Terrarium" type="TextureButton" parent="CanvasLayer/Button"]
+[node name="Terrarium" type="TextureButton" parent="Backdrop/Button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 578.261
-margin_top = 347.044
-margin_right = 660.261
-margin_bottom = 430.044
+margin_left = -38.7465
+margin_top = -43.9333
+margin_right = 45.2535
+margin_bottom = 39.0667
 rect_min_size = Vector2( 100, 50 )
-mouse_default_cursor_shape = 2
+rect_scale = Vector2( 1.25, 1 )
+disabled = true
 texture_normal = ExtResource( 4 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Fade" type="ColorRect" parent="CanvasLayer"]
+[node name="arrow" type="Sprite" parent="Backdrop/Button"]
 visible = false
+position = Vector2( 38.9, -130.027 )
+rotation = -1.5708
+scale = Vector2( 0.07, 0.05 )
+texture = ExtResource( 8 )
+
+[node name="Camera_Animation" type="AnimationPlayer" parent="Backdrop/Button"]
+anims/Move = SubResource( 1 )
+anims/Zoom_In = SubResource( 2 )
+
+[node name="Arrow_Animation" type="AnimationPlayer" parent="Backdrop/Button"]
+autoplay = "Move"
+anims/Move = SubResource( 3 )
+
+[node name="Cat" type="TextureRect" parent="Backdrop"]
+visible = false
+margin_left = 1053.2
+margin_top = 710.478
+margin_right = 1352.2
+margin_bottom = 972.478
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 3 )]
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -710.0
+margin_top = -573.0
+margin_right = 369.0
+margin_bottom = 182.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 838.233, 386.746 )
-current = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BeginScene = SubResource( 1 )
-anims/EndScene = SubResource( 2 )
-anims/FadeOutCanvas = SubResource( 3 )
-anims/MoveTrees = SubResource( 4 )
-anims/zoom-in = SubResource( 5 )
-
-[node name="ArrowBobbing" type="AnimationPlayer" parent="."]
-autoplay = "Move"
-anims/Move = SubResource( 6 )
+anims/BeginScene = SubResource( 4 )
+anims/BeginScene2 = SubResource( 5 )
+anims/EndScene = SubResource( 6 )
+anims/FadeOutCanvas = SubResource( 7 )
+anims/MoveTrees = SubResource( 8 )
+anims/zoom-in = SubResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 7 )
 volume_db = -40.0
 autoplay = true
-[connection signal="mouse_entered" from="CanvasLayer/Button/Terrarium" to="." method="_on_Terrarium_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Button/Terrarium" to="." method="_on_Terrarium_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/Button/Terrarium" to="." method="_on_Terrarium_pressed"]
+[connection signal="mouse_entered" from="Backdrop/Button/Terrarium" to="." method="_on_Terrarium_mouse_entered"]
+[connection signal="mouse_exited" from="Backdrop/Button/Terrarium" to="." method="_on_Terrarium_mouse_exited"]
+[connection signal="pressed" from="Backdrop/Button/Terrarium" to="." method="_on_Terrarium_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

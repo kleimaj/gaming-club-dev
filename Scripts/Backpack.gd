@@ -10,6 +10,7 @@ onready var ExitButton = $Background/ExitButton
 
 # Signal to change projectile
 signal projectile_change(texture_path)
+signal close_backpack
 
 # Maps the Projectiles to its indices
 var ProjectileMap = {}
@@ -59,7 +60,7 @@ func get_texture_path():
 
 func _on_ExitButton_pressed():
 	# Connect ExitButton to HUD.gd close()
-	get_node("/root/Game/HUD").close_backpack()
+	emit_signal("close_backpack")
 	
 	
 
@@ -75,7 +76,7 @@ func _on_RedBottle_mouse_exited():
 func _on_RedBottle_pressed():
 	selected_anim.text = "Red"
 	emit_signal("projectile_change", get_texture_path())
-	get_node("/root/Game/HUD").close_backpack()
+	emit_signal("close_backpack")
 
 
 func _on_YellowBottle_mouse_entered():
@@ -89,4 +90,4 @@ func _on_YellowBottle_mouse_exited():
 func _on_YellowBottle_pressed():
 	selected_anim.text = "Yellow"
 	emit_signal("projectile_change", get_texture_path())
-	get_node("/root/Game/HUD").close_backpack()
+	emit_signal("close_backpack")

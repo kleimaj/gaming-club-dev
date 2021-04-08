@@ -1,6 +1,6 @@
 extends "res://Scripts/Cutscene.gd"
 
-var dialog_dics = [
+var first_dialog = [
 	{
 		'name': 'Player',
 		'content': 'Where am I?',
@@ -50,7 +50,7 @@ var second_dialog = [
 	},
 	{
 		'name': 'Prof. Flores',
-		'content': '[color=#000000]The only way for us to return to normal size is to eradicate the black spores and return my terrarium to its former glory![/color]'
+		'content': 'The only way for us to return to normal size is to eradicate the black spores and return my terrarium to its former glory!'
 	},
 	{
 		'name': 'Prof. Flores',
@@ -105,6 +105,7 @@ var ItemMap = {
 	"BlueMushroom": {
 		"name": "Blue Mushroom",
 		"pack": false,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/blueMushIcon.png"),
 		"color": "#048B99",
 		"description": "The blue mushroom is the most common in this terrarium. Approximately, 85-95% of a healthy terrarium includes them. [b]The mushroom lives in sunlight,[/b] but thrives in darkness, [b]1 dose of the pink spray is needed to treat it when it's dark.[/b]",
@@ -113,6 +114,7 @@ var ItemMap = {
 	"BlueSpottedMushroom": {
 		"name": "Blue Spotted Mushroom",
 		"pack": false,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/blueSpotsMushIcon.png"),
 		"color": "#048B99",
 		"description": "The blue mushroom with spots is very similar to the blue mushroom without spots. [b]The mushroom lives in sunlight,[/b] but is more difficult to treat than the one without spots when it gets out of control which can occur in darkness. When it thrives in darkness, [b]1 dose of the yellow spray is needed to treat it.[/b] ",
@@ -121,6 +123,7 @@ var ItemMap = {
 	"GreenMushroom": {
 		"name": "Green Mushroom",
 		"pack": false,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/greenMushIcon.png"),
 		"color": "#0E8E00",
 		"description": "The green mushroom is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. [b]The mushroom thrives in dark environments,[/b] but if it thrives, [b]2 doses of the pink spray is needed to treat it.[/b]",
@@ -129,6 +132,7 @@ var ItemMap = {
 	"GreenSpottedMushroom": {
 		"name": "Green Spotted Mushroom",
 		"pack": false,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/greenSpotsMushIcon.png"),
 		"color": "#0E8E00",
 		"description": "The green mushroom with spots is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. [b]The mushroom thrives in dark environments, but is more difficult to treat than the one without spots when it gets out of control.[/b] If it thrives too much, [b]2 doses of the yellow spray is needed to treat it.[/b]",
@@ -137,6 +141,7 @@ var ItemMap = {
 	"YellowSpray": {
 		"name": "Yellow Spray",
 		"pack": true,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/newBottles/bottle1.png"),
 		"color": "#000",
 		"description": "The yellow spray is used on the overgrowth of blue and green mushrooms with  spots to trigger the the stopping of spores to fend off the dark mist. Sometimes certain mushrooms need more spray for a longer duration of time to be effective.",
@@ -145,6 +150,7 @@ var ItemMap = {
 	"PinkSpray": {
 		"name": "Pink Spray",
 		"pack": true,
+		"collected": false,
 		"sprite": load("res://Assets/GFX/UI/newBottles/bottle2.png"),
 		"color": "#000",
 		"description": "The pink spray is used on the overgrowth of blue and green mushrooms to trigger the stopping of spores to fend off the dark mist. Sometimes certain mushrooms need more spray for a longer duration of time to be effective.",
@@ -157,16 +163,22 @@ var finished_count = 0
 var clickable_items = 0
 const MAX_CLICKABLE_ITEMS = 6
 
+var content_map = {}
+var current_page_index = 0 
+var page_idx = 0
 
 func _ready():
 	$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
-	$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
+	$CanvasLayer/DialogueBox.assign_dictionary(first_dialog)
 	$CanvasLayer/DialogueBox.fade_in()
+	$CanvasLayer/Book.connect("book_closed", self, "book_closed_handler")
 	
 func enable_buttons():
 	for button in $Player/Backdrop/Buttons.get_children():
 		button.disabled = false
 		button.connect("pressed", self, "_on_item_pressed", [button])
+		button.connect("mouse_entered", self, "_on_mouse_entered", [button])
+		button.connect("mouse_exited", self, "_on_mouse_exited", [button])		
 
 func dialog_finished():
 	if finished_count == 0:
@@ -176,9 +188,9 @@ func dialog_finished():
 		$CanvasLayer/BookButton.show()
 		$CanvasLayer/BackpackButton.show()
 		finished_count += 1
-		$LeftButton.show()
-		$RightButton.show()
-		$AnimationPlayer.play("Arrows")
+		$Nav/LeftButton.show()
+		$Nav/RightButton.show()
+		_arrow_animate()
 		$Player/Backdrop/Buttons.show()
 		enable_buttons()
 		$CanvasLayer/DialogueBox.hide()
@@ -187,51 +199,53 @@ func dialog_finished():
 		$CanvasLayer/BackpackButton.hide()
 		$AnimationPlayer.play("EndScene")
 		
-func set_title(title, color):
-	var dynamic_font = DynamicFont.new()
-	dynamic_font.font_data = load("res://Fonts/ink-free-normal.ttf")
-	dynamic_font.size = 38
-	dynamic_font.outline_color = color
-	dynamic_font.outline_size = 1
-	dynamic_font.use_filter = true
-	title.set("custom_fonts/normal_font", dynamic_font)
-	title.add_color_override("default_color", Color(color))
-func set_line_break(lineBreak, color):
-	var styleBoxLine = StyleBoxLine.new()
-	styleBoxLine.color = color
-	styleBoxLine.thickness = 4
-	lineBreak.add_stylebox_override("panel", styleBoxLine)
 	
 func _on_item_pressed(button):
-	$CanvasLayer/Book.show()
-	$CanvasLayer/Book.buttonType = null
-	if ItemMap[button.name].pack:
-		$CanvasLayer/Book.buttonType = button.name
+	_game_pause(true)
+	if ItemMap[button.name].collected:
+		$CanvasLayer/Book.show()
+		$CanvasLayer/Book.receiveItem(button.name, false)
+	else:
+		$CanvasLayer/Book.buttonType = null
 		ItemMap[button.name].collected = true
-	get_node("Player/Backdrop/Buttons/" + button.name +"/" + button.name + "G").hide()
-	var title = $CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer/MushroomTitle
-	title.bbcode_text = ItemMap[button.name].name
-	set_title(title, ItemMap[button.name].color)
-	var lineBreak = $CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/LineBreak
-	set_line_break(lineBreak, ItemMap[button.name].color)
-	$CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer/Mushroom.texture = ItemMap[button.name].sprite
-	$CanvasLayer/Book/BookTexture/HBoxContainer/LeftContainer/Description.bbcode_text = ItemMap[button.name].description
-	$CanvasLayer/Book/BookTexture/HBoxContainer/RightContainer/Notes.bbcode_text = ItemMap[button.name].notes
-	clickable_items += 1
-	$CanvasLayer/Book/BookTexture/HBoxContainer/RightContainer/AnimationPlayer.play("ShowDescription")
-	button.disconnect("pressed", self, "_on_item_pressed")
+		content_map[button.name] = ItemMap.keys().find(button.name)
+		if ItemMap[button.name].pack:
+			$CanvasLayer/Book.buttonType = button.name
+			button.hide()
+			get_node("CanvasLayer/BackpackButton/"+button.name).show()
+		get_node("Player/Backdrop/Buttons/" + button.name +"/" + button.name + "G").hide()
+		$CanvasLayer/Book.show()
+		$CanvasLayer/Book.receiveItem(button.name, true)
+		clickable_items += 1
+		if clickable_items > 1:
+			$CanvasLayer/Book/BookTexture/ArrowContainer.show()
+		_reducto(button)
+		button.disconnect("mouse_entered", self, "_on_mouse_entered")
+		button.disconnect("mouse_exited", self, "_on_mouse_exited")
+#	button.disconnect("pressed", self, "_on_item_pressed")
+#	button.mouse_default_cursor_shape = Control.CURSOR_ARROW
+	
+func book_closed_handler():
 	if clickable_items == MAX_CLICKABLE_ITEMS:
 		# finish scene
+		# hide all UI items
+		$Nav/LeftButton.hide()
+		$Nav/RightButton.hide()
+		$AnimationPlayer.stop()
+		$CanvasLayer/BookButton.hide()
+		$CanvasLayer/BackpackButton.hide()
 		$CanvasLayer/DialogueBox.show()
 		$CanvasLayer/DialogueBox.assign_dictionary(third_dialog)
 		$CanvasLayer/DialogueBox.fade_in()
-	
+	else:
+		_game_pause(false)
+
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "BeginScene":
 		$CanvasLayer/DialogueBox.assign_dictionary(second_dialog)
 		$CanvasLayer/DialogueBox.fade_in()
 	elif anim_name == "EndScene":
-		get_tree().change_scene("res://Scenes/Game.tscn")
+		get_tree().change_scene("res://Scenes/Tutorial.tscn")
 
 func _engorgio(obj):
 	var scale = obj.get_scale() * 1.25
@@ -242,78 +256,37 @@ func _reducto(obj):
 	obj.set_scale(scale)
 	
 func _on_LeftButton_mouse_entered():
-	$AnimationPlayer.stop()
-	$Player.move_left()
-	_engorgio($LeftButton)
+	if not $Nav/LeftButton.disabled:
+		$AnimationPlayer.stop()
+		$Player.move_left()
+		_engorgio($Nav/LeftButton)
 
 
 func _on_LeftButton_mouse_exited():
-	$Player.stop()
-	$AnimationPlayer.play("Arrows")
-	_reducto($LeftButton)
+	if not $Nav/LeftButton.disabled:
+		$Player.stop()
+		_arrow_animate()
+		_reducto($Nav/LeftButton)
 
 
 func _on_RightButton_mouse_entered():
-	_engorgio($RightButton)
-	$Player.move_right()
-	$AnimationPlayer.stop()
+	if not $Nav/RightButton.disabled:
+		_engorgio($Nav/RightButton)
+		$Player.move_right()
+		$AnimationPlayer.stop()
 	
 	
 func _on_RightButton_mouse_exited():
-	_reducto($RightButton)
-	$Player.stop()
-	$AnimationPlayer.play("Arrows")
+	if not $Nav/RightButton.disabled:
+		_reducto($Nav/RightButton)
+		$Player.stop()
+		_arrow_animate()
 
+func _on_mouse_entered(button):
+	_engorgio(button)
 
-func _on_BlueMushroom_mouse_entered():
-	_engorgio($Player/Backdrop/Buttons/BlueMushroom)
-	
-
-func _on_BlueMushroom_mouse_exited():
-	_reducto($Player/Backdrop/Buttons/BlueMushroom)
-
-
-func _on_BlueSpottedMushroom_mouse_entered():
-	_engorgio($Player/Backdrop/Buttons/BlueSpottedMushroom)
-
-
-func _on_BlueSpottedMushroom_mouse_exited():
-	_reducto($Player/Backdrop/Buttons/BlueSpottedMushroom)
-
-
-func _on_GreenMushroom_mouse_entered():
-	_engorgio($Player/Backdrop/Buttons/GreenMushroom)
-
-
-func _on_GreenMushroom_mouse_exited():
-	_reducto($Player/Backdrop/Buttons/GreenMushroom)
-
-
-func _on_GreenSpottedMushroom_mouse_entered():
-	_engorgio($Player/Backdrop/Buttons/GreenSpottedMushroom)
-
-
-func _on_GreenSpottedMushroom_mouse_exited():
-	_reducto($Player/Backdrop/Buttons/GreenSpottedMushroom)
-
-
-func _on_YellowSpray_mouse_entered():
-	_engorgio($Player/Backdrop/Buttons/YellowSpray)
-
-
-func _on_YellowSpray_mouse_exited():
-	_reducto($Player/Backdrop/Buttons/YellowSpray)
-
-
-func _on_PinkSpray_mouse_entered():
-	_engorgio($Player/Backdrop/Buttons/PinkSpray)
-
-
-func _on_PinkSpray_mouse_exited():
-	_reducto($Player/Backdrop/Buttons/PinkSpray)
-
-
-
+func _on_mouse_exited(button):
+	_reducto(button)
 
 func _on_BackpackButton_mouse_entered():
 	if $CanvasLayer/BackpackButton/PinkSpray.visible:
@@ -328,3 +301,87 @@ func _on_BackpackButton_mouse_exited():
 	if $CanvasLayer/BackpackButton/YellowSpray.visible:
 		$CanvasLayer/BackpackButton/YellowSpray.rect_position.y += 40
 
+
+func _on_bb_pressed(button):
+	if button.visible:
+		$CanvasLayer/Book.show()
+		$CanvasLayer/Book.showPage($CanvasLayer/Book.KeyMap[button.name])
+		
+func _on_mouse_bb_entered(button):
+	if button.visible:
+		button.rect_position.y -= 40
+		
+func _on_mouse_bb_exited(button):
+	if button.visible:
+		button.rect_position.y += 40
+		
+func _game_pause(state):
+	if state:
+		$CanvasLayer/MistCanvas/BackgroundMist.set_speed_scale(0.0)
+		$Nav/LeftButton.disabled = true
+		$Nav/RightButton.disabled = true
+		_arrow_animate()
+	else:
+		$CanvasLayer/MistCanvas/BackgroundMist.set_speed_scale(1.0)
+		$Nav/LeftButton.disabled = false
+		$Nav/RightButton.disabled = false
+		_arrow_animate()
+	
+
+
+func _on_BookButton_pressed():
+	if clickable_items > 0 :
+		_game_pause(true)
+		$CanvasLayer/Book.show()
+		$CanvasLayer/Book.showPage(content_map[content_map.keys()[0]])
+		page_idx = 0
+		if clickable_items > 1:
+			$CanvasLayer/Book/BookTexture/ArrowContainer.show()
+		
+			
+		
+func _on_LeftTButton_pressed():
+	page_idx -=1
+	if page_idx == -1:
+		page_idx = content_map.keys().size() - 1
+	$CanvasLayer/Book.showPage(content_map[content_map.keys()[page_idx]])
+
+
+func _on_RightTButton_pressed():
+	page_idx +=1
+	if page_idx == content_map.keys().size():
+		page_idx = 0
+	$CanvasLayer/Book.showPage(content_map[content_map.keys()[page_idx]])
+	
+func _on_disable_nav(buttonTyp):
+	get_node("Nav/" + buttonTyp).rect_scale = Vector2(0.05,0.05)
+	get_node("Nav/" + buttonTyp).disabled = true
+	_arrow_animate()
+	
+func _on_enable_nav(buttonTyp):
+	get_node("Nav/" + buttonTyp).disabled = false
+	_arrow_animate()
+	
+
+
+func _on_PinkSpray_pressed():
+	_game_pause(true)
+	$CanvasLayer/Book.show()
+	$CanvasLayer/Book.receiveItem("PinkSpray", false)
+
+
+func _on_YellowSpray_pressed():
+	_game_pause(true)	
+	$CanvasLayer/Book.show()
+	$CanvasLayer/Book.receiveItem("YellowSpray", false)
+	
+func _arrow_animate():
+	if not $Nav/LeftButton.disabled:
+		$LeftArrowAnimation.play("Move")
+	else:
+		$LeftArrowAnimation.stop()
+	
+	if not $Nav/RightButton.disabled:
+		$RightArrowAnimation.play("Move")
+	else:
+		$RightArrowAnimation.stop()

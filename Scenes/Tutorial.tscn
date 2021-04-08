@@ -1,0 +1,678 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://Assets/GFX/cutscene/Book/arrow.png" type="Texture" id=1]
+[ext_resource path="res://Assets/GFX/UI/panel.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/MistCanvas.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Tank/Tank.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Interface/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Interface/GroundArea2D.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Tank/Bullet.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Enemy/Blue Spotted Mushroom.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Tutorial.gd" type="Script" id=15]
+[ext_resource path="res://Assets/GFX/background/leftTree.png" type="Texture" id=16]
+[ext_resource path="res://Assets/GFX/background/rightTree.png" type="Texture" id=17]
+[ext_resource path="res://Assets/GFX/UI/meterInsideMiddle.png" type="Texture" id=18]
+[ext_resource path="res://Assets/GFX/UI/meterInsideCap.png" type="Texture" id=19]
+[ext_resource path="res://Assets/GFX/UI/progress bar.png" type="Texture" id=20]
+[ext_resource path="res://Assets/GFX/background/background/bgLayer3.png" type="Texture" id=22]
+[ext_resource path="res://Assets/GFX/background/ground.png" type="Texture" id=24]
+[ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=25]
+[ext_resource path="res://Assets/GFX/UI/MicrosoftTeams-image (1).png" type="Texture" id=26]
+[ext_resource path="res://Assets/GFX/background/branch.png" type="Texture" id=28]
+[ext_resource path="res://Assets/SFX/Music/Honey Hills (Forest Area) - Kirby Star Allies Music.ogg" type="AudioStream" id=29]
+[ext_resource path="res://Assets/GFX/background/background/bgLayer1.png" type="Texture" id=30]
+[ext_resource path="res://Scenes/ProgressBar.gd" type="Script" id=31]
+[ext_resource path="res://Scenes/LostConditionArea.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=33]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0, 4.59177e-40, 1 )
+colors = PoolColorArray( 0.266667, 0.027451, 0.309804, 0.223529, 0.396078, 0.0941176, 0.517647, 0.105882, 0.392157, 0.145098, 0.501961, 0.0745098, 0.980392, 0.647059, 0.980392, 0.0588235 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0.0016, 0.117265 ), 0.0, 0.801052, 0, 0, Vector2( 1, 0.489416 ), -0.825937, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+resource_local_to_scene = true
+trail_divisor = 4
+emission_shape = 2
+emission_box_extents = Vector3( 400, 100, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 10, 0 )
+spread = 0.0
+gravity = Vector3( 0, 5, 0 )
+initial_velocity = 5.0
+angular_velocity = 0.01
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+tangential_accel = 0.2
+angle = 360.0
+angle_random = 1.0
+scale = 2.0
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="Animation" id=7]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3, 3 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 3, 3 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "fade-out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer2/Fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer2/Fade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "move-arrows"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("backgrop/RightArrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 765.293, 4301.8 ), Vector2( 765.293, 4351.8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("backgrop/LeftArrow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -57.8711, 4330.49 ), Vector2( -57.871, 4380.49 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("backgrop/MushroomArrow:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -597.789, 3484.29 ), Vector2( -597.789, 3534.29 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer2/BookArrow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 954.43, 556.919 ), Vector2( 954.43, 606.919 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("backgrop/MushroomArrow2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 271.289, 2949 ), Vector2( 271.289, 2999.01 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CanvasLayer2/BackpackArrow:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 64.4138, 558.491 ), Vector2( 64.414, 608.491 ) ]
+}
+
+[node name="Tutorial" type="Node2D"]
+position = Vector2( 1.82056, -32.7698 )
+script = ExtResource( 15 )
+
+[node name="backgrop" type="Sprite" parent="."]
+position = Vector2( 531.593, -592.521 )
+scale = Vector2( 0.456058, 0.256182 )
+texture = ExtResource( 30 )
+
+[node name="bgLayer2" type="Sprite" parent="backgrop"]
+position = Vector2( 95.0314, 924.311 )
+scale = Vector2( 1.02118, 1.0621 )
+texture = ExtResource( 25 )
+
+[node name="bgLayer3" type="Sprite" parent="backgrop"]
+position = Vector2( 9.65848, 1013.47 )
+scale = Vector2( 0.832583, 1.03693 )
+texture = ExtResource( 22 )
+
+[node name="bgLayer1" type="Sprite" parent="backgrop"]
+position = Vector2( -2365.54, 417.658 )
+scale = Vector2( 1.06152, 1.07679 )
+texture = ExtResource( 30 )
+
+[node name="bgLayer4" type="Sprite" parent="backgrop"]
+position = Vector2( 2381.68, 400.374 )
+scale = Vector2( 1.06152, 1.07679 )
+texture = ExtResource( 30 )
+
+[node name="rightTree" type="Sprite" parent="backgrop"]
+position = Vector2( 1018.84, 708.078 )
+rotation = 0.0122232
+scale = Vector2( 0.743798, 1.02568 )
+texture = ExtResource( 17 )
+
+[node name="branch" type="Sprite" parent="backgrop/rightTree"]
+position = Vector2( -732.017, 2667.22 )
+rotation = -0.169332
+scale = Vector2( 1.34274, 2.24501 )
+texture = ExtResource( 28 )
+flip_h = true
+
+[node name="branch2" type="Sprite" parent="backgrop/rightTree"]
+position = Vector2( -516.968, 1876.75 )
+rotation = 0.279547
+scale = Vector2( 1.00255, 1.64383 )
+texture = ExtResource( 28 )
+flip_h = true
+flip_v = true
+
+[node name="branch3" type="Sprite" parent="backgrop/rightTree"]
+position = Vector2( -515.334, 1845.16 )
+rotation = -0.622961
+scale = Vector2( 1.24039, 1.64383 )
+texture = ExtResource( 28 )
+flip_h = true
+flip_v = true
+
+[node name="branch4" type="Sprite" parent="backgrop/rightTree"]
+position = Vector2( -763.159, 1093.43 )
+rotation = 0.2926
+scale = Vector2( 1.34274, 2.24501 )
+texture = ExtResource( 28 )
+flip_h = true
+
+[node name="branch5" type="Sprite" parent="backgrop/rightTree"]
+position = Vector2( -311.449, 334.451 )
+rotation = -0.190636
+scale = Vector2( 0.645443, 2.01796 )
+texture = ExtResource( 28 )
+flip_h = true
+flip_v = true
+
+[node name="branch6" type="Sprite" parent="backgrop/rightTree"]
+position = Vector2( -353.763, 179.84 )
+rotation = -0.190636
+scale = Vector2( 0.645443, 2.01796 )
+texture = ExtResource( 28 )
+flip_h = true
+flip_v = true
+
+[node name="branch8" type="Sprite" parent="backgrop/rightTree"]
+position = Vector2( -307.49, -1193.26 )
+rotation = -0.0182367
+scale = Vector2( 0.39666, 1.24547 )
+texture = ExtResource( 28 )
+flip_h = true
+flip_v = true
+
+[node name="branch9" type="Sprite" parent="backgrop/rightTree"]
+position = Vector2( -409.043, -1465.33 )
+rotation = -0.0182367
+scale = Vector2( 0.621316, 2.92563 )
+texture = ExtResource( 28 )
+flip_h = true
+
+[node name="branch10" type="Sprite" parent="backgrop/rightTree"]
+position = Vector2( -762.381, -2760.15 )
+rotation = -0.0182367
+scale = Vector2( 1.28812, 4.60222 )
+texture = ExtResource( 28 )
+flip_h = true
+flip_v = true
+
+[node name="branch7" type="Sprite" parent="backgrop/rightTree"]
+position = Vector2( -783.122, -621.994 )
+rotation = 0.219321
+scale = Vector2( 1.33901, 2.01796 )
+texture = ExtResource( 28 )
+flip_h = true
+flip_v = true
+
+[node name="leftTree" type="Sprite" parent="backgrop"]
+position = Vector2( -916.018, 708.491 )
+scale = Vector2( 0.839009, 1.04438 )
+texture = ExtResource( 16 )
+
+[node name="branch" type="Sprite" parent="backgrop/leftTree"]
+position = Vector2( 492.334, 3199.17 )
+scale = Vector2( 1.01594, 1.66075 )
+texture = ExtResource( 28 )
+
+[node name="branch2" type="Sprite" parent="backgrop/leftTree"]
+position = Vector2( 386.007, 2453.49 )
+rotation = -0.213658
+scale = Vector2( 1.01594, 1.66075 )
+texture = ExtResource( 28 )
+flip_v = true
+
+[node name="branch3" type="Sprite" parent="backgrop/leftTree"]
+position = Vector2( 132.586, 1799.41 )
+rotation = 0.188567
+scale = Vector2( 0.538709, 1.47305 )
+texture = ExtResource( 28 )
+
+[node name="branch4" type="Sprite" parent="backgrop/leftTree"]
+position = Vector2( 132.586, 1799.41 )
+rotation = -0.242676
+scale = Vector2( 0.538709, 1.47305 )
+texture = ExtResource( 28 )
+
+[node name="branch5" type="Sprite" parent="backgrop/leftTree"]
+position = Vector2( 359.535, 1707.95 )
+rotation = 0.780914
+scale = Vector2( 1.19778, 1.47305 )
+texture = ExtResource( 28 )
+
+[node name="branch6" type="Sprite" parent="backgrop/leftTree"]
+position = Vector2( 542.981, 829.74 )
+rotation = 0.0244875
+scale = Vector2( 1.19778, 1.47305 )
+texture = ExtResource( 28 )
+
+[node name="branch7" type="Sprite" parent="backgrop/leftTree"]
+position = Vector2( 420.395, -96.2926 )
+rotation = 0.0244875
+scale = Vector2( 1.0126, 4.50878 )
+texture = ExtResource( 28 )
+
+[node name="branch8" type="Sprite" parent="backgrop/leftTree"]
+position = Vector2( 281.778, -1222.85 )
+rotation = 0.190137
+scale = Vector2( 0.761952, 2.4256 )
+texture = ExtResource( 28 )
+flip_v = true
+
+[node name="branch9" type="Sprite" parent="backgrop/leftTree"]
+position = Vector2( 403.606, -1783.83 )
+rotation = 0.190137
+scale = Vector2( 1.03865, 2.4256 )
+texture = ExtResource( 28 )
+
+[node name="branch10" type="Sprite" parent="backgrop/leftTree"]
+position = Vector2( 477.564, -3185.66 )
+rotation = -0.532807
+scale = Vector2( 1.2462, 2.4256 )
+texture = ExtResource( 28 )
+flip_v = true
+
+[node name="ground" type="Sprite" parent="backgrop"]
+position = Vector2( 19.0995, 4915 )
+scale = Vector2( 1.02118, 0.925825 )
+texture = ExtResource( 24 )
+
+[node name="RightArrow" type="Sprite" parent="backgrop"]
+visible = false
+position = Vector2( 765.293, 4301.8 )
+rotation = 1.5708
+scale = Vector2( -0.249112, -0.092973 )
+texture = ExtResource( 1 )
+
+[node name="RightArea" type="Area2D" parent="backgrop/RightArrow"]
+position = Vector2( -560.594, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="backgrop/RightArrow/RightArea"]
+rotation = -7.04132e-15
+scale = Vector2( 129.165, 53.195 )
+shape = SubResource( 1 )
+
+[node name="LeftArrow" type="Sprite" parent="backgrop"]
+visible = false
+position = Vector2( -57.8711, 4330.49 )
+rotation = 1.5708
+scale = Vector2( -0.249112, -0.092973 )
+texture = ExtResource( 1 )
+
+[node name="LeftArea" type="Area2D" parent="backgrop/LeftArrow"]
+position = Vector2( -560.594, 0 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="backgrop/LeftArrow/LeftArea"]
+position = Vector2( 0.000976563, 9.34009 )
+rotation = -7.04132e-15
+scale = Vector2( 129.165, 53.1951 )
+shape = SubResource( 1 )
+
+[node name="MushroomArrow" type="Sprite" parent="backgrop"]
+visible = false
+position = Vector2( -597.789, 3484.29 )
+rotation = 1.5708
+scale = Vector2( -0.249112, -0.092973 )
+texture = ExtResource( 1 )
+
+[node name="LeftArea" type="Area2D" parent="backgrop/MushroomArrow"]
+position = Vector2( -560.594, 0 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="backgrop/MushroomArrow/LeftArea"]
+position = Vector2( 0.000976563, 9.34009 )
+rotation = -7.04132e-15
+scale = Vector2( 129.165, 53.1951 )
+shape = SubResource( 1 )
+
+[node name="MushroomArrow2" type="Sprite" parent="backgrop"]
+visible = false
+position = Vector2( 271.289, 2949 )
+rotation = 1.5708
+scale = Vector2( -0.249112, -0.092973 )
+texture = ExtResource( 1 )
+
+[node name="LeftArea" type="Area2D" parent="backgrop/MushroomArrow2"]
+position = Vector2( -560.594, 0 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="backgrop/MushroomArrow2/LeftArea"]
+position = Vector2( 0.000976563, 9.34009 )
+rotation = -7.04132e-15
+scale = Vector2( 129.165, 53.1951 )
+shape = SubResource( 1 )
+
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2( 2.95483, 36.9359 )
+
+[node name="Blue Mushroom" parent="Enemies" groups=[
+"Blue",
+] instance=ExtResource( 11 )]
+position = Vector2( 245.166, 344.892 )
+rotation = 0.194915
+BOUNCE_MULTIPLIER = 1.2
+isTutorial = true
+
+[node name="Blue Spotted Mushroom" parent="Enemies" groups=[
+"Blue Spotted",
+] instance=ExtResource( 9 )]
+position = Vector2( 657.978, 223.008 )
+rotation = -0.289871
+BOUNCE_MULTIPLIER = 1.2
+isTutorial = true
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="MistCanvas" parent="CanvasLayer3" instance=ExtResource( 3 )]
+
+[node name="BackgroundMist" parent="CanvasLayer3/MistCanvas" index="0"]
+visible = false
+process_material = SubResource( 6 )
+
+[node name="BMTinge" parent="CanvasLayer3/MistCanvas" index="1"]
+visible = false
+margin_left = -1087.74
+margin_top = -9.95749
+margin_right = 2217.26
+margin_bottom = 2406.04
+
+[node name="Tank" parent="." instance=ExtResource( 5 )]
+position = Vector2( 482.944, 546.6 )
+collision_mask = 2147483649
+Bullet = ExtResource( 8 )
+
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+margin_left = 1.52185
+margin_top = 7.60883
+margin_right = 1.52185
+margin_bottom = 7.60883
+
+[node name="GroundArea2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 522.189, 696.331 )
+rotation = 0.00340095
+
+[node name="LostConditionArea" parent="." instance=ExtResource( 32 )]
+visible = false
+position = Vector2( 558.538, 558.903 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="TextureProgress" parent="CanvasLayer2"]
+visible = false
+margin_left = 964.649
+margin_top = 575.33
+margin_right = 1392.65
+margin_bottom = 616.33
+rect_rotation = 270.0
+texture_under = ExtResource( 26 )
+texture_progress = ExtResource( 18 )
+nine_patch_stretch = true
+script = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightBG" type="TextureRect" parent="CanvasLayer2/ProgressBar"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -4.00201
+margin_right = 10.998
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightBG2" type="TextureRect" parent="CanvasLayer2/ProgressBar"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -428.002
+margin_top = 41.0
+margin_right = -409.002
+margin_bottom = 40.0
+rect_rotation = 180.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FinalProgress" type="TextureRect" parent="CanvasLayer2/ProgressBar"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -7.78973
+margin_top = 0.280945
+margin_right = 13.2103
+margin_bottom = 0.280945
+texture = ExtResource( 19 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FinalProgress2" type="TextureRect" parent="CanvasLayer2/ProgressBar"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -423.58
+margin_top = 41.2627
+margin_right = -403.58
+margin_bottom = 40.2627
+rect_rotation = 540.0
+texture = ExtResource( 19 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="progress bar" type="Sprite" parent="CanvasLayer2/ProgressBar"]
+show_behind_parent = true
+light_mask = -2147483647
+position = Vector2( 210.868, 2.49182 )
+rotation = 1.5708
+scale = Vector2( 0.484115, 0.354863 )
+texture = ExtResource( 20 )
+
+[node name="panel" type="Sprite" parent="CanvasLayer2/ProgressBar/progress bar"]
+show_behind_parent = true
+position = Vector2( 5.00031, 0.381226 )
+rotation = -4.95477e-06
+scale = Vector2( 1.14564, 5.62328 )
+texture = ExtResource( 2 )
+
+[node name="DialogueBox" parent="CanvasLayer2" instance=ExtResource( 13 )]
+margin_top = -141.188
+margin_bottom = 12.8125
+dialog_locked = true
+
+[node name="BookArrow" type="Sprite" parent="CanvasLayer2"]
+visible = false
+position = Vector2( 954.43, 556.919 )
+rotation = -1.5708
+scale = Vector2( 0.063818, 0.0424011 )
+texture = ExtResource( 1 )
+
+[node name="LeftArea" type="Area2D" parent="CanvasLayer2/BookArrow"]
+position = Vector2( -560.594, 0 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CanvasLayer2/BookArrow/LeftArea"]
+position = Vector2( 0.000976563, 9.34009 )
+rotation = -7.04132e-15
+scale = Vector2( 129.165, 53.1951 )
+shape = SubResource( 1 )
+
+[node name="BackpackArrow" type="Sprite" parent="CanvasLayer2"]
+visible = false
+position = Vector2( 64.4138, 558.491 )
+rotation = -1.5708
+scale = Vector2( 0.063818, 0.0424011 )
+texture = ExtResource( 1 )
+
+[node name="LeftArea" type="Area2D" parent="CanvasLayer2/BackpackArrow"]
+position = Vector2( -560.594, 0 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CanvasLayer2/BackpackArrow/LeftArea"]
+position = Vector2( 0.000976563, 9.34009 )
+rotation = -7.04132e-15
+scale = Vector2( 129.165, 53.1951 )
+shape = SubResource( 1 )
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer2"]
+modulate = Color( 0.888889, 0.888889, 0.888889, 0.111111 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" parent="." instance=ExtResource( 33 )]
+position = Vector2( 536.119, 407.802 )
+rotation = 1.56789
+scale = Vector2( 0.184558, 0.210266 )
+offset = Vector2( 1, 1 )
+current = true
+
+[node name="TopLeft" parent="Camera2D/Limits" index="0"]
+position = Vector2( 0, -1647.78 )
+
+[node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/zoom_in = SubResource( 7 )
+anims/zoom_out = SubResource( 8 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 29 )
+volume_db = -30.0
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade-out = SubResource( 9 )
+anims/move-arrows = SubResource( 10 )
+[connection signal="area_shape_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_RightArea_area_shape_entered"]
+[connection signal="body_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_RightArea_body_entered"]
+[connection signal="body_entered" from="backgrop/LeftArrow/LeftArea" to="." method="_on_LeftArea_body_entered"]
+[connection signal="tutorial_hit" from="Enemies/Blue Mushroom" to="." method="_on_Blue_Mushroom_tutorial_hit"]
+[connection signal="tutorial_hit" from="Enemies/Blue Spotted Mushroom" to="." method="_on_Blue_Spotted_Mushroom_tutorial_hit"]
+[connection signal="projectile_change" from="Tank" to="." method="_on_Tank_projectile_change"]
+[connection signal="close_backpack" from="HUD/CanvasLayer/Backpack" to="HUD" method="_on_Backpack_close_backpack"]
+[connection signal="projectile_change" from="HUD/CanvasLayer/Backpack" to="Tank" method="_on_Backpack_projectile_change"]
+[connection signal="tutorial_item_found" from="HUD/CanvasLayer/TransitionBook" to="." method="_on_TransitionBook_tutorial_item_found"]
+[connection signal="area_entered" from="LostConditionArea" to="." method="_on_LostConditionArea_area_entered"]
+[connection signal="value_changed" from="CanvasLayer2/ProgressBar" to="." method="_on_ProgressBar_value_changed"]
+[connection signal="reached_lower_limit" from="Camera2D" to="." method="_on_Camera2D_reached_lower_limit"]
+[connection signal="reached_upper_limit" from="Camera2D" to="." method="_on_Camera2D_reached_upper_limit"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="CanvasLayer3/MistCanvas"]
+
+[editable path="HUD"]
+
+[editable path="Camera2D"]

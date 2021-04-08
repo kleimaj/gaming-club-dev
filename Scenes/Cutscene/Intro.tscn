@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Cutscene/ButtonStyles/Button.tres" type="StyleBox" id=7]
 [ext_resource path="res://Scenes/SmokeRight.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/SmokeLeft.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/GFX/Music/[MapleStory BGM] Sleepywood.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/SFX/Music/[MapleStory BGM] Sleepywood.ogg" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -26,6 +26,7 @@ corner_radius_bottom_left = 18
 [sub_resource type="DynamicFont" id=3]
 size = 24
 use_filter = true
+extra_spacing_top = 3
 font_data = ExtResource( 6 )
 
 [sub_resource type="Animation" id=4]
@@ -296,8 +297,8 @@ margin_bottom = 389.0
 rect_min_size = Vector2( 1024, 75 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[center]FemBlast[/center]!"
-text = "FemBlast!"
+bbcode_text = "[center]Gyno-Garden[/center]"
+text = "Gyno-Garden"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -330,7 +331,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

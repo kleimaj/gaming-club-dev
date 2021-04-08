@@ -6,18 +6,23 @@ export (float) var gun_cooldown
 var bulletSpeed = 100
 var maxBulletSpeed = 2000
 export (bool) var keyboardControls = true
+export (bool) var chargingControls = true
 
 
 var sprayColor = "Red"
 var velocity = Vector2()
 var can_shoot = true
 
-onready var line = $Line2D
+onready var YellowLine = $YellowLine2D
+onready var RedLine = $RedLine2D
 onready var muzzle = $Muzzle/Position2D
 
 export var MAX_POINTS = 500
 
 var changemuzzle = false
+var enabled = true
+
+signal projectile_change
 
 func _ready():
 	$ShootTimer.wait_time = gun_cooldown
@@ -34,7 +39,8 @@ func control(delta):
 			position.x = 30
 		if(position.x > 950):
 			position.x = 950
-		
+	if not enabled:
+		return
 	if keyboardControls:	
 		$Muzzle.look_at(get_global_mouse_position())
 		velocity = Vector2()
@@ -44,8 +50,13 @@ func control(delta):
 			velocity = Vector2(-speed, 0)
 	if Input.is_action_just_pressed('click') || changemuzzle == true:
 		changemuzzle = true
-		if bulletSpeed != maxBulletSpeed:
-			bulletSpeed += 5
+		# Charging up functionality
+		if chargingControls:
+			if bulletSpeed != maxBulletSpeed:
+				bulletSpeed += 5
+		else:
+		# New way of shooting (Gouri)
+			bulletSpeed = abs((500 - get_global_mouse_position().y)) * 2.0
 #		$Muzzle.look_at(get_global_mouse_position())
 		update_trajectory(delta)
 	if Input.is_action_just_released("click"):
@@ -53,6 +64,9 @@ func control(delta):
 		if get_global_mouse_position().y < 600:
 			shoot()
 			bulletSpeed = 100
+	if Input.is_action_just_pressed("right_click"):
+		chargingControls = !chargingControls
+		
 #func control(delta):
 #	$Muzzle.look_at(get_global_mouse_position())
 #	velocity = Vector2()
@@ -65,7 +79,8 @@ func control(delta):
 
 		
 func shoot():
-	line.clear_points()
+	YellowLine.clear_points()
+	RedLine.clear_points()
 	$ShootTimer.start()
 	var b = Bullet.instance()
 	#b.get_node("Sprite").frames.load_path = ammo_texture
@@ -79,11 +94,16 @@ func shoot():
 	b.get_child(0).get_child(0).remote_path = "../../../Camera2D"
 
 func update_trajectory(delta):
-	line.clear_points()
+	YellowLine.clear_points()
+	RedLine.clear_points()
 	var pos = muzzle.global_position
 	var vel = muzzle.global_transform.x * bulletSpeed
 	for i in MAX_POINTS:
-		line.add_point(pos)
+		if sprayColor == "Yellow":
+			YellowLine.add_point(pos)
+		else:
+			RedLine.add_point(pos)
+		#line.add_point(pos)
 		vel.y += 2.5
 		pos += vel
 		if pos.y > position.y:
@@ -108,3 +128,10 @@ func _on_texture_change(new_anim):
 	
 func _on_Area2D_body_entered(body):
 	pass
+
+
+func _on_Backpack_projectile_change(new_anim):
+	sprayColor = new_anim
+	$Bottle.texture = load("res://Assets/GFX/UI/newBottles/" + new_anim + "BottleLoad.png")
+	if new_anim == "Yellow":
+		emit_signal("projectile_change")

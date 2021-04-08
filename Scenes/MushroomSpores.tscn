@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/GFX/Projectiles/animation/spores.png" type="Texture" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=2]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.364621, 0.685921, 1 )
+colors = PoolColorArray( 0.179321, 0, 0.441406, 1, 0.530518, 0, 0.640625, 1, 0.658824, 0.196078, 1, 1, 0.666667, 0.560784, 0.729412, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 2
+emission_box_extents = Vector3( 70, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 59.49
+gravity = Vector3( 0, 100, 0 )
+initial_velocity = 34.52
+angular_velocity = 40.12
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 4.33
+angle = 360.0
+angle_random = 1.0
+scale_random = 0.2
+color_ramp = SubResource( 4 )
+hue_variation = 0.03
+hue_variation_random = 1.0
+anim_speed = 0.75
+
+[node name="MushroomSpores" type="Node2D"]
+scale = Vector2( 2, 2 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+show_behind_parent = true
+material = SubResource( 2 )
+position = Vector2( 0.164322, 1.59659 )
+amount = 20
+lifetime = 0.5
+speed_scale = 0.5
+process_material = SubResource( 5 )
+texture = ExtResource( 2 )
