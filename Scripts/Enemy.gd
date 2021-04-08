@@ -71,6 +71,8 @@ func register_correct_hit(anim_type):
 	# Signal Fog and ProgressBar
 	var mist = get_node("../../emcl/evilMist")
 	var progressBar = get_node("../../CanvasLayer2/ProgressBar")
+	var cat = get_node("../../Cat")
+	cat.cat_hide()
 	mist.moveUp(50)
 	progressBar.incrementValue(13)
 	diminish_shader()
@@ -89,6 +91,8 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 	body.velocity.x *= -(transform.get_rotation() / transform.get_rotation()) 
 	# yellow or pink
 	var projectile_type = body.get_meta("type")
+	var cat = get_node("../../Cat")
+	cat.cat_show()
 	for group in get_groups():
 		# should only iterate once
 		if CollisionMap[projectile_type].has(group) and not beenHit and not isTutorial:
