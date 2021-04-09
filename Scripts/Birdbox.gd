@@ -9,6 +9,7 @@ func spawn_bird():
 	if rng.randi_range(0,1):
 		spawnedBird.direction = -1
 		spawnedBird.position.x = $Right.position.x
+	spawnedBird.position.y = rng.randf_range($Top.position.y, $Bottom.position.y)
 #	else:
 	add_child(spawnedBird)
 
