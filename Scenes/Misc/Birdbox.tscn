@@ -3,19 +3,15 @@
 [ext_resource path="res://Scripts/Birdbox.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.30787, 356.869 )
+extents = Vector2( 521.313, 371.917 )
 
 [node name="Birdbox" type="Area2D"]
 scale = Vector2( 0.960001, 0.960001 )
 collision_mask = 16
 script = ExtResource( 1 )
 
-[node name="Left" type="CollisionShape2D" parent="."]
-position = Vector2( 2.2486, 358.042 )
-shape = SubResource( 1 )
-
-[node name="Right" type="CollisionShape2D" parent="."]
-position = Vector2( 1061.43, 358.042 )
+[node name="LeftCollision" type="CollisionShape2D" parent="."]
+position = Vector2( 537.756, 365.057 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
@@ -27,4 +23,11 @@ position = Vector2( 551.877, 0 )
 
 [node name="Bottom" type="Position2D" parent="."]
 position = Vector2( 551.877, 708.554 )
+
+[node name="Left" type="Position2D" parent="."]
+position = Vector2( 35.5225, 361.366 )
+
+[node name="Right" type="Position2D" parent="."]
+position = Vector2( 1033.97, 358.421 )
+[connection signal="body_exited" from="." to="." method="_on_Birdbox_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

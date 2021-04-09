@@ -17,3 +17,7 @@ func spawn_bird():
 func _on_Timer_timeout():
 	spawn_bird()
 	$Timer.start()
+
+
+func _on_Birdbox_body_exited(body):
+	body.queue_free()
