@@ -32,7 +32,7 @@ func _on_Lifetime_timeout():
 	explode()
 
 func _on_Area2D_body_entered(body):
-	pass
+	print(body.name)
 
 func _reset_camera(current_camera_position):
 	var ap = get_parent().get_node("CAnimationPlayer")

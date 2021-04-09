@@ -10,8 +10,10 @@ var anim = "flying"
 func _physics_process(delta):
 	vel = Vector2()
 	calc_vel()
-	move_and_collide(vel * delta)
 	$AnimatedSprite.play(anim)
+	var collision = move_and_collide(vel * delta)
+	if collision:
+		isDead = true
 
 func calc_vel():
 	if isDead:
