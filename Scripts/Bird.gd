@@ -18,9 +18,9 @@ func calc_vel():
 		vel.y += fallSpeed
 		anim = "dead"
 		$AnimatedSprite.set_flip_v(true)
-	elif direction:
+	elif direction == 1:
 		vel.x += flySpeed
 		$AnimatedSprite.set_flip_h(false)
-	else:
+	elif direction == -1:
 		vel.x -= flySpeed
 		$AnimatedSprite.set_flip_h(true)
