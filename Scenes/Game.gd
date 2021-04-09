@@ -120,8 +120,9 @@ func _on_Timer_timeout():
 
 
 func _on_LostConditionArea_area_entered(area):
-	$emcl/evilMist.set_process(false)
-	$CanvasLayer2/YouLose.show()
+	#$emcl/evilMist.set_process(false)
+	#$CanvasLayer2/YouLose.show()
+	pass
 
 
 func _on_RetryButton_pressed():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scenes/Tank/Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tank/Bullet.tscn" type="PackedScene" id=2]
@@ -67,6 +67,38 @@ angle_random = 1.0
 scale = 2.0
 scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
+
+[sub_resource type="Animation" id=12]
+resource_name = "RedBlink"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "Move"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 50.0, 0.0 ]
+}
 
 [sub_resource type="DynamicFont" id=6]
 size = 96
@@ -421,12 +453,29 @@ collision_mask = 0
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
+[node name="progress bar" type="Sprite" parent="CanvasLayer2"]
+show_behind_parent = true
+light_mask = -2147483647
+position = Vector2( 967.47, 364.462 )
+rotation = 3.63192e-06
+scale = Vector2( 0.486773, 0.354863 )
+texture = ExtResource( 11 )
+
+[node name="panel" type="Sprite" parent="CanvasLayer2/progress bar"]
+visible = false
+show_behind_parent = true
+position = Vector2( 5.00031, 0.381226 )
+rotation = -4.95477e-06
+scale = Vector2( 1.14564, 5.62328 )
+texture = ExtResource( 20 )
+
 [node name="ProgressBar" type="TextureProgress" parent="CanvasLayer2"]
 margin_left = 964.649
 margin_top = 575.33
 margin_right = 1392.65
 margin_bottom = 616.33
 rect_rotation = 270.0
+value = 50.0
 texture_under = ExtResource( 13 )
 texture_progress = ExtResource( 9 )
 nine_patch_stretch = true
@@ -490,20 +539,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="progress bar" type="Sprite" parent="CanvasLayer2/ProgressBar"]
-show_behind_parent = true
-light_mask = -2147483647
-position = Vector2( 210.868, 2.49182 )
-rotation = 1.5708
-scale = Vector2( 0.484115, 0.354863 )
-texture = ExtResource( 11 )
+[node name="RedAlertAP" type="AnimationPlayer" parent="CanvasLayer2/ProgressBar"]
+anims/RedBlink = SubResource( 12 )
 
-[node name="panel" type="Sprite" parent="CanvasLayer2/ProgressBar/progress bar"]
-show_behind_parent = true
-position = Vector2( 5.00031, 0.381226 )
-rotation = -4.95477e-06
-scale = Vector2( 1.14564, 5.62328 )
-texture = ExtResource( 20 )
+[node name="HealthMoveAP" type="AnimationPlayer" parent="CanvasLayer2/ProgressBar"]
+anims/Move = SubResource( 13 )
 
 [node name="DialogueBox" parent="CanvasLayer2" instance=ExtResource( 23 )]
 

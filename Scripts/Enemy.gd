@@ -18,6 +18,11 @@ const CollisionMap = {
 #For med splash animation
 const MedSplashEffect = preload("res://Scenes/Tank/MedSplash.tscn")
 
+onready var progressBar = get_node("../../CanvasLayer2/ProgressBar")
+
+onready var mist_obj = get_parent().get_parent().get_node("CanvasLayer3/MistCanvas/BackgroundMist")
+onready var mist_tinge_obj = get_parent().get_parent().get_node("CanvasLayer3/MistCanvas/BMTinge")
+
 func create_splash_effect(animType, animPosition):
 	var splashEffect = MedSplashEffect.instance()
 	get_parent().add_child(splashEffect)
@@ -34,6 +39,7 @@ func create_splash_effect(animType, animPosition):
 
 var beenHit:bool = false
 
+
 func diminish_shader():
 	# Fetch Mist Sprite
 	#var mist:Sprite = get_tree().get_root().get_node("Game").get_node("Mist")
@@ -45,8 +51,12 @@ func diminish_shader():
 	#scale -= mistFactor
 	# Set new ScaleParameter
 	#mat.set_shader_param("scaleParam", scale)
-	var mist_obj = get_parent().get_parent().get_node("CanvasLayer3/MistCanvas/BackgroundMist")
 	mist_obj.modulate.a -= mistFactor
+	mist_tinge_obj.modulate.a -= mistFactor
+	
+func increment_shader():
+	mist_obj.modulate.a += mistFactor
+	mist_tinge_obj.modulate.a += mistFactor
 
 func _collision_v1(body):
 	# Fetch Mist Sprite
@@ -69,10 +79,9 @@ func _collision_v1(body):
 
 func register_correct_hit(anim_type):
 	# Signal Fog and ProgressBar
-	var mist = get_node("../../emcl/evilMist")
-	var progressBar = get_node("../../CanvasLayer2/ProgressBar")
-	mist.moveUp(50)
-	progressBar.incrementValue(13)
+	#var mist = get_node("../../emcl/evilMist")
+	#mist.moveUp(50)
+	progressBar.incrementValue()
 	diminish_shader()
 	# Set beenHit to true (doesn't trigger again)
 	beenHit = true
@@ -97,6 +106,11 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 		elif isTutorial:
 			emit_signal("tutorial_hit")
 			$MushroomSpores/Particles2D.emitting = false
+			break
+		elif not CollisionMap[projectile_type].has(group):
+			#loosing situation
+			progressBar.decrementValue()
+			increment_shader()
 	create_splash_effect(projectile_type, body.global_position)
 	body.curr_hits += 1
 	if body.curr_hits == body.MAX_HITS:
