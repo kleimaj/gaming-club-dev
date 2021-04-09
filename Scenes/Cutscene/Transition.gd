@@ -167,6 +167,8 @@ var content_map = {}
 var current_page_index = 0 
 var page_idx = 0
 
+var isBagOpen  = false
+
 func _ready():
 	$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
 	$CanvasLayer/DialogueBox.assign_dictionary(first_dialog)
@@ -212,7 +214,7 @@ func _on_item_pressed(button):
 		if ItemMap[button.name].pack:
 			$CanvasLayer/Book.buttonType = button.name
 			button.hide()
-			get_node("CanvasLayer/BackpackButton/"+button.name).show()
+			show_bottles()
 		get_node("Player/Backdrop/Buttons/" + button.name +"/" + button.name + "G").hide()
 		$CanvasLayer/Book.show()
 		$CanvasLayer/Book.receiveItem(button.name, true)
@@ -288,19 +290,6 @@ func _on_mouse_entered(button):
 func _on_mouse_exited(button):
 	_reducto(button)
 
-func _on_BackpackButton_mouse_entered():
-	if $CanvasLayer/BackpackButton/PinkSpray.visible:
-		$CanvasLayer/BackpackButton/PinkSpray.rect_position.y -= 40
-	if $CanvasLayer/BackpackButton/YellowSpray.visible:
-		$CanvasLayer/BackpackButton/YellowSpray.rect_position.y -= 40
-
-
-func _on_BackpackButton_mouse_exited():
-	if $CanvasLayer/BackpackButton/PinkSpray.visible:
-		$CanvasLayer/BackpackButton/PinkSpray.rect_position.y += 40
-	if $CanvasLayer/BackpackButton/YellowSpray.visible:
-		$CanvasLayer/BackpackButton/YellowSpray.rect_position.y += 40
-
 
 func _on_bb_pressed(button):
 	if button.visible:
@@ -310,6 +299,7 @@ func _on_bb_pressed(button):
 func _on_mouse_bb_entered(button):
 	if button.visible:
 		button.rect_position.y -= 40
+		
 		
 func _on_mouse_bb_exited(button):
 	if button.visible:
@@ -385,3 +375,26 @@ func _arrow_animate():
 		$RightArrowAnimation.play("Move")
 	else:
 		$RightArrowAnimation.stop()
+
+
+func show_bottles():
+	if isBagOpen:
+		if ItemMap["PinkSpray"].collected:
+			$CanvasLayer/BackpackButton/PinkSpray.visible = true
+		if ItemMap["YellowSpray"].collected:
+			$CanvasLayer/BackpackButton/YellowSpray.visible = true
+	else:
+		$CanvasLayer/BackpackButton/PinkSpray.visible = false
+		$CanvasLayer/BackpackButton/YellowSpray.visible = false
+
+func _on_BackpackButton_pressed():
+	if not isBagOpen:
+		isBagOpen = true
+		$CanvasLayer/BackpackButton.texture_normal = load("res://Assets/GFX/new/Backpack/Backpack_open.png")
+		$CanvasLayer/BackpackButton/BackpackFront.visible = true
+	else:
+		isBagOpen = false
+		$CanvasLayer/BackpackButton.texture_normal = load("res://Assets/GFX/new/Backpack/Backpack_closed_Back.png")
+		$CanvasLayer/BackpackButton/BackpackFront.visible = false
+	show_bottles()
+

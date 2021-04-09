@@ -29,7 +29,7 @@ func _on_Button_pressed():
 
 func dialog_finished():
 	if not first_finished:
-		$AnimationPlayer.play("zoom-in")
+		$AnimationPlayer.play("zoom-in2")
 		first_finished = true
 	else:
 		$AnimationPlayer.play("EndScene")
@@ -40,7 +40,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		$CanvasLayer/DialogueBox.assign_dictionary(first_dialogue)
 		$CanvasLayer/DialogueBox.fade_in()
 		
-	elif anim_name == "zoom-in":
+	elif anim_name == "zoom-in2":
 		$CanvasLayer/DialogueBox.assign_dictionary(second_dialogue)
 		$CanvasLayer/DialogueBox.fade_in()
 	elif anim_name == "EndScene":

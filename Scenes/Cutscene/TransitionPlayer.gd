@@ -8,9 +8,9 @@ enum{
 }
 
 var state = STOP
-var speed = 5
-var leftLimit = 840
-var rightLimit = -480
+var speed = 4
+var leftLimit = 820
+var rightLimit = -500
 
 
 
