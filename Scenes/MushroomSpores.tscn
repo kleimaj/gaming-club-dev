@@ -10,8 +10,8 @@ particles_anim_v_frames = 7
 particles_anim_loop = false
 
 [sub_resource type="Gradient" id=2]
-offsets = PoolRealArray( 0.809322, 1 )
-colors = PoolColorArray( 0.368627, 0.027451, 0.384314, 1, 0.486275, 0.290196, 0.470588, 1 )
+offsets = PoolRealArray( 0.0338983, 0.930085 )
+colors = PoolColorArray( 0.141176, 0.027451, 0.184314, 1, 0.4, 0.160784, 0.454902, 1 )
 
 [sub_resource type="GradientTexture" id=3]
 gradient = SubResource( 2 )

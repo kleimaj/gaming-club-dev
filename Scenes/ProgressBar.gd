@@ -13,7 +13,9 @@ func incrementValue():
 	var endValue = value + ((100-value)/totalEnemy)
 	animateHealth(value, endValue)
 	#value = endValue
-	totalEnemy-= 1
+	totalEnemy -= 1
+	if totalEnemy == 0:
+		animateHealth(value, 100)
 
 func decrementValue(amount=6):
 	checkHealth()
