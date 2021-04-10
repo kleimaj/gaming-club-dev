@@ -40,8 +40,10 @@ func load_dialog():
 			if dialog_dics[dialog_index].name == "Cat":
 				$CatRect.show()
 				$AnimationPlayer.play("fade-in-cat")
+				$AnimationPlayer.play("animate_cat")
 			elif dialog_dics[dialog_index].name == "Prof. Flores" or dialog_dics[dialog_index].name == "???":
 				$FloresRect.show()
+				$AnimationPlayer.play("animate_flores")
 		else:
 			$NameRect.hide()
 		$RichTextLabel.bbcode_text = dialog_dics[dialog_index].content
