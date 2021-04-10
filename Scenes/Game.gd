@@ -129,4 +129,6 @@ func _on_LostConditionArea_area_entered(area):
 
 
 func _on_RetryButton_pressed():
+	get_node("HUD").pause_mode = PAUSE_MODE_PROCESS
+	get_tree().paused = false
 	get_tree().reload_current_scene()
