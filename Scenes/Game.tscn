@@ -10,7 +10,7 @@
 [ext_resource path="res://Assets/GFX/background/rightTree.png" type="Texture" id=8]
 [ext_resource path="res://Assets/GFX/UI/meterInsideMiddle.png" type="Texture" id=9]
 [ext_resource path="res://Assets/GFX/UI/meterInsideCap.png" type="Texture" id=10]
-[ext_resource path="res://Assets/GFX/UI/progress bar.png" type="Texture" id=11]
+[ext_resource path="res://Assets/GFX/UI/progress-bar_v2.png" type="Texture" id=11]
 [ext_resource path="res://Assets/GFX/raincloud/mistTileTop.png" type="Texture" id=12]
 [ext_resource path="res://Assets/GFX/UI/MicrosoftTeams-image (1).png" type="Texture" id=13]
 [ext_resource path="res://Assets/GFX/raincloud/mistTileBottom.png" type="Texture" id=14]
@@ -659,7 +659,7 @@ collision_mask = 0
 [node name="progress bar" type="Sprite" parent="CanvasLayer2"]
 show_behind_parent = true
 light_mask = -2147483647
-position = Vector2( 967.47, 364.462 )
+position = Vector2( 983.008, 365.813 )
 rotation = 3.63192e-06
 scale = Vector2( 0.486773, 0.354863 )
 texture = ExtResource( 11 )
@@ -754,6 +754,7 @@ rotation = 1.5708
 scale = Vector2( 0.0880176, 0.112915 )
 frames = SubResource( 32 )
 animation = "Green"
+frame = 4
 playing = true
 offset = Vector2( 0, 100 )
 
