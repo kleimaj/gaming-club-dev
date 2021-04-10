@@ -24,7 +24,7 @@ one_way_collision_margin = 128.0
 position = Vector2( -0.578223, -60.7123 )
 
 [node name="MushroomSpores" parent="." instance=ExtResource( 3 )]
-position = Vector2( -0.57825, -58.9777 )
+position = Vector2( -0.57825, -68.0843 )
 [connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_Enemy_body_shape_entered"]
 
