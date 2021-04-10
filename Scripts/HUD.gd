@@ -20,6 +20,7 @@ func _on_BackpackButton_pressed():
 
 func set_backpack(isOpen: bool):
 	Backpack.visible = isOpen
+	
 
 
 func close_backpack():
@@ -27,6 +28,7 @@ func close_backpack():
 	Backpack.visible = false
 	backpackIsOpen = false
 	get_tree().paused = false
+
 
 func close_book():
 	$CanvasLayer/ColorRect.hide()

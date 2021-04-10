@@ -62,29 +62,12 @@ func _on_ExitButton_pressed():
 	# Connect ExitButton to HUD.gd close()
 	emit_signal("close_backpack")
 	
-	
-
-
-
-func _on_RedBottle_mouse_entered():
-	$RedBottle.rect_position.y -= 40.0
-	
-func _on_RedBottle_mouse_exited():
-	$RedBottle.rect_position.y += 40.0
-
 
 func _on_RedBottle_pressed():
 	selected_anim.text = "Red"
 	emit_signal("projectile_change", get_texture_path())
 	emit_signal("close_backpack")
 
-
-func _on_YellowBottle_mouse_entered():
-	$YellowBottle.rect_position.y -=40
-
-
-func _on_YellowBottle_mouse_exited():
-	$YellowBottle.rect_position.y += 40
 
 
 func _on_YellowBottle_pressed():

@@ -646,6 +646,7 @@ anims/zoom_out = SubResource( 8 )
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 stream = ExtResource( 29 )
 volume_db = -30.0
 autoplay = true
