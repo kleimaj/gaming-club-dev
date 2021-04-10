@@ -754,7 +754,6 @@ rotation = 1.5708
 scale = Vector2( 0.0880176, 0.112915 )
 frames = SubResource( 32 )
 animation = "Green"
-frame = 3
 playing = true
 offset = Vector2( 0, 100 )
 

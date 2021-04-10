@@ -512,6 +512,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="progress bar" type="Sprite" parent="CanvasLayer2/ProgressBar"]
+show_behind_parent = true
+light_mask = -2147483647
+position = Vector2( 210.868, 2.49182 )
+rotation = 1.5708
+scale = Vector2( 0.484115, 0.354863 )
+texture = ExtResource( 20 )
+
+[node name="panel" type="Sprite" parent="CanvasLayer2/ProgressBar/progress bar"]
+show_behind_parent = true
+position = Vector2( 5.00031, 0.381226 )
+rotation = -4.95477e-06
+scale = Vector2( 1.14564, 5.62328 )
+texture = ExtResource( 2 )
+
 [node name="RightBG" type="TextureRect" parent="CanvasLayer2/ProgressBar"]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -567,20 +582,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="progress bar" type="Sprite" parent="CanvasLayer2/ProgressBar"]
-show_behind_parent = true
-light_mask = -2147483647
-position = Vector2( 210.868, 2.49182 )
-rotation = 1.5708
-scale = Vector2( 0.484115, 0.354863 )
-texture = ExtResource( 20 )
+[node name="HealthAnim" type="AnimatedSprite" parent="CanvasLayer2/ProgressBar"]
 
-[node name="panel" type="Sprite" parent="CanvasLayer2/ProgressBar/progress bar"]
-show_behind_parent = true
-position = Vector2( 5.00031, 0.381226 )
-rotation = -4.95477e-06
-scale = Vector2( 1.14564, 5.62328 )
-texture = ExtResource( 2 )
+[node name="RedAnimAP" type="AnimationPlayer" parent="CanvasLayer2/ProgressBar"]
+
+[node name="HealthMoveAP" type="AnimationPlayer" parent="CanvasLayer2/ProgressBar"]
 
 [node name="DialogueBox" parent="CanvasLayer2" instance=ExtResource( 13 )]
 margin_top = -141.188
