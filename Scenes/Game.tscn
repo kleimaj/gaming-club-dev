@@ -266,7 +266,7 @@ size = 24
 use_filter = true
 font_data = ExtResource( 25 )
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=36]
 resource_name = "cat_smile"
 length = 2.0
 tracks/0/type = "value"
@@ -282,7 +282,7 @@ tracks/0/keys = {
 "values": [ Vector2( 496.409, 862.992 ), Vector2( 496.409, 762.992 ), Vector2( 496.409, 762.992 ), Vector2( 496.409, 862.992 ) ]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=37]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:zoom")
 tracks/0/interp = 1
@@ -296,7 +296,7 @@ tracks/0/keys = {
 "values": [ Vector2( 3, 3 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=38]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:zoom")
 tracks/0/interp = 1
@@ -310,7 +310,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 3, 3 ) ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=39]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
@@ -775,13 +775,14 @@ rotation = 1.5708
 scale = Vector2( 0.0880176, 0.112915 )
 frames = SubResource( 32 )
 animation = "Green"
-frame = 7
+frame = 1
 playing = true
 offset = Vector2( 0, 100 )
 
 [node name="DialogueBox" parent="CanvasLayer2" instance=ExtResource( 23 )]
 
 [node name="YouLose" type="TextureRect" parent="CanvasLayer2"]
+pause_mode = 2
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -845,9 +846,9 @@ current = true
 position = Vector2( 0, -1647.78 )
 
 [node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/cat_smile = SubResource( 39 )
-anims/zoom_in = SubResource( 36 )
-anims/zoom_out = SubResource( 37 )
+anims/cat_smile = SubResource( 36 )
+anims/zoom_in = SubResource( 37 )
+anims/zoom_out = SubResource( 38 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -861,7 +862,7 @@ autoplay = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ResetCamera = SubResource( 38 )
+anims/ResetCamera = SubResource( 39 )
 [connection signal="projectile_change" from="Tank" to="HUD" method="_on_Tank_projectile_change"]
 [connection signal="close_backpack" from="HUD/CanvasLayer/Backpack" to="HUD" method="_on_Backpack_close_backpack"]
 [connection signal="projectile_change" from="HUD/CanvasLayer/Backpack" to="Tank" method="_on_Backpack_projectile_change"]
