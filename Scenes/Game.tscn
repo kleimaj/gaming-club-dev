@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Scenes/Tank/Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tank/Bullet.tscn" type="PackedScene" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://Assets/GFX/UI/RedDown.png" type="Texture" id=33]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=34]
 [ext_resource path="res://Assets/GFX/background/branch.png" type="Texture" id=35]
+[ext_resource path="res://Assets/GFX/new/cat/Cat_Smile.png" type="Texture" id=36]
 [ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=68]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer1.png" type="Texture" id=72]
 
@@ -117,134 +118,134 @@ tracks/1/keys = {
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 0, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 320, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 640, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 960, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 0, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 320, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 640, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 960, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 0, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 320, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 640, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 960, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 0, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 320, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 640, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 960, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 0, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=25]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 320, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=26]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 640, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 960, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 0, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=29]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 320, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=30]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 640, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 960, 672, 320, 336 )
 
 [sub_resource type="SpriteFrames" id=32]
 animations = [ {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
-"name": "Green",
+"name": "Red",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
-"name": "Red",
+"name": "Green",
 "speed": 5.0
 } ]
 
@@ -264,6 +265,22 @@ corner_radius_bottom_left = 18
 size = 24
 use_filter = true
 font_data = ExtResource( 25 )
+
+[sub_resource type="Animation" id=39]
+resource_name = "cat_smile"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer2/Cat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 496.409, 862.992 ), Vector2( 496.409, 762.992 ), Vector2( 496.409, 762.992 ), Vector2( 496.409, 862.992 ) ]
+}
 
 [sub_resource type="Animation" id=36]
 tracks/0/type = "value"
@@ -337,6 +354,10 @@ texture = ExtResource( 72 )
 position = Vector2( 2381.68, 400.374 )
 scale = Vector2( 1.06152, 1.07679 )
 texture = ExtResource( 72 )
+
+[node name="Birdbox" parent="backgrop" instance=ExtResource( 4 )]
+position = Vector2( -1192.42, 1676.84 )
+scale = Vector2( 2.105, 3.74734 )
 
 [node name="rightTree" type="Sprite" parent="backgrop"]
 position = Vector2( 1018.84, 708.078 )
@@ -754,7 +775,7 @@ rotation = 1.5708
 scale = Vector2( 0.0880176, 0.112915 )
 frames = SubResource( 32 )
 animation = "Green"
-frame = 4
+frame = 9
 playing = true
 offset = Vector2( 0, 100 )
 
@@ -808,6 +829,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Cat" type="Sprite" parent="CanvasLayer2"]
+position = Vector2( 496.409, 862.992 )
+scale = Vector2( 0.0799992, 0.0799992 )
+texture = ExtResource( 36 )
+
 [node name="Camera2D" parent="." instance=ExtResource( 19 )]
 position = Vector2( 536.119, 407.802 )
 rotation = 1.56789
@@ -819,6 +845,7 @@ current = true
 position = Vector2( 0, -1647.78 )
 
 [node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/cat_smile = SubResource( 39 )
 anims/zoom_in = SubResource( 36 )
 anims/zoom_out = SubResource( 37 )
 
@@ -835,9 +862,6 @@ autoplay = true
 
 [node name="CAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ResetCamera = SubResource( 38 )
-
-[node name="Birdbox" parent="." instance=ExtResource( 4 )]
-position = Vector2( -12.2207, -162.946 )
 [connection signal="projectile_change" from="Tank" to="HUD" method="_on_Tank_projectile_change"]
 [connection signal="close_backpack" from="HUD/CanvasLayer/Backpack" to="HUD" method="_on_Backpack_close_backpack"]
 [connection signal="projectile_change" from="HUD/CanvasLayer/Backpack" to="Tank" method="_on_Backpack_projectile_change"]

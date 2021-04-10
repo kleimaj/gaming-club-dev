@@ -99,9 +99,12 @@ func checkGameOver(animType):
 		$CanvasLayer3/MistCanvas/BackgroundMist.emitting = false
 		timer.set_wait_time(rain_seconds)
 		timer.start();
+	else:
+		$CameraAnimationPlayer.play("cat_smile")
 	
 func incrementScore():
 	mushrooms_hit += 1
+
 
 func _on_ProgressBar_value_changed(value):
 	$CanvasLayer2/ProgressBar/FinalProgress.visible = false
