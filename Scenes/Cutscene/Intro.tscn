@@ -11,9 +11,9 @@
 [ext_resource path="res://Scenes/SmokeRight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/SFX/Music/[MapleStory BGM] Sleepywood.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Assets/GFX/new/Intro_Env/openning_TreeA.png" type="Texture" id=11]
-[ext_resource path="res://Assets/GFX/new/Intro_Env/Start_B_Before.png" type="Texture" id=12]
+[ext_resource path="res://Assets/GFX/new/Intro_Env/Start_B_Before_v2.png" type="Texture" id=12]
 [ext_resource path="res://Assets/GFX/new/Intro_Env/Title.png" type="Texture" id=13]
-[ext_resource path="res://Assets/GFX/new/Intro_Env/Start_B_After.png" type="Texture" id=14]
+[ext_resource path="res://Assets/GFX/new/Intro_Env/Start_B_After_v2.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -406,11 +406,11 @@ scale = Vector2( 0.135975, 0.155603 )
 texture = ExtResource( 13 )
 
 [node name="StartButton" type="TextureButton" parent="CanvasLayer/StartContainer"]
-margin_left = 394.196
-margin_top = 464.987
-margin_right = 1352.2
-margin_bottom = 1080.99
-rect_scale = Vector2( 0.2, 0.2 )
+margin_left = 394.0
+margin_top = 465.0
+margin_right = 2185.0
+margin_bottom = 2265.0
+rect_scale = Vector2( 0.1, 0.1 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 14 )
@@ -420,7 +420,6 @@ __meta__ = {
 }
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
