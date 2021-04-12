@@ -9,32 +9,12 @@ var first_dialog = [
 
 var second_dialog = [
 	{
-		'name': '???',
-		'content': 'Hmph! Not exactly who I was expecting but-',
-	},
-	{
-		'name': 'Player',
-		'content': '(startled) AAAAA!!!',
-	},
-	{
-		'name': '???',
-		'content': 'AAAA WHY ARE YOU SCREAMING??',
-	},
-	{
 		'name': 'Player',
 		'content': 'Who are you!? Do you have any idea what’s going on here!?',
 	},
 	{
-		'name': '???',
-		'content': 'Ah ah! Be calmed young friend, it appears your curiosity got the better of you! Not that I’m one to talk..',
-	},
-	{
-		'name': 'Player',
-		'content': 'Huh??',
-	},
-	{
 		'name': 'Prof. Flores',
-		'content': 'I\'m Professor Flores, and it appears that you and I are trapped!'
+		'content': 'I\'m Professor Flores, and it appears that you and I are trapped in my award...'
 	},
 	{
 		'name': 'Player',
@@ -42,7 +22,7 @@ var second_dialog = [
 	},
 	{
 		'name': 'Prof. Flores',
-		'content': 'This is not just some bottle! It’s- well it WAS my award winning terrarium. You see, I’m a botanist and fungi expert.'
+		'content': 'My award winning terrarium. You see, I’m a botanist and fungi expert.'
 	},
 	{
 		'name': 'Prof. Flores',
@@ -74,15 +54,15 @@ var second_dialog = [
 	},
 	{
 		'name': null,
-		'content': 'You received a Book'
+		'content': 'You received the Field Manual'
 	},
 	{
 		'name': 'Player',
-		'content': 'A book?',
+		'content': 'A manual?',
 	},
 	{
 		'name': 'Prof. Flores',
-		'content': 'This is not just any book! It contains all the knowledge I’ve cultivated through my studies.'
+		'content': 'This is not just any field manual! It contains all the knowledge I’ve cultivated through my studies.'
 	},
 	{
 		'name': 'Prof. Flores',

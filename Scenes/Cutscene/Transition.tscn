@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Cutscene/Transition.gd" type="Script" id=2]
 [ext_resource path="res://Assets/GFX/new/Transition_bg/Transition.png" type="Texture" id=3]
 [ext_resource path="res://Assets/SFX/Music/Labyrinth I - Lush Woodlands.ogg" type="AudioStream" id=4]
-[ext_resource path="res://Assets/GFX/UI/bookClosed.png" type="Texture" id=5]
+[ext_resource path="res://Assets/GFX/UI/Book/book-closed.png" type="Texture" id=5]
 [ext_resource path="res://Assets/GFX/UI/blueMushIcon.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GFX/UI/blueSpotsMushIcon.png" type="Texture" id=7]
 [ext_resource path="res://Assets/GFX/UI/greenMushIcon.png" type="Texture" id=8]
@@ -377,13 +377,15 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -121.656
-margin_top = -146.145
-margin_right = 167.344
-margin_bottom = 263.855
+margin_left = -174.0
+margin_top = -166.0
+margin_right = 446.0
+margin_bottom = 428.0
 rect_scale = Vector2( 0.280001, 0.280001 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }

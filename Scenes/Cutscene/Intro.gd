@@ -4,7 +4,7 @@ extends "res://Scripts/Cutscene.gd"
 var first_dialogue = [
 	{
 		'name': null,
-		'content': 'Hello there, welcome to the game! Please [color=#ff0000]click[/color] to continue!',
+		'content': 'Hello there, welcome to the game! Please click to continue!',
 	},
 	{
 		'name': 'Player',

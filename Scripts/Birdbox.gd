@@ -6,6 +6,7 @@ var Bird = load("res://Scenes/Misc/Bird.tscn")
 
 func spawn_bird():
 	var spawnedBird = Bird.instance()
+	rng.randomize()
 	if rng.randi_range(0,1):
 		spawnedBird.direction = -1
 		spawnedBird.position.x = $Right.position.x
