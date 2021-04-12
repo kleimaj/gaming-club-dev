@@ -48,6 +48,10 @@ func animateHealth(startValue, endValue, animPos):
 	currenthasPos = animPos
 	if yield($HealthMoveAP, "animation_finished"):
 		if value <= looseLimit:
+			$RedAlertAP.stop()
+			visible = true
+			get_parent().get_parent().get_node("HUD").pause_mode = PAUSE_MODE_INHERIT
+			get_tree().paused = true
 			looseScene.show()
 		else:
 			checkHealth()
