@@ -6,6 +6,7 @@ var dialog_dics = []
 var dialog_index = 0
 signal finished
 var dialog_done = false
+var floresDidWink = false
 
 export var dialog_locked = false
 
@@ -43,7 +44,9 @@ func load_dialog():
 				$AnimationPlayer.play("animate_cat")
 			elif dialog_dics[dialog_index].name == "Prof. Flores" or dialog_dics[dialog_index].name == "???":
 				$FloresRect.show()
-				$AnimationPlayer.play("animate_flores")
+				if !floresDidWink:
+					$AnimationPlayer.play("animate_flores")
+					floresDidWink = true
 		else:
 			$NameRect.hide()
 		$RichTextLabel.bbcode_text = dialog_dics[dialog_index].content
