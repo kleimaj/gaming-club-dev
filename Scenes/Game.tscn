@@ -118,122 +118,122 @@ tracks/1/keys = {
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 320, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 640, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 960, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 0, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 320, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 640, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 960, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 0, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 320, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 640, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 960, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 32 )
 region = Rect2( 0, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 32 )
 region = Rect2( 320, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 32 )
 region = Rect2( 640, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 32 )
 region = Rect2( 960, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 32 )
 region = Rect2( 0, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=25]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 32 )
 region = Rect2( 320, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=26]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 32 )
 region = Rect2( 640, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 32 )
 region = Rect2( 960, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 32 )
 region = Rect2( 0, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=29]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 32 )
 region = Rect2( 320, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=30]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 32 )
 region = Rect2( 640, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 32 )
 region = Rect2( 960, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=32]
@@ -300,12 +300,12 @@ region = Rect2( 960, 672, 320, 336 )
 animations = [ {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
-"name": "Green",
+"name": "Blue",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
-"name": "Blue",
+"name": "Green",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
@@ -840,7 +840,7 @@ rotation = 1.5708
 scale = Vector2( 0.0880176, 0.112915 )
 frames = SubResource( 44 )
 animation = "Blue"
-frame = 10
+frame = 1
 playing = true
 offset = Vector2( 0, 100 )
 
