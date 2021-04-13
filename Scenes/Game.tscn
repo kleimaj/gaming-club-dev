@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://Scenes/Tank/Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tank/Bullet.tscn" type="PackedScene" id=2]
@@ -8,11 +8,10 @@
 [ext_resource path="res://Assets/GFX/background/leftTree.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Interface/GroundArea2D.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/GFX/background/rightTree.png" type="Texture" id=8]
-[ext_resource path="res://Assets/GFX/UI/meterInsideMiddle.png" type="Texture" id=9]
-[ext_resource path="res://Assets/GFX/UI/meterInsideCap.png" type="Texture" id=10]
-[ext_resource path="res://Assets/GFX/UI/progress-bar_v2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/GFX/UI/meterInsideMiddleBlue.png" type="Texture" id=9]
+[ext_resource path="res://Assets/GFX/new/Health_Meter/energy_bar_base.png" type="Texture" id=11]
 [ext_resource path="res://Assets/GFX/raincloud/mistTileTop.png" type="Texture" id=12]
-[ext_resource path="res://Assets/GFX/UI/MicrosoftTeams-image (1).png" type="Texture" id=13]
+[ext_resource path="res://Assets/GFX/UI/BlueDown.png" type="Texture" id=13]
 [ext_resource path="res://Assets/GFX/raincloud/mistTileBottom.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/Game.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/ProgressBar.gd" type="Script" id=16]
@@ -36,6 +35,7 @@
 [ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=34]
 [ext_resource path="res://Assets/GFX/background/branch.png" type="Texture" id=35]
 [ext_resource path="res://Assets/GFX/new/cat/Cat_Smile.png" type="Texture" id=36]
+[ext_resource path="res://Assets/GFX/UI/meterInsideCapBlue.png" type="Texture" id=37]
 [ext_resource path="res://Scenes/Enemy/Enemy.tscn" type="PackedScene" id=68]
 [ext_resource path="res://Assets/GFX/background/background/bgLayer1.png" type="Texture" id=72]
 
@@ -118,156 +118,220 @@ tracks/1/keys = {
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 0, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 320, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 640, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 960, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 0, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 320, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 640, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 960, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 0, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 320, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 640, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 960, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 320, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 640, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 960, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 0, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=25]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 320, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=26]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 640, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=27]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 960, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 0, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=29]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 320, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=30]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 640, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=31]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 13 )
 region = Rect2( 960, 672, 320, 336 )
 
-[sub_resource type="SpriteFrames" id=32]
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 33 )
+region = Rect2( 0, 0, 320, 336 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 33 )
+region = Rect2( 320, 0, 320, 336 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 33 )
+region = Rect2( 640, 0, 320, 336 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 33 )
+region = Rect2( 960, 0, 320, 336 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 33 )
+region = Rect2( 0, 336, 320, 336 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 33 )
+region = Rect2( 320, 336, 320, 336 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 33 )
+region = Rect2( 640, 336, 320, 336 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 33 )
+region = Rect2( 960, 336, 320, 336 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 33 )
+region = Rect2( 0, 672, 320, 336 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 33 )
+region = Rect2( 320, 672, 320, 336 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 33 )
+region = Rect2( 640, 672, 320, 336 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 33 )
+region = Rect2( 960, 672, 320, 336 )
+
+[sub_resource type="SpriteFrames" id=44]
 animations = [ {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
-"name": "Red",
+"name": "Green",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
-"name": "Green",
+"name": "Blue",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
+"loop": true,
+"name": "Red",
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=33]
+[sub_resource type="DynamicFont" id=45]
 size = 96
 use_filter = true
 font_data = ExtResource( 25 )
 
-[sub_resource type="StyleBoxFlat" id=34]
+[sub_resource type="StyleBoxFlat" id=46]
 bg_color = Color( 0.992157, 0.737255, 0.0901961, 1 )
 corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 
-[sub_resource type="DynamicFont" id=35]
+[sub_resource type="DynamicFont" id=47]
 size = 24
 use_filter = true
 font_data = ExtResource( 25 )
 
-[sub_resource type="Animation" id=36]
-resource_name = "cat_smile"
+[sub_resource type="Animation" id=48]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer2/Cat:position")
@@ -282,7 +346,7 @@ tracks/0/keys = {
 "values": [ Vector2( 496.409, 862.992 ), Vector2( 496.409, 762.992 ), Vector2( 496.409, 762.992 ), Vector2( 496.409, 862.992 ) ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=49]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:zoom")
 tracks/0/interp = 1
@@ -296,7 +360,7 @@ tracks/0/keys = {
 "values": [ Vector2( 3, 3 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=50]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:zoom")
 tracks/0/interp = 1
@@ -310,7 +374,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 3, 3 ) ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=51]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:position")
@@ -680,9 +744,9 @@ collision_mask = 0
 [node name="progress bar" type="Sprite" parent="CanvasLayer2"]
 show_behind_parent = true
 light_mask = -2147483647
-position = Vector2( 983.008, 365.813 )
+position = Vector2( 984.367, 323.708 )
 rotation = 3.63192e-06
-scale = Vector2( 0.486773, 0.354863 )
+scale = Vector2( 0.0991655, 0.101075 )
 texture = ExtResource( 11 )
 
 [node name="panel" type="Sprite" parent="CanvasLayer2/progress bar"]
@@ -694,13 +758,12 @@ scale = Vector2( 1.14564, 5.62328 )
 texture = ExtResource( 20 )
 
 [node name="ProgressBar" type="TextureProgress" parent="CanvasLayer2"]
-margin_left = 964.649
-margin_top = 575.33
-margin_right = 1392.65
-margin_bottom = 616.33
+margin_left = 963.0
+margin_top = 534.0
+margin_right = 1391.0
+margin_bottom = 575.0
 rect_rotation = 270.0
 value = 50.0
-texture_under = ExtResource( 13 )
 texture_progress = ExtResource( 9 )
 nine_patch_stretch = true
 script = ExtResource( 16 )
@@ -709,6 +772,7 @@ __meta__ = {
 }
 
 [node name="RightBG" type="TextureRect" parent="CanvasLayer2/ProgressBar"]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -720,6 +784,7 @@ __meta__ = {
 }
 
 [node name="RightBG2" type="TextureRect" parent="CanvasLayer2/ProgressBar"]
+visible = false
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -742,7 +807,7 @@ margin_left = -7.78973
 margin_top = 0.280945
 margin_right = 13.2103
 margin_bottom = 0.280945
-texture = ExtResource( 10 )
+texture = ExtResource( 37 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -757,7 +822,7 @@ margin_top = 41.2627
 margin_right = -403.58
 margin_bottom = 40.2627
 rect_rotation = 540.0
-texture = ExtResource( 10 )
+texture = ExtResource( 37 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -773,9 +838,9 @@ anims/Move = SubResource( 7 )
 position = Vector2( 216.62, 20.2925 )
 rotation = 1.5708
 scale = Vector2( 0.0880176, 0.112915 )
-frames = SubResource( 32 )
-animation = "Green"
-frame = 4
+frames = SubResource( 44 )
+animation = "Blue"
+frame = 10
 playing = true
 offset = Vector2( 0, 100 )
 
@@ -803,7 +868,7 @@ margin_left = 498.84
 margin_top = 146.662
 margin_right = 1598.84
 margin_bottom = 346.662
-custom_fonts/normal_font = SubResource( 33 )
+custom_fonts/normal_font = SubResource( 45 )
 custom_colors/default_color = Color( 0.286275, 0.133333, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Sadly, you have failed to fend off the mist.[/center]"
@@ -820,9 +885,9 @@ margin_bottom = 428.886
 rect_min_size = Vector2( 150, 50 )
 rect_scale = Vector2( 2.20998, 2.20998 )
 mouse_default_cursor_shape = 2
-custom_styles/hover = SubResource( 34 )
+custom_styles/hover = SubResource( 46 )
 custom_styles/normal = ExtResource( 26 )
-custom_fonts/font = SubResource( 35 )
+custom_fonts/font = SubResource( 47 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 text = "RETRY"
@@ -846,9 +911,9 @@ current = true
 position = Vector2( 0, -1647.78 )
 
 [node name="CameraAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/cat_smile = SubResource( 36 )
-anims/zoom_in = SubResource( 37 )
-anims/zoom_out = SubResource( 38 )
+anims/cat_smile = SubResource( 48 )
+anims/zoom_in = SubResource( 49 )
+anims/zoom_out = SubResource( 50 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -862,7 +927,7 @@ autoplay = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ResetCamera = SubResource( 39 )
+anims/ResetCamera = SubResource( 51 )
 [connection signal="projectile_change" from="Tank" to="HUD" method="_on_Tank_projectile_change"]
 [connection signal="close_backpack" from="HUD/CanvasLayer/Backpack" to="HUD" method="_on_Backpack_close_backpack"]
 [connection signal="projectile_change" from="HUD/CanvasLayer/Backpack" to="Tank" method="_on_Backpack_projectile_change"]

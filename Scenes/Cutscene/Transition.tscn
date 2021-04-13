@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Cutscene/Transition.gd" type="Script" id=2]
@@ -15,25 +15,69 @@
 [ext_resource path="res://Scenes/Cutscene/TransitionPlayer.gd" type="Script" id=13]
 [ext_resource path="res://Assets/GFX/cutscene/Book/arrow.png" type="Texture" id=14]
 [ext_resource path="res://Assets/GFX/cutscene/Book/arrow-right.png" type="Texture" id=15]
+[ext_resource path="res://Fonts/transition-font/TransitionSceneLabelFont.tres" type="DynamicFont" id=16]
 [ext_resource path="res://Scenes/Glow.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/GFX/new/Backpack/BackpackFront.png" type="Texture" id=18]
 [ext_resource path="res://Assets/GFX/new/Backpack/Backpack_closed_Back.png" type="Texture" id=19]
 [ext_resource path="res://Scenes/MistCanvas.tscn" type="PackedScene" id=20]
 
-[sub_resource type="Gradient" id=1]
+[sub_resource type="Animation" id=1]
+resource_name = "FontFadeIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath("NoOfObjects:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("NoOfObjects:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "FontFadeInOut"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("NoOfObjects:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0, 0, 4.59177e-40, 1 )
 colors = PoolColorArray( 0.266667, 0.027451, 0.309804, 0.223529, 0.396078, 0.0941176, 0.517647, 0.105882, 0.392157, 0.145098, 0.501961, 0.0745098, 0.980392, 0.647059, 0.980392, 0.0588235 )
 
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=5]
 _data = [ Vector2( 0.0016, 0.117265 ), 0.0, 0.801052, 0, 0, Vector2( 1, 0.489416 ), -0.825937, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
-curve = SubResource( 3 )
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=7]
 resource_local_to_scene = true
 trail_divisor = 4
 emission_shape = 2
@@ -50,10 +94,10 @@ tangential_accel = 0.2
 angle = 360.0
 angle_random = 1.0
 scale = 2.0
-scale_curve = SubResource( 4 )
-color_ramp = SubResource( 2 )
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=8]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Nav/LeftButton:rect_position")
@@ -80,7 +124,7 @@ tracks/1/keys = {
 "values": [ Vector2( 935.294, 349.99 ), Vector2( 930.294, 349.99 ), Vector2( 935.294, 349.99 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
@@ -106,7 +150,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
@@ -132,23 +176,22 @@ tracks/1/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=9]
-
-[sub_resource type="Animation" id=10]
-
 [sub_resource type="Animation" id=11]
 
 [sub_resource type="Animation" id=12]
 
-[sub_resource type="Environment" id=13]
+[sub_resource type="Animation" id=13]
+
+[sub_resource type="Animation" id=14]
+
+[sub_resource type="Environment" id=15]
 glow_enabled = true
 glow_intensity = 1.0
 glow_strength = 1.3
 glow_blend_mode = 0
 glow_bicubic_upscale = true
 
-[sub_resource type="Animation" id=14]
-resource_name = "Move"
+[sub_resource type="Animation" id=16]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Nav/LeftButton:rect_position")
@@ -163,8 +206,7 @@ tracks/0/keys = {
 "values": [ Vector2( 63.553, 349.99 ), Vector2( 73.553, 349.99 ), Vector2( 63.553, 349.99 ) ]
 }
 
-[sub_resource type="Animation" id=15]
-resource_name = "Move"
+[sub_resource type="Animation" id=17]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Nav/RightButton:rect_position")
@@ -182,6 +224,8 @@ tracks/0/keys = {
 [node name="Transition" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 517.0
+margin_bottom = 314.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -194,10 +238,10 @@ script = ExtResource( 13 )
 [node name="Backdrop" type="TextureRect" parent="Player"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 202.0
-margin_top = 196.0
-margin_right = 1496.0
-margin_bottom = 413.0
+margin_left = -1356.39
+margin_top = -162.54
+margin_right = 10747.6
+margin_bottom = 2567.46
 rect_scale = Vector2( 0.25, 0.3 )
 texture = ExtResource( 3 )
 expand = true
@@ -207,20 +251,21 @@ __meta__ = {
 }
 
 [node name="Buttons" type="Control" parent="Player/Backdrop"]
-margin_left = 140.906
-margin_top = 618.891
-margin_right = 180.906
-margin_bottom = 658.891
+margin_left = 6294.67
+margin_top = 1459.88
+margin_right = 6334.67
+margin_bottom = 1499.88
+rect_scale = Vector2( 1.25, 1.25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BlueMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = -2181.23
-margin_top = 372.533
-margin_right = -2056.23
-margin_bottom = 514.533
+margin_left = -2500.48
+margin_top = 209.455
+margin_right = -2375.48
+margin_bottom = 351.455
 rect_scale = Vector2( 1.1, 1.1 )
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 6 )
@@ -238,10 +283,10 @@ modulate = Color( 1, 0.701961, 0, 1 )
 
 [node name="BlueSpottedMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = -1155.36
-margin_top = 450.604
-margin_right = -1001.36
-margin_bottom = 605.604
+margin_left = -1126.84
+margin_top = 250.953
+margin_right = -972.838
+margin_bottom = 405.953
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 7 )
 texture_disabled = ExtResource( 7 )
@@ -254,10 +299,10 @@ position = Vector2( 77.6906, 64.3643 )
 
 [node name="GreenMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = 2349.34
-margin_top = 248.354
-margin_right = 2503.33
-margin_bottom = 403.354
+margin_left = 3246.4
+margin_top = 268.666
+margin_right = 3400.39
+margin_bottom = 423.666
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 8 )
 texture_disabled = ExtResource( 8 )
@@ -270,10 +315,10 @@ position = Vector2( 68.9351, 53.7703 )
 
 [node name="GreenSpottedMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = 1157.62
-margin_top = 366.407
-margin_right = 1319.62
-margin_bottom = 527.407
+margin_left = 1400.05
+margin_top = 337.885
+margin_right = 1562.05
+margin_bottom = 498.885
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 9 )
 texture_disabled = ExtResource( 9 )
@@ -286,10 +331,10 @@ position = Vector2( 86.2458, 68.6934 )
 
 [node name="YellowSpray" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = -3336.27
-margin_top = 51.3906
-margin_right = -3174.27
-margin_bottom = 212.391
+margin_left = -3783.76
+margin_top = 200.281
+margin_right = -3621.76
+margin_bottom = 361.281
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 10 )
 texture_disabled = ExtResource( 10 )
@@ -302,10 +347,10 @@ position = Vector2( 68.9351, 88.5908 )
 
 [node name="PinkSpray" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = 459.264
-margin_top = 41.0161
-margin_right = 621.264
-margin_bottom = 202.016
+margin_left = 776.601
+margin_top = 64.8256
+margin_right = 938.601
+margin_bottom = 225.826
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 11 )
 texture_disabled = ExtResource( 11 )
@@ -346,6 +391,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="NoOfObjects" type="Label" parent="Nav"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -512.0
+margin_top = 50.0
+margin_right = 512.0
+margin_bottom = 93.0
+custom_fonts/font = ExtResource( 16 )
+custom_colors/font_color = Color( 0.32549, 0.733333, 0.901961, 1 )
+custom_constants/shadow_as_outline = 0
+text = "Objects left to find : 6"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nav"]
+anims/FontFadeIn = SubResource( 1 )
+anims/FontFadeInOut = SubResource( 2 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 0
 
@@ -353,7 +420,7 @@ layer = 0
 
 [node name="BackgroundMist" parent="CanvasLayer/MistCanvas" index="0"]
 position = Vector2( 529.446, -16.6933 )
-process_material = SubResource( 5 )
+process_material = SubResource( 7 )
 
 [node name="BMTinge" parent="CanvasLayer/MistCanvas" index="1"]
 visible = false
@@ -448,36 +515,32 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 [node name="ArrowContainer" parent="CanvasLayer/Book/BookTexture" index="1"]
 visible = false
 
-[node name="LeftButton" parent="CanvasLayer/Book/BookTexture/ArrowContainer" index="0"]
-visible = false
-
-[node name="RightButton" parent="CanvasLayer/Book/BookTexture/ArrowContainer" index="1"]
-visible = false
-
 [node name="LeftTButton" type="TextureButton" parent="CanvasLayer/Book/BookTexture/ArrowContainer" index="2"]
+visible = false
 margin_right = 1051.0
 margin_bottom = 997.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 14 )
 
 [node name="RightTButton" type="TextureButton" parent="CanvasLayer/Book/BookTexture/ArrowContainer" index="3"]
-margin_left = 8051.0
-margin_right = 9102.0
+visible = false
+margin_right = 1051.0
 margin_bottom = 997.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 15 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Arrows = SubResource( 6 )
-anims/BeginScene = SubResource( 7 )
-anims/EndScene = SubResource( 8 )
-anims/PinkSpray = SubResource( 9 )
-anims/Red = SubResource( 10 )
-anims/Yellow = SubResource( 11 )
-anims/YellowSpray = SubResource( 12 )
+anims/Arrows = SubResource( 8 )
+anims/BeginScene = SubResource( 9 )
+anims/EndScene = SubResource( 10 )
+anims/PinkSpray = SubResource( 11 )
+anims/Red = SubResource( 12 )
+anims/Yellow = SubResource( 13 )
+anims/YellowSpray = SubResource( 14 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 319.606, 422.005 )
+zoom = Vector2( 2, 2 )
 process_mode = 0
 smoothing_enabled = true
 
@@ -487,13 +550,13 @@ volume_db = -30.0
 autoplay = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 13 )
+environment = SubResource( 15 )
 
 [node name="LeftArrowAnimation" type="AnimationPlayer" parent="."]
-anims/Move = SubResource( 14 )
+anims/Move = SubResource( 16 )
 
 [node name="RightArrowAnimation" type="AnimationPlayer" parent="."]
-anims/Move = SubResource( 15 )
+anims/Move = SubResource( 17 )
 [connection signal="mouse_entered" from="Player/Backdrop/Buttons/BlueMushroom" to="." method="_on_BlueMushroom_mouse_entered"]
 [connection signal="mouse_exited" from="Player/Backdrop/Buttons/BlueMushroom" to="." method="_on_BlueMushroom_mouse_exited"]
 [connection signal="mouse_entered" from="Player/Backdrop/Buttons/BlueSpottedMushroom" to="." method="_on_BlueSpottedMushroom_mouse_entered"]

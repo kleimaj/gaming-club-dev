@@ -148,6 +148,7 @@ var current_page_index = 0
 var page_idx = 0
 
 var isBagOpen  = false
+var objLeft = 6 setget set_objectLeft
 
 func _ready():
 	$CanvasLayer/DialogueBox.connect("finished", self, "dialog_finished")
@@ -172,6 +173,7 @@ func dialog_finished():
 		finished_count += 1
 		$Nav/LeftButton.show()
 		$Nav/RightButton.show()
+		$Nav/AnimationPlayer.play("FontFadeIn")
 		_arrow_animate()
 		$Player/Backdrop/Buttons.show()
 		enable_buttons()
@@ -190,6 +192,7 @@ func _on_item_pressed(button):
 	else:
 		$CanvasLayer/Book.buttonType = null
 		ItemMap[button.name].collected = true
+		_object_found()
 		content_map[button.name] = ItemMap.keys().find(button.name)
 		if ItemMap[button.name].pack:
 			$CanvasLayer/Book.buttonType = button.name
@@ -377,4 +380,18 @@ func _on_BackpackButton_pressed():
 		$CanvasLayer/BackpackButton.texture_normal = load("res://Assets/GFX/new/Backpack/Backpack_closed_Back.png")
 		$CanvasLayer/BackpackButton/BackpackFront.visible = false
 	show_bottles()
+
+func set_objectLeft(value):
+	objLeft = value
+	if objLeft > 0:
+		$Nav/NoOfObjects.text = "Objects left to find : " + str(objLeft)
+		$Nav/AnimationPlayer.play("FontFadeIn")
+	else:
+		$Nav/NoOfObjects.text = "Nice!!! you found them all..."
+		$Nav/AnimationPlayer.play("FontFadeInOut")
+	
+	
+func _object_found():
+	self.objLeft -= 1
+	
 
