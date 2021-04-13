@@ -5,10 +5,10 @@
 [ext_resource path="res://Assets/GFX/new/Transition_bg/Transition.png" type="Texture" id=3]
 [ext_resource path="res://Assets/SFX/Music/Labyrinth I - Lush Woodlands.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Assets/GFX/UI/Book/book-closed.png" type="Texture" id=5]
-[ext_resource path="res://Assets/GFX/UI/blueMushIcon.png" type="Texture" id=6]
-[ext_resource path="res://Assets/GFX/UI/blueSpotsMushIcon.png" type="Texture" id=7]
-[ext_resource path="res://Assets/GFX/UI/greenMushIcon.png" type="Texture" id=8]
-[ext_resource path="res://Assets/GFX/UI/greenSpotsMushIcon.png" type="Texture" id=9]
+[ext_resource path="res://Assets/GFX/new/MainGame_Mushroom/Green_Sppotted_Mushroom.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GFX/new/MainGame_Mushroom/GreenMushroom.png" type="Texture" id=7]
+[ext_resource path="res://Assets/GFX/new/MainGame_Mushroom/BlueMushroom.png" type="Texture" id=8]
+[ext_resource path="res://Assets/GFX/new/MainGame_Mushroom/Blue_Sppotted_Mushroom.png" type="Texture" id=9]
 [ext_resource path="res://Assets/GFX/UI/newBottles/bottle1.png" type="Texture" id=10]
 [ext_resource path="res://Assets/GFX/UI/newBottles/bottle2.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Cutscene/TransitionBook.tscn" type="PackedScene" id=12]
@@ -135,7 +135,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+"values": [ Color( 0, 0, 0, 0.705882 ), Color( 0, 0, 0, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CanvasLayer/Fade:visible")
@@ -262,72 +262,87 @@ __meta__ = {
 
 [node name="BlueMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = -2500.48
-margin_top = 209.455
-margin_right = -2375.48
-margin_bottom = 351.455
-rect_scale = Vector2( 1.1, 1.1 )
+margin_left = -2602.81
+margin_top = 466.032
+margin_right = -2540.81
+margin_bottom = 679.032
+rect_scale = Vector2( 0.5, 0.5 )
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 6 )
-texture_disabled = ExtResource( 6 )
+texture_normal = ExtResource( 8 )
+texture_disabled = ExtResource( 8 )
+expand = true
+stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BlueMushroomG" parent="Player/Backdrop/Buttons/BlueMushroom" instance=ExtResource( 17 )]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-position = Vector2( 63.2125, 52.3086 )
+position = Vector2( 31.3414, 62.9324 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Particles2D" parent="Player/Backdrop/Buttons/BlueMushroom/BlueMushroomG" index="0"]
 modulate = Color( 1, 0.701961, 0, 1 )
 
 [node name="BlueSpottedMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = -1126.84
-margin_top = 250.953
-margin_right = -972.838
-margin_bottom = 405.953
+margin_left = -1127.0
+margin_top = 251.0
+margin_right = -929.0
+margin_bottom = 440.0
+rect_scale = Vector2( 0.5, 0.5 )
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 7 )
-texture_disabled = ExtResource( 7 )
+texture_normal = ExtResource( 9 )
+texture_disabled = ExtResource( 9 )
+expand = true
+stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BlueSpottedMushroomG" parent="Player/Backdrop/Buttons/BlueSpottedMushroom" instance=ExtResource( 17 )]
 position = Vector2( 77.6906, 64.3643 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="GreenMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = 3246.4
-margin_top = 268.666
-margin_right = 3400.39
-margin_bottom = 423.666
+margin_left = 3340.09
+margin_top = 322.625
+margin_right = 3477.09
+margin_bottom = 433.625
+rect_scale = Vector2( 0.5, 0.5 )
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 8 )
-texture_disabled = ExtResource( 8 )
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
+expand = true
+stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="GreenMushroomG" parent="Player/Backdrop/Buttons/GreenMushroom" instance=ExtResource( 17 )]
-position = Vector2( 68.9351, 53.7703 )
+position = Vector2( 59.2012, 12.312 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="GreenSpottedMushroom" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
-margin_left = 1400.05
-margin_top = 337.885
-margin_right = 1562.05
-margin_bottom = 498.885
+margin_left = 1668.42
+margin_top = 445.156
+margin_right = 1805.42
+margin_bottom = 556.156
+rect_scale = Vector2( 0.5, 0.5 )
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 9 )
-texture_disabled = ExtResource( 9 )
+texture_normal = ExtResource( 6 )
+texture_disabled = ExtResource( 6 )
+expand = true
+stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="GreenSpottedMushroomG" parent="Player/Backdrop/Buttons/GreenSpottedMushroom" instance=ExtResource( 17 )]
-position = Vector2( 86.2458, 68.6934 )
+position = Vector2( 59.2012, 12.312 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="YellowSpray" type="TextureButton" parent="Player/Backdrop/Buttons"]
 modulate = Color( 1.2, 1.2, 1.2, 1 )
@@ -392,17 +407,17 @@ __meta__ = {
 }
 
 [node name="NoOfObjects" type="Label" parent="Nav"]
-modulate = Color( 1, 1, 1, 0 )
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -512.0
-margin_top = 50.0
-margin_right = 512.0
-margin_bottom = 93.0
+margin_left = -475.746
+margin_top = 48.711
+margin_right = 479.254
+margin_bottom = 97.711
 custom_fonts/font = ExtResource( 16 )
-custom_colors/font_color = Color( 0.32549, 0.733333, 0.901961, 1 )
+custom_colors/font_color = Color( 0.901961, 0.662745, 0.32549, 1 )
 custom_constants/shadow_as_outline = 0
-text = "Objects left to find : 6"
+text = "Items left to find : 6"
 align = 1
 valign = 1
 __meta__ = {
@@ -429,7 +444,7 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.52588e-05
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0.705882 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -557,18 +572,6 @@ anims/Move = SubResource( 16 )
 
 [node name="RightArrowAnimation" type="AnimationPlayer" parent="."]
 anims/Move = SubResource( 17 )
-[connection signal="mouse_entered" from="Player/Backdrop/Buttons/BlueMushroom" to="." method="_on_BlueMushroom_mouse_entered"]
-[connection signal="mouse_exited" from="Player/Backdrop/Buttons/BlueMushroom" to="." method="_on_BlueMushroom_mouse_exited"]
-[connection signal="mouse_entered" from="Player/Backdrop/Buttons/BlueSpottedMushroom" to="." method="_on_BlueSpottedMushroom_mouse_entered"]
-[connection signal="mouse_exited" from="Player/Backdrop/Buttons/BlueSpottedMushroom" to="." method="_on_BlueSpottedMushroom_mouse_exited"]
-[connection signal="mouse_entered" from="Player/Backdrop/Buttons/GreenMushroom" to="." method="_on_GreenMushroom_mouse_entered"]
-[connection signal="mouse_exited" from="Player/Backdrop/Buttons/GreenMushroom" to="." method="_on_GreenMushroom_mouse_exited"]
-[connection signal="mouse_entered" from="Player/Backdrop/Buttons/GreenSpottedMushroom" to="." method="_on_GreenSpottedMushroom_mouse_entered"]
-[connection signal="mouse_exited" from="Player/Backdrop/Buttons/GreenSpottedMushroom" to="." method="_on_GreenSpottedMushroom_mouse_exited"]
-[connection signal="mouse_entered" from="Player/Backdrop/Buttons/YellowSpray" to="." method="_on_YellowSpray_mouse_entered"]
-[connection signal="mouse_exited" from="Player/Backdrop/Buttons/YellowSpray" to="." method="_on_YellowSpray_mouse_exited"]
-[connection signal="mouse_entered" from="Player/Backdrop/Buttons/PinkSpray" to="." method="_on_PinkSpray_mouse_entered"]
-[connection signal="mouse_exited" from="Player/Backdrop/Buttons/PinkSpray" to="." method="_on_PinkSpray_mouse_exited"]
 [connection signal="mouse_entered" from="Nav/LeftButton" to="." method="_on_LeftButton_mouse_entered"]
 [connection signal="mouse_exited" from="Nav/LeftButton" to="." method="_on_LeftButton_mouse_exited"]
 [connection signal="mouse_entered" from="Nav/RightButton" to="." method="_on_RightButton_mouse_entered"]
