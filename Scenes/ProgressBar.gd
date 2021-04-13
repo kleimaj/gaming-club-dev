@@ -8,8 +8,8 @@ var maxPoints = 100
 onready var startHP = value
 onready var starthasPos =   $HealthAnim.position
 onready var currenthasPos = $HealthAnim.position
-onready var greenProgress = load("res://Assets/GFX/UI/meterInsideMiddle.png")
-onready var greenCap = load("res://Assets/GFX/UI/meterInsideCap.png")
+onready var blueProgress = load("res://Assets/GFX/UI/meterInsideMiddleBlue.png")
+onready var blueCap = load("res://Assets/GFX/UI/meterInsideCapBlue.png")
 onready var redProgress = load("res://Assets/GFX/UI/meterInsideMiddleRed.png")
 onready var redCap = load("res://Assets/GFX/UI/meterInsideCapRed.png")
 onready var looseScene = get_parent().get_parent().get_node("CanvasLayer2/YouLose")
@@ -70,7 +70,7 @@ func checkHealth():
 		$FinalProgress2.texture = redCap
 		$RedAlertAP.play("RedBlink")
 	else:
-		$HealthAnim.play("Green")
-		texture_progress = greenProgress
-		$FinalProgress2.texture  = greenCap
+		$HealthAnim.play("Blue")
+		texture_progress = blueProgress
+		$FinalProgress2.texture  = blueCap
 		$RedAlertAP.stop()
