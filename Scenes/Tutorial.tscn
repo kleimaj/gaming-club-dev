@@ -663,8 +663,8 @@ autoplay = true
 anims/fade-out = SubResource( 9 )
 anims/move-arrows = SubResource( 10 )
 [connection signal="area_shape_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_RightArea_area_shape_entered"]
-[connection signal="body_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_RightArea_body_entered"]
 [connection signal="body_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_RightArea_body_entered"]
 [connection signal="body_entered" from="backgrop/LeftArrow/LeftArea" to="." method="_on_LeftArea_body_entered"]
 [connection signal="tutorial_hit" from="Enemies/Blue Mushroom" to="." method="_on_Blue_Mushroom_tutorial_hit"]
 [connection signal="tutorial_hit" from="Enemies/Blue Spotted Mushroom" to="." method="_on_Blue_Spotted_Mushroom_tutorial_hit"]

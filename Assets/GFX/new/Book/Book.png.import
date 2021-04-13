@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/end.png-37d990ca3983029e036ea5e8e4ea6e56.stex"
+path="res://.import/Book.png-e88122917e43b7644284a2946de460a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GFX/new/Health_Meter/small/end.png"
-dest_files=[ "res://.import/end.png-37d990ca3983029e036ea5e8e4ea6e56.stex" ]
+source_file="res://Assets/GFX/new/Book/Book.png"
+dest_files=[ "res://.import/Book.png-e88122917e43b7644284a2946de460a6.stex" ]
 
 [params]
 

@@ -8,10 +8,10 @@ var maxPoints = 100
 onready var startHP = value
 onready var starthasPos =   $HealthAnim.position
 onready var currenthasPos = $HealthAnim.position
-onready var blueProgress = load("res://Assets/GFX/UI/meterInsideMiddleBlue.png")
-onready var blueCap = load("res://Assets/GFX/UI/meterInsideCapBlue.png")
-onready var redProgress = load("res://Assets/GFX/UI/meterInsideMiddleRed.png")
-onready var redCap = load("res://Assets/GFX/UI/meterInsideCapRed.png")
+onready var blueProgress = load("res://Assets/GFX/new/Health_Meter/small/BlueMiddle.png")
+onready var blueCap = load("res://Assets/GFX/new/Health_Meter/small/BlueCap.png")
+onready var redProgress = load("res://Assets/GFX/new/Health_Meter/small/RedMiddle.png")
+onready var redCap = load("res://Assets/GFX/new/Health_Meter/small/RedCap.png")
 onready var looseScene = get_parent().get_parent().get_node("CanvasLayer2/YouLose")
 
 func _on_Mushroom2_body_shape_entered(body_id, body, body_shape, area_shape):

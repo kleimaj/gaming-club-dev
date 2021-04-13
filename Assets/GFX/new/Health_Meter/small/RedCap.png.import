@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/energy_bar_base_lowRes_V2.png-8ed345890d9f74dba45a447777a3c573.stex"
+path="res://.import/RedCap.png-8bf8e6146148f4831efd0060a2cadb35.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GFX/new/Health_Meter/small/energy_bar_base_lowRes_V2.png"
-dest_files=[ "res://.import/energy_bar_base_lowRes_V2.png-8ed345890d9f74dba45a447777a3c573.stex" ]
+source_file="res://Assets/GFX/new/Health_Meter/small/RedCap.png"
+dest_files=[ "res://.import/RedCap.png-8bf8e6146148f4831efd0060a2cadb35.stex" ]
 
 [params]
 

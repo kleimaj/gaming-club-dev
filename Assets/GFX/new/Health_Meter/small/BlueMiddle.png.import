@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MiddleV2.png-d26b5815622c112d0c68f55be4173542.stex"
+path="res://.import/BlueMiddle.png-596f630427f4b9f00a192eec157c01c4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GFX/new/Health_Meter/small/MiddleV2.png"
-dest_files=[ "res://.import/MiddleV2.png-d26b5815622c112d0c68f55be4173542.stex" ]
+source_file="res://Assets/GFX/new/Health_Meter/small/BlueMiddle.png"
+dest_files=[ "res://.import/BlueMiddle.png-596f630427f4b9f00a192eec157c01c4.stex" ]
 
 [params]
 
