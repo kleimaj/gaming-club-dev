@@ -11,9 +11,9 @@
 [ext_resource path="res://Scenes/SmokeRight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/SFX/Music/[MapleStory BGM] Sleepywood.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Assets/GFX/new/Intro_Env/openning_TreeA.png" type="Texture" id=11]
-[ext_resource path="res://Assets/GFX/new/Intro_Env/Start_B_Before_v2.png" type="Texture" id=12]
-[ext_resource path="res://Assets/GFX/new/Intro_Env/Title.png" type="Texture" id=13]
-[ext_resource path="res://Assets/GFX/new/Intro_Env/Start_B_After_v2.png" type="Texture" id=14]
+[ext_resource path="res://Assets/GFX/new/Intro_Env/Start_B_Before_v7.png" type="Texture" id=12]
+[ext_resource path="res://Assets/GFX/new/Intro_Env/Title_V03.png" type="Texture" id=13]
+[ext_resource path="res://Assets/GFX/new/Intro_Env/Start_B_After_v7.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -248,7 +248,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1.3, 1 ), Vector2( 1.3, 1 ), Vector2( 0.75, 0.6 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.5, 0.5 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Backdrop/Camera2D:position")
@@ -260,7 +260,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 667.536, 379.361 ), Vector2( 667.536, 379.361 ), Vector2( 617.536, 419.361 ) ]
+"values": [ Vector2( 667.536, 379.361 ), Vector2( 667.536, 379.361 ), Vector2( 517.536, 419.361 ) ]
 }
 
 [node name="Intro" type="Control"]
@@ -287,7 +287,6 @@ __meta__ = {
 [node name="Camera2D" type="Camera2D" parent="Backdrop"]
 position = Vector2( 667.536, 379.361 )
 current = true
-zoom = Vector2( 1.3, 1 )
 process_mode = 0
 smoothing_enabled = true
 
@@ -305,6 +304,7 @@ z_index = 1
 [node name="SmokeRight" parent="." instance=ExtResource( 9 )]
 
 [node name="Top" parent="SmokeRight" index="0"]
+visible = false
 z_index = 1
 
 [node name="Middle" parent="SmokeRight" index="1"]
@@ -401,20 +401,21 @@ __meta__ = {
 [node name="StartContainer" type="Node" parent="CanvasLayer"]
 
 [node name="Title" type="Sprite" parent="CanvasLayer/StartContainer"]
-position = Vector2( 489.833, 363.972 )
-scale = Vector2( 0.135975, 0.155603 )
+position = Vector2( 500.979, 320.609 )
+scale = Vector2( 0.958297, 0.986249 )
 texture = ExtResource( 13 )
 
 [node name="StartButton" type="TextureButton" parent="CanvasLayer/StartContainer"]
-margin_left = 394.0
-margin_top = 465.0
-margin_right = 2185.0
-margin_bottom = 2265.0
-rect_scale = Vector2( 0.1, 0.1 )
+margin_left = 429.411
+margin_top = 451.843
+margin_right = 533.411
+margin_bottom = 553.843
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 14 )
 texture_hover = ExtResource( 14 )
+expand = true
+stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }

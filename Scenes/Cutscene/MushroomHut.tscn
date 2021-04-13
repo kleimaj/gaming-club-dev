@@ -292,10 +292,10 @@ scale = Vector2( 1.25, 1 )
 [node name="Terrarium" type="TextureButton" parent="Backdrop/Button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -44.1885
-margin_top = -24.846
-margin_right = 39.8115
-margin_bottom = 58.154
+margin_left = -42.9552
+margin_top = -21.886
+margin_right = 41.0448
+margin_bottom = 61.114
 rect_min_size = Vector2( 100, 50 )
 rect_scale = Vector2( 1.25, 1 )
 disabled = true
