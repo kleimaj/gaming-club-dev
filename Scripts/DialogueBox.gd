@@ -49,6 +49,9 @@ func load_dialog():
 					floresDidWink = true
 		else:
 			$NameRect.hide()
+			if dialog_dics[dialog_index].content == 'You received the Field Manual':
+				$Book.show()
+				$AnimationPlayer.play("animate-book")
 		$RichTextLabel.bbcode_text = dialog_dics[dialog_index].content
 		$RichTextLabel.percent_visible = 0
 		$Tween.interpolate_property($RichTextLabel, "percent_visible", 0, 1, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/Background.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/GFX/cutscene/Cat.png" type="Texture" id=7]
 [ext_resource path="res://Assets/GFX/new/Dr_F/Dr_F_base.png" type="Texture" id=8]
 [ext_resource path="res://Assets/GFX/new/Dr_F/Dr_F_Smile.png" type="Texture" id=9]
+[ext_resource path="res://Assets/GFX/UI/Book/book-closed.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -36,6 +37,22 @@ size = 22
 use_filter = true
 extra_spacing_top = 4
 font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=9]
+resource_name = "animate-book"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Book:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 494.353, -24.6465 ), Vector2( 494.353, -144.653 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "animate_cat"
@@ -157,6 +174,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Book" type="TextureRect" parent="."]
+visible = false
+margin_left = 494.353
+margin_top = -24.6465
+margin_right = 1994.35
+margin_bottom = 1149.35
+rect_scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -228,6 +257,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/animate-book = SubResource( 9 )
 anims/animate_cat = SubResource( 4 )
 anims/animate_flores = SubResource( 5 )
 anims/fade-in = SubResource( 6 )
