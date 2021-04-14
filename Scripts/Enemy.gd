@@ -23,18 +23,17 @@ onready var progressBar = get_node("../../CanvasLayer2/ProgressBar")
 onready var mist_obj = get_parent().get_parent().get_node("CanvasLayer3/MistCanvas/BackgroundMist")
 onready var mist_tinge_obj = get_parent().get_parent().get_node("CanvasLayer3/MistCanvas/BMTinge")
 
-func create_splash_effect(animType, animPosition):
+func create_splash_effect(animType, obj):
 	var splashEffect = MedSplashEffect.instance()
 	get_parent().add_child(splashEffect)
 	splashEffect.play(animType)
-	splashEffect.global_position = animPosition
+	splashEffect.global_position = obj.get_node("Position2D").global_position
 	splashEffect.rotation_degrees = $Position2D.rotation_degrees
 	#Add bubbles on the mushroom after hit
 	var MedBubble = load("res://Scenes/" + animType +".tscn")
 	var bubble = MedBubble.instance()
 	get_parent().add_child(bubble)
-	bubble.position = animPosition
-	bubble.position.y = animPosition.y + 15
+	bubble.position = obj.get_node("Position2D").global_position
 	bubble.rotation_degrees = $Position2D.rotation_degrees
 
 var beenHit:bool = false
@@ -111,7 +110,7 @@ func _on_Enemy_body_shape_entered(body_id, body: RigidBody2D, body_shape, area_s
 			#loosing situation
 			progressBar.decrementValue()
 			increment_shader()
-	create_splash_effect(projectile_type, body.global_position)
+	create_splash_effect(projectile_type, body)
 	body.curr_hits += 1
 	if body.curr_hits == body.MAX_HITS:
 		body.explode()

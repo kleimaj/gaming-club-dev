@@ -384,7 +384,7 @@ func _on_BackpackButton_pressed():
 func set_objectLeft(value):
 	objLeft = value
 	if objLeft > 0:
-		$Nav/NoOfObjects.text = "Objects left to find : " + str(objLeft)
+		$Nav/NoOfObjects.text = "Items left to find : " + str(objLeft)
 		$Nav/AnimationPlayer.play("FontFadeIn")
 	else:
 		$Nav/NoOfObjects.text = "Nice!!! you found them all..."

@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Cutscene/MushroomHut.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/GFX/MushroomHut/terrarium.png" type="Texture" id=4]
-[ext_resource path="res://Assets/GFX/cutscene/Cat.png" type="Texture" id=5]
+[ext_resource path="res://Assets/GFX/new/cat/small/Cat_V3.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Glow.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/SFX/Music/Grandma s Theme - The Legend of Zelda The Wind Waker.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Assets/GFX/cutscene/Book/arrow.png" type="Texture" id=8]
@@ -322,10 +322,10 @@ anims/Move = SubResource( 3 )
 
 [node name="Cat" type="TextureRect" parent="Backdrop"]
 visible = false
-margin_left = 1045.67
-margin_top = 731.57
-margin_right = 1344.67
-margin_bottom = 993.57
+margin_left = 1046.75
+margin_top = 740.212
+margin_right = 1345.75
+margin_bottom = 1002.21
 texture = ExtResource( 5 )
 expand = true
 stretch_mode = 1

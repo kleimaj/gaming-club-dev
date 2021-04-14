@@ -86,6 +86,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=6]
+length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/CenterContainer:modulate")
 tracks/0/interp = 1
@@ -117,10 +118,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, -2 ),
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 55.5556, 0 ), Vector2( 755.556, 0 ) ]
+"values": [ Vector2( 55.5556, 0 ), Vector2( 455.556, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("CanvasLayer/Trees/LeftTrees:position")
@@ -129,10 +130,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, -2 ),
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -55.5556, 0 ), Vector2( -755.556, 0 ) ]
+"values": [ Vector2( -55.5556, 0 ), Vector2( -555.556, 0 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CanvasLayer/StartContainer/Title:visible")
@@ -181,6 +182,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Backdrop/Camera2D:zoom")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.8, 0.8 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -248,7 +261,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.5, 0.5 ) ]
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 0.8, 0.8 ), Vector2( 0.5, 0.5 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Backdrop/Camera2D:position")
@@ -261,6 +274,30 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 667.536, 379.361 ), Vector2( 667.536, 379.361 ), Vector2( 517.536, 419.361 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/Trees/RightTrees:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 455.556, 0 ), Vector2( 755.556, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/Trees/LeftTrees:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -555.556, 0 ), Vector2( -755.556, 0 ) ]
 }
 
 [sub_resource type="Environment" id=10]
@@ -311,7 +348,6 @@ z_index = 1
 [node name="SmokeRight" parent="." instance=ExtResource( 9 )]
 
 [node name="Top" parent="SmokeRight" index="0"]
-visible = false
 z_index = 1
 
 [node name="Middle" parent="SmokeRight" index="1"]
@@ -413,7 +449,6 @@ scale = Vector2( 0.958297, 0.986249 )
 texture = ExtResource( 13 )
 
 [node name="StartButton" type="TextureButton" parent="CanvasLayer/StartContainer"]
-modulate = Color( 1.3, 1.3, 1.3, 1 )
 margin_left = 429.411
 margin_top = 451.843
 margin_right = 533.411
