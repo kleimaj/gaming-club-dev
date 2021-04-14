@@ -6,7 +6,7 @@ export (float) var gun_cooldown
 var bulletSpeed = 100
 var maxBulletSpeed = 2000
 export (bool) var keyboardControls = true
-export (bool) var chargingControls = true
+export (bool) var chargingControls = false
 
 
 var sprayColor = "Red"
@@ -64,8 +64,8 @@ func control(delta):
 		if get_global_mouse_position().y < 600:
 			shoot()
 			bulletSpeed = 100
-	if Input.is_action_just_pressed("right_click"):
-		chargingControls = !chargingControls
+#	if Input.is_action_just_pressed("right_click"):
+#		chargingControls = !chargingControls
 		
 #func control(delta):
 #	$Muzzle.look_at(get_global_mouse_position())
