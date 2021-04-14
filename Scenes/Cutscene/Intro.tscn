@@ -405,9 +405,9 @@ __meta__ = {
 }
 
 [node name="Title" type="RichTextLabel" parent="CanvasLayer/CenterContainer"]
-margin_top = 314.0
+margin_top = 411.0
 margin_right = 1024.0
-margin_bottom = 389.0
+margin_bottom = 486.0
 rect_min_size = Vector2( 1024, 75 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
@@ -418,9 +418,9 @@ __meta__ = {
 }
 
 [node name="ButtonContainer" type="CenterContainer" parent="CanvasLayer/CenterContainer"]
-margin_top = 389.0
+margin_top = 486.0
 margin_right = 1024.0
-margin_bottom = 439.0
+margin_bottom = 536.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

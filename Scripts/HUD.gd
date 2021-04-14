@@ -3,6 +3,8 @@ extends Control
 var backpackIsOpen = false
 var bookIsOpen = false
 
+signal toggle_tank
+
 export var isTutorial = false
 
 onready var Backpack = $CanvasLayer/Backpack
@@ -15,6 +17,7 @@ func _on_BackpackButton_pressed():
 	backpackIsOpen  = !backpackIsOpen
 	set_backpack(backpackIsOpen)
 	get_tree().paused = true
+	emit_signal("toggle_tank")
 	$CanvasLayer/ColorRect.show()
 	
 
@@ -28,6 +31,7 @@ func close_backpack():
 	Backpack.visible = false
 	backpackIsOpen = false
 	get_tree().paused = false
+	emit_signal("toggle_tank")
 
 
 func close_book():
@@ -35,6 +39,7 @@ func close_book():
 	$CanvasLayer/TransitionBook.hide()
 	bookIsOpen = false
 	get_tree().paused = false
+	emit_signal("toggle_tank")	
 
 func _on_BookButton_pressed():
 	if bookIsOpen:
@@ -42,6 +47,7 @@ func _on_BookButton_pressed():
 		$CanvasLayer/TransitionBook.hide()
 		bookIsOpen = false
 		get_tree().paused = false
+		emit_signal("toggle_tank")
 	else:
 		$CanvasLayer/ColorRect.show()
 		$CanvasLayer/TransitionBook.show()
@@ -50,8 +56,10 @@ func _on_BookButton_pressed():
 		$CanvasLayer/TransitionBook/BookTexture/BlueMushroom/PathFollow2D/Sprite.hide()
 		bookIsOpen = true
 		get_tree().paused = true
+		emit_signal("toggle_tank")
 		if isTutorial:
 			$CanvasLayer/TransitionBook.receiveItem("BlueSpottedMushroom", false)
+			emit_signal("toggle_tank")			
 
 
 func _on_Backpack_close_backpack():

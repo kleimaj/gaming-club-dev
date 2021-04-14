@@ -1,15 +1,15 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/Background.png" type="Texture" id=2]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/indicator.svg" type="Texture" id=3]
 [ext_resource path="res://Assets/GFX/new/cat/CatCeye.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/Calibri Regular.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Assets/GFX/cutscene/DialogueBox/dialogue box.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GFX/cutscene/DialogueBox/box.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GFX/cutscene/Cat.png" type="Texture" id=7]
 [ext_resource path="res://Assets/GFX/new/Dr_F/Dr_F_base.png" type="Texture" id=8]
 [ext_resource path="res://Assets/GFX/new/Dr_F/Dr_F_Smile.png" type="Texture" id=9]
-[ext_resource path="res://Assets/GFX/new/cat/small/Cat_V3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/GFX/UI/Book/book-closed.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -29,7 +29,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 755.986, 116.055 ), Vector2( 755.986, 106.055 ) ]
+"values": [ Vector2( 755.986, 77.915 ), Vector2( 755.986, 67.915 ) ]
 }
 
 [sub_resource type="DynamicFont" id=3]
@@ -37,6 +37,22 @@ size = 22
 use_filter = true
 extra_spacing_top = 4
 font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=9]
+resource_name = "animate-book"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Book:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 494.353, -24.6465 ), Vector2( 494.353, -144.653 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "animate_cat"
@@ -136,7 +152,7 @@ margin_left = -279.082
 margin_top = -99.408
 margin_right = -76.0815
 margin_bottom = 105.592
-texture = ExtResource( 10 )
+texture = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -158,6 +174,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Book" type="TextureRect" parent="."]
+visible = false
+margin_left = 494.353
+margin_top = -24.6465
+margin_right = 1994.35
+margin_bottom = 1149.35
+rect_scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -174,12 +202,12 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 78.0
-margin_top = 38.0
-margin_right = -78.0
-margin_bottom = -30.0
+margin_left = 31.0
+margin_top = 20.0
+margin_right = -43.0
+margin_bottom = -47.0
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0.368627, 0.160784, 0.027451, 1 )
+custom_colors/default_color = Color( 1, 0.501961, 0.184314, 1 )
 bbcode_enabled = true
 bbcode_text = "..."
 text = "..."
@@ -189,8 +217,8 @@ __meta__ = {
 
 [node name="Indicator" type="Sprite" parent="."]
 visible = false
-position = Vector2( 755.986, 111.055 )
-scale = Vector2( 0.16, 0.16 )
+position = Vector2( 755.986, 77.915 )
+scale = Vector2( 0.0838512, 0.0838512 )
 texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Indicator"]
@@ -201,9 +229,9 @@ anims/IDLE = SubResource( 2 )
 [node name="NameRect" type="TextureRect" parent="."]
 visible = false
 margin_left = 3.0
-margin_top = -42.0
+margin_top = -49.4163
 margin_right = 154.0
-margin_bottom = -1.0
+margin_bottom = -8.41626
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -229,6 +257,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/animate-book = SubResource( 9 )
 anims/animate_cat = SubResource( 4 )
 anims/animate_flores = SubResource( 5 )
 anims/fade-in = SubResource( 6 )

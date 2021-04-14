@@ -89,6 +89,9 @@ func checkGameOver(animType):
 		add_child(rs)
 		rs.start_rain(animType)
 		var animation = $CameraAnimationPlayer.get_animation("zoom_out")
+		$Tank.enabled = false
+		$HUD/CanvasLayer/BackpackButton.hide()
+		$HUD/CanvasLayer/BookButton.hide()
 		animation.track_insert_key(0, 0.0, $Camera2D.zoom)
 		$Camera2D.limit_left -= ((3.0 - $Camera2D.zoom.x) * 500)
 		$Camera2D.limit_right += ((3.0 - $Camera2D.zoom.y) * 500)

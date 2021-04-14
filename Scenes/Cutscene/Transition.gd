@@ -168,6 +168,7 @@ func dialog_finished():
 		$AnimationPlayer.play("BeginScene")
 		finished_count += 1
 	elif finished_count == 1:
+		$CanvasLayer/DialogueBox/Book.hide()
 		$CanvasLayer/BookButton.show()
 		$CanvasLayer/BackpackButton.show()
 		finished_count += 1

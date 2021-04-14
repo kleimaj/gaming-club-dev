@@ -450,8 +450,8 @@ __meta__ = {
 }
 
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 1 )]
-margin_top = -222.092
-margin_bottom = -32.0917
+margin_top = -148.0
+margin_bottom = -33.0
 
 [node name="BookButton" type="TextureButton" parent="CanvasLayer"]
 visible = false
