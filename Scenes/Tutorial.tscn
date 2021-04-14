@@ -589,8 +589,11 @@ __meta__ = {
 [node name="HealthMoveAP" type="AnimationPlayer" parent="CanvasLayer2/ProgressBar"]
 
 [node name="DialogueBox" parent="CanvasLayer2" instance=ExtResource( 13 )]
-margin_top = -141.188
-margin_bottom = 12.8125
+margin_left = -323.693
+margin_top = -139.231
+margin_right = 496.307
+margin_bottom = 14.7695
+rect_scale = Vector2( 0.8, 0.8 )
 dialog_locked = true
 
 [node name="BookArrow" type="Sprite" parent="CanvasLayer2"]
@@ -663,8 +666,8 @@ autoplay = true
 anims/fade-out = SubResource( 9 )
 anims/move-arrows = SubResource( 10 )
 [connection signal="area_shape_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_RightArea_area_shape_entered"]
-[connection signal="body_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_RightArea_body_entered"]
+[connection signal="body_entered" from="backgrop/RightArrow/RightArea" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="backgrop/LeftArrow/LeftArea" to="." method="_on_LeftArea_body_entered"]
 [connection signal="tutorial_hit" from="Enemies/Blue Mushroom" to="." method="_on_Blue_Mushroom_tutorial_hit"]
 [connection signal="tutorial_hit" from="Enemies/Blue Spotted Mushroom" to="." method="_on_Blue_Spotted_Mushroom_tutorial_hit"]
