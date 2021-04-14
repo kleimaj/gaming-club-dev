@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/Background.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Assets/GFX/cutscene/Cat.png" type="Texture" id=7]
 [ext_resource path="res://Assets/GFX/new/Dr_F/Dr_F_base.png" type="Texture" id=8]
 [ext_resource path="res://Assets/GFX/new/Dr_F/Dr_F_Smile.png" type="Texture" id=9]
+[ext_resource path="res://Assets/GFX/new/cat/small/Cat_V3.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -119,7 +120,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -410.0
-margin_top = -185.0
+margin_top = -160.0
 margin_right = 410.0
 margin_bottom = -31.0
 script = ExtResource( 1 )
@@ -135,7 +136,7 @@ margin_left = -279.082
 margin_top = -99.408
 margin_right = -76.0815
 margin_bottom = 105.592
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -160,6 +161,10 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -6.0
+margin_top = -8.0
+margin_right = -6.0
+margin_bottom = -17.0
 texture = ExtResource( 6 )
 expand = true
 __meta__ = {
