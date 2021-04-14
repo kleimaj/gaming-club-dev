@@ -31,7 +31,7 @@ func _unhandled_key_input(event):
 var dialog_1 = [
 	{
 		'name': 'Prof. Flores',
-		'content': 'Scroll the mouse wheel to zoom in an out of the level. Zoom all the way out.',
+		'content': 'Welcome to the tutorial! Scroll the mouse wheel to zoom in an out of the level. Zoom all the way out.',
 	},
 	{
 		'name': 'Prof. Flores',
@@ -63,7 +63,7 @@ var dialog_1 = [
 	},
 	{
 		'name': 'Prof. Flores',
-		'content': 'Excellent work, you\'re all prepared to clear out the mist of the terrarium!',
+		'content': 'Excellent work, you\'re all prepared to clear out the mist of the terrarium! Click to play the game!',
 	},
 ]
 
@@ -173,6 +173,7 @@ func _on_Blue_Spotted_Mushroom_tutorial_hit():
 		progress_tutorial()
 		$backgrop/MushroomArrow2.hide()
 		$CanvasLayer2/DialogueBox.dialog_locked = false
+		$Tank.enabled = false
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
