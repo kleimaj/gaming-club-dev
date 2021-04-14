@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export (PackedScene) var Bullet
 export (int) var speed = 10
-export (float) var gun_cooldown
+export (float) var gun_cooldown = 1
 var bulletSpeed = 100
 var maxBulletSpeed = 2000
 export (bool) var keyboardControls = true
@@ -22,10 +22,32 @@ export var MAX_POINTS = 500
 var changemuzzle = false
 var enabled = true
 
+
 signal projectile_change
 
 func _ready():
 	$ShootTimer.wait_time = gun_cooldown
+
+func _input(event):
+	if not enabled:
+		return
+	if Input.is_action_just_pressed('click') || changemuzzle == true:
+		changemuzzle = true
+		# Charging up functionality
+		if chargingControls:
+			if bulletSpeed != maxBulletSpeed:
+				bulletSpeed += 5
+		else:
+		# New way of shooting (Gouri)
+			bulletSpeed = abs((500 - get_global_mouse_position().y)) * 2.0
+#		$Muzzle.look_at(get_global_mouse_position())
+		if get_viewport().get_mouse_position().y < 600:
+			update_trajectory()
+	if Input.is_action_just_released("click") and can_shoot:
+		changemuzzle = false
+		if get_viewport().get_mouse_position().y < 600:
+			shoot()
+			bulletSpeed = 100
 
 func control(delta):
 #	velocity = Vector2()
@@ -48,39 +70,12 @@ func control(delta):
 			velocity = Vector2(speed, 0)
 		if Input.is_action_pressed('back'):
 			velocity = Vector2(-speed, 0)
-	if Input.is_action_just_pressed('click') || changemuzzle == true:
-		changemuzzle = true
-		# Charging up functionality
-		if chargingControls:
-			if bulletSpeed != maxBulletSpeed:
-				bulletSpeed += 5
-		else:
-		# New way of shooting (Gouri)
-			bulletSpeed = abs((500 - get_global_mouse_position().y)) * 2.0
-#		$Muzzle.look_at(get_global_mouse_position())
-		update_trajectory(delta)
-	if Input.is_action_just_released("click"):
-		changemuzzle = false
-		if get_global_mouse_position().y < 600:
-			shoot()
-			bulletSpeed = 100
-#	if Input.is_action_just_pressed("right_click"):
-#		chargingControls = !chargingControls
-		
-#func control(delta):
-#	$Muzzle.look_at(get_global_mouse_position())
-#	velocity = Vector2()
-#	if Input.is_action_pressed('forward'):
-#		velocity = Vector2(speed, 0)
-#	if Input.is_action_pressed('back'):
-#		velocity = Vector2(-speed, 0)
-#	if Input.is_action_just_pressed('click'):
-#		shoot()
 
 		
 func shoot():
 	YellowLine.clear_points()
 	RedLine.clear_points()
+	can_shoot = false
 	$ShootTimer.start()
 	var b = Bullet.instance()
 	#b.get_node("Sprite").frames.load_path = ammo_texture
@@ -93,7 +88,7 @@ func shoot():
 	b.gravity = 250
 	b.get_child(0).get_child(0).remote_path = "../../../Camera2D"
 
-func update_trajectory(delta):
+func update_trajectory():
 	YellowLine.clear_points()
 	RedLine.clear_points()
 	var pos = muzzle.global_position
@@ -135,3 +130,11 @@ func _on_Backpack_projectile_change(new_anim):
 	$Bottle.texture = load("res://Assets/GFX/UI/newBottles/" + new_anim + "BottleLoad.png")
 	if new_anim == "Yellow":
 		emit_signal("projectile_change")
+
+
+func _on_HUD_toggle_tank():
+	enabled = !enabled
+
+
+func _on_ShootTimer_timeout():
+	can_shoot = true

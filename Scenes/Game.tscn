@@ -730,6 +730,12 @@ margin_top = 7.60883
 margin_right = 1.52185
 margin_bottom = 7.60883
 
+[node name="BookButton" parent="HUD/CanvasLayer" index="2"]
+mouse_default_cursor_shape = 2
+
+[node name="BackpackButton" parent="HUD/CanvasLayer" index="4"]
+mouse_default_cursor_shape = 2
+
 [node name="GroundArea2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 522.189, 696.331 )
 rotation = 0.00340095
@@ -931,6 +937,7 @@ autoplay = true
 [node name="CAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ResetCamera = SubResource( 51 )
 [connection signal="projectile_change" from="Tank" to="HUD" method="_on_Tank_projectile_change"]
+[connection signal="toggle_tank" from="HUD" to="Tank" method="_on_HUD_toggle_tank"]
 [connection signal="close_backpack" from="HUD/CanvasLayer/Backpack" to="HUD" method="_on_Backpack_close_backpack"]
 [connection signal="projectile_change" from="HUD/CanvasLayer/Backpack" to="Tank" method="_on_Backpack_projectile_change"]
 [connection signal="area_entered" from="LostConditionArea" to="." method="_on_LostConditionArea_area_entered"]

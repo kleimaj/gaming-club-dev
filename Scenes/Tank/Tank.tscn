@@ -84,3 +84,4 @@ visible = false
 position = Vector2( 2434.75, 3034.07 )
 scale = Vector2( 237, 257 )
 shape = SubResource( 3 )
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
