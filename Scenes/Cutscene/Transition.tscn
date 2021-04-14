@@ -530,15 +530,19 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 [node name="ArrowContainer" parent="CanvasLayer/Book/BookTexture" index="1"]
 visible = false
 
-[node name="LeftTButton" type="TextureButton" parent="CanvasLayer/Book/BookTexture/ArrowContainer" index="2"]
+[node name="LeftButton" parent="CanvasLayer/Book/BookTexture/ArrowContainer" index="0"]
 visible = false
+
+[node name="RightButton" parent="CanvasLayer/Book/BookTexture/ArrowContainer" index="1"]
+visible = false
+
+[node name="LeftTButton" type="TextureButton" parent="CanvasLayer/Book/BookTexture/ArrowContainer" index="2"]
 margin_right = 1051.0
 margin_bottom = 997.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 14 )
 
 [node name="RightTButton" type="TextureButton" parent="CanvasLayer/Book/BookTexture/ArrowContainer" index="3"]
-visible = false
 margin_right = 1051.0
 margin_bottom = 997.0
 mouse_default_cursor_shape = 2
