@@ -443,10 +443,15 @@ __meta__ = {
 
 [node name="StartContainer" type="Node" parent="CanvasLayer"]
 
-[node name="Title" type="Sprite" parent="CanvasLayer/StartContainer"]
-position = Vector2( 500.979, 320.609 )
-scale = Vector2( 0.958297, 0.986249 )
+[node name="Title" type="TextureRect" parent="CanvasLayer/StartContainer"]
+margin_left = 160.0
+margin_top = 224.0
+margin_right = 860.0
+margin_bottom = 417.0
 texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="StartButton" type="TextureButton" parent="CanvasLayer/StartContainer"]
 margin_left = 429.411

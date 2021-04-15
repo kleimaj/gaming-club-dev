@@ -452,7 +452,7 @@ BOUNCE_MULTIPLIER = 1.2
 isTutorial = true
 
 [node name="Blue Spotted Mushroom" parent="Enemies" groups=[
-"Blue Spotted",
+"BlueSpotted",
 ] instance=ExtResource( 9 )]
 position = Vector2( 657.978, 223.008 )
 rotation = -0.289871
