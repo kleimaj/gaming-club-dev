@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GFX/new/Intro_Env/openning_TreeB.png" type="Texture" id=2]
@@ -195,6 +195,30 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 0.8, 0.8 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("CanvasLayer/Fade2:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.00392157, 0.00392157, 0.00392157, 0.670588 ), Color( 0.00392157, 0.00392157, 0.00392157, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("CanvasLayer/Fade2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=7]
 length = 1.5
@@ -299,13 +323,6 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( -555.556, 0 ), Vector2( -755.556, 0 ) ]
 }
-
-[sub_resource type="Environment" id=10]
-glow_enabled = true
-glow_intensity = 1.2
-glow_strength = 1.2
-glow_blend_mode = 0
-glow_bicubic_upscale = true
 
 [node name="Intro" type="Control"]
 anchor_right = 1.0
@@ -441,6 +458,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Fade2" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.00392157, 0.00392157, 0.00392157, 0.670588 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartContainer" type="Node" parent="CanvasLayer"]
 
 [node name="Title" type="TextureRect" parent="CanvasLayer/StartContainer"]
@@ -497,9 +522,6 @@ pause_mode = 2
 stream = ExtResource( 10 )
 volume_db = -30.0
 autoplay = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 10 )
 [connection signal="pressed" from="CanvasLayer/CenterContainer/ButtonContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CanvasLayer/StartContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
