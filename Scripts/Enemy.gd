@@ -29,6 +29,7 @@ onready var GreenSpotted = preload("res://Assets/GFX/new/MainGame_Mushroom/Green
 onready var CureMushroomAnimation = preload("res://Scenes/MushroomCure.tscn")
 
 
+
 #For med splash animation
 const MedSplashEffect = preload("res://Scenes/Tank/MedSplash.tscn")
 
@@ -94,11 +95,13 @@ func _physics_process(delta):
 				
 
 func create_splash_effect(animType, obj):
+	#Visual
 	var splashEffect = MedSplashEffect.instance()
 	get_parent().add_child(splashEffect)
 	splashEffect.play(animType)
 	splashEffect.global_position = obj.get_node("Position2D").global_position
 	splashEffect.rotation_degrees = $Position2D.rotation_degrees
+		
 	#Add bubbles on the mushroom after hit
 	var MedBubble = load("res://Scenes/" + animType +".tscn")
 	var bubble = MedBubble.instance()
@@ -119,14 +122,12 @@ func diminish_shader():
 	#scale -= mistFactor
 	# Set new ScaleParameter
 	#mat.set_shader_param("scaleParam", scale)
-	if mist_obj.modulate.a >= 0.0:
-		mist_obj.modulate.a -= mistFactor
-		mist_tinge_obj.modulate.a -= mistFactor
+	mist_obj.modulate.a = max(mist_obj.modulate.a - mistFactor,0.2)
+	mist_tinge_obj.modulate.a = max(mist_tinge_obj.modulate.a - mistFactor,0.2)
 	
 func increment_shader():
-	if mist_obj.modulate.a <= 1.0 : 
-		mist_obj.modulate.a += mistFactor
-		mist_tinge_obj.modulate.a += mistFactor
+	mist_obj.modulate.a = min(mist_obj.modulate.a - mistFactor,1.0)
+	mist_tinge_obj.modulate.a = min(mist_tinge_obj.modulate.a - mistFactor,1.0)
 
 func _collision_v1(body):
 	# Fetch Mist Sprite
@@ -139,12 +140,13 @@ func _collision_v1(body):
 	#scale -= mistFactor
 	# Set new ScaleParameter
 	#mat.set_shader_param("scaleParam", scale)
-	var mist_obj = get_parent().get_parent().get_node("CanvasLayer3/MistCanvas/BackgroundMist")
-	mist_obj.modulate.a -= mistFactor
+	#var mist_obj = get_parent().get_parent().get_node("CanvasLayer3/MistCanvas/BackgroundMist")
+	#mist_obj.modulate.a -= mistFactor
 	# Remove Enemy
-	queue_free()
+	#queue_free()
 	# Remove Bullet
-	body.free()
+	#body.free()
+	pass
 	
 
 func getMaxShots(mType):
