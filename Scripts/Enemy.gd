@@ -126,8 +126,8 @@ func diminish_shader():
 	mist_tinge_obj.modulate.a = max(mist_tinge_obj.modulate.a - mistFactor,0.2)
 	
 func increment_shader():
-	mist_obj.modulate.a = min(mist_obj.modulate.a - mistFactor,1.0)
-	mist_tinge_obj.modulate.a = min(mist_tinge_obj.modulate.a - mistFactor,1.0)
+	mist_obj.modulate.a += mistFactor
+	mist_tinge_obj.modulate.a += mistFactor
 
 func _collision_v1(body):
 	# Fetch Mist Sprite
