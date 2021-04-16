@@ -1,6 +1,6 @@
 extends TextureProgress
 
-var totalEnemy = 8
+var totalEnemy = 8.0
 var loosePointsCount = 6
 var redLimit = 25
 var looseLimit = 15
@@ -15,24 +15,24 @@ onready var redCap = load("res://Assets/GFX/new/Health_Meter/small/RedCap.png")
 onready var looseScene = get_parent().get_parent().get_node("CanvasLayer2/YouLose")
 
 func _on_Mushroom2_body_shape_entered(body_id, body, body_shape, area_shape):
-	value += 25
+	pass
 
 func _on_Mushroom_body_shape_entered(body_id, body, body_shape, area_shape):
-	value -= 25
+	pass
 
-func incrementValue():
-	var newVal = ((maxPoints-value)/totalEnemy)
+func incrementValue(valBy=1.0):
+	var newVal = ((maxPoints-value)/totalEnemy) * valBy
 	var endValue = value + newVal
 	var newPos = Vector2(newHealthMoveAP(endValue),currenthasPos.y)
-	totalEnemy -= 1
-	if totalEnemy <= 0:
+	totalEnemy -= valBy
+	if totalEnemy <= 0.0:
 		$HealthAnim.visible = false
 		endValue = maxPoints
 	animateHealth(value, endValue, newPos)
 
 
 func decrementValue(amount=loosePointsCount):
-	if totalEnemy > 0 :
+	if totalEnemy > 0.0 :
 		var endValue = value - amount
 		var newPos = Vector2(newHealthMoveAP(endValue),currenthasPos.y)
 		animateHealth(value, endValue, newPos)

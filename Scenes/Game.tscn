@@ -392,7 +392,6 @@ tracks/0/keys = {
 [node name="Game" type="Node2D"]
 position = Vector2( 1.82056, -32.7698 )
 script = ExtResource( 15 )
-mushroomAmount = 8
 
 [node name="backgrop" type="Sprite" parent="."]
 position = Vector2( 531.593, -592.521 )
@@ -847,7 +846,7 @@ rotation = 1.5708
 scale = Vector2( 0.109097, 0.0946846 )
 frames = SubResource( 44 )
 animation = "Blue"
-frame = 5
+frame = 2
 playing = true
 offset = Vector2( 0, 100 )
 flip_h = true

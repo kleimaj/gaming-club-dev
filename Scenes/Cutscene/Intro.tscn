@@ -443,16 +443,29 @@ __meta__ = {
 
 [node name="StartContainer" type="Node" parent="CanvasLayer"]
 
-[node name="Title" type="Sprite" parent="CanvasLayer/StartContainer"]
-position = Vector2( 500.979, 320.609 )
-scale = Vector2( 0.958297, 0.986249 )
+[node name="Title" type="TextureRect" parent="CanvasLayer/StartContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -350.0
+margin_top = -171.5
+margin_right = 350.0
+margin_bottom = 21.5
 texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="StartButton" type="TextureButton" parent="CanvasLayer/StartContainer"]
-margin_left = 429.411
-margin_top = 451.843
-margin_right = 533.411
-margin_bottom = 553.843
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -52.0
+margin_top = 64.0
+margin_right = 52.0
+margin_bottom = 166.0
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 14 )
