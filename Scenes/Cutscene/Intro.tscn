@@ -195,30 +195,6 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 0.8, 0.8 ) ]
 }
-tracks/9/type = "value"
-tracks/9/path = NodePath("CanvasLayer/Fade2:color")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.00392157, 0.00392157, 0.00392157, 0.670588 ), Color( 0.00392157, 0.00392157, 0.00392157, 0 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("CanvasLayer/Fade2:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
 
 [sub_resource type="Animation" id=7]
 length = 1.5
@@ -454,14 +430,6 @@ custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 text = "START"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Fade2" type="ColorRect" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.00392157, 0.00392157, 0.00392157, 0.670588 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
