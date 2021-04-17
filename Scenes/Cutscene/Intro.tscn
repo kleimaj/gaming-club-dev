@@ -231,10 +231,10 @@ tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0, 0.3, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 5.0, 0.0 ]
+"values": [ 0.0, 5.0, 5.0, 0.0 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -484,14 +484,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Fade" type="ColorRect" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="StartContainer" type="Node" parent="CanvasLayer"]
 
 [node name="Title" type="TextureRect" parent="CanvasLayer/StartContainer"]
@@ -523,6 +515,14 @@ texture_pressed = ExtResource( 14 )
 texture_hover = ExtResource( 14 )
 expand = true
 stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
