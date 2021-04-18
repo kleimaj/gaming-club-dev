@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/page-flip.ogg-ba9a4283a4524a9fae281a0f80cab72e.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Sounds/Book/page-flip.ogg"
+dest_files=[ "res://.import/page-flip.ogg-ba9a4283a4524a9fae281a0f80cab72e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

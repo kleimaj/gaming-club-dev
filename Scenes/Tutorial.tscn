@@ -116,6 +116,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -30.0, -80.0 ]
+}
 
 [sub_resource type="Animation" id=10]
 resource_name = "move-arrows"
@@ -629,7 +641,7 @@ scale = Vector2( 129.165, 53.1951 )
 shape = SubResource( 1 )
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer2"]
-modulate = Color( 0.888889, 0.888889, 0.888889, 0.111111 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )

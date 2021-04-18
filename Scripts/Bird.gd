@@ -12,8 +12,9 @@ func _physics_process(delta):
 	calc_vel()
 	$AnimatedSprite.play(anim)
 	var collision = move_and_collide(vel * delta)
-	if collision:
+	if collision and not isDead:
 		isDead = true
+		$BirdSound.play()
 
 func calc_vel():
 	if isDead:
