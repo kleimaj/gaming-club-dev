@@ -1,6 +1,6 @@
 extends Node2D
 
-export var mushroomAmount = 3
+export var mushroomAmount = 8.0
 var mushrooms_hit = 0
 export var rain_seconds = 5
 
@@ -84,7 +84,6 @@ func dialog_finished():
 
 func checkGameOver(animType):
 	if mushrooms_hit == mushroomAmount:
-		$emcl/evilMist.hide()
 		rs = rainScene.instance()
 		add_child(rs)
 		rs.start_rain(animType)
@@ -105,8 +104,8 @@ func checkGameOver(animType):
 	else:
 		$CameraAnimationPlayer.play("cat_smile")
 	
-func incrementScore():
-	mushrooms_hit += 1
+func incrementScore(increaseByVal):
+	mushrooms_hit += increaseByVal
 
 
 func _on_ProgressBar_value_changed(value):

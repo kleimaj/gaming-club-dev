@@ -36,9 +36,10 @@ func _on_Area2D_body_entered(body):
 
 func _reset_camera(current_camera_position):
 	var ap = get_parent().get_node("CAnimationPlayer")
-	var camera_obj = get_parent().get_node("Camera2D")
-	var animation = ap.get_animation("ResetCamera")
-	animation.track_insert_key(0, 0.0, current_camera_position)
-	ap.play("ResetCamera")
-	camera_obj.smoothing_enabled = true
-	camera_obj.smoothing_speed = 5
+	if ap != null:
+		var camera_obj = get_parent().get_node("Camera2D")
+		var animation = ap.get_animation("ResetCamera")
+		animation.track_insert_key(0, 0.0, current_camera_position)
+		ap.play("ResetCamera")
+		camera_obj.smoothing_enabled = true
+		camera_obj.smoothing_speed = 5
