@@ -11,5 +11,5 @@ dest_files=[ "res://.import/bird-noise.ogg-7f9e9192c83ecb814a86ebd85a58715d.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
