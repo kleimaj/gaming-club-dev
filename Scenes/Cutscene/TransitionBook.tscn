@@ -1,20 +1,21 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Cutscene/BookStyles/BookButton.tres" type="StyleBox" id=1]
 [ext_resource path="res://Fonts/ink-free-normal.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/GFX/cutscene/Book/pen.png" type="Texture" id=3]
 [ext_resource path="res://Assets/GFX/UI/Book/book-open.png" type="Texture" id=4]
 [ext_resource path="res://Assets/GFX/new/MainGame_Mushroom/BlueMushroom.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/Antiqua-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Assets/GFX/cutscene/Book/arrow.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Cutscene/TransitionBook.gd" type="Script" id=8]
 [ext_resource path="res://Assets/GFX/cutscene/Book/arrow-right.png" type="Texture" id=9]
+[ext_resource path="res://Fonts/Antiqua-Bold.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 38
-outline_size = 1
 outline_color = Color( 0.0156863, 0.545098, 0.6, 1 )
 use_filter = true
-font_data = ExtResource( 2 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxLine" id=2]
 color = Color( 0.0156863, 0.545098, 0.6, 1 )
@@ -22,24 +23,23 @@ thickness = 4
 
 [sub_resource type="DynamicFont" id=3]
 size = 22
-outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 extra_spacing_top = 5
-font_data = ExtResource( 2 )
+font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 22
 use_filter = true
 extra_spacing_top = 5
-font_data = ExtResource( 2 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 22
 outline_color = Color( 0.823529, 0, 0, 1 )
 use_filter = true
 extra_spacing_top = 10
-font_data = ExtResource( 2 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="Animation" id=6]
 length = 3.0

@@ -78,14 +78,14 @@ var KeyMap = {
 # Changes Mushroom Title (sets new color and outline color)
 func set_title(title, color):
 	# creates dynamic font
-	var dynamic_font = DynamicFont.new()
-	dynamic_font.font_data = load("res://Fonts/ink-free-normal.ttf")
-	dynamic_font.size = 38
-	dynamic_font.outline_color = color
-	dynamic_font.outline_size = 1
-	dynamic_font.use_filter = true
-	# set title to new dynamic font (with new assigned color)
-	title.set("custom_fonts/normal_font", dynamic_font)
+#	var dynamic_font = DynamicFont.new()
+#	dynamic_font.font_data = load("res://Fonts/ink-free-normal.ttf")
+#	dynamic_font.size = 38
+#	dynamic_font.outline_color = color
+#	dynamic_font.outline_size = 1
+#	dynamic_font.use_filter = true
+#	# set title to new dynamic font (with new assigned color)
+#	title.set("custom_fonts/normal_font", dynamic_font)
 	title.add_color_override("default_color", Color(color))
 
 # Changes color of LineBreak
