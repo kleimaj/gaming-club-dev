@@ -134,6 +134,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -30.0, -80.0 ]
+}
 
 [sub_resource type="Animation" id=7]
 tracks/0/type = "value"
@@ -338,13 +350,14 @@ __meta__ = {
 [node name="DialogueBox" parent="CanvasLayer" instance=ExtResource( 3 )]
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -710.0
 margin_top = -573.0
 margin_right = 369.0
 margin_bottom = 182.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -360,7 +373,7 @@ anims/zoom-in = SubResource( 9 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 7 )
-volume_db = -40.0
+volume_db = -30.0
 autoplay = true
 [connection signal="mouse_entered" from="Backdrop/Button/Terrarium" to="." method="_on_Terrarium_mouse_entered"]
 [connection signal="mouse_exited" from="Backdrop/Button/Terrarium" to="." method="_on_Terrarium_mouse_exited"]
