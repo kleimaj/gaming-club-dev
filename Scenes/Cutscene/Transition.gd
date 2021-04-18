@@ -187,6 +187,7 @@ func dialog_finished():
 	
 func _on_item_pressed(button):
 	_game_pause(true)
+	$CanvasLayer/Book.play_open_close_book_sound()
 	if ItemMap[button.name].collected:
 		$CanvasLayer/Book.show()
 		$CanvasLayer/Book.receiveItem(button.name, false)
@@ -309,6 +310,7 @@ func _on_BookButton_pressed():
 		$CanvasLayer/Book.show()
 		$CanvasLayer/Book.showPage(content_map[content_map.keys()[0]])
 		page_idx = 0
+		$CanvasLayer/Book.play_open_close_book_sound()
 		if clickable_items > 1:
 			$CanvasLayer/Book/BookTexture/ArrowContainer.show()
 		
@@ -319,6 +321,7 @@ func _on_LeftTButton_pressed():
 	if page_idx == -1:
 		page_idx = content_map.keys().size() - 1
 	$CanvasLayer/Book.showPage(content_map[content_map.keys()[page_idx]])
+	$CanvasLayer/Book.play_page_turn_sound()	
 
 
 func _on_RightTButton_pressed():
@@ -326,6 +329,7 @@ func _on_RightTButton_pressed():
 	if page_idx == content_map.keys().size():
 		page_idx = 0
 	$CanvasLayer/Book.showPage(content_map[content_map.keys()[page_idx]])
+	$CanvasLayer/Book.play_page_turn_sound()
 	
 func _on_disable_nav(buttonTyp):
 	get_node("Nav/" + buttonTyp).rect_scale = Vector2(0.05,0.05)

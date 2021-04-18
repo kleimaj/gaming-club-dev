@@ -104,7 +104,7 @@ func _on_Button_pressed():
 	emit_signal("book_closed")
 	get_tree().paused = false
 	emit_signal("tutorial_item_found")
-	$OpenSound.play()
+	play_open_close_book_sound()
 #	if buttonType != null:
 #		get_parent().get_parent().get_node("Player/Backdrop/Buttons/"+ buttonType).hide()
 #		get_parent().get_node("BackpackButton/"+ buttonType).show()
@@ -133,13 +133,16 @@ func _on_LeftButton_pressed():
 	if page_idx == -1:
 		page_idx = 5
 	showPage(page_idx)
-	$PageTurnSound.play()
-
+	play_page_turn_sound()
 # Turn page to the right
 func _on_RightButton_pressed():
 	page_idx +=1
 	if page_idx == 6:
 		page_idx = 0
 	showPage(page_idx)
-	$PageTurnSound.play()
+	play_page_turn_sound()
 	
+func play_page_turn_sound():
+	$PageTurnSound.play()
+func play_open_close_book_sound():
+	$OpenSound.play()
