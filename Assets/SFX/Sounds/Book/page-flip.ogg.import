@@ -11,5 +11,5 @@ dest_files=[ "res://.import/page-flip.ogg-ba9a4283a4524a9fae281a0f80cab72e.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/Cutscene/BookStyles/BookButton.tres" type="StyleBox" id=1]
 [ext_resource path="res://Fonts/ink-free-normal.ttf" type="DynamicFontData" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Scenes/Cutscene/TransitionBook.gd" type="Script" id=8]
 [ext_resource path="res://Assets/GFX/cutscene/Book/arrow-right.png" type="Texture" id=9]
 [ext_resource path="res://Fonts/Antiqua-Bold.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Assets/SFX/Sounds/Book/page-flip.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Assets/SFX/Sounds/Book/open-book.ogg" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 38
@@ -277,6 +279,15 @@ text = "X"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PageTurnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -30.0
+
+[node name="OpenSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -30.0
+pitch_scale = 0.73
 [connection signal="pressed" from="BookTexture/ArrowContainer/LeftButton" to="." method="_on_LeftButton_pressed"]
 [connection signal="pressed" from="BookTexture/ArrowContainer/RightButton" to="." method="_on_RightButton_pressed"]
 [connection signal="pressed" from="BookTexture/Button" to="." method="_on_Button_pressed"]
