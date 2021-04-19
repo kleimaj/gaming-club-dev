@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Transition.ogg-638fece5fa5b9533cb05c9a16903f2c6.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Music/Transition.ogg"
+dest_files=[ "res://.import/Transition.ogg-638fece5fa5b9533cb05c9a16903f2c6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

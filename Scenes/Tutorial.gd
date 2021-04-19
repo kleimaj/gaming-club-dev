@@ -179,3 +179,4 @@ func _on_Blue_Spotted_Mushroom_tutorial_hit():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "fade-out":
 		get_tree().change_scene("res://Scenes/Game.tscn")
+		#SceneChanger.goto_scene("res://Scenes/Game.tscn",self)
