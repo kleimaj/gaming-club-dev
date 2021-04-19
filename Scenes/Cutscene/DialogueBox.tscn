@@ -26,10 +26,22 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 755.986, 77.915 ), Vector2( 755.986, 67.915 ) ]
+"values": [ Vector2( 755.986, 67.915 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="DynamicFont" id=3]
@@ -205,7 +217,7 @@ margin_top = 20.0
 margin_right = -43.0
 margin_bottom = -47.0
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 1, 0.501961, 0.184314, 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = true
 bbcode_text = "..."
 text = "..."
@@ -215,7 +227,7 @@ __meta__ = {
 
 [node name="Indicator" type="Sprite" parent="."]
 visible = false
-position = Vector2( 755.986, 77.915 )
+position = Vector2( 755.986, 72.915 )
 scale = Vector2( 0.0838512, 0.0838512 )
 texture = ExtResource( 3 )
 

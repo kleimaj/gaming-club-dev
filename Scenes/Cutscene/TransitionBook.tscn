@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Cutscene/BookStyles/BookButton.tres" type="StyleBox" id=1]
 [ext_resource path="res://Fonts/ink-free-normal.ttf" type="DynamicFontData" id=2]
@@ -15,13 +15,13 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 38
-outline_color = Color( 0.0156863, 0.545098, 0.6, 1 )
+outline_color = Color( 0.337255, 0.380392, 0.470588, 1 )
 use_filter = true
 font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxLine" id=2]
-color = Color( 0.0156863, 0.545098, 0.6, 1 )
-thickness = 4
+color = Color( 0.337255, 0.380392, 0.470588, 1 )
+thickness = 3
 
 [sub_resource type="DynamicFont" id=3]
 size = 22
@@ -35,6 +35,12 @@ size = 22
 use_filter = true
 extra_spacing_top = 5
 font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 22
+use_filter = true
+extra_spacing_top = 10
+font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 22
@@ -161,7 +167,7 @@ margin_right = 250.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 250, 100 )
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0.0156863, 0.545098, 0.6, 1 )
+custom_colors/default_color = Color( 0.337255, 0.380392, 0.470588, 1 )
 bbcode_enabled = true
 bbcode_text = "Blue Mushroom"
 text = "Blue Mushroom"
@@ -189,7 +195,7 @@ margin_bottom = 624.0
 rect_min_size = Vector2( 400, 350 )
 custom_fonts/bold_font = SubResource( 3 )
 custom_fonts/normal_font = SubResource( 4 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.337255, 0.380392, 0.470588, 1 )
 bbcode_enabled = true
 bbcode_text = "The blue mushroom with spots is very similar to the blue mushroom without spots. The mushroom lives in sunlight,** but is more difficult to treat than the one without spots when it gets out of control which can occur in darkness. When it thrives in darkness, [b]1 dose of the yellow spray is needed to treat it.[/b]
 "
@@ -208,12 +214,11 @@ margin_top = 119.0
 margin_right = 400.0
 margin_bottom = 619.0
 rect_min_size = Vector2( 400, 500 )
+custom_fonts/bold_font = SubResource( 10 )
 custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 0.823529, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player selects the spray bottle from the backpack and loads it into the cannon. Once loaded the player has to hit the blue mushroom. Once hit X1 the mushroom brightens and sprays miniscule spores that lightens the mist ever so slightly. The mushrooms work as trampolines. The spray droplet will hit the mushroom, bounce to the next mushroom depending on angle of spray."
-visible_characters = 0
-percent_visible = 0.0
 text = "The blue mushrooms MUST be sprayed by the pink spray bottle. The player selects the spray bottle from the backpack and loads it into the cannon. Once loaded the player has to hit the blue mushroom. Once hit X1 the mushroom brightens and sprays miniscule spores that lightens the mist ever so slightly. The mushrooms work as trampolines. The spray droplet will hit the mushroom, bounce to the next mushroom depending on angle of spray."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BookTexture/HBoxContainer/RightContainer"]
@@ -249,12 +254,14 @@ texture_normal = ExtResource( 9 )
 curve = SubResource( 7 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="BookTexture/BlueMushroom"]
-position = Vector2( 513.015, 116.236 )
+position = Vector2( 883.52, 545.422 )
 rotation = 0.00520463
+offset = 566.795
 rotate = false
 loop = false
 
 [node name="Sprite" type="Sprite" parent="BookTexture/BlueMushroom/PathFollow2D"]
+visible = false
 position = Vector2( 1.54279, 2.56921 )
 rotation = 0.824467
 scale = Vector2( 0.649022, 0.649022 )

@@ -51,6 +51,7 @@ func _on_BookButton_pressed():
 	else:
 		$CanvasLayer/ColorRect.show()
 		$CanvasLayer/TransitionBook.show()
+		$CanvasLayer/TransitionBook.showPage(0)
 		$CanvasLayer/TransitionBook/BookTexture/ArrowContainer.show()
 		$CanvasLayer/TransitionBook/BookTexture/HBoxContainer/RightContainer/Notes.percent_visible = 1
 		$CanvasLayer/TransitionBook/BookTexture/BlueMushroom/PathFollow2D/Sprite.hide()

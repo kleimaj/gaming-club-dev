@@ -467,6 +467,9 @@ __meta__ = {
 margin_top = -148.0
 margin_bottom = -33.0
 
+[node name="Indicator" parent="CanvasLayer/DialogueBox" index="5"]
+position = Vector2( 755.986, 67.915 )
+
 [node name="BookButton" type="TextureButton" parent="CanvasLayer"]
 visible = false
 anchor_left = 1.0
@@ -605,5 +608,7 @@ anims/Move = SubResource( 17 )
 [editable path="Player/Backdrop/Buttons/BlueMushroom/BlueMushroomG"]
 
 [editable path="CanvasLayer/MistCanvas"]
+
+[editable path="CanvasLayer/DialogueBox"]
 
 [editable path="CanvasLayer/Book"]
