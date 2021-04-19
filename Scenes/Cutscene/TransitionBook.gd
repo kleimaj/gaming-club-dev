@@ -119,9 +119,9 @@ func showPage(idx):
 	var pageContents = ItemMap[idx]
 	var title = $BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer/MushroomTitle
 	title.bbcode_text = pageContents.name
-	set_title(title, pageContents.color)
+#	set_title(title, pageContents.color)
 	var lineBreak = $BookTexture/HBoxContainer/LeftContainer/LineBreak
-	set_line_break(lineBreak, pageContents.color)
+#	set_line_break(lineBreak, pageContents.color)
 	$BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer/Mushroom.texture = pageContents.sprite
 	$BookTexture/HBoxContainer/LeftContainer/Description.bbcode_text = pageContents.description
 	$BookTexture/HBoxContainer/RightContainer/Notes.bbcode_text = pageContents.notes
