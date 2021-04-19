@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/GFX/new/Terrarium/cleanTerrarium.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Cutscene/Ending.gd" type="Script" id=5]
-[ext_resource path="res://Assets/SFX/Music/[MapleStory BGM] Sleepywood.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Assets/SFX/Music/EndScene.ogg" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "BeginScene"
@@ -241,6 +241,6 @@ anims/zoom-in = SubResource( 5 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 6 )
-volume_db = -40.0
+volume_db = -30.0
 autoplay = true
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

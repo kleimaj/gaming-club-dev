@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MushroomHut.ogg-e9d33a20e60fe590c4360be17e9c30fc.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Music/MushroomHut.ogg"
+dest_files=[ "res://.import/MushroomHut.ogg-e9d33a20e60fe590c4360be17e9c30fc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
