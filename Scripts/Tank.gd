@@ -77,6 +77,7 @@ func shoot():
 	RedLine.clear_points()
 	can_shoot = false
 	$ShootTimer.start()
+	$CannonSoundAP.play("ShootSound")
 	var b = Bullet.instance()
 	#b.get_node("Sprite").frames.load_path = ammo_texture
 	b.get_node("AnimatedSprite").play(sprayColor)
