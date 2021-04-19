@@ -122,28 +122,28 @@ func _on_Camera2D_reached_lower_limit():
 func _on_Camera2D_reached_upper_limit():
 	if steps_completed == 0:
 		progress_tutorial()
-		$backgrop/RightArrow.show()
+		$BackDrop/RightArrow.show()
 		$AnimationPlayer.play("move-arrows")
 
 
 func _on_RightArea_body_entered(body):
 	if steps_completed == 2:
 		progress_tutorial()
-		$backgrop/RightArrow.hide()
-		$backgrop/LeftArrow.show()
+		$BackDrop/RightArrow.hide()
+		$BackDrop/LeftArrow.show()
 		$AnimationPlayer.play("move-arrows")
 
 func _on_LeftArea_body_entered(body):
 	if steps_completed == 3:
 		progress_tutorial()
-		$backgrop/LeftArrow.hide()
-		$backgrop/MushroomArrow.show()
+		$BackDrop/LeftArrow.hide()
+		$BackDrop/MushroomArrow.show()
 		$AnimationPlayer.play("move-arrows")
 
 func _on_Blue_Mushroom_tutorial_hit():
 	if steps_completed == 4:
 		progress_tutorial()
-		$backgrop/MushroomArrow.hide()
+		$BackDrop/MushroomArrow.hide()
 		$CanvasLayer2/BackpackArrow.show()
 		$HUD/CanvasLayer/BackpackGlow.show()
 		$AnimationPlayer.play("move-arrows")
@@ -164,14 +164,14 @@ func _on_TransitionBook_tutorial_item_found():
 		progress_tutorial()
 		$CanvasLayer2/BookArrow.hide()
 		$HUD/CanvasLayer/BookGlow.hide()
-		$backgrop/MushroomArrow2.show()
+		$BackDrop/MushroomArrow2.show()
 		$AnimationPlayer.play("move-arrows")
 
 
 func _on_Blue_Spotted_Mushroom_tutorial_hit():
 	if steps_completed == 7:
 		progress_tutorial()
-		$backgrop/MushroomArrow2.hide()
+		$BackDrop/MushroomArrow2.hide()
 		$CanvasLayer2/DialogueBox.dialog_locked = false
 		$Tank.enabled = false
 

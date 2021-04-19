@@ -1,0 +1,353 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/Misc/Birdbox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/GFX/new/Branches/BranchD.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GFX/new/Branches/BranchB.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GFX/new/Branches/BranchC.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GFX/background/background/bgLayer2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/GFX/background/branch.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GFX/new/animals/BirdA.png" type="Texture" id=7]
+[ext_resource path="res://Assets/GFX/background/leaf.png" type="Texture" id=8]
+[ext_resource path="res://Assets/GFX/background/rightTree.png" type="Texture" id=9]
+[ext_resource path="res://Assets/GFX/new/Branches/BranchA.png" type="Texture" id=10]
+[ext_resource path="res://Assets/GFX/background/background/bgLayer3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/GFX/new/animals/squirrel.png" type="Texture" id=12]
+[ext_resource path="res://Assets/GFX/background/leftTree.png" type="Texture" id=13]
+[ext_resource path="res://Assets/GFX/background/background/bgLayer1.png" type="Texture" id=14]
+[ext_resource path="res://Assets/GFX/background/ground.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/Birdbox.gd" type="Script" id=16]
+
+[node name="BackDrop" type="Sprite"]
+position = Vector2( 531.593, -592.521 )
+scale = Vector2( 0.456058, 0.256182 )
+texture = ExtResource( 14 )
+
+[node name="bgLayer2" type="Sprite" parent="."]
+position = Vector2( 95.0314, 924.311 )
+scale = Vector2( 1.02118, 1.0621 )
+texture = ExtResource( 5 )
+
+[node name="bgLayer3" type="Sprite" parent="."]
+position = Vector2( 9.65848, 1013.47 )
+scale = Vector2( 0.832583, 1.03693 )
+texture = ExtResource( 11 )
+
+[node name="bgLayer1" type="Sprite" parent="."]
+position = Vector2( -2365.54, 417.658 )
+scale = Vector2( 1.06152, 1.07679 )
+texture = ExtResource( 14 )
+
+[node name="bgLayer4" type="Sprite" parent="."]
+position = Vector2( 2381.68, 400.374 )
+scale = Vector2( 1.06152, 1.07679 )
+texture = ExtResource( 14 )
+
+[node name="Birdbox" type="Area2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1311.49, 1664.77 )
+scale = Vector2( 2.105, 3.74734 )
+collision_mask = 16
+script = ExtResource( 16 )
+
+[node name="rightTree" type="Sprite" parent="."]
+position = Vector2( 1018.84, 708.078 )
+rotation = 0.0122232
+scale = Vector2( 0.743798, 1.02568 )
+texture = ExtResource( 9 )
+
+[node name="branch" type="Sprite" parent="rightTree"]
+position = Vector2( -758.217, 2678.91 )
+rotation = -0.169332
+scale = Vector2( 3.1544, 2.92581 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="branch2" type="Sprite" parent="rightTree"]
+position = Vector2( -586.685, 1745.69 )
+rotation = 0.279547
+scale = Vector2( 2.33797, 1.7441 )
+texture = ExtResource( 2 )
+flip_v = true
+
+[node name="branch3" type="Sprite" parent="rightTree"]
+position = Vector2( -515.334, 1845.16 )
+rotation = -0.622961
+scale = Vector2( 1.24039, 1.64383 )
+texture = ExtResource( 6 )
+flip_h = true
+flip_v = true
+
+[node name="branch4" type="Sprite" parent="rightTree"]
+position = Vector2( -626.402, 1070.5 )
+rotation = -0.113743
+scale = Vector2( 2.70991, 2.6147 )
+texture = ExtResource( 4 )
+
+[node name="branch5" type="Sprite" parent="rightTree"]
+position = Vector2( -311.449, 334.451 )
+rotation = -0.190636
+scale = Vector2( 0.645443, 2.01796 )
+texture = ExtResource( 6 )
+flip_h = true
+flip_v = true
+
+[node name="branch6" type="Sprite" parent="rightTree"]
+position = Vector2( -590.838, 83.1465 )
+rotation = -0.190636
+scale = Vector2( 2.51662, 2.01796 )
+texture = ExtResource( 2 )
+flip_v = true
+
+[node name="branch8" type="Sprite" parent="rightTree"]
+position = Vector2( -307.49, -1193.26 )
+rotation = -0.0182367
+scale = Vector2( 0.39666, 1.24547 )
+texture = ExtResource( 6 )
+flip_h = true
+flip_v = true
+
+[node name="branch9" type="Sprite" parent="rightTree"]
+position = Vector2( -409.043, -1465.33 )
+rotation = -0.0182367
+scale = Vector2( 0.621316, 2.92563 )
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="branch10" type="Sprite" parent="rightTree"]
+position = Vector2( -762.381, -2760.15 )
+rotation = -0.0182367
+scale = Vector2( 1.28812, 4.60222 )
+texture = ExtResource( 6 )
+flip_h = true
+flip_v = true
+
+[node name="BranchD" type="Sprite" parent="rightTree/branch10"]
+position = Vector2( 191.536, 60.2587 )
+scale = Vector2( 1.64805, 1 )
+texture = ExtResource( 2 )
+
+[node name="branch7" type="Sprite" parent="rightTree"]
+position = Vector2( -783.122, -621.994 )
+rotation = 0.219321
+scale = Vector2( 1.33901, 2.01796 )
+texture = ExtResource( 6 )
+flip_h = true
+flip_v = true
+
+[node name="leaf" type="Sprite" parent="rightTree/branch7"]
+position = Vector2( -475.329, -52.3958 )
+scale = Vector2( 0.415952, 0.405761 )
+texture = ExtResource( 8 )
+
+[node name="leaf2" type="Sprite" parent="rightTree/branch7"]
+position = Vector2( -387.951, -29.0479 )
+rotation = 1.08915
+scale = Vector2( 0.476129, 0.540891 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="leaf3" type="Sprite" parent="rightTree/branch7"]
+position = Vector2( -28.3687, 66.5958 )
+rotation = 1.08915
+scale = Vector2( 0.451976, 0.585614 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="leaf4" type="Sprite" parent="rightTree/branch7"]
+position = Vector2( 2.51766, 58.2868 )
+rotation = 1.08915
+scale = Vector2( 0.566754, 0.802197 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="leaf5" type="Sprite" parent="rightTree/branch7"]
+position = Vector2( -73.6463, 33.2999 )
+rotation = 1.9551
+scale = Vector2( 0.536575, 0.403261 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="leaf6" type="Sprite" parent="rightTree/branch7"]
+position = Vector2( 40.1763, 52.9946 )
+rotation = 0.693614
+scale = Vector2( 0.723317, 0.590187 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="leftTree" type="Sprite" parent="."]
+position = Vector2( -916.018, 708.491 )
+scale = Vector2( 0.839009, 1.04438 )
+texture = ExtResource( 13 )
+
+[node name="branch" type="Sprite" parent="leftTree"]
+position = Vector2( 402.027, 3167.63 )
+rotation = 0.145621
+scale = Vector2( 2.63525, 2.80702 )
+texture = ExtResource( 10 )
+
+[node name="leaf" type="Sprite" parent="leftTree/branch"]
+modulate = Color( 0.45098, 0.435294, 0.435294, 1 )
+show_behind_parent = true
+position = Vector2( -103.221, -5.17896 )
+rotation = -0.933647
+scale = Vector2( 0.410346, 0.448817 )
+texture = ExtResource( 8 )
+
+[node name="leaf2" type="Sprite" parent="leftTree/branch"]
+modulate = Color( 0.45098, 0.435294, 0.435294, 1 )
+show_behind_parent = true
+position = Vector2( 33.7241, 8.33264 )
+rotation = -0.933647
+scale = Vector2( 0.424333, 0.291081 )
+texture = ExtResource( 8 )
+
+[node name="branch2" type="Sprite" parent="leftTree"]
+position = Vector2( 231.349, 2460.06 )
+rotation = -0.213658
+scale = Vector2( 1.67312, 2.21726 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="branch3" type="Sprite" parent="leftTree"]
+position = Vector2( 132.586, 1799.41 )
+rotation = 0.188567
+scale = Vector2( 0.538709, 1.47305 )
+texture = ExtResource( 6 )
+
+[node name="branch4" type="Sprite" parent="leftTree"]
+position = Vector2( 132.586, 1799.41 )
+rotation = -0.242676
+scale = Vector2( 0.538709, 1.47305 )
+texture = ExtResource( 6 )
+
+[node name="branch5" type="Sprite" parent="leftTree"]
+position = Vector2( 312.69, 1613.09 )
+rotation = 0.780914
+scale = Vector2( 2.54728, 2.71592 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="branch6" type="Sprite" parent="leftTree"]
+position = Vector2( 542.981, 829.74 )
+rotation = 0.0244875
+scale = Vector2( 1.19778, 1.47305 )
+texture = ExtResource( 6 )
+
+[node name="branch7" type="Sprite" parent="leftTree"]
+position = Vector2( 625.904, 124.421 )
+rotation = 0.345042
+scale = Vector2( 3.3522, 3.42712 )
+texture = ExtResource( 10 )
+
+[node name="leaf" type="Sprite" parent="leftTree/branch7"]
+position = Vector2( -155.45, -17.3304 )
+scale = Vector2( 0.308502, 0.266927 )
+texture = ExtResource( 8 )
+
+[node name="branch8" type="Sprite" parent="leftTree"]
+position = Vector2( 281.778, -1222.85 )
+rotation = 0.190137
+scale = Vector2( 0.761952, 2.4256 )
+texture = ExtResource( 6 )
+flip_v = true
+
+[node name="leaf" type="Sprite" parent="leftTree/branch8"]
+position = Vector2( -305.456, 97.5077 )
+rotation = -1.15629
+scale = Vector2( 0.591437, 1.66602 )
+texture = ExtResource( 8 )
+
+[node name="leaf2" type="Sprite" parent="leftTree/branch8"]
+position = Vector2( -312.979, 87.541 )
+rotation = -1.52366
+scale = Vector2( 0.591437, 1.5177 )
+texture = ExtResource( 8 )
+
+[node name="leaf3" type="Sprite" parent="leftTree/branch8"]
+position = Vector2( -60.2102, 86.0893 )
+rotation = -1.31732
+scale = Vector2( 0.694584, 1.37384 )
+texture = ExtResource( 8 )
+
+[node name="leaf4" type="Sprite" parent="leftTree/branch8"]
+position = Vector2( 20.6637, 103.25 )
+rotation = -1.31732
+scale = Vector2( 0.633943, 1.38035 )
+texture = ExtResource( 8 )
+
+[node name="leaf5" type="Sprite" parent="leftTree/branch8"]
+position = Vector2( 10.4255, 46.8874 )
+rotation = -0.487424
+scale = Vector2( 1.47686, 0.867159 )
+texture = ExtResource( 8 )
+
+[node name="leaf6" type="Sprite" parent="leftTree/branch8"]
+position = Vector2( 94.9759, 92.5045 )
+rotation = -1.92474
+scale = Vector2( 0.956843, 1.80117 )
+texture = ExtResource( 8 )
+
+[node name="leaf7" type="Sprite" parent="leftTree/branch8"]
+position = Vector2( 331.33, 144.182 )
+rotation = -1.66013
+scale = Vector2( 0.68043, 1.74744 )
+texture = ExtResource( 8 )
+
+[node name="branch9" type="Sprite" parent="leftTree"]
+position = Vector2( 403.606, -1783.83 )
+rotation = 0.190137
+scale = Vector2( 1.03865, 2.4256 )
+texture = ExtResource( 6 )
+
+[node name="BranchA" type="Sprite" parent="leftTree/branch9"]
+position = Vector2( -84.5309, -33.4856 )
+scale = Vector2( 2.09345, 1.12492 )
+texture = ExtResource( 10 )
+
+[node name="branch10" type="Sprite" parent="leftTree"]
+position = Vector2( 477.564, -3185.66 )
+rotation = -0.532807
+scale = Vector2( 1.2462, 2.4256 )
+texture = ExtResource( 6 )
+flip_v = true
+
+[node name="BranchB" type="Sprite" parent="leftTree/branch10"]
+position = Vector2( -211.001, -5.46133 )
+rotation = 0.157425
+scale = Vector2( 1.55469, 0.97596 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="BranchB" type="Sprite" parent="leftTree"]
+position = Vector2( 371.686, 951.973 )
+scale = Vector2( 2.26077, 2.75005 )
+texture = ExtResource( 3 )
+
+[node name="squirrel2" type="Sprite" parent="."]
+position = Vector2( -825.436, 3278.74 )
+scale = Vector2( 0.427007, 0.678517 )
+texture = ExtResource( 12 )
+flip_h = true
+
+[node name="squirrel3" type="Sprite" parent="."]
+position = Vector2( 138.479, 1752.23 )
+scale = Vector2( 0.222119, 0.389475 )
+texture = ExtResource( 12 )
+flip_h = true
+
+[node name="squirrel" type="Sprite" parent="."]
+position = Vector2( 783.389, 994.064 )
+rotation = 0.093447
+scale = Vector2( 0.39261, 0.607078 )
+texture = ExtResource( 12 )
+
+[node name="BirdA" type="Sprite" parent="."]
+position = Vector2( -744.013, 476.714 )
+scale = Vector2( 0.338092, 0.525537 )
+texture = ExtResource( 7 )
+flip_h = true
+
+[node name="ground" type="Sprite" parent="."]
+position = Vector2( 19.0995, 4915 )
+scale = Vector2( 1.02118, 0.925825 )
+texture = ExtResource( 15 )
+[connection signal="body_exited" from="Birdbox" to="Birdbox" method="_on_Birdbox_body_exited"]

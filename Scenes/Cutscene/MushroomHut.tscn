@@ -373,7 +373,7 @@ anims/zoom-in = SubResource( 9 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 7 )
-volume_db = -30.0
+volume_db = -20.0
 autoplay = true
 [connection signal="mouse_entered" from="Backdrop/Button/Terrarium" to="." method="_on_Terrarium_mouse_entered"]
 [connection signal="mouse_exited" from="Backdrop/Button/Terrarium" to="." method="_on_Terrarium_mouse_exited"]
