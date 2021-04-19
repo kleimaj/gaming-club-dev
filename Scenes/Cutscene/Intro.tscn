@@ -550,7 +550,7 @@ anims/zoom-in2 = SubResource( 10 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 10 )
-volume_db = -30.0
+volume_db = -20.0
 autoplay = true
 [connection signal="pressed" from="CanvasLayer/CenterContainer/ButtonContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CanvasLayer/StartContainer/StartButton" to="." method="_on_StartButton_pressed"]
