@@ -119,6 +119,7 @@ func showPage(idx):
 	var pageContents = ItemMap[idx]
 	var title = $BookTexture/HBoxContainer/LeftContainer/VBoxContainer/MushroomContainer/MushroomTitle
 	title.bbcode_text = pageContents.name
+	title.add_color_override("default_color", Color('#566178'))
 #	set_title(title, pageContents.color)
 	var lineBreak = $BookTexture/HBoxContainer/LeftContainer/LineBreak
 #	set_line_break(lineBreak, pageContents.color)
