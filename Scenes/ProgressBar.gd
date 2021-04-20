@@ -12,7 +12,7 @@ onready var blueProgress = load("res://Assets/GFX/new/Health_Meter/small/BlueMid
 onready var blueCap = load("res://Assets/GFX/new/Health_Meter/small/BlueCap.png")
 onready var redProgress = load("res://Assets/GFX/new/Health_Meter/small/RedMiddle.png")
 onready var redCap = load("res://Assets/GFX/new/Health_Meter/small/RedCap.png")
-onready var looseScene = get_parent().get_parent().get_node("CanvasLayer2/YouLose")
+onready var looseScene = get_tree().get_root().get_child(get_tree().get_root().get_child_count()-1).get_node("CanvasLayer2/YouLose")
 
 func _on_Mushroom2_body_shape_entered(body_id, body, body_shape, area_shape):
 	pass
@@ -50,7 +50,7 @@ func animateHealth(startValue, endValue, animPos):
 		if value <= looseLimit:
 			$RedAlertAP.stop()
 			visible = true
-			get_parent().get_parent().get_node("HUD").pause_mode = PAUSE_MODE_INHERIT
+			get_tree().get_root().get_node("Game").get_node("HUD").pause_mode = PAUSE_MODE_INHERIT
 			get_tree().paused = true
 			looseScene.show()
 		else:

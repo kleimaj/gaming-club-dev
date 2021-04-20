@@ -17,10 +17,24 @@ func _ready():
 export var max_load_time = 10000
 
 func goto_scene(path):
+	# This function will usually be called from a signal callback,
+	# or some other function in the current scene.
+	# Deleting the current scene at this point is
+	# a bad idea, because it may still be executing code.
+	# This will result in a crash or unexpected behavior.
+
+	# The solution is to defer the load to a later time, when
+	# we can be sure that no code from the current scene is running:
+
+	call_deferred("_deferred_goto_scene", path)
+	
+func _deferred_goto_scene(path):
 	var loader = ResourceLoader.load_interactive(path)
 	var current_scene = get_tree().get_current_scene()
 	if current_scene == null:
+		print("still null")
 		current_scene = get_tree().get_root().get_child(get_tree().get_root().get_child_count()-1)
+	
 	
 	
 	if loader == null:
@@ -37,10 +51,13 @@ func goto_scene(path):
 		var err = loader.poll()
 		if err == ERR_FILE_EOF:
 			#Loading Complete
-			var resource = loader.get_resource()
-			get_tree().get_root().call_deferred('add_child',resource.instance())
 			current_scene.queue_free()
 			loading_bar.queue_free()
+			
+			var resource = loader.get_resource()
+			var new_scene = resource.instance()
+			get_tree().get_root().add_child(new_scene)
+			get_tree().set_current_scene(new_scene)
 			break
 		elif err == OK:
 			#Still loading
@@ -52,3 +69,5 @@ func goto_scene(path):
 			break
 		yield(get_tree(),"idle_frame")
 		
+	
+	
