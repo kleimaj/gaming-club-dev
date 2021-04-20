@@ -254,7 +254,7 @@ shape = SubResource( 1 )
 
 [node name="MushroomArrow2" type="Sprite" parent="BackDrop"]
 visible = false
-position = Vector2( 271.289, 2949 )
+position = Vector2( 273.391, 3003.29 )
 rotation = -1.57079
 scale = Vector2( 0.249112, 0.092973 )
 texture = ExtResource( 1 )
@@ -282,7 +282,7 @@ isTutorial = true
 [node name="Blue Spotted Mushroom" parent="Enemies" groups=[
 "BlueSpotted",
 ] instance=ExtResource( 9 )]
-position = Vector2( 657.978, 223.008 )
+position = Vector2( 660.669, 230.005 )
 rotation = -0.289871
 BOUNCE_MULTIPLIER = 1.2
 isTutorial = true

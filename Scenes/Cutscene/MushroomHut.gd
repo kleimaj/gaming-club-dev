@@ -35,7 +35,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		$CanvasLayer/DialogueBox.assign_dictionary(dialog_dics)
 		$CanvasLayer/DialogueBox.fade_in()
 	elif anim_name == "EndScene":
-		get_tree().change_scene("res://Scenes/Cutscene/Transition.tscn")
+		#get_tree().change_scene("res://Scenes/Cutscene/Transition.tscn")
+		SceneChanger.goto_scene("res://Scenes/Cutscene/Transition.tscn")
 
 func _on_Terrarium_pressed():
 	$AnimationPlayer.play("EndScene")
