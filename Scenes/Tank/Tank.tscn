@@ -21,7 +21,7 @@ extents = Vector2( 27.9074, 13.2038 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "ShootSound"
-length = 0.2
+length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("CannonSound:playing")
 tracks/0/interp = 1
@@ -29,10 +29,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ false, true, false ]
+"values": [ true, false ]
 }
 
 [node name="Tank" type="KinematicBody2D"]
@@ -104,8 +104,9 @@ shape = SubResource( 3 )
 
 [node name="CannonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -15.0
+volume_db = -20.0
 
 [node name="CannonSoundAP" type="AnimationPlayer" parent="."]
+method_call_mode = 1
 anims/ShootSound = SubResource( 4 )
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]

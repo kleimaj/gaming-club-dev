@@ -16,17 +16,21 @@ func _ready():
 #	pass
 export var max_load_time = 10000
 
-func goto_scene(path, current_scene):
+func goto_scene(path):
 	var loader = ResourceLoader.load_interactive(path)
+	var current_scene = get_tree().get_current_scene()
+	if current_scene == null:
+		current_scene = get_tree().get_root().get_child(2)
+	
 	
 	if loader == null:
 		print("Resource loader unable to load the resource at path")
 		return
 	
-	var loading_bar = load("res://Scenes/LoadingBar.tscn").instance()
+	var loading_bar = load("res://Scenes/LoadingBarCanvas.tscn").instance()
 	
 	get_tree().get_root().call_deferred('add_child',loading_bar)
-	
+	loading_bar.get_node("ProgressBar").value = 0
 	var t = OS.get_ticks_msec()
 	
 	while OS.get_ticks_msec() - t < max_load_time:
@@ -41,9 +45,10 @@ func goto_scene(path, current_scene):
 		elif err == OK:
 			#Still loading
 			var progress = float(loader.get_stage())/loader.get_stage_count()
-			loading_bar.value = progress * 100
-			print(progress)
+			loading_bar.get_node("ProgressBar").value = progress * 100
+			#print(progress)
 		else:
 			print("Error while loading file")
 			break
 		yield(get_tree(),"idle_frame")
+		
