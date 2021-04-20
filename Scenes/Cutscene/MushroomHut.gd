@@ -21,6 +21,7 @@ func _ready():
 
 func dialog_finished():
 	$Backdrop/Cat.show()
+	$Backdrop/Cat/CatAnimation.play("animate_cat")
 	$Backdrop/Button/Glow.show()
 	$Backdrop/Button/arrow.show()
 	$Backdrop/Button/Camera_Animation.play("Zoom_In")
