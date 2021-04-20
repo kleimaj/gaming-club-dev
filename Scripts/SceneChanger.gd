@@ -20,7 +20,7 @@ func goto_scene(path):
 	var loader = ResourceLoader.load_interactive(path)
 	var current_scene = get_tree().get_current_scene()
 	if current_scene == null:
-		current_scene = get_tree().get_root().get_child(2)
+		current_scene = get_tree().get_root().get_child(get_tree().get_root().get_child_count()-1)
 	
 	
 	if loader == null:
