@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/LoadingPx.png-1cca0c9b3e32190ab3629db6c30c6ea4.stex"
+path="res://.import/LoadingBar_baseB.png-0bac57b6cd8787f86e91af9895fcd680.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GFX/new/LoadingProgressBar/LoadingPx.png"
-dest_files=[ "res://.import/LoadingPx.png-1cca0c9b3e32190ab3629db6c30c6ea4.stex" ]
+source_file="res://Assets/GFX/new/LoadingProgressBar/LoadingBar_baseB.png"
+dest_files=[ "res://.import/LoadingBar_baseB.png-0bac57b6cd8787f86e91af9895fcd680.stex" ]
 
 [params]
 
