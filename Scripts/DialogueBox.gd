@@ -42,6 +42,7 @@ func load_dialog():
 				$CatRect.show()
 				$AnimationPlayer.play("fade-in-cat")
 				$AnimationPlayer.play("animate_cat")
+				$Meow.play()
 			elif dialog_dics[dialog_index].name == "Prof. Flores" or dialog_dics[dialog_index].name == "???":
 				$FloresRect.show()
 				if !floresDidWink:
