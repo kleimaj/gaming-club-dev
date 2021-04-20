@@ -88,6 +88,8 @@ func _ready():
 
 func dialog_finished():
 	$HUD.hide()
+	$HUD/CanvasLayer/BackpackButton.hide()
+	$HUD/CanvasLayer/BookButton.hide()
 	$AnimationPlayer.play("fade-out")
 #	if dialog_count == 0:
 #		$emcl/evilMist.set_process(true)
