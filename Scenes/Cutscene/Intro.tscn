@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GFX/new/Intro_Env/openning_TreeB.png" type="Texture" id=2]
@@ -11,10 +11,11 @@
 [ext_resource path="res://Scenes/SmokeRight.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/SFX/Music/GoodStarts.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Assets/GFX/new/Intro_Env/openning_TreeA.png" type="Texture" id=11]
-[ext_resource path="res://Assets/GFX/new/Intro_Env/Start_B_Before_v7.png" type="Texture" id=12]
+[ext_resource path="res://Assets/GFX/new/Intro_Env/Start_B_After_v11.png" type="Texture" id=12]
 [ext_resource path="res://Assets/GFX/new/Intro_Env/Title_V03.png" type="Texture" id=13]
-[ext_resource path="res://Assets/GFX/new/Intro_Env/Start_B_After_v7.png" type="Texture" id=14]
+[ext_resource path="res://Assets/GFX/new/Intro_Env/Start_B_Before_v11.png" type="Texture" id=14]
 [ext_resource path="res://Assets/GFX/new/Intro_Env/DirectionalBlur.shader" type="Shader" id=15]
+[ext_resource path="res://Assets/GFX/new/Intro_Env/CPG_logo_JK02.png" type="Texture" id=16]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 15 )
@@ -39,12 +40,13 @@ extra_spacing_top = 3
 font_data = ExtResource( 6 )
 
 [sub_resource type="Animation" id=5]
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -56,12 +58,60 @@ tracks/1/path = NodePath("CanvasLayer/Fade:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/StartContainer/ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.1, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/StartContainer/ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3.1, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer/StartContainer/ColorRect/CPG_logo_JK02:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.1, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CanvasLayer/StartContainer/ColorRect/CPG_logo_JK02:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 3.1, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -521,12 +571,36 @@ margin_left = -52.0
 margin_top = 64.0
 margin_right = 52.0
 margin_bottom = 166.0
+rect_scale = Vector2( 0.8, 0.8 )
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 14 )
-texture_hover = ExtResource( 14 )
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
 expand = true
 stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/StartContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CPG_logo_JK02" type="TextureRect" parent="CanvasLayer/StartContainer/ColorRect"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -250.0
+margin_right = 250.0
+margin_bottom = 250.0
+texture = ExtResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -535,7 +609,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
