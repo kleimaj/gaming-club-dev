@@ -32,7 +32,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 755.986, 67.915 ) ]
+"values": [ Vector2( 755.986, 47.915 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:visible")

@@ -203,6 +203,7 @@ func _on_item_pressed(button):
 		get_node("Player/Backdrop/Buttons/" + button.name +"/" + button.name + "G").hide()
 		$CanvasLayer/Book.show()
 		$CanvasLayer/Book.receiveItem(button.name, true)
+		page_idx = clickable_items
 		clickable_items += 1
 		if clickable_items > 1:
 			$CanvasLayer/Book/BookTexture/ArrowContainer.show()
@@ -322,7 +323,7 @@ func _on_LeftTButton_pressed():
 	if page_idx == -1:
 		page_idx = content_map.keys().size() - 1
 	$CanvasLayer/Book.showPage(content_map[content_map.keys()[page_idx]])
-	$CanvasLayer/Book.play_page_turn_sound()	
+	$CanvasLayer/Book.play_page_turn_sound()
 
 
 func _on_RightTButton_pressed():
@@ -331,6 +332,7 @@ func _on_RightTButton_pressed():
 		page_idx = 0
 	$CanvasLayer/Book.showPage(content_map[content_map.keys()[page_idx]])
 	$CanvasLayer/Book.play_page_turn_sound()
+	
 	
 func _on_disable_nav(buttonTyp):
 	get_node("Nav/" + buttonTyp).rect_scale = Vector2(0.05,0.05)
