@@ -54,3 +54,13 @@ func _on_Terrarium_mouse_exited():
 		$Backdrop/Button/Terrarium.set_scale(Vector2(1.25,1.0))
 		var pos = $Backdrop/Button/Terrarium.get_position()
 		$Backdrop/Button/Terrarium.set_position(Vector2(pos.x+3.0,pos.y+6.0))
+
+
+func _on_Cat_pressed():
+	$Backdrop/Cat/Meow.play()
+	$Backdrop/Cat/CatAnimation.play("meow_cat")
+
+
+func _on_CatAnimation_animation_finished(anim_name):
+	if anim_name == "meow_cat":
+		$Backdrop/Cat/CatAnimation.play("animate_cat")

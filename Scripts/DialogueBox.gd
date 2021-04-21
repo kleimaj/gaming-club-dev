@@ -33,6 +33,7 @@ func fade_out():
 	
 func load_dialog():
 	$Indicator.hide()
+	$Indicator/AnimationPlayer.stop()
 	if dialog_index < dialog_dics.size():
 		# Show Name if exists
 		if dialog_dics[dialog_index].name != null:
