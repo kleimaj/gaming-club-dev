@@ -7,7 +7,7 @@ var dialog_index = 0
 signal finished
 var dialog_done = false
 var floresDidWink = false
-
+var indicatorHidden = false
 export var dialog_locked = false
 
 #func _ready():
@@ -63,8 +63,9 @@ func load_dialog():
 
 
 func _on_Tween_tween_completed(object, key):
-	$Indicator.show()
-	$Indicator/AnimationPlayer.play("IDLE")
+	if not indicatorHidden:
+		$Indicator.show()
+		$Indicator/AnimationPlayer.play("IDLE")
 	set_process(true)
 
 

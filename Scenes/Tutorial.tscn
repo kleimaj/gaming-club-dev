@@ -523,4 +523,6 @@ anims/move-arrows = SubResource( 10 )
 
 [editable path="HUD"]
 
+[editable path="CanvasLayer2/DialogueBox"]
+
 [editable path="Camera2D"]
