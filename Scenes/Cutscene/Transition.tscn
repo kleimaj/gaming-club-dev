@@ -419,7 +419,7 @@ __meta__ = {
 }
 
 [node name="NoOfObjects" type="Label" parent="Nav"]
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -221.0
@@ -454,11 +454,10 @@ process_material = SubResource( 7 )
 visible = false
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.52588e-05
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 0.705882 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
