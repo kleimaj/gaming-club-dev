@@ -3,7 +3,7 @@ extends "res://Scripts/Cutscene.gd"
 var dialog_dics = [
 	{
 		'name': 'Prof. Flores',
-		'content': 'Thanks again for all your help! Good luck at your meeting, you’re welcome to come by and visit anytime!',
+		'content': 'Thanks again for all your help! Good luck at your meeting. You’re welcome to come by and visit anytime!',
 	},
 	{
 		'name': 'Prof. Flores',

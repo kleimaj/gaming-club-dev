@@ -35,7 +35,7 @@ var ItemMap = [
 		"sprite": load("res://Assets/GFX/new/MainGame_Mushroom/GreenMushroom.png"),
 		"color": "#0E8E00",
 		"description": "The green mushroom is the least common fungi in this terrarium. Rarely is it seen in a healthy terrarium. [b]The mushroom thrives in dark environments,[/b] but if it thrives, [b]2 doses of the pink spray is needed to treat it.[/b]",
-		"notes": "The green mushroom is similar to [b]Candida non-albicans[/b]. It is rarely present in a healthy vagina. An overgrowth of this less common yeast caused by an imbalance in the vagina can result in an infection. [b]Fungistatic drugs[/b] which can be topical or oral are commonly used to treat these infections but [b]may need a longer duration  of treatment to eradicate the signs and symptoms.[/b]"
+		"notes": "The green mushroom is similar to [b]Candida non-albicans[/b]. It is rarely present in a healthy vagina. An overgrowth of this less common yeast caused by an imbalance in the vagina can result in an infection. [b]Fungistatic drugs[/b] which can be topical or oral are commonly used to treat these infections but [b]may need a longer duration of treatment to eradicate the signs and symptoms.[/b]"
 	},
 	{
 		"name": "Green Spotted Mushroom",
@@ -53,7 +53,7 @@ var ItemMap = [
 		"sprite": load("res://Assets/GFX/UI/newBottles/bottle1.png"),
 		"color": "#000",
 		"description": "The yellow spray is used on the overgrowth of blue and green mushrooms with  spots to trigger the the stopping of spores to fend off the dark mist. Sometimes certain mushrooms need more spray for a longer duration of time to be effective.",
-		"notes": "The yellow spray is similar to various fungistatic drugs which can be topical or oral. Patients may develop a resistance to this drug resulting in the need for longer duration of treatment"
+		"notes": "The yellow spray is similar to various fungistatic drugs which can be topical or oral. Patients may develop a resistance to this drug resulting in the need for longer duration of treatment."
 	},
 	{
 		"name": "Pink Spray",
@@ -62,7 +62,7 @@ var ItemMap = [
 		"sprite": load("res://Assets/GFX/UI/newBottles/bottle2.png"),
 		"color": "#000",
 		"description": "The pink spray is used on the overgrowth of blue and green mushrooms to trigger the stopping of spores to fend off the dark mist. Sometimes certain mushrooms need more spray for a longer duration of time to be effective.",
-		"notes": "The pink spray is similar to various fungistatic drugs which can be topical or oral. Patients may develop a resistance to this drug resulting in the need for longer duration of treatment"
+		"notes": "The pink spray is similar to various fungistatic drugs which can be topical or oral. Patients may develop a resistance to this drug resulting in the need for longer duration of treatment."
 	}
 ]
 
