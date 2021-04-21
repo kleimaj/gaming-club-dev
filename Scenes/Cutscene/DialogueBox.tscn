@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/DialogueBox.gd" type="Script" id=1]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/Background.png" type="Texture" id=2]
@@ -6,11 +6,13 @@
 [ext_resource path="res://Assets/GFX/new/cat/CatCeye.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/Calibri Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Assets/GFX/cutscene/DialogueBox/box.png" type="Texture" id=6]
-[ext_resource path="res://Assets/GFX/cutscene/Cat.png" type="Texture" id=7]
+[ext_resource path="res://Assets/GFX/new/cat/small/Cat_V3.png" type="Texture" id=7]
 [ext_resource path="res://Assets/GFX/new/Dr_F/Dr_F_base.png" type="Texture" id=8]
 [ext_resource path="res://Assets/GFX/new/Dr_F/Dr_F_Smile.png" type="Texture" id=9]
 [ext_resource path="res://Assets/GFX/UI/Book/book-closed.png" type="Texture" id=10]
 [ext_resource path="res://Assets/SFX/Sounds/Cat/meow.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Assets/GFX/new/cat/small/Cat_Smile_V3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/GFX/new/cat/small/CatCeye_V3.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -78,7 +80,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 1.1 ),
-"transitions": PoolRealArray( 1, 1.8025, 1 ),
+"transitions": PoolRealArray( 1.27456, 1.8025, 1.46409 ),
 "update": 1,
 "values": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 7 ) ]
 }
@@ -96,6 +98,22 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 6.06287 ),
 "update": 1,
 "values": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "cat_meow"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CatRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.2 ),
+"transitions": PoolRealArray( 1.18921, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 7 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -271,6 +289,7 @@ __meta__ = {
 anims/animate-book = SubResource( 4 )
 anims/animate_cat = SubResource( 5 )
 anims/animate_flores = SubResource( 6 )
+anims/cat_meow = SubResource( 10 )
 anims/fade-in = SubResource( 7 )
 anims/fade-in-cat = SubResource( 8 )
 anims/fade-out = SubResource( 9 )

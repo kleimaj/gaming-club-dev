@@ -41,7 +41,7 @@ func load_dialog():
 			if dialog_dics[dialog_index].name == "Cat":
 				$CatRect.show()
 				$AnimationPlayer.play("fade-in-cat")
-				$AnimationPlayer.play("animate_cat")
+				$AnimationPlayer.play("cat_meow")
 				$Meow.play()
 			elif dialog_dics[dialog_index].name == "Prof. Flores" or dialog_dics[dialog_index].name == "???":
 				$FloresRect.show()
@@ -75,4 +75,6 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		$RichTextLabel.bbcode_text = "..."
 		dialog_dics = []
 		emit_signal("finished")
+	elif anim_name == "cat_meow":
+		$AnimationPlayer.play("animate_cat")
 		
