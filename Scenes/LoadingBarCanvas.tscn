@@ -16,7 +16,7 @@ layer = 3
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 anchor_left = 0.5
-anchor_top = 0.498674
+anchor_top = 0.496021
 anchor_right = 0.500977
 anchor_bottom = 0.496021
 margin_left = -252.0
