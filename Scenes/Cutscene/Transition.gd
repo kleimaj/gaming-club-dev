@@ -395,7 +395,7 @@ func set_objectLeft(value):
 		$Nav/NoOfObjects.text = "Items left to find : " + str(objLeft)
 		$Nav/AnimationPlayer.play("FontFadeIn")
 	else:
-		$Nav/NoOfObjects.text = "All found"
+		$Nav/NoOfObjects.text = "All items found"
 		$Nav/AnimationPlayer.play("FontFadeInOut")
 	
 	
