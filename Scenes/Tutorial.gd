@@ -56,7 +56,7 @@ var dialog_1 = [
 	},
 	{
 		'name': 'Prof. Flores',
-		'content': 'Try hitting the indicated blue mushroom! Hold and click your left mouse button to properly aim and fire the medicine!',
+		'content': 'Try hitting the left blue mushroom! Hold and click your left mouse button to properly aim and fire the medicine!',
 	},
 	{
 		'name': 'Prof. Flores',
@@ -68,7 +68,7 @@ var dialog_1 = [
 	},
 	{
 		'name': 'Prof. Flores',
-		'content': 'Now you should know that Yellow Medicine is effective against Blue Spotted Mushrooms. Try hitting the last indicated mushroom!',
+		'content': 'Now you should know that Yellow Medicine is effective against Blue Spotted Mushrooms. Try hitting the mushroom on the right!',
 	},
 	{
 		'name': 'Prof. Flores',
@@ -133,56 +133,60 @@ func _on_Camera2D_reached_lower_limit():
 func _on_Camera2D_reached_upper_limit():
 	if steps_completed == 0:
 		progress_tutorial()
-		$BackDrop/RightArrow.show()
-		$AnimationPlayer.play("move-arrows")
+#		$BackDrop/RightArrow.show()
+#		$AnimationPlayer.play("move-arrows")
 
 
 func _on_RightArea_body_entered(body):
 	if steps_completed == 2:
 		progress_tutorial()
-		$BackDrop/RightArrow.hide()
-		$BackDrop/LeftArrow.show()
-		$AnimationPlayer.play("move-arrows")
+#		$BackDrop/RightArrow.hide()
+#		$BackDrop/LeftArrow.show()
+#		$AnimationPlayer.play("move-arrows")
 
 func _on_LeftArea_body_entered(body):
 	if steps_completed == 3:
 		progress_tutorial()
-		$BackDrop/LeftArrow.hide()
-		$BackDrop/MushroomArrow.show()
-		$AnimationPlayer.play("move-arrows")
+#		$BackDrop/LeftArrow.hide()
+#		$BackDrop/MushroomArrow.show()
+		$"Enemies/Blue Mushroom/BlueGlow".show()
+#		$AnimationPlayer.play("move-arrows")
 
 func _on_Blue_Mushroom_tutorial_hit():
 	if steps_completed == 4:
 		progress_tutorial()
-		$BackDrop/MushroomArrow.hide()
-		$CanvasLayer2/BackpackArrow.show()
+#		$BackDrop/MushroomArrow.hide()
+		$"Enemies/Blue Mushroom/BlueGlow".hide()
+#		$CanvasLayer2/BackpackArrow.show()
 		$HUD/CanvasLayer/BackpackGlow.show()
-		$AnimationPlayer.play("move-arrows")
+#		$AnimationPlayer.play("move-arrows")
 
 
 func _on_Tank_projectile_change():
 	if steps_completed == 5:
 		progress_tutorial()
-		$CanvasLayer2/BackpackArrow.hide()
+#		$CanvasLayer2/BackpackArrow.hide()
 		$HUD/CanvasLayer/BackpackGlow.hide()
-		$CanvasLayer2/BookArrow.show()
+#		$CanvasLayer2/BookArrow.show()
 		$HUD/CanvasLayer/BookGlow.show()
-		$AnimationPlayer.play("move-arrows")
+#		$AnimationPlayer.play("move-arrows")
 
 
 func _on_TransitionBook_tutorial_item_found():
 	if steps_completed == 6:
 		progress_tutorial()
-		$CanvasLayer2/BookArrow.hide()
+#		$CanvasLayer2/BookArrow.hide()
 		$HUD/CanvasLayer/BookGlow.hide()
-		$BackDrop/MushroomArrow2.show()
-		$AnimationPlayer.play("move-arrows")
+#		$BackDrop/MushroomArrow2.show()
+		$"Enemies/Blue Spotted Mushroom/BlueSpottedGlow".show()
+#		$AnimationPlayer.play("move-arrows")
 
 
 func _on_Blue_Spotted_Mushroom_tutorial_hit():
 	if steps_completed == 7:
 		progress_tutorial()
-		$BackDrop/MushroomArrow2.hide()
+		$"Enemies/Blue Spotted Mushroom/BlueSpottedGlow".hide()
+#		$BackDrop/MushroomArrow2.hide()
 		$CanvasLayer2/DialogueBox.dialog_locked = false
 		$Tank.enabled = false
 
