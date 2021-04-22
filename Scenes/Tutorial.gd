@@ -39,39 +39,39 @@ func _unhandled_key_input(event):
 
 var dialog_1 = [
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Welcome to the tutorial! Scroll the mouse wheel to zoom in an out of the level. Zoom all the way out.',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Great job, now zoom all the way back in!',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Move the cannon with the A and D keys, move to the very right with the D key',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Excellent! Now move back in place with the A key',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Try hitting the left blue mushroom! Hold and click your left mouse button to properly aim and fire the medicine!',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Nice shot! Now try changing medicine types with your backpack! Click on the Yellow Medicine!',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Nice work, check out your Manual to refresh on what medicine is effective against blue spotted mushrooms!',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Now you should know that Yellow Medicine is effective against Blue Spotted Mushrooms. Try hitting the mushroom!',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Excellent work, you\'re all prepared to clear out the mist of the terrarium! Click to play the game!',
 	},
 ]

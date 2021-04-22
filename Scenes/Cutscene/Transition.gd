@@ -13,7 +13,7 @@ var second_dialog = [
 		'content': 'Who are you!? Do you have any idea what’s going on here!?',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'I\'m Professor Flores, and it appears that you and I are trapped in my award...'
 	},
 	{
@@ -21,19 +21,19 @@ var second_dialog = [
 		'content': 'Eh? Wait like- in that bottle??',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'My award winning terrarium. You see, I’m a botanist and fungi expert.'
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Black spores have been wreaking havoc on my terrariums and surprisingly, those same black spores cause shrinking.'
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'The only way for us to return to normal size is to eradicate the black spores and return my terrarium to its former glory!'
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'I came in here to try and find a better treatment and rebalance the ecosystem.'
 	},
 	{
@@ -41,7 +41,7 @@ var second_dialog = [
 		'content': 'That\'s how I got in here? I thought that was smoke! It’s billowing out into the forest, we have to stop these spores before they spread beyond control!',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Agreed, okay lets.. Wait, how did you get in here?'
 	},
 	{
@@ -49,7 +49,7 @@ var second_dialog = [
 		'content': 'I was walking to a gynecology conference when...',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Nevermind that then, here take this!'
 	},
 	{
@@ -61,22 +61,22 @@ var second_dialog = [
 		'content': 'A manual?',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'This is not just any field manual! It contains all the knowledge I’ve cultivated through my studies.'
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'I have it mostly committed to memory, so you can hold onto it for the time being. Here’s a pen if you have anything to add.'
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'I’m going to scout ahead. Take a look around. I’ll come back and check on you.'
 	},
 ]
 
 var third_dialog = [
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Come along now! I’ve set up what might be our escape from here!'
 	}
 ]

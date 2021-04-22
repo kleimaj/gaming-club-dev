@@ -38,34 +38,34 @@ func _unhandled_key_input(event):
 
 var dialog_1 = [
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'It looks like the mist is encroaching on us… quickly! (use your scroll wheel to view the mist)',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'We must hit the mushrooms with medicine to drive the mist up and out of the terrarium.',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Move the cannon with the A and D keys!',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Aim the cannon with your mouse. Click the mouse to launch the medicine',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'The longer you click, the farther the medicine will launch! Remember that!',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'If you\'re not sure how to deal with each mushroom, check your guidebook again! Good luck!',
 	},
 ]
 
 var dialog_2 = [
 	{
-		'name': 'Prof. Flores',
+		'name': 'Professor Flores',
 		'content': 'Oh! You did it!! The medicine is mixing with the rainclouds and spreading across the terrarium! Let’s get out of here!'
 	}
 ]
@@ -82,13 +82,9 @@ func _ready():
 #	$CanvasLayer2/DialogueBox.fade_in()
 
 func dialog_finished():
-#	if dialog_count == 0:
-#		$emcl/evilMist.set_process(true)
-#		$Tank.enabled = true
-#		dialog_count += 1
-#	else:
-		#get_tree().change_scene("res://Scenes/Cutscene/Ending.tscn")
-		SceneChanger.goto_scene("res://Scenes/Cutscene/Ending.tscn")
+	$"CanvasLayer2/progress bar".hide()
+	$CanvasLayer2/ProgressBar.hide()
+	$CanvasLayer/AnimationPlayer.play("fade-out")
 
 func checkGameOver(animType):
 	if mushrooms_hit == mushroomAmount:
@@ -142,3 +138,7 @@ func _on_RetryButton_pressed():
 	get_node("HUD").pause_mode = PAUSE_MODE_PROCESS
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	SceneChanger.goto_scene("res://Scenes/Cutscene/Ending.tscn")
