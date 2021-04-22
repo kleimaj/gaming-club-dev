@@ -64,7 +64,7 @@ var dialog_1 = [
 	},
 	{
 		'name': 'Prof. Flores',
-		'content': 'Nice work, check out your Book to refresh on what medicine is effective against blue spotted mushrooms!',
+		'content': 'Nice work, check out your Manual to refresh on what medicine is effective against blue spotted mushrooms!',
 	},
 	{
 		'name': 'Prof. Flores',

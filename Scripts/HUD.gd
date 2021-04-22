@@ -60,6 +60,7 @@ func _on_BookButton_pressed():
 		emit_signal("toggle_tank")
 		if isTutorial:
 			$CanvasLayer/TransitionBook.receiveItem("BlueSpottedMushroom", false)
+			$CanvasLayer/TransitionBook.page_idx = 1
 			emit_signal("toggle_tank")			
 
 

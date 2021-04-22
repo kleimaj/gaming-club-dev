@@ -426,11 +426,11 @@ __meta__ = {
 [node name="HealthMoveAP" type="AnimationPlayer" parent="CanvasLayer2/ProgressBar"]
 
 [node name="DialogueBox" parent="CanvasLayer2" instance=ExtResource( 13 )]
-margin_left = -323.693
-margin_top = -139.231
-margin_right = 496.307
-margin_bottom = 14.7695
-rect_scale = Vector2( 0.8, 0.8 )
+margin_left = -380.0
+margin_top = -116.667
+margin_right = 440.0
+margin_bottom = -0.666748
+rect_scale = Vector2( 0.920001, 0.920001 )
 dialog_locked = true
 
 [node name="BookArrow" type="Sprite" parent="CanvasLayer2"]
