@@ -466,10 +466,6 @@ __meta__ = {
 margin_top = -148.0
 margin_bottom = -33.0
 
-[node name="Indicator" parent="CanvasLayer/DialogueBox" index="5"]
-visible = true
-position = Vector2( 755.986, 47.915 )
-
 [node name="BookButton" type="TextureButton" parent="CanvasLayer"]
 visible = false
 anchor_left = 1.0
