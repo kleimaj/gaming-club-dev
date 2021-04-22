@@ -1,23 +1,20 @@
-## Implementation Team 
+# Gyno-Garden
 
-### Assets to be completed
+### Built with Godot Game Engine
 
-#### Week 1 (3/4)
-~~* Player Movement and Projectile Shooting~~ <br>
-~~* Inventory changes Projectile type~~ <br>
-* UI display (book and inventory)
+![Intro Scene](Screenshots/Intro.png)
 
-#### Week 2 (3/11)
-~~* Enemy Classes~~ <br>
-~~* Mist Effect~~ <br>
-* Win / Lose conditions
+![Mushroom Hut Scene](Screenshots/MushroomHut.png)
 
-#### Week 3 (3/18)
-* Transition Level
-* Transition Interactivity
-* Fine tuning Level and gameplay
+![Transition Scene](Screenshots/Transition.png)
 
-#### Week 4 (3/25)
-* Adding script to Transition
-* Adding Assets to Gameplay, Transitions, Cutscenes
-* Final Playtesting, refactoring of code, etc.
+![Tutorial Scene](Screenshots/Tutorial.png)
+
+![Game Scene](Screenshots/Game.png)
+
+![Gameplay Scene](Screenshots/Gameplay.png)
+
+© 2021 Communication Partners Group, LLC
+
+
+
