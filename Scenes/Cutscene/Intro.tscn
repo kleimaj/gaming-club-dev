@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/Cutscene/DialogueBox.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/GFX/new/Intro_Env/openning_TreeB.png" type="Texture" id=2]
@@ -39,7 +39,12 @@ use_filter = true
 extra_spacing_top = 3
 font_data = ExtResource( 6 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="DynamicFont" id=5]
+size = 20
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=6]
 length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
@@ -114,7 +119,7 @@ tracks/5/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
@@ -152,7 +157,7 @@ tracks/2/keys = {
 "values": [ -30.0, -80.0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/CenterContainer:modulate")
@@ -299,7 +304,7 @@ tracks/11/keys = {
 "values": [ 0.0, 5.0, 5.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Trees/RightTrees:position")
@@ -326,7 +331,7 @@ tracks/1/keys = {
 "values": [ Vector2( -55.5556, 0 ), Vector2( -755.556, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Backdrop/Camera2D:zoom")
 tracks/0/interp = 1
@@ -352,7 +357,7 @@ tracks/1/keys = {
 "values": [ Vector2( 902.409, 504.018 ), Vector2( 681.331, 495.636 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Backdrop/Camera2D:zoom")
 tracks/0/interp = 1
@@ -603,6 +608,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CopyRight" type="Label" parent="CanvasLayer/StartContainer/ColorRect"]
+margin_left = 324.808
+margin_top = 460.334
+margin_right = 703.808
+margin_bottom = 492.334
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "© 2021 Communication Partners Group, LLC"
+align = 1
+valign = 1
+
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
 visible = false
 anchor_right = 1.0
@@ -613,12 +629,12 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BeginScene = SubResource( 5 )
-anims/EndScene = SubResource( 6 )
-anims/FadeOutCanvas = SubResource( 7 )
-anims/MoveTrees = SubResource( 8 )
-anims/zoom-in = SubResource( 9 )
-anims/zoom-in2 = SubResource( 10 )
+anims/BeginScene = SubResource( 6 )
+anims/EndScene = SubResource( 7 )
+anims/FadeOutCanvas = SubResource( 8 )
+anims/MoveTrees = SubResource( 9 )
+anims/zoom-in = SubResource( 10 )
+anims/zoom-in2 = SubResource( 11 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2

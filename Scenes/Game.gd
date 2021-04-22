@@ -88,7 +88,9 @@ func dialog_finished():
 #		dialog_count += 1
 #	else:
 		#get_tree().change_scene("res://Scenes/Cutscene/Ending.tscn")
-		SceneChanger.goto_scene("res://Scenes/Cutscene/Ending.tscn")
+		$AnimationPlayer.play("FadeAway")
+		if yield($AnimationPlayer, "animation_finished"):
+			SceneChanger.goto_scene("res://Scenes/Cutscene/Ending.tscn")
 
 func checkGameOver(animType):
 	if mushrooms_hit == mushroomAmount:

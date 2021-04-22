@@ -2,17 +2,20 @@ extends "res://Scripts/Cutscene.gd"
 
 var dialog_dics = [
 	{
-		'name': 'Prof. Flores',
+		'name': '',
 		'content': 'Thanks again for all your help! Good luck at your meeting. You’re welcome to come by and visit anytime!',
 	},
 	{
-		'name': 'Prof. Flores',
+		'name': '',
 		'content': 'I have a feeling I may need your help with the rest of my terrariums in the future...',
 	},
 ]
 
 func _ready():
 	$AnimationPlayer.play("BeginScene")
+	if yield($AnimationPlayer, "animation_finished"):
+		$AnimationPlayer.play("Smile")
+	
 	
 
 func dialog_finished():
