@@ -65,6 +65,21 @@ scale = 2.0
 scale_curve = SubResource( 4 )
 color_ramp = SubResource( 2 )
 
+[sub_resource type="Animation" id=52]
+resource_name = "fade-out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
 [sub_resource type="Animation" id=6]
 resource_name = "RedBlink"
 length = 0.4
@@ -111,62 +126,62 @@ tracks/1/keys = {
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 0, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 320, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 640, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 960, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 0, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 320, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 640, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 960, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 0, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 320, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 640, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
-atlas = ExtResource( 33 )
+atlas = ExtResource( 32 )
 region = Rect2( 960, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=20]
@@ -231,69 +246,69 @@ region = Rect2( 960, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=32]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 0, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=33]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 320, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=34]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 640, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=35]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 960, 0, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=36]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 0, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=37]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 320, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=38]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 640, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=39]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 960, 336, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=40]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 0, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=41]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 320, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=42]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 640, 672, 320, 336 )
 
 [sub_resource type="AtlasTexture" id=43]
 flags = 4
-atlas = ExtResource( 32 )
+atlas = ExtResource( 33 )
 region = Rect2( 960, 672, 320, 336 )
 
 [sub_resource type="SpriteFrames" id=44]
 animations = [ {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
-"name": "Red",
+"name": "Green",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
@@ -303,7 +318,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
 "loop": true,
-"name": "Green",
+"name": "Red",
 "speed": 5.0
 } ]
 
@@ -505,6 +520,19 @@ texture = ExtResource( 12 )
 position = Vector2( 482.944, 546.6 )
 collision_mask = 2147483649
 Bullet = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 1036.0
+margin_bottom = 758.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+anims/fade-out = SubResource( 52 )
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 margin_left = 1.52185
@@ -718,13 +746,13 @@ color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [node name="CAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ResetCamera = SubResource( 51 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeAway = SubResource( 52 )
 [connection signal="projectile_change" from="Tank" to="HUD" method="_on_Tank_projectile_change"]
+[connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="toggle_tank" from="HUD" to="Tank" method="_on_HUD_toggle_tank"]
 [connection signal="close_backpack" from="HUD/CanvasLayer/Backpack" to="HUD" method="_on_Backpack_close_backpack"]
 [connection signal="projectile_change" from="HUD/CanvasLayer/Backpack" to="Tank" method="_on_Backpack_projectile_change"]
