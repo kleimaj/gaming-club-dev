@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BagOpen.ogg-6d3cde68a34024ab88a76c91847b8865.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Sounds/BagOpen.ogg"
+dest_files=[ "res://.import/BagOpen.ogg-6d3cde68a34024ab88a76c91847b8865.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

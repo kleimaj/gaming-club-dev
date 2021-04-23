@@ -186,6 +186,7 @@ func dialog_finished():
 		
 	
 func _on_item_pressed(button):
+	$MushroomSelect.play()
 	_game_pause(true)
 	$CanvasLayer/Book.play_open_close_book_sound()
 	if ItemMap[button.name].collected:
@@ -346,12 +347,14 @@ func _on_enable_nav(buttonTyp):
 
 
 func _on_PinkSpray_pressed():
+	$MushroomSelect.play()
 	_game_pause(true)
 	$CanvasLayer/Book.show()
 	$CanvasLayer/Book.receiveItem("PinkSpray", false)
 
 
 func _on_YellowSpray_pressed():
+	$MushroomSelect.play()
 	_game_pause(true)	
 	$CanvasLayer/Book.show()
 	$CanvasLayer/Book.receiveItem("YellowSpray", false)
@@ -380,10 +383,12 @@ func show_bottles():
 
 func _on_BackpackButton_pressed():
 	if not isBagOpen:
+		$CanvasLayer/BackpackButton/BagOpen.play()
 		isBagOpen = true
 		$CanvasLayer/BackpackButton.texture_normal = load("res://Assets/GFX/new/Backpack/Backpack_open.png")
 		$CanvasLayer/BackpackButton/BackpackFront.visible = true
 	else:
+		$CanvasLayer/BackpackButton/BagClose.play()
 		isBagOpen = false
 		$CanvasLayer/BackpackButton.texture_normal = load("res://Assets/GFX/new/Backpack/Backpack_closed_Back.png")
 		$CanvasLayer/BackpackButton/BackpackFront.visible = false

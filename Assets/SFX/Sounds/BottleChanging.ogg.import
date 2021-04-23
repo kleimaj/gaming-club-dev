@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BottleChanging.ogg-d1080a413891456f4cf21a0ed706558f.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Sounds/BottleChanging.ogg"
+dest_files=[ "res://.import/BottleChanging.ogg-d1080a413891456f4cf21a0ed706558f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

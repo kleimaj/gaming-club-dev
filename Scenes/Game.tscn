@@ -396,6 +396,33 @@ tracks/0/keys = {
 "values": [ Vector2( 536.119, 407.802 ), Vector2( 536.119, 407.802 ) ]
 }
 
+[sub_resource type="Animation" id=52]
+resource_name = "FadeAway"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/Fade:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
 [node name="Game" type="Node2D"]
 position = Vector2( 1.82056, -32.7698 )
 script = ExtResource( 15 )
@@ -624,7 +651,7 @@ rotation = 1.5708
 scale = Vector2( 0.109097, 0.0946846 )
 frames = SubResource( 44 )
 animation = "Blue"
-frame = 3
+frame = 10
 playing = true
 offset = Vector2( 0, 100 )
 flip_h = true
@@ -704,8 +731,26 @@ stream = ExtResource( 27 )
 volume_db = -30.0
 autoplay = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -194.0
+margin_top = -189.0
+margin_right = 210.0
+margin_bottom = 88.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [node name="CAnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ResetCamera = SubResource( 51 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeAway = SubResource( 52 )
 [connection signal="projectile_change" from="Tank" to="HUD" method="_on_Tank_projectile_change"]
 [connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="toggle_tank" from="HUD" to="Tank" method="_on_HUD_toggle_tank"]

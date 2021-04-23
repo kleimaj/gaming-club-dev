@@ -100,7 +100,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=7]
 resource_name = "cat_meow"
 length = 2.0
 tracks/0/type = "value"
@@ -116,7 +116,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 12 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 7 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -130,7 +130,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CatRect:modulate")
 tracks/0/interp = 1
@@ -144,7 +144,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
@@ -289,10 +289,10 @@ __meta__ = {
 anims/animate-book = SubResource( 4 )
 anims/animate_cat = SubResource( 5 )
 anims/animate_flores = SubResource( 6 )
-anims/cat_meow = SubResource( 10 )
-anims/fade-in = SubResource( 7 )
-anims/fade-in-cat = SubResource( 8 )
-anims/fade-out = SubResource( 9 )
+anims/cat_meow = SubResource( 7 )
+anims/fade-in = SubResource( 8 )
+anims/fade-in-cat = SubResource( 9 )
+anims/fade-out = SubResource( 10 )
 
 [node name="Meow" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )

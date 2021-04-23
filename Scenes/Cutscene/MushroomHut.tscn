@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/GFX/new/Mushroom/mushroom_house.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Cutscene/MushroomHut.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/GFX/new/cat/small/CatCeye_V3.png" type="Texture" id=10]
 [ext_resource path="res://Assets/SFX/Sounds/Cat/meow.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Assets/GFX/new/cat/small/Cat_Smile_V3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/SFX/Sounds/EnteringTrerrarium.ogg" type="AudioStream" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Move"
@@ -89,7 +90,7 @@ tracks/1/keys = {
 "values": [ ExtResource( 5 ), ExtResource( 10 ), ExtResource( 5 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=5]
 resource_name = "meow_cat"
 length = 0.5
 tracks/0/type = "value"
@@ -105,7 +106,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 12 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 5 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
@@ -131,7 +132,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
@@ -157,7 +158,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Fade:color")
 tracks/0/interp = 1
@@ -195,7 +196,7 @@ tracks/2/keys = {
 "values": [ -30.0, -80.0 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/CenterContainer:modulate")
 tracks/0/interp = 1
@@ -245,7 +246,7 @@ tracks/3/keys = {
 "values": [ Vector2( -55.5556, 0 ), Vector2( -555.556, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Backdrop/Trees/RightTrees:position")
 tracks/0/interp = 1
@@ -271,7 +272,7 @@ tracks/1/keys = {
 "values": [ Vector2( -55.5556, 0 ), Vector2( -555.556, 0 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Backdrop/Camera2D:zoom")
 tracks/0/interp = 1
@@ -396,7 +397,7 @@ __meta__ = {
 
 [node name="CatAnimation" type="AnimationPlayer" parent="Backdrop/Cat"]
 anims/animate_cat = SubResource( 4 )
-anims/meow_cat = SubResource( 11 )
+anims/meow_cat = SubResource( 5 )
 
 [node name="Meow" type="AudioStreamPlayer" parent="Backdrop/Cat"]
 stream = ExtResource( 11 )
@@ -419,18 +420,22 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/BeginScene = SubResource( 5 )
-anims/BeginScene2 = SubResource( 6 )
-anims/EndScene = SubResource( 7 )
-anims/FadeOutCanvas = SubResource( 8 )
-anims/MoveTrees = SubResource( 9 )
-anims/zoom-in = SubResource( 10 )
+anims/BeginScene = SubResource( 6 )
+anims/BeginScene2 = SubResource( 7 )
+anims/EndScene = SubResource( 8 )
+anims/FadeOutCanvas = SubResource( 9 )
+anims/MoveTrees = SubResource( 10 )
+anims/zoom-in = SubResource( 11 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 7 )
 volume_db = -30.0
 autoplay = true
+
+[node name="EnteringBox" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -25.0
 [connection signal="mouse_entered" from="Backdrop/Button/Terrarium" to="." method="_on_Terrarium_mouse_entered"]
 [connection signal="mouse_exited" from="Backdrop/Button/Terrarium" to="." method="_on_Terrarium_mouse_exited"]
 [connection signal="pressed" from="Backdrop/Button/Terrarium" to="." method="_on_Terrarium_pressed"]

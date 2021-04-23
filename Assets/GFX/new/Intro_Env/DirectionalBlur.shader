@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float radius = 10.0;
+uniform float radius = 3.0;
 
 void fragment(){
 	vec4 new_color = texture(TEXTURE, UV);
