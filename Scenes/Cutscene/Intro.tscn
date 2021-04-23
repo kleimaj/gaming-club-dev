@@ -304,6 +304,30 @@ tracks/11/keys = {
 "update": 0,
 "values": [ 0.0, 5.0, 5.0, 0.0 ]
 }
+tracks/12/type = "value"
+tracks/12/path = NodePath("CanvasLayer/StartContainer/CopyRight2:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("CanvasLayer/StartContainer/CopyRight2:custom_colors/font_color")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=9]
 length = 1.5
@@ -610,6 +634,7 @@ __meta__ = {
 }
 
 [node name="CopyRight" type="Label" parent="CanvasLayer/StartContainer/ColorRect"]
+visible = false
 margin_left = 324.808
 margin_top = 460.334
 margin_right = 703.808
@@ -619,6 +644,24 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "© 2021 Communication Partners Group, LLC"
 align = 1
 valign = 1
+
+[node name="CopyRight2" type="Label" parent="CanvasLayer/StartContainer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -189.5
+margin_top = -86.1766
+margin_right = 189.5
+margin_bottom = -54.1766
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "© 2021 Communication Partners Group, LLC"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Fade" type="ColorRect" parent="CanvasLayer"]
 visible = false

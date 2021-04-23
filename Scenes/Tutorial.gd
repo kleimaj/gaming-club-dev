@@ -56,19 +56,19 @@ var dialog_1 = [
 	},
 	{
 		'name': 'Professor Flores',
-		'content': 'Try hitting the left blue mushroom! Hold and click your left mouse button to properly aim and fire the medicine!',
+		'content': 'Try hitting the left blue mushroom! Hold and click your left mouse button to properly aim and fire the Spray!',
 	},
 	{
 		'name': 'Professor Flores',
-		'content': 'Nice shot! Now try changing medicine types with your backpack! Click on the Yellow Medicine!',
+		'content': 'Nice shot! Now try changing Spray types with your backpack! Click on the Yellow Spray!',
 	},
 	{
 		'name': 'Professor Flores',
-		'content': 'Nice work, check out your Manual to refresh on what medicine is effective against blue spotted mushrooms!',
+		'content': 'Nice work, check out your Manual to refresh on what Spray is effective against blue spotted mushrooms!',
 	},
 	{
 		'name': 'Professor Flores',
-		'content': 'Now you should know that Yellow Medicine is effective against Blue Spotted Mushrooms. Try hitting the mushroom!',
+		'content': 'Now you should know that Yellow Spray is effective against Blue Spotted Mushrooms. Try hitting the mushroom!',
 	},
 	{
 		'name': 'Professor Flores',

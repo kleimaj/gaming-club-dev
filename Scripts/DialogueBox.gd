@@ -9,6 +9,7 @@ var dialog_done = false
 var floresDidWink = false
 var indicatorHidden = false
 export var dialog_locked = false
+export var no_sprite = false
 
 #func _ready():
 ##	load_dialog()
@@ -44,7 +45,7 @@ func load_dialog():
 				$AnimationPlayer.play("fade-in-cat")
 				$AnimationPlayer.play("cat_meow")
 				$Meow.play()
-			elif dialog_dics[dialog_index].name == "Professor Flores" or dialog_dics[dialog_index].name == "???":
+			elif dialog_dics[dialog_index].name == "Professor Flores" and not no_sprite:
 				$FloresRect.show()
 				if !floresDidWink:
 					$AnimationPlayer.play("animate_flores")
