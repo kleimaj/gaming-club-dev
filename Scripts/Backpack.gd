@@ -64,6 +64,7 @@ func _on_ExitButton_pressed():
 	
 
 func _on_RedBottle_pressed():
+	$BottleChanging.play()
 	selected_anim.text = "Red"
 	emit_signal("projectile_change", get_texture_path())
 	emit_signal("close_backpack")
@@ -71,6 +72,7 @@ func _on_RedBottle_pressed():
 
 
 func _on_YellowBottle_pressed():
+	$BottleChanging.play()
 	selected_anim.text = "Yellow"
 	emit_signal("projectile_change", get_texture_path())
 	emit_signal("close_backpack")

@@ -17,6 +17,7 @@ func _on_BackpackButton_pressed():
 	backpackIsOpen  = !backpackIsOpen
 	set_backpack(backpackIsOpen)
 	get_tree().paused = true
+	$CanvasLayer/BackpackButton/BagOpen.play()
 	emit_signal("toggle_tank")
 	$CanvasLayer/ColorRect.show()
 	

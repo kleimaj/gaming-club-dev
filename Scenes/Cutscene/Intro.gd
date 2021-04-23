@@ -49,4 +49,5 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 func _on_StartButton_pressed():
+	$StartClickSound.play()
 	$AnimationPlayer.play("FadeOutCanvas")

@@ -39,6 +39,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		SceneChanger.goto_scene("res://Scenes/Cutscene/Transition.tscn")
 
 func _on_Terrarium_pressed():
+	$EnteringBox.play()
 	$AnimationPlayer.play("EndScene")
 
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MouseClickSound.ogg-e66510173c0be63ee1ddca9b092ddf04.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Sounds/MouseClickSound.ogg"
+dest_files=[ "res://.import/MouseClickSound.ogg-e66510173c0be63ee1ddca9b092ddf04.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
