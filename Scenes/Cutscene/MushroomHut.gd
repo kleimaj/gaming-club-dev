@@ -15,6 +15,8 @@ var dialog_dics = [
 	},
 ]
 
+var CatClick = 0 
+
 func _ready():
 	$AnimationPlayer.play("BeginScene2")
 	
@@ -58,8 +60,13 @@ func _on_Terrarium_mouse_exited():
 
 
 func _on_Cat_pressed():
-	$Backdrop/Cat/Meow.play()
-	$Backdrop/Cat/CatAnimation.play("meow_cat")
+	CatClick += 1
+	if CatClick == 3:
+		$Backdrop/Cat/CatAnimation.play("GrumpyCat")
+		CatClick = 0
+	else:
+		$Backdrop/Cat/Meow.play()
+		$Backdrop/Cat/CatAnimation.play("meow_cat")
 
 
 func _on_CatAnimation_animation_finished(anim_name):

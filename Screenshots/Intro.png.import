@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ending_Env03_BG.png-906690721d5dfd4482ab0a767fcedd14.stex"
+path="res://.import/Intro.png-b0bf81385ad15dddda5142d4d67c211f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GFX/new/EndScene/Ending_Env03_BG.png"
-dest_files=[ "res://.import/Ending_Env03_BG.png-906690721d5dfd4482ab0a767fcedd14.stex" ]
+source_file="res://Screenshots/Intro.png"
+dest_files=[ "res://.import/Intro.png-b0bf81385ad15dddda5142d4d67c211f.stex" ]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
-flags/mipmaps=true
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
